@@ -1,0 +1,12 @@
+# VS Code
+.vscode/
+
+# Dependencies
+node_modules/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Storegit status
