@@ -40,6 +40,7 @@ export default function Home() {
   const [progressWidth, setProgressWidth] = useState("0%");
   const [activeApp, setActiveApp] = useState(0);
   const [bubbles, setBubbles] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
   
   const appTitleRef = useRef(null);
 
@@ -74,6 +75,24 @@ export default function Home() {
     return () => {
       elements.forEach((x) => io.unobserve(x));
     };
+  }, []);
+
+  // URL parameters listener for active App selection
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const appParam = params.get("app");
+      if (appParam !== null) {
+        const index = parseInt(appParam, 10);
+        if (!isNaN(index) && index >= 0 && index < appData.length) {
+          setActiveApp(index);
+          const el = document.getElementById("applications");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      }
+    }
   }, []);
 
   // Generate fluidization bubbles
@@ -120,42 +139,107 @@ export default function Home() {
     <>
       <div className="progress" style={{ width: progressWidth }}></div>
       
+
       <nav>
         <div className="wrap nav">
           <Link className="brand" href="/">
-            ACCURATE <span>THERMAL</span> SYSTEMS
+            <img src="/assets/images/ats-logo.png" alt="Accurate Thermal Systems" className="nav-logo" />
           </Link>
           <div className="links">
-            <Link href="/products">PRODUCTS</Link>
-            <a href="#applications">APPLICATIONS</a>
-            <a href="#technology">TECHNOLOGY</a>
-            <a href="#industries">INDUSTRIES</a>
-            <a href="#resources">RESOURCES</a>
+            <div className="nav-item-dropdown">
+              <Link href="/products">PRODUCTS <span className="nav-link-arrow">▼</span></Link>
+              <div className="dropdown-menu">
+                <Link href="/products#fluidized" className="dropdown-item">Fluidized Temperature Baths</Link>
+                <Link href="/products#thermcal" className="dropdown-item">Dry Block Calibrators</Link>
+                <Link href="/products#hepa" className="dropdown-item">HEPA Filtration</Link>
+                <Link href="/#resources" className="dropdown-item">Media & Accessories</Link>
+              </div>
+            </div>
+
+            <div className="nav-item-dropdown">
+              <a href="#applications">APPLICATIONS <span className="nav-link-arrow">▼</span></a>
+              <div className="dropdown-menu">
+                <a href="#applications" className="dropdown-item" onClick={() => setActiveApp(0)}>Tool and Parts Cleaning</a>
+                <a href="#applications" className="dropdown-item" onClick={() => setActiveApp(1)}>Nitinol Shape Setting</a>
+                <a href="#applications" className="dropdown-item" onClick={() => setActiveApp(3)}>Reactor Heating</a>
+                <a href="#applications" className="dropdown-item" onClick={() => setActiveApp(2)}>Temperature Calibration</a>
+              </div>
+            </div>
+
+            <a href="#contact">CONTACT</a>
+            <a href="#resources">SUPPORT</a>
+            <a href="#technology">VIDEOS</a>
+            <a href="#resources">SHOP</a>
+
+            <div className="nav-item-dropdown">
+              <a href="#">+ MORE <span className="nav-link-arrow">▼</span></a>
+              <div className="dropdown-menu">
+                <a href="#systems" className="dropdown-item">Calibration Services</a>
+                <a href="#resources" className="dropdown-item">Resources</a>
+                <a href="#about" className="dropdown-item">About</a>
+              </div>
+            </div>
           </div>
-          <a className="nav-cta" href="#contact">
-            Request a Quote
-          </a>
+          
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <a className="nav-cta" href="#contact">
+              GET A QUOTE
+            </a>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "18px", cursor: "pointer", color: "#00a7e8" }}>
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+
+          <button className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </nav>
+
+      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        <div className="mobile-links" style={{ overflowY: "auto", maxHeight: "100vh", padding: "100px 20px 40px" }}>
+          <span className="mobile-header-link">Products</span>
+          <Link href="/products#fluidized" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Fluidized Temperature Baths</Link>
+          <Link href="/products#thermcal" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Dry Block Calibrators</Link>
+          <Link href="/products#hepa" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>HEPA Filtration</Link>
+          <Link href="/#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Media & Accessories</Link>
+          
+          <span className="mobile-header-link">Applications</span>
+          <Link href="/?app=0" className="mobile-sub-link" onClick={() => { setActiveApp(0); setMenuOpen(false); }}>Tool and Parts Cleaning</Link>
+          <Link href="/?app=1" className="mobile-sub-link" onClick={() => { setActiveApp(1); setMenuOpen(false); }}>Nitinol Shape Setting</Link>
+          <Link href="/?app=3" className="mobile-sub-link" onClick={() => { setActiveApp(3); setMenuOpen(false); }}>Reactor Heating</Link>
+          <Link href="/?app=2" className="mobile-sub-link" onClick={() => { setActiveApp(2); setMenuOpen(false); }}>Temperature Calibration</Link>
+
+          <span className="mobile-header-link">Navigation</span>
+          <a href="#contact" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Support</a>
+          <a href="#technology" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Videos</a>
+          <a href="#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Shop</a>
+
+          <span className="mobile-header-link" style={{ marginTop: "15px" }}>More</span>
+          <a href="#systems" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Calibration Services</a>
+          <a href="#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Resources</a>
+          <a href="#about" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>About</a>
+          
+          <a href="#contact" className="mobile-cta" onClick={() => setMenuOpen(false)}>GET A QUOTE</a>
+        </div>
+      </div>
 
       <header className="hero">
         <div className="wrap hero-inner">
           <div>
-            <div className="eyebrow mono">Precision thermal engineering · Made in the USA</div>
             <h1>
               <span className="word">
-                <i>CONTROL</i>
+                <i>Better by</i>
               </span>
               <br />
               <span className="word">
-                <i style={{ animationDelay: ".08s" }}>TEMPERATURE.</i>
-              </span>
-              <br />
-              <em className="word">
-                <i style={{ animationDelay: ".16s" }}>CONTROL</i>
-              </em>{" "}
-              <span className="word">
-                <i style={{ animationDelay: ".24s" }}>THE PROCESS.</i>
+                <i style={{ animationDelay: ".08s" }}>
+                  <span className="half-color-text">degree.</span>
+                </i>
               </span>
             </h1>
             <p>
@@ -193,7 +277,7 @@ export default function Home() {
 
       <div className="signal"></div>
 
-      <section className="intro">
+      <section className="intro" id="about">
         <div className="wrap">
           <div className="intro-grid reveal">
             <div>
