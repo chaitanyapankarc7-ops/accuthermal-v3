@@ -1,0 +1,2130 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap');
+
+:root {
+  --night: #071421;
+  --night2: #0b1d2d;
+  --night3: #102638;
+  --ink: #101820;
+  --paper: #f4f1ea;
+  --white: #fff;
+  --steel: #dce4e7;
+  --muted: #687681;
+  --blue: #00a7e8;
+  --red: #d91f38;
+  --heat: #ff8a34;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-light: #d8e0e3;
+  --max: 1280px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+h1, h2, h3 {
+  font-family: "Manrope", sans-serif;
+}
+
+::selection {
+  background: var(--red);
+  color: #fff;
+}
+
+/* Common Layout Utilities */
+.progress {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--red), var(--heat));
+  width: 0;
+  z-index: 100;
+  transition: width 0.1s ease;
+}
+
+.wrap {
+  width: min(var(--max), calc(100% - 48px));
+  margin: auto;
+}
+
+.mono {
+  font: 500 10px "IBM Plex Mono", monospace;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+
+.eyebrow:before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* Navigation */
+nav {
+  height: 84px;
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font: 800 17px "Manrope", sans-serif;
+  letter-spacing: -.02em;
+}
+
+.brand span {
+  color: var(--red);
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+  font-size: 12px;
+  font-weight: 700;
+  align-items: center;
+}
+
+.links a {
+  transition: 0.25s;
+}
+
+.links a:hover,
+.links .active {
+  color: var(--blue);
+}
+
+.nav-cta {
+  padding: 13px 18px;
+  background: var(--red);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.btn {
+  padding: 15px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  transition: .3s;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+}
+
+.btn.primary {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Animations & Scroll Reveals */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity .85s ease, transform .85s cubic-bezier(.2, .8, .2, 1);
+}
+
+.reveal.on {
+  opacity: 1;
+  transform: none;
+}
+
+.word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.word i {
+  display: inline-block;
+  font-style: normal;
+  transform: translateY(110%);
+  animation: word .8s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+
+@keyframes word {
+  to { transform: none; }
+}
+
+@keyframes draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.08); opacity: .6; }
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rise {
+  to { transform: translateY(-290px); opacity: 0; }
+}
+
+/* Footer styling */
+footer {
+  background: #05111b;
+  color: #8296a4;
+  padding: 70px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.footer-grid h3,
+.footer-grid b {
+  color: #fff;
+}
+
+.footer-grid a {
+  display: block;
+  margin: 9px 0;
+  font-size: 12px;
+  transition: color 0.25s ease;
+}
+
+.footer-grid a:hover {
+  color: var(--red);
+}
+
+.legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 45px;
+  padding-top: 20px;
+  font-size: 11px;
+}
+
+/* =========================================
+   HOME PAGE SPECIFIC STYLES
+   ========================================= */
+
+.hero {
+  min-height: 900px;
+  background: radial-gradient(circle at 72% 48%, #12334b 0, transparent 26%), linear-gradient(120deg, #061321, #0b1e30);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to left, #000, transparent 65%);
+}
+
+.hero-inner {
+  min-height: 900px;
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+  padding-top: 70px;
+}
+
+.hero h1 {
+  font-size: clamp(58px, 7vw, 104px);
+  line-height: .87;
+  letter-spacing: -.065em;
+  margin: 0 0 28px;
+  max-width: 760px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--red);
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.hero p {
+  color: #aebcc7;
+  font-size: 17px;
+  max-width: 590px;
+  line-height: 1.8;
+}
+
+.blueprint {
+  height: 570px;
+  position: relative;
+}
+
+.machine {
+  position: absolute;
+  width: 310px;
+  height: 390px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -44%);
+  border: 1.5px solid #9fb1be;
+  border-radius: 14px 14px 34px 34px;
+}
+
+.machine:before {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 42px;
+  left: 39px;
+  top: -43px;
+  border: 1.5px solid #9fb1be;
+}
+
+.machine:after {
+  content: "PID CTRL";
+  position: absolute;
+  width: 110px;
+  height: 52px;
+  left: 99px;
+  top: -97px;
+  border: 1.5px solid #9fb1be;
+  display: grid;
+  place-items: center;
+  font: 500 11px "IBM Plex Mono";
+  color: #b7c7d2;
+}
+
+.chamber {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border: 1px dashed #e2a54a;
+  border-radius: 50%;
+  left: 84px;
+  top: 110px;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.chamber:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #e2a54a;
+  border-radius: 50%;
+  left: 60px;
+  top: 60px;
+  box-shadow: 0 0 28px #ff8a34;
+}
+
+.dimension {
+  position: absolute;
+  color: #a8bdca;
+  font: 500 10px "IBM Plex Mono";
+}
+
+.d1 { top: 48px; left: 10px; }
+.d2 { right: 0; top: 230px; }
+.d3 { left: 80px; bottom: 40px; }
+
+.line {
+  position: absolute;
+  height: 1px;
+  background: #8098a7;
+  transform-origin: left;
+  animation: draw 1.8s ease both;
+}
+
+.l1 { width: 170px; right: 20px; top: 220px; }
+.l2 { width: 145px; left: 10px; top: 330px; }
+
+.orbit {
+  position: absolute;
+  width: 470px;
+  height: 470px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 20s linear infinite;
+}
+
+.orbit:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--blue);
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--blue);
+}
+
+.hero-index {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.hero-index .wrap {
+  display: flex;
+  justify-content: space-between;
+  color: #718998;
+}
+
+.signal {
+  height: 7px;
+  background: linear-gradient(90deg, var(--red), var(--heat), var(--blue));
+}
+
+.intro {
+  padding: 115px 0 90px;
+  background: #f5f2ec;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 80px;
+}
+
+.intro h2, .systems h2, .applications h2, .technology h2, .industries h2, .resources h2 {
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: .95;
+  letter-spacing: -.055em;
+  margin: 0;
+}
+
+.intro-copy {
+  font-size: 18px;
+  color: #5e6972;
+  line-height: 1.8;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #ccd4d7;
+  margin-top: 70px;
+}
+
+.fact {
+  padding: 28px 20px 0 0;
+}
+
+.fact+.fact {
+  border-left: 1px solid #ccd4d7;
+  padding-left: 28px;
+}
+
+.fact b {
+  display: block;
+  font: 800 28px "Manrope", sans-serif;
+  color: var(--night);
+}
+
+.fact span {
+  font-size: 11px;
+  color: #78858e;
+}
+
+.systems {
+  padding: 110px 0;
+  background: #fff;
+}
+
+.section-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 60px;
+}
+
+.section-top p {
+  color: #687681;
+  line-height: 1.8;
+}
+
+.system-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 510px;
+  border-top: 1px solid #dce2e5;
+}
+
+.system-visual {
+  position: relative;
+  background: linear-gradient(135deg, #dceef3, #f0ece3);
+  overflow: hidden;
+}
+
+.system-visual .halo {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffb55e 0, #f45d38 26%, #c71f38 44%, transparent 45%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(2px);
+  opacity: .75;
+}
+
+.system-visual .silhouette {
+  position: absolute;
+  width: 210px;
+  height: 280px;
+  background: linear-gradient(120deg, #adb6b9, #f6f7f7 45%, #8e999e);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -45%);
+  clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+  filter: drop-shadow(0 25px 20px rgba(82, 97, 107, 0.33));
+}
+
+.system-copy {
+  padding: 65px;
+}
+
+.system-copy .num {
+  font: 500 11px "IBM Plex Mono";
+  color: var(--red);
+}
+
+.system-copy h3 {
+  font-size: 42px;
+  letter-spacing: -.045em;
+  margin: 16px 0;
+}
+
+.system-copy p {
+  color: #65727c;
+  line-height: 1.8;
+}
+
+.specs {
+  display: flex;
+  gap: 30px;
+  border-top: 1px solid #dde3e6;
+  margin-top: 30px;
+  padding-top: 24px;
+}
+
+.specs b {
+  display: block;
+  font-size: 15px;
+}
+
+.specs small {
+  color: #7b8891;
+}
+
+.system-product-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: auto;
+  height: auto;
+  max-width: 68%;
+  max-height: 78%;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  filter: drop-shadow(0 25px 25px rgba(7, 20, 33, 0.18));
+  transition: transform 0.6s cubic-bezier(.16, 1, .3, 1), filter 0.6s ease;
+}
+
+.system-visual:hover .system-product-img {
+  transform: translate(-50%, -52%) scale(1.04);
+  filter: drop-shadow(0 32px 30px rgba(7, 20, 33, 0.25));
+}
+
+/* ThermCal Specifics (Home Page) */
+.thermcal-story {
+  margin-top: 80px;
+  background: #071421;
+  min-height: 600px;
+}
+
+.thermcal-copy {
+  padding: 70px 65px;
+  background: #071421;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thermcal-copy .num {
+  color: #00a7e8;
+}
+
+.thermcal-copy h3 {
+  color: #fff;
+  font-size: 48px;
+  line-height: 1.05;
+  margin: 22px 0;
+}
+
+.thermcal-copy > p {
+  color: #a9bac8;
+  line-height: 1.8;
+}
+
+.thermcal-copy .specs {
+  border-top: 1px solid rgba(255,255,255,.16);
+}
+
+.thermcal-copy .specs b {
+  color: #fff;
+}
+
+.thermcal-copy .specs small {
+  color: #8295a5;
+}
+
+.thermcal-visual {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, rgba(0,167,232,.10), transparent 40%), linear-gradient(135deg, #dceef2, #f1ede4);
+  overflow: hidden;
+}
+
+.thermcal-product-img {
+  position: relative;
+  z-index: 5;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 65%;
+  max-height: 440px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 30px 30px rgba(7,20,33,.20));
+  cursor: pointer;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1);
+  transition: transform .7s cubic-bezier(.16,1,.3,1), filter .7s ease;
+}
+
+.thermcal-visual:hover .thermcal-product-img {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-4deg) translateY(-10px) scale(1.045);
+  filter: drop-shadow(18px 38px 28px rgba(7,20,33,.28));
+}
+
+.thermcal-product-img:active {
+  transform: perspective(1000px) rotateX(0) rotateY(0) scale(1.10);
+}
+
+.thermcal-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform .9s cubic-bezier(.16,1,.3,1), opacity .6s ease;
+}
+
+.ring-one {
+  width: 330px;
+  height: 330px;
+  border: 1px solid rgba(7,20,33,.12);
+}
+
+.ring-two {
+  width: 430px;
+  height: 430px;
+  border: 1px dashed rgba(7,20,33,.15);
+}
+
+.thermcal-visual:hover .ring-one {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.thermcal-visual:hover .ring-two {
+  transform: translate(-50%, -50%) scale(.94);
+}
+
+.product-marker {
+  position: absolute;
+  left: 30px;
+  bottom: 25px;
+  z-index: 10;
+  font-size: 9px;
+  letter-spacing: .16em;
+  color: #536975;
+}
+
+.system-story:not(.thermcal-story) .system-visual {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 52% 48%, rgba(0,167,232,.13) 0%, rgba(0,167,232,.06) 27%, transparent 55%), linear-gradient(135deg, #dceef2 0%, #e8efed 52%, #f3eee4 100%);
+}
+
+.system-story:not(.thermcal-story) .system-visual::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,167,232,.13), rgba(0,167,232,.04) 45%, transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.system-story:not(.thermcal-story) .system-product-img {
+  position: relative;
+  z-index: 2;
+}
+
+/* Applications Tab Section */
+.applications {
+  padding: 120px 0;
+  background: #091827;
+  color: #fff;
+}
+
+.applications h2 {
+  color: #fff;
+}
+
+.applications .section-top p {
+  color: #a6b6c2;
+}
+
+.app-stage {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.app-nav button {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  background: transparent;
+  color: #8398a8;
+  text-align: left;
+  padding: 23px 10px;
+  display: grid;
+  grid-template-columns: 45px 1fr 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app-nav button.active {
+  color: #fff;
+  border-left: 2px solid var(--red);
+  padding-left: 18px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.app-view {
+  min-height: 480px;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 30%, #14364e, transparent 30%);
+}
+
+.app-view .big {
+  font: 800 140px "Manrope", sans-serif;
+  color: rgba(255, 255, 255, 0.02);
+  position: absolute;
+  right: 40px;
+  top: 0;
+  line-height: 1;
+}
+
+.app-view h3 {
+  font-size: 48px;
+  margin: 50px 0 15px;
+}
+
+.app-view p {
+  max-width: 620px;
+  color: #aebcc7;
+  line-height: 1.8;
+}
+
+.app-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.app-meta span {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 9px 12px;
+  font: 500 9px "IBM Plex Mono";
+  letter-spacing: .08em;
+}
+
+/* Technology section */
+.technology {
+  padding: 120px 0;
+  background: #efeae1;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.tech-copy p {
+  color: #64717b;
+  line-height: 1.8;
+}
+
+.fluid {
+  height: 580px;
+  background: #0c2031;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 35px 70px rgba(21, 44, 58, 0.15);
+}
+
+.fluid:before {
+  content: "FLUIDIZATION / LIVE SECTION";
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  color: #7d9bad;
+  font: 500 9px "IBM Plex Mono";
+  letter-spacing: .12em;
+}
+
+.media {
+  position: absolute;
+  bottom: 0;
+  left: 12%;
+  right: 12%;
+  height: 58%;
+  border: 1px solid #7f96a5;
+  border-top: 0;
+  background: linear-gradient(#c38b55, #7e5739);
+}
+
+.media:before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: -22px;
+  height: 43px;
+  border: 1px solid #7f96a5;
+  border-radius: 50%;
+  background: #a9774c;
+}
+
+.bubble {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  bottom: 12px;
+  animation: rise linear infinite;
+  opacity: .65;
+}
+
+.heater {
+  position: absolute;
+  bottom: 34px;
+  left: 18%;
+  right: 18%;
+  height: 8px;
+  background: var(--red);
+  box-shadow: 0 0 28px var(--red);
+}
+
+.airflow {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #86dafa;
+  font: 500 11px "IBM Plex Mono";
+}
+
+.tech-label {
+  position: absolute;
+  color: #b5c6d1;
+  font: 500 9px "IBM Plex Mono";
+}
+
+.tl1 { right: 20px; top: 210px; }
+.tl2 { left: 20px; bottom: 150px; }
+.tl3 { right: 20px; bottom: 65px; }
+
+/* Models family */
+.models {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.models-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 35px;
+}
+
+.models h3 {
+  font-size: 38px;
+}
+
+.model-track {
+  display: flex;
+  overflow: auto;
+  gap: 12px;
+  scrollbar-width: thin;
+  padding-bottom: 15px;
+}
+
+.model {
+  min-width: 235px;
+  border: 1px solid #dce3e6;
+  padding: 28px;
+  transition: .3s;
+  background: #fff;
+}
+
+.model:hover {
+  background: #0b1d2d;
+  color: #fff;
+  transform: translateY(-5px);
+  border-color: #0b1d2d;
+}
+
+.model b {
+  font: 800 22px "Manrope", sans-serif;
+}
+
+.model span {
+  display: block;
+  font-size: 11px;
+  color: #788690;
+  margin-top: 8px;
+}
+
+/* Industries styling */
+.industries {
+  padding: 120px 0;
+  background: #dce5e7;
+}
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #b9c5ca;
+  margin-top: 55px;
+}
+
+.industry {
+  background: #f6f3ed;
+  padding: 34px;
+  min-height: 210px;
+  position: relative;
+  overflow: hidden;
+  transition: .35s;
+}
+
+.industry:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 0;
+  background: var(--red);
+  transition: .35s;
+}
+
+.industry:hover {
+  transform: translateY(-6px);
+  z-index: 2;
+}
+
+.industry:hover:after {
+  width: 100%;
+}
+
+.industry small {
+  color: var(--blue);
+}
+
+.industry h3 {
+  font-size: 24px;
+}
+
+.industry p {
+  color: #6c7982;
+  font-size: 13px;
+}
+
+/* Custom engineering */
+.custom {
+  padding: 120px 0;
+  background: linear-gradient(115deg, #c91d35 0 48%, #101a22 48%);
+  color: #fff;
+}
+
+.custom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.custom h2 {
+  font-size: clamp(48px, 6vw, 80px);
+  letter-spacing: -.06em;
+  line-height: .92;
+  margin: 0;
+}
+
+.custom p {
+  color: #c8d0d5;
+  line-height: 1.8;
+}
+
+.custom .btn {
+  background: #fff;
+  color: #111;
+  border-color: #fff;
+}
+
+/* Resources section */
+.resources {
+  padding: 110px 0;
+  background: #f7f5f0;
+}
+
+.resource-list {
+  margin-top: 55px;
+  border-top: 1px solid #ccd5d9;
+}
+
+.resource {
+  display: grid;
+  grid-template-columns: 70px 1fr 180px 40px;
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 1px solid #ccd5d9;
+  cursor: pointer;
+  transition: padding-left 0.3s ease;
+}
+
+.resource:hover {
+  padding-left: 10px;
+}
+
+.resource span, .resource small {
+  font: 500 9px "IBM Plex Mono";
+  color: #75848e;
+}
+
+.resource b {
+  font-size: 16px;
+}
+
+/* CTA */
+.cta {
+  padding: 100px 0;
+  background: #0a1927;
+  color: #fff;
+}
+
+.cta-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.cta h2 {
+  font-size: clamp(40px, 5vw, 68px);
+  letter-spacing: -.05em;
+  max-width: 780px;
+  margin: 0;
+}
+
+.cta h2 span {
+  color: var(--red);
+}
+
+/* =========================================
+   PRODUCTS PAGE SPECIFIC STYLES
+   ========================================= */
+
+.product-stage {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.real-product {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: auto;
+  height: auto;
+  max-width: 62%;
+  max-height: 72%;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  filter: drop-shadow(0 28px 30px rgba(7, 20, 33, 0.18));
+  transition: transform 0.7s cubic-bezier(.16, 1, .3, 1), filter 0.7s ease;
+}
+
+.product-stage:hover .real-product {
+  transform: translate(-50%, -53%) scale(1.04);
+  filter: drop-shadow(0 38px 38px rgba(7, 20, 33, 0.25));
+}
+
+.thermal-aura {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(220, 132, 65, 0.22);
+  filter: blur(55px);
+  z-index: 1;
+  animation: thermalPulse 4s ease-in-out infinite alternate;
+}
+
+.engineering-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ring-a {
+  width: 350px;
+  height: 350px;
+  border: 1px solid rgba(7, 20, 33, 0.12);
+}
+
+.ring-b {
+  width: 440px;
+  height: 440px;
+  border: 1px dashed rgba(7, 20, 33, 0.10);
+  animation: ringRotate 25s linear infinite;
+}
+
+.stage-label {
+  position: absolute;
+  left: 28px;
+  bottom: 24px;
+  z-index: 7;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #415563;
+}
+
+@keyframes thermalPulse {
+  from {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
+
+@keyframes ringRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.blueprint-frame {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.blueprint-frame::before,
+.blueprint-frame::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.blueprint-frame::before {
+  height: 1px;
+  width: 520px;
+  left: -50px;
+  top: 50%;
+}
+
+.blueprint-frame::after {
+  width: 1px;
+  height: 520px;
+  top: -50px;
+  left: 50%;
+}
+
+.measure {
+  position: absolute;
+  color: #9bb0bd;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+}
+
+.measure.one { left: 0; top: 90px; }
+.measure.two { right: 0; top: 245px; }
+.measure.three { left: 70px; bottom: 20px; }
+
+.family {
+  padding: 120px 0;
+  background: white;
+}
+
+.family-showcase {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  min-height: 530px;
+}
+
+.family-visual {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 138, 52, 0.34), transparent 25%), linear-gradient(135deg, #dceef3, #efe9df);
+  overflow: hidden;
+}
+
+.family-visual::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(16, 24, 32, 0.12);
+  border-radius: 50%;
+}
+
+.product-placeholder {
+  position: absolute;
+  width: 250px;
+  height: 330px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -45%);
+  background: linear-gradient(120deg, #a8b2b6, #f5f6f6 45%, #8d989d);
+  clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+  filter: drop-shadow(0 30px 24px rgba(0, 0, 0, 0.25));
+}
+
+.family-copy {
+  padding: 65px;
+  background: var(--night2);
+  color: white;
+}
+
+.family-copy h3 {
+  font-size: 44px;
+  letter-spacing: -.045em;
+  margin: 20px 0;
+}
+
+.family-copy p {
+  color: #aebcc7;
+  line-height: 1.8;
+}
+
+.family-specs {
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.family-spec {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.family-spec span:last-child {
+  color: #8da4b3;
+}
+
+.models-dark {
+  padding: 120px 0;
+  background: #0a1927;
+  color: white;
+}
+
+.models-dark .section-top p {
+  color: #a8b8c3;
+}
+
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.model-card {
+  min-height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 28px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  transition: .35s;
+  overflow: hidden;
+}
+
+.model-card::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: var(--blue);
+  filter: blur(90px);
+  opacity: 0;
+  right: -70px;
+  top: -70px;
+  transition: 0.4s;
+}
+
+.model-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(0, 167, 232, 0.55);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.model-card:hover::before {
+  opacity: .25;
+}
+
+.model-number {
+  color: var(--red);
+}
+
+.model-card h3 {
+  font-size: 28px;
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
+.model-card p {
+  color: #91a5b3;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.model-arrow {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  font-size: 22px;
+}
+
+/* Products dryblock section */
+.thermcal {
+  padding: 120px 0;
+  background: #ebe7df;
+}
+
+.thermcal-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.thermcal-visual-legacy {
+  height: 530px;
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 167, 232, 0.22), transparent 30%), #dce5e7;
+  overflow: hidden;
+}
+
+.dryblock {
+  position: absolute;
+  width: 300px;
+  height: 230px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -45%) rotate(-3deg);
+  background: linear-gradient(130deg, #9da8ac, #f3f5f5 45%, #8e999d);
+  box-shadow: 0 35px 50px rgba(0, 0, 0, 0.2);
+}
+
+.dryblock::before {
+  content: "";
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  left: 105px;
+  top: 35px;
+  border-radius: 50%;
+  background: #20292d;
+  box-shadow: inset 0 0 0 22px #cbd1d3;
+}
+
+.thermcal h2 {
+  font-size: clamp(44px, 5vw, 70px);
+  line-height: .95;
+  letter-spacing: -.055em;
+  margin: 0 0 25px;
+}
+
+.thermcal p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.light-btn {
+  border-color: #b9c4c9;
+  margin-top: 25px;
+}
+
+/* Application Selector (Products) */
+.selector {
+  padding: 120px 0;
+  background: white;
+}
+
+.selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line-light);
+  border-left: 1px solid var(--line-light);
+}
+
+.selector-card {
+  padding: 35px;
+  min-height: 230px;
+  border-right: 1px solid var(--line-light);
+  border-bottom: 1px solid var(--line-light);
+  position: relative;
+  transition: .35s;
+  overflow: hidden;
+  background: #fff;
+}
+
+.selector-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--red);
+  transition: .35s;
+}
+
+.selector-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(11, 37, 69, 0.08);
+  z-index: 2;
+}
+
+.selector-card:hover::after {
+  width: 100%;
+}
+
+.selector-card small {
+  color: var(--blue);
+}
+
+.selector-card h3 {
+  font-size: 24px;
+  margin-top: 35px;
+}
+
+.selector-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Products final page CTA */
+.final {
+  padding: 100px 0;
+  background: #0a1927;
+  color: white;
+}
+
+.final-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.final h2 {
+  font-size: clamp(42px, 5vw, 68px);
+  letter-spacing: -.05em;
+  max-width: 800px;
+  margin: 0;
+}
+
+.final h2 span {
+  color: var(--red);
+}
+
+/* =====================================================
+   PRODUCT PAGE — FTB TECHNICAL CATALOG
+   ===================================================== */
+
+.family-catalog {
+  position: relative;
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: minmax(280px, .8fr) minmax(440px, 1.3fr) minmax(260px, .75fr);
+  align-items: center;
+  background: linear-gradient(120deg, #e0eff2 0%, #edf1ed 52%, #f2ede4 100%);
+  overflow: hidden;
+  border-top: 1px solid #cdd5d9;
+  border-bottom: 1px solid #cdd5d9;
+  width: 100% !important;
+}
+
+.catalog-heading {
+  position: relative;
+  z-index: 5;
+  padding: 70px 0 70px 55px;
+}
+
+.catalog-series {
+  display: block;
+  color: #e51f3b;
+  font-size: 10px;
+  letter-spacing: .17em;
+  margin-bottom: 24px;
+}
+
+.catalog-heading h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(42px, 4vw, 66px);
+  line-height: .98;
+  letter-spacing: -.055em;
+  color: #071421;
+  margin: 0 0 28px;
+}
+
+.catalog-heading p {
+  max-width: 320px;
+  color: #536975;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.catalog-machine {
+  position: relative;
+  height: 620px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+}
+
+.catalog-product {
+  position: relative;
+  z-index: 5;
+  display: block;
+  max-width: 72%;
+  max-height: 540px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transform: perspective(1200px) rotateY(-5deg) translateX(12px) scale(.94);
+  filter: drop-shadow(25px 35px 25px rgba(7, 20, 33, 0.20));
+  transition: transform .9s cubic-bezier(.16, 1, .3, 1), filter .9s ease;
+  cursor: pointer;
+}
+
+.catalog-machine:hover .catalog-product {
+  transform: perspective(1200px) rotateY(0deg) translateX(0) translateY(-10px) scale(1.035);
+  filter: drop-shadow(5px 45px 32px rgba(7, 20, 33, 0.27));
+}
+
+.catalog-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 1s cubic-bezier(.16, 1, .3, 1);
+}
+
+.orbit-one {
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(7, 20, 33, 0.13);
+}
+
+.orbit-two {
+  width: 490px;
+  height: 490px;
+  border: 1px dashed rgba(7, 20, 33, 0.13);
+}
+
+.catalog-machine:hover .orbit-one {
+  transform: translate(-50%, -50%) scale(1.07);
+}
+
+.catalog-machine:hover .orbit-two {
+  transform: translate(-50%, -50%) rotate(10deg) scale(.95);
+}
+
+.catalog-line {
+  position: absolute;
+  z-index: 2;
+  height: 1px;
+  background: rgba(7, 20, 33, 0.15);
+  transition: width .8s ease;
+}
+
+.line-one {
+  width: 90px;
+  right: 4%;
+  top: 37%;
+}
+
+.line-two {
+  width: 130px;
+  left: 0;
+  bottom: 32%;
+}
+
+.catalog-machine:hover .line-one {
+  width: 130px;
+}
+
+.catalog-machine:hover .line-two {
+  width: 170px;
+}
+
+.catalog-apps {
+  position: relative;
+  z-index: 5;
+  padding-right: 45px;
+}
+
+.catalog-label {
+  display: block;
+  color: #687d88;
+  font-size: 9px;
+  letter-spacing: .17em;
+  margin-bottom: 22px;
+}
+
+.catalog-app {
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 17px 0;
+  border-top: 1px solid rgba(7, 20, 33, 0.15);
+  transition: padding-left 0.35s ease;
+}
+
+.catalog-app:last-child {
+  border-bottom: 1px solid rgba(7, 20, 33, 0.15);
+}
+
+.catalog-app span {
+  color: #00a7e8;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+}
+
+.catalog-app b {
+  color: #071421;
+  font-size: 13px;
+}
+
+.catalog-app:hover {
+  padding-left: 8px;
+}
+
+.catalog-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 28px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(7, 20, 33, 0.13);
+  color: #536975;
+  font-size: 9px;
+  letter-spacing: .14em;
+}
+
+/* ==================================================
+   THERMCAL PRODUCT FAMILY (PRODUCTS PAGE)
+   ================================================== */
+
+.thermcal-family-page {
+  padding: 120px 0;
+  background: #f4f1ea;
+}
+
+.thermcal-page-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  min-height: 650px;
+  align-items: stretch;
+}
+
+.thermcal-visual-page {
+  position: relative;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 48%, rgba(0, 167, 232, 0.10), transparent 36%), linear-gradient(135deg, #dcecef 0%, #eef0ea 100%);
+}
+
+.thermcal-orbit-page {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(10, 25, 39, 0.13);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.thermcal-orbit-one {
+  width: 390px;
+  height: 390px;
+}
+
+.thermcal-orbit-two {
+  width: 500px;
+  height: 500px;
+  border-style: dashed;
+  opacity: .7;
+}
+
+.thermcal-cross {
+  position: absolute;
+  background: rgba(10, 25, 39, 0.08);
+  pointer-events: none;
+}
+
+.thermcal-cross-x {
+  width: 72%;
+  height: 1px;
+}
+
+.thermcal-cross-y {
+  width: 1px;
+  height: 72%;
+}
+
+.thermcal-product {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: auto;
+  max-width: 65%;
+  max-height: 470px;
+  object-fit: contain;
+  cursor: pointer;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 28px 25px rgba(10, 25, 39, 0.16));
+  transition: transform .55s cubic-bezier(.16, 1, .3, 1), filter .55s ease;
+}
+
+.thermcal-visual-page:hover .thermcal-product {
+  transform: translateY(-8px) rotate(-1deg) scale(1.035);
+  filter: drop-shadow(0 38px 32px rgba(10, 25, 39, 0.22));
+}
+
+.thermcal-product-label {
+  position: absolute;
+  left: 28px;
+  bottom: 25px;
+  font-size: 10px;
+  letter-spacing: .15em;
+  color: #60737f;
+}
+
+.thermcal-content {
+  padding: 75px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #0a1927;
+  color: white;
+}
+
+.thermcal-content .eyebrow {
+  color: var(--blue);
+}
+
+.thermcal-content h2 {
+  font-size: clamp(42px, 4vw, 68px);
+  line-height: .98;
+  margin: 25px 0 30px;
+}
+
+.thermcal-content > p {
+  max-width: 590px;
+  color: #adc0cc;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.thermcal-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 38px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.thermcal-specs > div {
+  padding: 24px 18px 24px 0;
+}
+
+.thermcal-specs span {
+  display: block;
+  color: var(--blue);
+  font-size: 10px;
+  margin-bottom: 12px;
+}
+
+.thermcal-specs b {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.thermcal-specs small {
+  color: #8299a8;
+  font-size: 10px;
+}
+
+.thermcal-content .light-btn {
+  align-self: flex-start;
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.thermcal-catalog-product {
+  max-width: 58%;
+  max-height: 460px;
+  mix-blend-mode: multiply;
+}
+
+.thermcal-machine .thermcal-catalog-product {
+  transform: perspective(1200px) rotateY(5deg) translateX(-10px) scale(.94);
+}
+
+.thermcal-machine:hover .thermcal-catalog-product {
+  transform: perspective(1200px) rotateY(0deg) translateX(0) translateY(-10px) scale(1.035);
+}
+
+.thermcal-catalog .catalog-footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .25s ease;
+}
+
+.thermcal-catalog .catalog-footer a:hover {
+  color: var(--red);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (GLOBAL BREAKPOINTS)
+   ========================================= */
+
+@media (max-width: 900px) {
+  .links {
+    display: none;
+  }
+  
+  .hero-inner,
+  .intro-grid,
+  .section-top,
+  .system-story,
+  .tech-grid,
+  .custom-grid,
+  .family-showcase,
+  .thermcal-grid,
+  .thermcal-page-grid,
+  .final-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 1050px;
+  }
+
+  .hero-inner {
+    padding-top: 130px;
+  }
+
+  .blueprint {
+    height: 500px;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .fact + .fact {
+    border-left: 0;
+    border-top: 1px solid #ccd4d7;
+    padding-left: 0;
+  }
+
+  .system-copy {
+    padding: 40px 10px;
+  }
+
+  .app-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .app-nav {
+    display: flex;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .app-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .app-nav button {
+    min-width: 190px;
+  }
+
+  .industry-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .custom {
+    background: #c91d35;
+  }
+
+  .resource {
+    grid-template-columns: 45px 1fr 35px;
+  }
+
+  .resource small {
+    display: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cta-grid {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .family-catalog {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-heading {
+    padding: 55px 35px 20px;
+  }
+
+  .catalog-machine {
+    height: 500px;
+  }
+
+  .catalog-product {
+    max-width: 60%;
+    max-height: 430px;
+  }
+
+  .catalog-apps {
+    padding: 20px 35px 90px;
+  }
+
+  .catalog-footer {
+    padding: 18px 25px;
+  }
+
+  .model-grid,
+  .selector-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .thermcal-visual,
+  .thermcal-visual-page {
+    min-height: 480px;
+  }
+
+  .thermcal-product-img {
+    max-width: 65%;
+    max-height: 350px;
+  }
+
+  .thermcal-content {
+    padding: 55px 35px;
+  }
+}
+
+@media (max-width: 520px) {
+  .wrap {
+    width: min(100% - 30px, var(--max));
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .machine {
+    width: 240px;
+    height: 320px;
+  }
+
+  .machine:before {
+    width: 180px;
+    left: 29px;
+  }
+
+  .machine:after {
+    left: 64px;
+  }
+
+  .chamber {
+    left: 49px;
+  }
+
+  .orbit {
+    width: 360px;
+    height: 360px;
+  }
+
+  .app-view {
+    padding: 35px 22px;
+  }
+
+  .app-view h3 {
+    font-size: 36px;
+  }
+
+  .industry-grid,
+  .model-grid,
+  .selector-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .family-copy {
+    padding: 40px 25px;
+  }
+
+  .blueprint-frame {
+    width: 300px;
+    height: 300px;
+  }
+}
