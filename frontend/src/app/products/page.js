@@ -25,6 +25,7 @@ const selectorData = [
 
 export default function Products() {
   const [progressWidth, setProgressWidth] = useState("0%");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // Scroll progress handler
   useEffect(() => {
@@ -76,31 +77,99 @@ export default function Products() {
     <>
       <div className="progress" style={{ width: progressWidth }}></div>
 
+
       {/* NAV */}
       <nav>
         <div className="wrap nav">
           <Link href="/" className="brand">
-            ACCURATE <span>THERMAL</span> SYSTEMS
+            <img src="/assets/images/ats-logo.png" alt="Accurate Thermal Systems" className="nav-logo" />
           </Link>
           <div className="links">
-            <Link href="/">HOME</Link>
-            <Link href="/products" className="active">
-              PRODUCTS
-            </Link>
-            <Link href="/#applications">APPLICATIONS</Link>
-            <Link href="/#technology">TECHNOLOGY</Link>
-            <Link href="/#industries">INDUSTRIES</Link>
-            <Link href="/#resources">RESOURCES</Link>
+            <div className="nav-item-dropdown">
+              <Link href="/products" className="active">PRODUCTS <span className="nav-link-arrow">▼</span></Link>
+              <div className="dropdown-menu">
+                <Link href="/products#fluidized" className="dropdown-item">Fluidized Temperature Baths</Link>
+                <Link href="/products#thermcal" className="dropdown-item">Dry Block Calibrators</Link>
+                <Link href="/products#hepa" className="dropdown-item">HEPA Filtration</Link>
+                <Link href="/#resources" className="dropdown-item">Media & Accessories</Link>
+              </div>
+            </div>
+
+            <div className="nav-item-dropdown">
+              <Link href="/#applications">APPLICATIONS <span className="nav-link-arrow">▼</span></Link>
+              <div className="dropdown-menu">
+                <Link href="/?app=0" className="dropdown-item">Tool and Parts Cleaning</Link>
+                <Link href="/?app=1" className="dropdown-item">Nitinol Shape Setting</Link>
+                <Link href="/?app=3" className="dropdown-item">Reactor Heating</Link>
+                <Link href="/?app=2" className="dropdown-item">Temperature Calibration</Link>
+              </div>
+            </div>
+
+            <Link href="/#contact">CONTACT</Link>
+            <Link href="/#resources">SUPPORT</Link>
+            <Link href="/#technology">VIDEOS</Link>
+            <Link href="/#resources">SHOP</Link>
+
+            <div className="nav-item-dropdown">
+              <a href="#">+ MORE <span className="nav-link-arrow">▼</span></a>
+              <div className="dropdown-menu">
+                <Link href="/#systems" className="dropdown-item">Calibration Services</Link>
+                <Link href="/#resources" className="dropdown-item">Resources</Link>
+                <Link href="/#about" className="dropdown-item">About</Link>
+              </div>
+            </div>
           </div>
-          <Link href="/#contact" className="nav-cta">
-            REQUEST A QUOTE
-          </Link>
+          
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Link href="/#contact" className="nav-cta">
+              GET A QUOTE
+            </Link>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "18px", cursor: "pointer", color: "#00a7e8" }}>
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+
+          <button className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </nav>
 
+      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        <div className="mobile-links" style={{ overflowY: "auto", maxHeight: "100vh", padding: "100px 20px 40px" }}>
+          <span className="mobile-header-link">Products</span>
+          <Link href="/products#fluidized" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Fluidized Temperature Baths</Link>
+          <Link href="/products#thermcal" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Dry Block Calibrators</Link>
+          <Link href="/products#hepa" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>HEPA Filtration</Link>
+          <Link href="/#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Media & Accessories</Link>
+          
+          <span className="mobile-header-link">Applications</span>
+          <Link href="/?app=0" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Tool and Parts Cleaning</Link>
+          <Link href="/?app=1" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Nitinol Shape Setting</Link>
+          <Link href="/?app=3" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Reactor Heating</Link>
+          <Link href="/?app=2" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Temperature Calibration</Link>
+
+          <span className="mobile-header-link">Navigation</span>
+          <Link href="/#contact" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link href="/#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Support</Link>
+          <Link href="/#technology" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Videos</Link>
+          <Link href="/#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Shop</Link>
+
+          <span className="mobile-header-link" style={{ marginTop: "15px" }}>More</span>
+          <Link href="/#systems" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Calibration Services</Link>
+          <Link href="/#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Resources</Link>
+          <Link href="/#about" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>About</Link>
+          
+          <Link href="/#contact" className="mobile-cta" onClick={() => setMenuOpen(false)}>GET A QUOTE</Link>
+        </div>
+      </div>
+
       {/* HERO */}
       <header className="hero">
-        <div className="wrap hero-grid">
+        <div className="wrap hero-inner">
           <div>
             <div className="eyebrow mono">ATS / PRODUCT SYSTEMS</div>
             <h1>
