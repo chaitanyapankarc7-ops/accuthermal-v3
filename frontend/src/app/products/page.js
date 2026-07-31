@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+
 const modelData = [
   { num: "01", name: "FTBLL12", desc: "Fluidized temperature bath for controlled thermal applications." },
   { num: "02", name: "FTBLL12W", desc: "Explore applications, technical data and product documentation." },
@@ -85,56 +86,71 @@ export default function Products() {
             <img src="/assets/images/ats-logo.png" alt="Accurate Thermal Systems" className="nav-logo" />
           </Link>
           <div className="links">
-            <div className="nav-item-dropdown">
-              <Link href="/products" className="active">PRODUCTS <span className="nav-link-arrow">▼</span></Link>
-              <div className="dropdown-menu">
-                <Link href="/products#fluidized" className="dropdown-item">Fluidized Temperature Baths</Link>
-                <Link href="/products#thermcal" className="dropdown-item">Dry Block Calibrators</Link>
-                <Link href="/products#hepa" className="dropdown-item">HEPA Filtration</Link>
-                <Link href="/#resources" className="dropdown-item">Media & Accessories</Link>
-              </div>
-            </div>
 
-            <div className="nav-item-dropdown">
-              <Link href="/#applications">APPLICATIONS <span className="nav-link-arrow">▼</span></Link>
-              <div className="dropdown-menu">
-                <Link href="/?app=0" className="dropdown-item">Tool and Parts Cleaning</Link>
-                <Link href="/?app=1" className="dropdown-item">Nitinol Shape Setting</Link>
-                <Link href="/?app=3" className="dropdown-item">Reactor Heating</Link>
-                <Link href="/?app=2" className="dropdown-item">Temperature Calibration</Link>
-              </div>
-            </div>
+  <Link href="/">HOME</Link>
 
-            <Link href="/#contact">CONTACT</Link>
-            <Link href="/#resources">SUPPORT</Link>
-            <Link href="/#technology">VIDEOS</Link>
-            <Link href="/#resources">SHOP</Link>
+  {/* PRODUCTS DROPDOWN */}
+  <div className="nav-dropdown">
 
-            <div className="nav-item-dropdown">
-              <a href="#">+ MORE <span className="nav-link-arrow">▼</span></a>
-              <div className="dropdown-menu">
-                <Link href="/#systems" className="dropdown-item">Calibration Services</Link>
-                <Link href="/#resources" className="dropdown-item">Resources</Link>
-                <Link href="/#about" className="dropdown-item">About</Link>
-              </div>
-            </div>
-          </div>
-          
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <Link href="/#contact" className="nav-cta">
-              GET A QUOTE
-            </Link>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "18px", cursor: "pointer", color: "#00a7e8" }}>
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </div>
+    <Link
+      href="/products"
+      className="nav-dropdown-trigger active"
+    >
+      PRODUCTS
+      <span className="nav-chevron">⌄</span>
+    </Link>
 
-          <button className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+    <div className="nav-dropdown-menu">
+
+      <Link href="/products" className="dropdown-all">
+        <span>00</span>
+
+        <div>
+          <b>All Products</b>
+          <small>Explore ATS thermal systems</small>
+        </div>
+      </Link>
+
+      <Link href="/products/fluidized-temperature-baths">
+        <span>01</span>
+
+        <div>
+          <b>Fluidized Temperature Baths</b>
+          <small>Thermal processing systems</small>
+        </div>
+      </Link>
+
+      <Link href="/products/thermcal">
+        <span>02</span>
+
+        <div>
+          <b>ThermCal Dry Block Calibrators</b>
+          <small>Temperature calibration</small>
+        </div>
+      </Link>
+
+      <Link href="/products/hepa-air-filtration">
+        <span>03</span>
+
+        <div>
+          <b>HEPA Air Filtration</b>
+          <small>Process air filtration</small>
+        </div>
+      </Link>
+
+    </div>
+
+  </div>
+
+  <Link href="/#applications">APPLICATIONS</Link>
+  <Link href="/#technology">TECHNOLOGY</Link>
+  <Link href="/#industries">INDUSTRIES</Link>
+  <Link href="/#resources">RESOURCES</Link>
+
+</div>
+          <Link href="/#contact" className="nav-cta">
+            REQUEST A QUOTE
+          </Link>
         </div>
       </nav>
 
@@ -367,6 +383,129 @@ export default function Products() {
           </div>
         </div>
       </section>
+
+      {/* =========================================================
+    HEPA AIR FILTRATION
+========================================================= */}
+
+<section className="family hepa-family" id="hepa">
+  <div className="wrap">
+
+    {/* SECTION INTRO */}
+    <div className="section-top reveal">
+      <div>
+        <div className="eyebrow mono">
+          05 · HEPA air filtration
+        </div>
+
+        <h2>
+          Cleaner air around the process.
+        </h2>
+      </div>
+
+      <p>
+        HEPA air filtration systems are designed to capture smoke,
+        particulates, fumes and VOCs generated during thermal cleaning
+        and demanding industrial processes.
+      </p>
+    </div>
+
+
+    {/* HEPA PRODUCT CATALOG */}
+    <div className="family-catalog hepa-catalog reveal">
+
+      {/* LEFT TITLE */}
+      <div className="catalog-heading">
+
+        <span className="mono catalog-series">
+          ATS / HEPA SERIES
+        </span>
+
+        <h3>
+          HEPA Air
+          <br />
+          Filtration
+          <br />
+          Systems
+        </h3>
+
+        <p>
+          Industrial filtration systems engineered for smoke,
+          particulate, fume and VOC capture around thermal cleaning
+          and manufacturing processes.
+        </p>
+
+      </div>
+
+
+      {/* CENTER PRODUCT */}
+      <div className="catalog-machine hepa-machine">
+
+        <div className="catalog-orbit orbit-one"></div>
+        <div className="catalog-orbit orbit-two"></div>
+
+        <img
+          src="/assets/images/products/hepa-filtration.png"
+          alt="Accurate Thermal Systems HEPA Air Filtration System"
+          className="catalog-product hepa-catalog-product"
+        />
+
+        <span className="catalog-line line-one"></span>
+        <span className="catalog-line line-two"></span>
+
+      </div>
+
+
+      {/* RIGHT APPLICATIONS */}
+      <div className="catalog-apps">
+
+        <span className="mono catalog-label">
+          APPLICATION MATRIX
+        </span>
+
+        <div className="catalog-app">
+          <span>01</span>
+          <b>Smoke Capture</b>
+        </div>
+
+        <div className="catalog-app">
+          <span>02</span>
+          <b>Fume Filtration</b>
+        </div>
+
+        <div className="catalog-app">
+          <span>03</span>
+          <b>Particulate Removal</b>
+        </div>
+
+        <div className="catalog-app">
+          <span>04</span>
+          <b>VOC Control</b>
+        </div>
+
+      </div>
+
+
+      {/* BOTTOM */}
+      <div className="catalog-footer mono">
+
+        <span>
+          ATS / HEPA AIR FILTRATION
+        </span>
+
+        <a href="#">
+          EXPLORE HEPA →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+      
 
       {/* MODELS */}
       <section className="models-dark">

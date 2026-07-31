@@ -288,7 +288,7 @@ footer {
    ========================================= */
 
 .hero {
-  min-height: 900px;
+  min-height:650px;
   background: radial-gradient(circle at 72% 48%, #12334b 0, transparent 26%), linear-gradient(120deg, #061321, #0b1e30);
   color: #fff;
   position: relative;
@@ -305,14 +305,14 @@ footer {
 }
 
 .hero-inner {
-  min-height: 900px;
+  min-height:650px;
   display: grid;
   grid-template-columns: 1.02fr .98fr;
   align-items: center;
   gap: 60px;
   position: relative;
   z-index: 2;
-  padding-top: 90px;
+  padding-top: 30px;
 }
 
 .hero h1 {
@@ -1783,10 +1783,9 @@ footer {
 /* ==================================================
    THERMCAL PRODUCT FAMILY (PRODUCTS PAGE)
    ================================================== */
-
-.thermcal-family-page {
-  padding: 120px 0;
-  background: #f4f1ea;
+.thermcal-family {
+  background: #f3f0e9;
+  color: #0b1722;
 }
 
 .thermcal-page-grid {
@@ -1934,28 +1933,25 @@ footer {
   border-color: rgba(255, 255, 255, 0.35);
 }
 
-.thermcal-catalog-product {
-  max-width: 58%;
-  max-height: 460px;
-  mix-blend-mode: multiply;
+.thermcal-catalog {
+  background: linear-gradient(110deg, #e7f2f4 0%, #f3f0e9 100%);
+  color: #0b1722;
 }
 
-.thermcal-machine .thermcal-catalog-product {
-  transform: perspective(1200px) rotateY(5deg) translateX(-10px) scale(.94);
+.thermcal-catalog .catalog-heading p {
+  color: #536775;
 }
 
-.thermcal-machine:hover .thermcal-catalog-product {
-  transform: perspective(1200px) rotateY(0deg) translateX(0) translateY(-10px) scale(1.035);
+.thermcal-catalog .catalog-app {
+  color: #0b1722;
 }
 
-.thermcal-catalog .catalog-footer a {
-  color: inherit;
-  text-decoration: none;
-  transition: color .25s ease;
+.thermcal-catalog .catalog-app b {
+  color: #0b1722;
 }
 
-.thermcal-catalog .catalog-footer a:hover {
-  color: var(--red);
+.thermcal-catalog .catalog-footer {
+  color: #536775;
 }
 
 /* =========================================
@@ -2155,298 +2151,1883 @@ footer {
   }
 }
 
-/* Responsive Logo Class */
-.nav-logo {
-  display: block;
-  height: 68px;
-  width: auto;
-  max-width: 420px;
-  object-fit: contain;
-}
 
-@media (max-width: 900px) {
-  .nav-logo {
-    height: 52px;
-    max-width: 280px;
-  }
-}
+/* ==========================================================
+   PRODUCTS PAGE — LAYOUT FIX
+   ========================================================== */
 
-@media (max-width: 520px) {
-  .nav-logo {
-    height: 44px;
-    max-width: 220px;
-  }
-}
-
-/* Hamburger Menu Button */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 30;
-  padding: 0;
-}
-
-.hamburger span {
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  transition: all 0.3s ease;
-  transform-origin: left center;
-}
-
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg);
-}
-
-.hamburger.open span:nth-child(2) {
-  width: 0%;
-  opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-@media (max-width: 900px) {
-  .hamburger {
+/* Product hero */
+.hero {
+    min-height: 720px;
+    height: auto;
+    padding: 130px 0 80px;
     display: flex;
-  }
+    align-items: center;
+    overflow: hidden;
 }
 
-/* Mobile Menu Overlay */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(7, 20, 33, 0.98);
-  backdrop-filter: blur(16px);
-  z-index: 25;
+/* Main hero grid */
+.hero .hero-grid {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+    align-items: center;
+
+    gap: 70px;
+}
+
+/* Hero text */
+.hero h1 {
+    font-size: clamp(64px, 6vw, 100px);
+    line-height: 0.88;
+    letter-spacing: -0.055em;
+    margin: 20px 0 28px;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.hero p {
+    max-width: 620px;
+    line-height: 1.7;
+}
+
+/* Blueprint side */
+.hero .blueprint {
+    width: 100%;
+    height: 520px;
+
+    position: relative;
+    inset: auto;
+    transform: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================
+   PRODUCT PAGE CONTENT
+   ========================================================== */
+
+.family,
+.intro,
+.models,
+.thermcal-family,
+.hepa-family {
+    width: 100%;
+}
+
+.family .wrap,
+.intro .wrap,
+.models .wrap {
+    width: min(1200px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+/* Section headings */
+
+.family .section-top {
+    margin-bottom: 60px;
+}
+
+/* Product showcase */
+
+.family-catalog {
+    width: 100%;
+    min-height: 570px;
+}
+
+/* Prevent images from escaping their containers */
+
+.catalog-product {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero .blueprint {
+        height: 420px;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 10vw, 85px);
+    }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 650px) {
+
+    .hero {
+        min-height: auto;
+        padding: 110px 0 50px;
+    }
+
+    .hero .hero-grid,
+    .family .wrap,
+    .intro .wrap,
+    .models .wrap {
+        width: calc(100% - 32px);
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 15vw, 70px);
+    }
+
+    .hero .blueprint {
+        height: 340px;
+    }
+}
+
+/* ==================================================
+   PRODUCTS NAV DROPDOWN
+================================================== */
+
+.nav-dropdown {
+    position: relative;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.nav-dropdown-trigger {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-chevron {
+    font-size: 12px;
+    transition: transform 0.25s ease;
+}
+
+
+/* DROPDOWN */
+
+.nav-dropdown-menu {
+    position: absolute;
+
+    top: calc(100% - 1px);
+    left: -25px;
+
+    width: 360px;
+
+    background: #fff;
+    border: 1px solid #dbe3e8;
+
+    box-shadow: 0 20px 50px rgba(7, 24, 39, 0.12);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 2000;
+}
+
+
+/* SHOW DROPDOWN */
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.nav-dropdown:hover .nav-chevron {
+    transform: rotate(180deg);
+}
+
+
+/* ITEMS */
+
+.nav-dropdown-menu > a {
+    min-height: 78px;
+
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    align-items: center;
+
+    padding: 15px 20px;
+
+    color: #071827;
+    text-decoration: none;
+
+    border-bottom: 1px solid #e5eaee;
+
+    transition:
+        background 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+.nav-dropdown-menu > a:last-child {
+    border-bottom: 0;
+}
+
+
+/* NUMBER */
+
+.nav-dropdown-menu > a > span {
+    color: #e51d36;
+
+    font-family: monospace;
+    font-size: 10px;
+}
+
+
+/* PRODUCT NAME */
+
+.nav-dropdown-menu b {
+    display: block;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* DESCRIPTION */
+
+.nav-dropdown-menu small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #71818c;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 0;
+}
+
+
+/* HOVER */
+
+.nav-dropdown-menu > a:hover {
+    background: #f3f7f8;
+    padding-left: 25px;
+}
+
+.nav-dropdown-menu > a:hover b {
+    color: #00a7e8;
+}
+
+
+/* ALL PRODUCTS */
+
+.nav-dropdown-menu .dropdown-all {
+    background: #071827;
+    color: #fff;
+}
+
+.nav-dropdown-menu .dropdown-all small {
+    color: #91a5b3;
+}
+
+.nav-dropdown-menu .dropdown-all:hover {
+    background: #0d2436;
+}
+
+.nav-dropdown-menu .dropdown-all:hover b {
+    color: #00a7e8;
+}
+/* =========================================================
+   PRODUCT PAGE — VISUAL RHYTHM
+========================================================= */
+
+.family {
+    position: relative;
+    padding: 110px 0;
+}
+
+
+/* FTB */
+
+#fluidized {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 167, 232, 0.035),
+            transparent 55%
+        ),
+        #f7f9f8;
+}
+
+
+/* THERMCAL */
+
+#thermcal {
+    background: #fff;
+    color: #0b1722;
+}
+
+#thermcal .section-top h2,
+#thermcal .catalog-heading h3,
+#thermcal .catalog-app b {
+    color: #fff;
+}
+
+#thermcal .section-top p,
+#thermcal .catalog-heading p {
+    color: #91a5b3;
+}
+
+#thermcal .family-catalog {
+    background: #0b2132;
+    border-color: rgba(255,255,255,.12);
+}
+
+#thermcal .catalog-app {
+    border-color: rgba(255,255,255,.14);
+}
+
+#thermcal .catalog-app span,
+#thermcal .catalog-label,
+#thermcal .catalog-series {
+    color: #00a7e8;
+}
+
+
+/* HEPA */
+
+#hepa {
+    background: #eeeae2;
+}
+
+#thermcal .thermcal-catalog {
+    background: linear-gradient(
+        110deg,
+        #e7f2f4 0%,
+        #f3f0e9 100%
+    ) !important;
+
+    color: #0b1722 !important;
+}
+
+#thermcal .thermcal-catalog h3,
+#thermcal .thermcal-catalog b {
+    color: #0b1722 !important;
+}
+
+#thermcal .thermcal-catalog p,
+#thermcal .thermcal-catalog .catalog-footer {
+    color: #536775 !important;
+}
+
+/* ===== PRODUCT PAGE SPACING ===== */
+
+.family {
+  padding: 70px 0;
+}
+
+.family .section-top {
+  margin-bottom: 40px;
+}
+
+.family-catalog {
+  margin-top: 0;
+}
+
+/* =========================================================
+   FTB PRODUCT FAMILY PAGE
+========================================================= */
+
+.ftb-page {
+  background: #f4f1ea;
+  color: #0a1927;
+}
+
+
+/* HERO */
+
+.ftb-hero {
+  min-height: 720px;
+  position: relative;
+  overflow: hidden;
+
+  color: #fff;
+
+  background:
+    radial-gradient(circle at 72% 42%, #143c57 0%, transparent 30%),
+    linear-gradient(120deg, #061321, #0b1e30);
+}
+
+.ftb-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+
+  background-size: 56px 56px;
+
+  pointer-events: none;
+}
+
+.ftb-hero-grid {
+  min-height: 640px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  gap: 70px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.ftb-back {
+  display: inline-block;
+
+  margin-bottom: 28px;
+
+  color: #8da6b7;
+  text-decoration: none;
+
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+.ftb-hero h1 {
+  margin: 18px 0 25px;
+
+  font-size: clamp(70px, 7vw, 118px);
+  line-height: .82;
+
+  letter-spacing: -.065em;
+}
+
+.ftb-hero h1 span {
+  color: #00a7e8;
+}
+
+.ftb-hero-copy > p {
+  max-width: 620px;
+
+  color: #b4c3cc;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.ftb-hero-actions {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+
+/* MACHINE */
+
+.ftb-hero-machine {
+  height: 520px;
+
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateY(-100%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mobile-menu.open {
-  transform: translateY(0);
-}
-
-.mobile-links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px;
-  width: 100%;
-}
-
-.mobile-links a {
-  font-family: "Manrope", sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.01em;
-  transition: color 0.3s ease;
-}
-
-.mobile-links a:hover {
-  color: var(--blue);
-}
-
-.mobile-cta {
-  margin-top: 20px;
-  padding: 14px 28px;
-  background: var(--red);
-  font-size: 16px !important;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-}
-
-/* Desktop Dropdown Navigation Menu */
-.nav-item-dropdown {
+.ftb-hero-machine img {
   position: relative;
-  display: inline-block;
-  padding: 10px 0;
+  z-index: 3;
+
+  width: min(460px, 90%);
+  max-height: 480px;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 35px 45px rgba(0,0,0,.35));
 }
 
-.dropdown-menu {
+.ftb-orbit {
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  background: rgba(11, 29, 45, 0.98);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
-  min-width: 250px;
-  padding: 12px 0;
+
+  border: 1px solid rgba(0,167,232,.32);
+  border-radius: 50%;
+}
+
+.orbit-a {
+  width: 390px;
+  height: 390px;
+}
+
+.orbit-b {
+  width: 510px;
+  height: 510px;
+
+  opacity: .45;
+}
+
+.ftb-marker {
+  position: absolute;
+
+  color: #7893a5;
+
+  font-size: 9px;
+  letter-spacing: .13em;
+}
+
+.marker-a {
+  top: 80px;
+  right: 0;
+}
+
+.marker-b {
+  bottom: 55px;
+  left: 20px;
+}
+
+
+/* HERO DATA */
+
+.ftb-hero-data {
+  position: relative;
+  z-index: 3;
+
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.ftb-hero-data .wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.ftb-hero-data .wrap > div {
+  padding: 24px 25px;
+
+  border-right: 1px solid rgba(255,255,255,.1);
+}
+
+.ftb-hero-data b {
+  display: block;
+
+  color: #00a7e8;
+
+  font-size: 22px;
+}
+
+.ftb-hero-data span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #8399a8;
+
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+
+/* OVERVIEW */
+
+.ftb-overview {
+  padding: 110px 0;
+}
+
+.ftb-overview-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+
+  gap: 100px;
+}
+
+.ftb-overview h2,
+.ftb-section-heading h2,
+.ftb-tech-copy h2,
+.ftb-feature-grid h2 {
+  margin-top: 15px;
+
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: .98;
+
+  letter-spacing: -.05em;
+}
+
+.ftb-overview-copy {
+  max-width: 680px;
+}
+
+.ftb-overview-copy p {
+  margin-bottom: 20px;
+
+  color: #526573;
+
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+
+/* GENERIC SECTION HEADING */
+
+.ftb-section-heading {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 55px;
+}
+
+.ftb-section-heading > p {
+  color: #60727d;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+/* APPLICATIONS */
+
+.ftb-applications {
+  padding: 100px 0;
+
+  background: #fff;
+}
+
+.ftb-application-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ftb-application-card {
+  min-height: 390px;
+
+  padding: 35px;
+
+  border: 1px solid #dbe2e5;
+  border-right: 0;
+
+  position: relative;
+
+  transition: .3s ease;
+}
+
+.ftb-application-card:last-child {
+  border-right: 1px solid #dbe2e5;
+}
+
+.ftb-application-card:hover {
+  background: #eaf4f5;
+
+  transform: translateY(-5px);
+}
+
+.ftb-app-number {
+  color: #e51d36;
+
+  font-size: 10px;
+}
+
+.ftb-application-card h3 {
+  margin: 65px 0 18px;
+
+  font-size: 30px;
+  line-height: 1.05;
+}
+
+.ftb-application-card > p {
+  color: #637580;
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+.ftb-recommended {
+  margin-top: 24px;
+  padding-top: 16px;
+
+  border-top: 1px solid rgba(7, 24, 39, 0.12);
+
   display: flex;
   flex-direction: column;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(16px);
-  z-index: 50;
-  text-align: left;
-}
-
-.nav-item-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-
-.dropdown-item {
-  padding: 10px 20px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #aebcc7;
-  transition: all 0.25s ease;
-  white-space: nowrap;
-  display: block;
-  text-transform: none;
-  letter-spacing: normal;
-}
-
-.dropdown-item:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.05);
-  padding-left: 24px;
-}
-
-.nav-link-arrow {
-  font-size: 8px;
-  margin-left: 5px;
-  vertical-align: middle;
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.nav-item-dropdown:hover .nav-link-arrow {
-  transform: rotate(180deg);
-}
-
-/* Mobile Sublinks & Headers inside Mobile Overlay */
-.mobile-header-link {
-  font-size: 16px !important;
-  color: #fff !important;
-  font-weight: 700 !important;
-  margin-top: 5px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.mobile-sub-link {
-  font-size: 13px !important;
-  color: #8398a8 !important;
-  font-weight: 500 !important;
-  margin-top: -10px;
-  text-transform: none !important;
-  letter-spacing: normal !important;
-}
-
-.mobile-sub-link:hover {
-  color: var(--blue) !important;
-}
-
-/* Top Bar (Telephone) */
-.top-bar {
-  height: 34px;
-  background: #007bb6;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  z-index: 21;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-}
-
-.top-bar .wrap {
-  display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
+
+  position: static;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+
+  color: #657481;
 }
 
-.top-bar a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.ftb-recommended strong {
+  display: block;
+  position: static;
+
+  width: 100%;
+
+  color: #e7193f;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.5;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+
+  transform: none;
+}
+
+
+/* TECHNOLOGY */
+
+.ftb-technology {
+  padding: 120px 0;
+
+  background: #071827;
   color: #fff;
 }
 
-/* Updated Navbar with Transparent Background */
-nav {
-  height: 84px;
+.ftb-tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+.ftb-tech-visual {
+  height: 520px;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ftb-tech-ring {
   position: absolute;
-  z-index: 20;
+
+  border: 1px solid rgba(0,167,232,.25);
+  border-radius: 50%;
+}
+
+.ring-1 {
+  width: 400px;
+  height: 400px;
+}
+
+.ring-2 {
+  width: 510px;
+  height: 510px;
+
+  opacity: .45;
+}
+
+.ftb-chamber {
+  width: 230px;
+  height: 330px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,.35);
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0 20%,
+    rgba(0,167,232,.08) 20% 100%
+  );
+}
+
+.ftb-media {
+  position: absolute;
+
   left: 0;
   right: 0;
-  top: 0; /* Aligned to the top */
-  background: transparent;
-  color: #fff;
-  border-bottom: 1px solid var(--line);
+  bottom: 0;
+
+  height: 75%;
+
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.3) 1px, transparent 1px);
+
+  background-size: 9px 9px;
 }
 
-.nav {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.ftb-air {
+  width: 6px;
+  height: 6px;
+
+  position: absolute;
+
+  bottom: 15px;
+
+  border: 1px solid #00a7e8;
+  border-radius: 50%;
+
+  animation: ftbBubble 3s infinite ease-in;
 }
 
-.links a, .links .nav-item-dropdown > a, .links .nav-item-dropdown > Link {
-  color: #fff !important;
-  font-weight: 700 !important;
-  font-size: 11px !important;
-  text-transform: uppercase !important;
-  padding: 8px 0;
-  border-bottom: 2px solid transparent;
-  transition: all 0.25s ease;
+.air-1 {
+  left: 30%;
 }
 
-.links a:hover,
-.links .active,
-.links .nav-item-dropdown:hover > a {
-  color: var(--blue) !important;
-  border-bottom: 2px solid var(--red) !important;
+.air-2 {
+  left: 50%;
+
+  animation-delay: .7s;
 }
 
-.nav-cta {
-  padding: 12px 20px;
-  background: var(--red);
-  color: #fff !important;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  border-radius: 3px;
-  transition: background 0.3s ease;
+.air-3 {
+  left: 70%;
+
+  animation-delay: 1.4s;
 }
 
-.nav-cta:hover {
-  background: #b0182b;
-}
+@keyframes ftbBubble {
+  0% {
+    transform: translateY(0) scale(.5);
+    opacity: 0;
+  }
 
-/* Fix mobile menu positioning due to top-bar */
-@media (max-width: 900px) {
-  .mobile-menu {
-    top: 0;
-    height: 100vh;
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-250px) scale(2);
+    opacity: 0;
   }
 }
 
+.tech-label {
+  position: absolute;
+
+  color: #7893a5;
+
+  font-size: 8px;
+  letter-spacing: .1em;
+}
+
+.label-air {
+  left: 5%;
+  bottom: 50px;
+}
+
+.label-media {
+  right: 0;
+  top: 160px;
+}
+
+.label-heat {
+  left: 5%;
+  top: 90px;
+}
+
+.ftb-tech-copy p {
+  margin-top: 20px;
+
+  color: #9cb0bc;
+
+  font-size: 13px;
+  line-height: 1.85;
+}
 
 
+/* BENEFITS */
+
+.ftb-why {
+  padding: 105px 0;
+
+  background: #eaf2f3;
+}
+
+.ftb-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 60px;
+
+  border-top: 1px solid #c9d7dc;
+  border-bottom: 1px solid #c9d7dc;
+}
+
+.ftb-benefits > div {
+  min-height: 180px;
+
+  padding: 35px 25px;
+
+  border-right: 1px solid #c9d7dc;
+}
+
+.ftb-benefits strong {
+  display: block;
+
+  color: #00a7e8;
+
+  font-size: 28px;
+}
+
+.ftb-benefits span {
+  display: block;
+
+  margin-top: 45px;
+
+  color: #536773;
+
+  font-size: 11px;
+}
+
+
+/* FEATURES */
+
+.ftb-features {
+  padding: 110px 0;
+
+  background: #f4f1ea;
+}
+
+.ftb-feature-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+
+  gap: 100px;
+}
+
+.ftb-feature {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+
+  padding: 17px 0;
+
+  border-bottom: 1px solid #ccd5d8;
+}
+
+.ftb-feature span {
+  color: #e51d36;
+
+  font-size: 9px;
+}
+
+.ftb-feature p {
+  font-size: 12px;
+}
+
+
+/* MODELS */
+
+.ftb-models {
+  padding: 110px 0;
+
+  background: #fff;
+}
+
+.ftb-model-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.ftb-model-card {
+  min-height: 320px;
+
+  position: relative;
+
+  padding: 28px;
+
+  border: 1px solid #dce3e6;
+
+  transition: .3s ease;
+}
+
+.ftb-model-card:hover {
+  background: #071827;
+  color: #fff;
+
+  transform: translateY(-6px);
+}
+
+.ftb-model-top {
+  display: flex;
+  justify-content: space-between;
+
+  color: #8798a2;
+
+  font-size: 8px;
+}
+
+.ftb-model-card h3 {
+  margin: 65px 0 12px;
+
+  font-size: 29px;
+}
+
+.ftb-model-card > p {
+  min-height: 50px;
+
+  color: #687b86;
+
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.ftb-model-card:hover > p {
+  color: #93a8b5;
+}
+
+.ftb-model-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+.ftb-model-specs small {
+  display: block;
+
+  color: #8798a2;
+
+  font-size: 7px;
+}
+
+.ftb-model-specs b {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 11px;
+}
+
+.ftb-model-arrow {
+  position: absolute;
+
+  right: 25px;
+  bottom: 20px;
+
+  color: #00a7e8;
+
+  font-size: 20px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+  .ftb-hero-grid,
+  .ftb-overview-grid,
+  .ftb-tech-grid,
+  .ftb-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ftb-section-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ftb-application-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ftb-model-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ftb-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ftb-hero-data .wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .ftb-hero h1 {
+    font-size: 58px;
+  }
+
+  .ftb-hero-machine {
+    height: 380px;
+  }
+
+  .ftb-model-grid,
+  .ftb-benefits {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================================================
+   FLUIDIZED TEMPERATURE BATH PRODUCT PAGE
+   ========================================================= */
+
+.ftb-page {
+  background: #f5f5f2;
+  color: #071827;
+}
+
+.ftb-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* HERO */
+
+.ftb-hero {
+  min-height: 680px;
+  background:
+    radial-gradient(circle at 70% 50%, rgba(13, 93, 142, .3), transparent 34%),
+    linear-gradient(120deg, #061421, #092238);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.ftb-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+
+  background-size: 52px 52px;
+  pointer-events: none;
+}
+
+.ftb-hero-grid {
+  min-height: 680px;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+  padding: 80px 0 45px;
+}
+
+.ftb-breadcrumb,
+.ftb-kicker,
+.ftb-section-number {
+  font-family: monospace;
+  letter-spacing: .12em;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ftb-breadcrumb {
+  color: #7d9bb1;
+  margin-bottom: 70px;
+}
+
+.ftb-kicker {
+  color: #00a9ee;
+  margin-bottom: 20px;
+}
+
+.ftb-hero h1 {
+  font-size: clamp(58px, 6vw, 88px);
+  line-height: .88;
+  letter-spacing: -.065em;
+  margin: 0 0 28px;
+}
+
+.ftb-hero h1 span {
+  color: #ed1b35;
+}
+
+.ftb-hero-copy > p {
+  max-width: 540px;
+  color: #c9d6df;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.ftb-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.ftb-btn {
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.ftb-btn.primary {
+  background: #ed1b35;
+  color: white;
+}
+
+.ftb-btn.secondary {
+  color: white;
+  border: 1px solid #667786;
+}
+
+.ftb-stats {
+  display: flex;
+  margin-top: 48px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  padding-top: 22px;
+}
+
+.ftb-stats > div {
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+  margin-right: 30px;
+  border-right: 1px solid rgba(255,255,255,.18);
+}
+
+.ftb-stats > div:last-child {
+  border: 0;
+}
+
+.ftb-stats strong {
+  font-size: 22px;
+}
+
+.ftb-stats span {
+  font-size: 9px;
+  color: #91a6b5;
+  margin-top: 4px;
+}
+
+.ftb-hero-machine {
+  position: relative;
+  height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ftb-hero-machine img {
+  position: relative;
+  z-index: 4;
+  max-height: 510px;
+  max-width: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 35px rgba(0,0,0,.4));
+}
+
+.ftb-orbit {
+  position: absolute;
+  border: 1px solid rgba(107, 168, 202, .22);
+  border-radius: 50%;
+}
+
+.ftb-orbit.orbit-a {
+  width: 430px;
+  height: 430px;
+}
+
+.ftb-orbit.orbit-b {
+  width: 530px;
+  height: 530px;
+}
+
+.ftb-tech-label {
+  position: absolute;
+  font-family: monospace;
+  font-size: 9px;
+  color: #7ca2ba;
+}
+
+.ftb-tech-label.label-one {
+  left: 3%;
+  top: 35%;
+}
+
+.ftb-tech-label.label-two {
+  right: 4%;
+  top: 48%;
+}
+
+/* SUB NAV */
+
+.ftb-subnav {
+  min-height: 58px;
+  background: white;
+  border-bottom: 1px solid #d7dde1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 44px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.ftb-subnav a {
+  color: #52616b;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+
+.ftb-subnav a:hover {
+  color: #ed1b35;
+}
+
+/* GENERAL SECTIONS */
+
+.ftb-section {
+  padding: 100px 0;
+}
+
+.ftb-section-number {
+  color: #009ee3;
+  margin-bottom: 20px;
+}
+
+.ftb-section h2,
+.ftb-technology h2,
+.ftb-resources h2 {
+  font-size: clamp(38px, 4vw, 62px);
+  line-height: .94;
+  letter-spacing: -.05em;
+  margin: 0;
+}
+
+.ftb-split {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 110px;
+}
+
+.ftb-body p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4f5e67;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.ftb-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: end;
+  margin-bottom: 55px;
+}
+
+.ftb-heading > p {
+  max-width: 500px;
+  color: #61717b;
+  line-height: 1.7;
+}
+
+/* APPLICATIONS */
+
+.ftb-applications {
+  background: #eeece6;
+}
+
+.ftb-app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #c9ced0;
+  border-bottom: 1px solid #c9ced0;
+}
+
+.ftb-app-card {
+  padding: 38px;
+  min-height: 390px;
+  border-right: 1px solid #c9ced0;
+}
+
+.ftb-app-card:last-child {
+  border: 0;
+}
+
+.ftb-card-number {
+  color: #ed1b35;
+  font-family: monospace;
+  font-weight: 800;
+}
+
+.ftb-app-card h3 {
+  font-size: 24px;
+  margin: 25px 0 18px;
+}
+
+.ftb-app-card p {
+  color: #59666e;
+  line-height: 1.7;
+}
+
+.ftb-recommended {
+  margin-top: 30px;
+  font-size: 9px;
+  font-weight: 800;
+  color: #77838a;
+}
+
+.ftb-recommended strong {
+  display: block;
+  color: #ed1b35;
+  font-size: 11px;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* TECHNOLOGY */
+
+.ftb-technology {
+  background: #071827;
+  color: white;
+  padding: 100px 0;
+}
+
+.ftb-heading.dark > p {
+  color: #aabcc8;
+}
+
+.ftb-tech-grid {
+  display: grid;
+  grid-template-columns: 1.4fr .6fr;
+  gap: 30px;
+}
+
+.ftb-diagram {
+  min-height: 440px;
+  border: 1px solid #284359;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 90px;
+  background:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 35px 35px;
+}
+
+.ftb-airflow {
+  color: #ed1b35;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 15px;
+  margin-bottom: 8px;
+}
+
+.ftb-media {
+  height: 150px;
+  border: 2px solid #8498a6;
+  background: repeating-radial-gradient(
+    circle,
+    #b59056 0,
+    #b59056 2px,
+    #836a46 3px,
+    #836a46 5px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.ftb-media span {
+  background: #071827;
+  padding: 8px 12px;
+  transform: translateX(70px);
+  font-size: 10px;
+}
+
+.ftb-plate {
+  background: #81919a;
+  color: #071827;
+  font-size: 10px;
+  text-align: right;
+  padding: 7px;
+}
+
+.ftb-air {
+  height: 80px;
+  border: 2px solid #8498a6;
+  border-top: 0;
+  color: #00a9ee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 24px;
+}
+
+.ftb-air span {
+  font-size: 9px;
+  color: white;
+}
+
+.ftb-video-card {
+  border: 1px solid #3d5363;
+  background: #0b2132;
+}
+
+.ftb-video-card video {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  background: black;
+}
+
+.ftb-video-copy {
+  padding: 25px;
+}
+
+.ftb-video-copy span {
+  color: #00a9ee;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.ftb-video-copy h3 {
+  font-size: 22px;
+  margin: 12px 0;
+}
+
+.ftb-video-copy p {
+  color: #9eb0bd;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.ftb-how-copy {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px solid #294052;
+}
+
+.ftb-how-copy p {
+  color: #a7bac7;
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+/* MODELS */
+
+.ftb-models {
+  background: #f7f7f5;
+}
+
+.ftb-model-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.ftb-model-card {
+  border: 1px solid #d7dddf;
+  background: white;
+  padding: 22px;
+  transition: .25s;
+}
+
+.ftb-model-card:hover {
+  transform: translateY(-5px);
+  border-color: #009ee3;
+}
+
+.ftb-model-card > span {
+  color: #009ee3;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.ftb-model-card h3 {
+  font-size: 22px;
+  margin: 8px 0;
+}
+
+.ftb-model-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+}
+
+.ftb-model-card dl {
+  margin: 15px 0 0;
+}
+
+.ftb-model-card dl div {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e2e5e6;
+  padding: 9px 0;
+}
+
+.ftb-model-card dt {
+  font-size: 8px;
+  color: #7b858b;
+}
+
+.ftb-model-card dd {
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* SPECIFICATIONS */
+
+.ftb-specifications {
+  background: #eeece6;
+}
+
+.ftb-table-wrap {
+  overflow-x: auto;
+  background: white;
+  border: 1px solid #d4d8da;
+}
+
+.ftb-table-wrap table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 850px;
+}
+
+.ftb-table-wrap th {
+  background: #0a3457;
+  color: white;
+  text-align: left;
+  padding: 18px;
+  font-size: 10px;
+}
+
+.ftb-table-wrap td {
+  padding: 17px 18px;
+  border-bottom: 1px solid #e0e3e4;
+  font-size: 12px;
+}
+
+.ftb-table-wrap tbody tr:hover {
+  background: #f1f7fa;
+}
+
+.ftb-spec-note {
+  color: #778289;
+  font-size: 10px;
+  margin-top: 18px;
+}
+
+/* FEATURES */
+
+.ftb-features {
+  background: white;
+}
+
+.ftb-feature-layout {
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  gap: 100px;
+}
+
+.ftb-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ftb-feature {
+  min-height: 110px;
+  padding: 20px;
+  border-top: 1px solid #d9dddf;
+  display: grid;
+  grid-template-columns: 45px 1fr;
+}
+
+.ftb-feature span {
+  color: #ed1b35;
+  font-family: monospace;
+  font-weight: 800;
+}
+
+.ftb-feature p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* RESOURCES */
+
+.ftb-resources {
+  padding: 90px 0;
+  background: #071827;
+  color: white;
+}
+
+.ftb-resource-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr 1fr 1.1fr;
+  margin-top: 40px;
+  border-top: 1px solid #294052;
+}
+
+.ftb-resource-grid > div {
+  padding: 30px 25px;
+  border-right: 1px solid #294052;
+}
+
+.ftb-resource-column > span,
+.ftb-resource-cta > span {
+  display: block;
+  color: #00a9ee;
+  font-size: 9px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.ftb-resource-column a {
+  display: block;
+  color: #b9c8d2;
+  text-decoration: none;
+  font-size: 11px;
+  padding: 8px 0;
+}
+
+.ftb-resource-column a:hover {
+  color: white;
+}
+
+.ftb-resource-cta {
+  background: #0d263a;
+}
+
+.ftb-resource-cta h3 {
+  font-size: 23px;
+  line-height: 1;
+}
+
+.ftb-resource-cta a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 15px;
+  background: #ed1b35;
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .ftb-hero-grid,
+  .ftb-split,
+  .ftb-heading,
+  .ftb-feature-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ftb-hero-machine {
+    height: 400px;
+  }
+
+  .ftb-hero {
+    min-height: auto;
+  }
+
+  .ftb-hero-grid {
+    padding-top: 130px;
+  }
+
+  .ftb-breadcrumb {
+    margin-bottom: 40px;
+  }
+
+  .ftb-app-grid,
+  .ftb-how-copy {
+    grid-template-columns: 1fr;
+  }
+
+  .ftb-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ftb-model-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ftb-resource-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ftb-subnav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .ftb-container {
+    width: min(100% - 30px, 1180px);
+  }
+
+  .ftb-hero h1 {
+    font-size: 52px;
+  }
+
+  .ftb-stats {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .ftb-model-grid,
+  .ftb-feature-grid,
+  .ftb-resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ftb-diagram {
+    padding: 40px 30px;
+  }
+
+  .ftb-media span {
+    transform: none;
+  }
+}
