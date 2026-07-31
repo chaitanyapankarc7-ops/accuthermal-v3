@@ -351,7 +351,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="applications" id="applications">
+      <section className="applications" id="applications" style={{ display: "none" }}>
         <div className="wrap">
           <div className="section-top reveal">
             <div>
