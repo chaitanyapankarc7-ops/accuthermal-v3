@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Navbar from "./component/Navbar";
+import Customers from "./component/Customers";
 const appData = [
   [
     "01",
@@ -396,44 +397,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="technology" id="technology">
-        <div className="wrap tech-grid">
-          <div className="tech-copy reveal">
-            <div className="eyebrow mono">03 · Fluidization technology</div>
-            <h2>See the heat-transfer principle in motion.</h2>
-            <p>
-              Compressed air enters beneath a porous plate and passes through heated aluminum-oxide
-              media. As the media fluidizes, it moves around immersed objects and provides a dry
-              thermal environment with rapid heat transfer.
-            </p>
-            <p>The animation visualizes the principle instead of using decorative motion with no purpose.</p>
-          </div>
-          <div className="fluid reveal">
-            <div className="media" id="media">
-              {bubbles.map((b) => (
-                <i
-                  key={b.id}
-                  className="bubble"
-                  style={{
-                    left: b.left,
-                    animationDelay: b.delay,
-                    animationDuration: b.duration,
-                    width: b.size,
-                    height: b.size,
-                  }}
-                />
-              ))}
-            </div>
-            <div className="heater"></div>
-            <div className="airflow">↑ AIRFLOW ↑ AIRFLOW ↑ AIRFLOW ↑</div>
-            <span className="tech-label tl1">FLUIDIZED MEDIA</span>
-            <span className="tech-label tl2">HEATED ZONE</span>
-            <span className="tech-label tl3">AIR DISTRIBUTION</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="models" id="models">
+<section className="models" id="models">
         <div className="wrap">
           <div className="models-head reveal">
             <div>
@@ -466,6 +430,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Customers />
 
       <section className="industries" id="industries">
         <div className="wrap">
@@ -607,7 +573,7 @@ export default function Home() {
             <div>
               <b>Explore</b>
               <a href="#applications">Applications</a>
-              <a href="#technology">Technology</a>
+              <a href="#customers">Customers</a>
               <a href="#industries">Industries</a>
             </div>
             <div>
