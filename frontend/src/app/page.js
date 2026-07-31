@@ -40,6 +40,14 @@ export default function Home() {
   const [progressWidth, setProgressWidth] = useState("0%");
   const [activeApp, setActiveApp] = useState(0);
   const [bubbles, setBubbles] = useState([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const heroImages = [
+    "/assets/images/imgs.jpeg",
+    "/assets/images/pictures_2.jpeg",
+    "/assets/images/pictures_3.jpeg"
+  ];
+
   const [menuOpen, setMenuOpen] = useState(false);
   
   const appTitleRef = useRef(null);
@@ -107,6 +115,15 @@ export default function Home() {
     setBubbles(generatedBubbles);
   }, []);
 
+  // Hero slideshow interval timer
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 4500); // Crossfade every 4.5 seconds
+    return () => clearInterval(timer);
+  }, [heroImages.length]);
+
+
   // Animate app title on active tab switch
   useEffect(() => {
     if (appTitleRef.current) {
@@ -168,17 +185,34 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="blueprint">
-            <div className="orbit"></div>
-            <div className="machine">
-              <div className="chamber"></div>
-            </div>
-            <div className="dimension d1">FLUIDIZED BATH / SECTION A-A</div>
-            <div className="dimension d2">01 · WORKING CHAMBER</div>
-            <div className="dimension d3">ENGINEERED THERMAL PLATFORM</div>
-            <div className="line l1"></div>
-            <div className="line l2"></div>
+          <div className="blueprint" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "700px", position: "relative" }}>
+            {heroImages.map((src, idx) => (
+              <img 
+                key={src}
+                src={src} 
+                alt={`Accurate Thermal Systems Products ${idx + 1}`} 
+                style={{
+                  width: "auto",
+                  height: "100%",
+                  maxHeight: "700px",
+                  objectFit: "contain",
+                  borderRadius: "8px",
+                  filter: "drop-shadow(0 20px 50px rgba(0, 0, 0, 0.45))",
+                  position: "absolute",
+                  top: 0,
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  opacity: currentImageIndex === idx ? 1 : 0,
+                  transition: "opacity 1s ease-in-out",
+                  pointerEvents: currentImageIndex === idx ? "auto" : "none",
+                }} 
+              />
+            ))}
           </div>
+
+
+
+
         </div>
         <div className="hero-index">
           <div className="wrap mono">
@@ -188,9 +222,11 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="signal"></div>
+      <div className="signal" style={{ display: "none" }}></div>
 
-      <section className="intro" id="about">
+
+      <section className="intro" id="about" style={{ display: "none" }}>
+
         <div className="wrap">
           <div className="intro-grid reveal">
             <div>
@@ -223,6 +259,7 @@ export default function Home() {
       </section>
 
       <section className="systems" id="systems">
+
         <div className="wrap">
           <div className="section-top reveal">
             <div>
@@ -248,10 +285,7 @@ export default function Home() {
               <span className="num">SYSTEM / FTB</span>
               <h3>Fluidized Temperature Baths</h3>
               <p>
-                Fluidized baths create a stable and uniform temperature environment for applications
-                including thermal cleaning, heat treatment, calibration, testing and reactor
-                heating. Heated media moves around immersed components, supporting rapid heat transfer
-                and consistent thermal results.
+                Accurate Thermal Systems manufactures a complete line of fluidized temperature baths with an operating range of -100 to 1100°C to meet a wide range of applications requiring a stable and uniform temperature environment.
               </p>
               <div className="specs">
                 <div>
@@ -281,9 +315,7 @@ export default function Home() {
               <span className="num">SYSTEM / THERMCAL</span>
               <h3>Dry Block Temperature Calibrators</h3>
               <p>
-                ThermCal dry block temperature calibrators provide a controlled thermal environment for
-                calibration of temperature sensors, switches and thermometers in laboratory and field
-                applications.
+                ThermCal dry block temperature calibrators offer high accuracy and stability for field or laboratory use at an economical cost and are used to calibrate all types of temperature sensors, switches, and thermometers.
               </p>
               <div className="specs">
                 <div>
