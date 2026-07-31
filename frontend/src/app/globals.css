@@ -122,9 +122,12 @@ nav {
   z-index: 20;
   left: 0;
   right: 0;
+  background: rgba(7, 20, 33, 0.85);
+  backdrop-filter: blur(12px);
   color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 
 .nav {
   height: 100%;
@@ -141,6 +144,27 @@ nav {
 .brand span {
   color: var(--red);
 }
+
+.nav-logo {
+  display: block;
+  height: 68px;
+  width: auto;
+  max-width: 420px;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .nav-logo {
+    height: 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-logo {
+    height: 44px;
+  }
+}
+
 
 .links {
   display: flex;
@@ -2329,9 +2353,10 @@ footer {
     position: absolute;
 
     top: calc(100% - 1px);
-    left: -25px;
+    left: 0;
 
-    width: 360px;
+    width: 320px;
+
 
     background: #fff;
     border: 1px solid #dbe3e8;
@@ -2398,7 +2423,7 @@ footer {
     color: #e51d36;
 
     font-family: monospace;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 
@@ -2407,7 +2432,7 @@ footer {
 .nav-dropdown-menu b {
     display: block;
 
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 800;
 }
 
@@ -2421,7 +2446,7 @@ footer {
 
     color: #71818c;
 
-    font-size: 9px;
+    font-size: 11.5px;
     font-weight: 500;
 
     letter-spacing: 0;
@@ -4031,3 +4056,109 @@ footer {
     transform: none;
   }
 }
+
+/* ==========================================================
+   HAMBURGER & MOBILE MENU OVERLAY
+   ========================================================== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2100;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(7, 20, 33, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2000;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-header-link {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #00a7e8;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.mobile-sub-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.mobile-sub-link:hover {
+  color: #00a7e8;
+}
+
+.mobile-cta {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  background: #d91f38;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+  .links {
+    display: none;
+  }
+}
