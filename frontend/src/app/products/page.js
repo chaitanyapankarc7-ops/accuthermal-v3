@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Navbar from "../component/Navbar";
 
 
 const modelData = [
@@ -26,7 +27,6 @@ const selectorData = [
 
 export default function Products() {
   const [progressWidth, setProgressWidth] = useState("0%");
-  const [menuOpen, setMenuOpen] = useState(false);
 
   // Scroll progress handler
   useEffect(() => {
@@ -80,108 +80,7 @@ export default function Products() {
 
 
       {/* NAV */}
-      <nav>
-        <div className="wrap nav">
-          <Link href="/" className="brand">
-            <img src="/assets/images/ats-logo.png" alt="Accurate Thermal Systems" className="nav-logo" />
-          </Link>
-          <div className="links">
-
-  <Link href="/">HOME</Link>
-
-  {/* PRODUCTS DROPDOWN */}
-  <div className="nav-dropdown">
-
-    <Link
-      href="/products"
-      className="nav-dropdown-trigger active"
-    >
-      PRODUCTS
-      <span className="nav-chevron">⌄</span>
-    </Link>
-
-    <div className="nav-dropdown-menu">
-
-      <Link href="/products" className="dropdown-all">
-        <span>00</span>
-
-        <div>
-          <b>All Products</b>
-          <small>Explore ATS thermal systems</small>
-        </div>
-      </Link>
-
-      <Link href="/products/fluidized-temperature-baths">
-        <span>01</span>
-
-        <div>
-          <b>Fluidized Temperature Baths</b>
-          <small>Thermal processing systems</small>
-        </div>
-      </Link>
-
-      <Link href="/products/thermcal">
-        <span>02</span>
-
-        <div>
-          <b>ThermCal Dry Block Calibrators</b>
-          <small>Temperature calibration</small>
-        </div>
-      </Link>
-
-      <Link href="/products/hepa-air-filtration">
-        <span>03</span>
-
-        <div>
-          <b>HEPA Air Filtration</b>
-          <small>Process air filtration</small>
-        </div>
-      </Link>
-
-    </div>
-
-  </div>
-
-  <Link href="/#applications">APPLICATIONS</Link>
-  <Link href="/#technology">TECHNOLOGY</Link>
-  <Link href="/#industries">INDUSTRIES</Link>
-  <Link href="/#resources">RESOURCES</Link>
-
-</div>
-          <Link href="/#contact" className="nav-cta">
-            REQUEST A QUOTE
-          </Link>
-        </div>
-      </nav>
-
-      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <div className="mobile-links" style={{ overflowY: "auto", maxHeight: "100vh", padding: "100px 20px 40px" }}>
-          <span className="mobile-header-link">Products</span>
-          <Link href="/products#fluidized" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Fluidized Temperature Baths</Link>
-          <Link href="/products#thermcal" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Dry Block Calibrators</Link>
-          <Link href="/products#hepa" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>HEPA Filtration</Link>
-          <Link href="/#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Media & Accessories</Link>
-          
-          <span className="mobile-header-link">Applications</span>
-          <Link href="/?app=0" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Tool and Parts Cleaning</Link>
-          <Link href="/?app=1" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Nitinol Shape Setting</Link>
-          <Link href="/?app=3" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Reactor Heating</Link>
-          <Link href="/?app=2" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Temperature Calibration</Link>
-
-          <span className="mobile-header-link">Navigation</span>
-          <Link href="/#contact" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Contact</Link>
-          <Link href="/#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Support</Link>
-          <Link href="/#technology" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Videos</Link>
-          <Link href="/#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Shop</Link>
-
-          <span className="mobile-header-link" style={{ marginTop: "15px" }}>More</span>
-          <Link href="/#systems" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Calibration Services</Link>
-          <Link href="/#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Resources</Link>
-          <Link href="/#about" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>About</Link>
-          
-          <Link href="/#contact" className="mobile-cta" onClick={() => setMenuOpen(false)}>GET A QUOTE</Link>
-        </div>
-      </div>
+      <Navbar activePage="products" />
 
       {/* HERO */}
       <header className="hero">

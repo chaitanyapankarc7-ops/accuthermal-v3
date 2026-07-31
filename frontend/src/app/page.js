@@ -139,7 +139,7 @@ export default function Home() {
     <>
       <div className="progress" style={{ width: progressWidth }}></div>
       
-      <Navbar />
+      <Navbar setActiveApp={setActiveApp} />
 
       <header className="hero">
         <div className="wrap hero-inner">
