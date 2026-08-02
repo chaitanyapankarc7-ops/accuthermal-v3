@@ -124,7 +124,6 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [heroImages.length]);
 
-
   // Animate app title on active tab switch
   useEffect(() => {
     if (appTitleRef.current) {
@@ -211,9 +210,6 @@ export default function Home() {
             ))}
           </div>
 
-
-
-
         </div>
         <div className="hero-index">
           <div className="wrap mono">
@@ -224,7 +220,6 @@ export default function Home() {
       </header>
 
       <div className="signal" style={{ display: "none" }}></div>
-
 
       <section className="intro" id="about" style={{ display: "none" }}>
 
@@ -348,85 +343,6 @@ export default function Home() {
               />
               <span className="product-marker mono">ATS / THERMCAL 400</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="applications" id="applications" style={{ display: "none" }}>
-        <div className="wrap">
-          <div className="section-top reveal">
-            <div>
-              <div className="eyebrow mono">02 · Applications</div>
-              <h2>Start with the process, not the product number.</h2>
-            </div>
-            <p>
-              Select an application to understand the role of the thermal system before moving into
-              models, specifications and technical documentation.
-            </p>
-          </div>
-          <div className="app-stage reveal">
-            <div className="app-nav">
-              {appData.map((data, index) => (
-                <button
-                  key={index}
-                  className={activeApp === index ? "active" : ""}
-                  onClick={() => setActiveApp(index)}
-                >
-                  <span>{data[0]}</span>
-                  <b>{data[1]}</b>
-                  <span>→</span>
-                </button>
-              ))}
-            </div>
-            <div className="app-view">
-              <div className="big" id="appnum">
-                {currentApp[0]}
-              </div>
-              <div className="eyebrow mono">Application focus</div>
-              <h3 id="apptitle" ref={appTitleRef}>
-                {currentApp[1]}
-              </h3>
-              <p id="appdesc">{currentApp[2]}</p>
-              <div className="app-meta" id="appmeta">
-                {currentApp[3].map((meta, i) => (
-                  <span key={i}>{meta}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-<section className="models" id="models">
-        <div className="wrap">
-          <div className="models-head reveal">
-            <div>
-              <div className="eyebrow mono">04 · System explorer</div>
-              <h3>Fluidized bath family</h3>
-            </div>
-            <span className="mono">Drag / scroll →</span>
-          </div>
-          <div className="model-track reveal">
-            {[
-              "FTBLL12",
-              "FTBLL12W",
-              "FTBLL26",
-              "FTBLL27",
-              "FTBLL47",
-              "FTBSL6",
-              "FTBSL15",
-              "FTBSL25",
-            ].map((modelName) => (
-              <div
-                key={modelName}
-                className="model"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-              >
-                <b>{modelName}</b>
-                <span>Fluidized temperature bath</span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
