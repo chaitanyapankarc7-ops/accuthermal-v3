@@ -4203,7 +4203,6 @@ footer {
 }
 
 .customers-stage {
-  border-top: 1px solid #dce2e5;
   padding-top: 44px;
 }
 
@@ -4314,4 +4313,267 @@ footer {
 @media (max-width: 480px) {
   .customer-grid { grid-template-columns: repeat(2, 1fr); }
   .customer-logo { min-height: 84px; padding: 14px; }
+}
+
+
+/* =========================================
+   CONTACT FORM PAGE
+========================================= */
+.form-hero {
+  padding: 130px 0 70px;
+  background: #071421;
+  color: #fff;
+}
+
+.form-hero .eyebrow {
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+
+.form-hero h1 {
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  margin: 0 0 24px;
+}
+
+.form-hero p {
+  max-width: 560px;
+  color: #a6b6c2;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.form-section {
+  padding: 90px 0 120px;
+  background: #f4f1ea;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.form-panel {
+  background: #fff;
+  border: 1px solid #dce2e5;
+  padding: 48px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font: 600 12px "IBM Plex Mono", monospace;
+  letter-spacing: 0.08em;
+  color: #0b1d2d;
+}
+
+.form-field .req {
+  color: var(--red);
+  font-weight: 500;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 14px 16px;
+  font: 500 15px "DM Sans", sans-serif;
+  color: #0b1d2d;
+  background: #fff;
+  border: 1px solid #ccd5d9;
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-field input::placeholder {
+  color: #9aa7af;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0, 167, 232, 0.15);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.form-captcha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccd5d9;
+  background: #f9fafb;
+  padding: 14px 18px;
+}
+
+.captcha-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #3c4a54;
+}
+
+.captcha-box input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--blue);
+}
+
+.captcha-badge {
+  font: 500 10px "IBM Plex Mono", monospace;
+  color: #687681;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.form-success {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.form-success-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.form-success h2 {
+  font-size: 34px;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+}
+
+.form-success p {
+  color: #5e6972;
+  line-height: 1.8;
+  max-width: 420px;
+  margin: 0 auto 28px;
+}
+
+.contact-info {
+  border-top: 1px solid #0b1d2d;
+  padding-top: 28px;
+}
+
+.contact-info h3 {
+  font-size: 26px;
+  letter-spacing: -0.03em;
+  margin: 0 0 28px;
+}
+
+.contact-block {
+  margin-bottom: 32px;
+}
+
+.contact-block b {
+  display: block;
+  font: 600 11px "IBM Plex Mono", monospace;
+  letter-spacing: 0.12em;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.contact-block p {
+  color: #3c4a54;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.contact-block a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.contact-block a:hover {
+  text-decoration: underline;
+}
+
+.contact-map-btn {
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 560px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .form-panel {
+    padding: 28px;
+  }
+}
+
+
+/* =========================================
+   FTB SYSTEM STORY — BLUE THEME PANEL
+========================================= */
+.system-story:not(.thermcal-story) .system-copy {
+  background: var(--blue);
+  color: #fff;
+}
+
+.system-story:not(.thermcal-story) .system-copy .num {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.system-story:not(.thermcal-story) .system-copy h3 {
+  color: #fff;
+}
+
+.system-story:not(.thermcal-story) .system-copy p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.system-story:not(.thermcal-story) .specs {
+  border-top-color: rgba(255, 255, 255, 0.35);
+}
+
+.system-story:not(.thermcal-story) .specs b {
+  color: #fff;
+}
+
+.system-story:not(.thermcal-story) .specs small {
+  color: rgba(255, 255, 255, 0.8);
 }
