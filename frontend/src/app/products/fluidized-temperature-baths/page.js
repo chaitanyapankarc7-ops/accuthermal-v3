@@ -1,544 +1,578 @@
 "use client";
 
+import "./page.css";
 import Navbar from "../../component/Navbar";
-
-const applications = [
-  {
-    number: "01",
-    title: "Thermal Cleaning",
-    description:
-      "Remove paint, oil, grease, epoxy, plastic, varnish, insulation, rubber, adhesives, food and plant material from tooling, machinery and industrial components.",
-    models: "FTBSL6, FTBLL12, FTBLL12W, FTBLL26, FTBLL27, FTBLL47",
-  },
-  {
-    number: "02",
-    title: "Heat Treatment & Medical Device Processing",
-    description:
-      "Fast and uniform heating for annealing, tempering, shape setting, high-temperature quenching and specialized material processing.",
-    models: "FTBSL6, FTBSL15, FTBSL25",
-  },
-  {
-    number: "03",
-    title: "Calibration, Testing & Reactor Heating",
-    description:
-      "Calibration of temperature sensors and systems, thermal failure mode testing, and heating coils and vessels for endothermic and exothermic reactions.",
-    models: "Select model based on application volume and heat load.",
-  },
-];
-
-const models = [
-  { name: "FTBLL12", diameter: '9.5"', depth: '12"', load: "25 lb" },
-  { name: "FTBLL12W", diameter: '13.5"', depth: '13"', load: "50 lb" },
-  { name: "FTBLL26", diameter: '9.5"', depth: '28"', load: "50 lb" },
-  { name: "FTBLL27", diameter: '17.7"', depth: '28"', load: "130 lb" },
-  { name: "FTBLL47", diameter: '17.7"', depth: '47"', load: "200 lb" },
-  { name: "FTBSL6", diameter: '5.3"', depth: '6"', load: "1.5 lb" },
-  { name: "FTBSL15", diameter: '7.0"', depth: '15"', load: "8 lb" },
-  { name: "FTBSL25", diameter: '7.0"', depth: '25"', load: "15 lb" },
-];
-
-const specs = [
-  ["FTBLL12", "±1.0°C", "150 min", "4.5 kW", "25 lb"],
-  ["FTBLL12W", "±1.5°C", "200 min", "6.8 kW", "50 lb"],
-  ["FTBLL26", "±1.0°C", "180 min", "6.2 kW", "50 lb"],
-  ["FTBLL27", "±5.0°C", "240 min", "12.9 kW", "130 lb"],
-  ["FTBLL47", "±5.0°C", "220 min", "18 kW", "200 lb"],
-  ["FTBSL6", "±0.2°C", "70 min", "1.9 kW", "1.5 lb"],
-  ["FTBSL15", "±0.3°C", "150 min", "4 kW", "8 lb"],
-  ["FTBSL25", "±0.4°C", "180 min", "6 kW", "15 lb"],
-];
-
-const features = [
-  "Proven and reliable fluidized bath technology",
-  "Fully automatic fluidizing air control",
-  "Advanced PID temperature control",
-  "Independent over-temperature protection",
-  "Bath lid designed to reduce media and heat loss",
-  "Insulated construction for reliable and safe operation",
-  "Stainless steel top cover and tank",
-  "RS485 interface with Windows PC software",
-  "Advanced temperature validation software",
-  "Manufactured in the USA",
-];
+import Image from "next/image";
 
 export default function FluidizedTemperatureBaths() {
   return (
-    <main className="ftb-page">
+    <>
       <Navbar />
 
-      {/* HERO */}
-      <section className="ftb-hero">
-        <div className="ftb-container ftb-hero-grid">
+      {/* ================= HERO ================= */}
 
-          <div className="ftb-hero-copy">
-            <div className="ftb-breadcrumb">
-              HOME / PRODUCTS / FLUIDIZED TEMPERATURE BATHS
-            </div>
+      <section className="hero">
 
-            <div className="ftb-kicker">
-              ATS / FLUIDIZED THERMAL SYSTEMS
-            </div>
+        <div className="hero-grid"></div>
+
+        <div className="hero-container">
+
+          {/* LEFT */}
+
+          <div className="hero-left">
+
+            <span className="hero-tag">
+              ACCURATE THERMAL SYSTEMS
+            </span>
 
             <h1>
               FLUIDIZED
               <br />
               TEMPERATURE
               <br />
-              <span>BATHS.</span>
+              <span>BATHS</span>
             </h1>
 
             <p>
-              Stable, uniform and rapidly responsive thermal environments
-              engineered for cleaning, calibration, heat treatment, medical
-              device processing, testing and reactor heating.
+              Precision engineered thermal processing equipment delivering
+              rapid heat transfer, exceptional temperature uniformity and
+              industrial reliability.
             </p>
 
-            <div className="ftb-actions">
-              <a href="#models" className="ftb-btn primary">
-                EXPLORE MODELS →
+            <div className="hero-buttons">
+
+              <a href="#overview" className="btn-primary">
+                Explore Models
               </a>
 
-              <a href="/#contact" className="ftb-btn secondary">
-                REQUEST A QUOTE
+              <a href="#contact" className="btn-secondary">
+                Request Quote
               </a>
+
             </div>
 
-            <div className="ftb-stats">
-              <div>
-                <strong>08</strong>
-                <span>MODELS AVAILABLE</span>
+            <div className="hero-stats">
+
+              <div className="stat">
+                <h2>600°C</h2>
+                <span>Maximum Temperature</span>
               </div>
 
-              <div>
-                <strong>200 LB</strong>
-                <span>MAX LOAD CAPACITY</span>
+              <div className="stat">
+                <h2>8</h2>
+                <span>Available Models</span>
               </div>
 
-              <div>
-                <strong>USA</strong>
-                <span>MANUFACTURED</span>
+              <div className="stat">
+                <h2>±1°C</h2>
+                <span>Temperature Stability</span>
               </div>
+
             </div>
+
           </div>
 
-          <div className="ftb-hero-machine">
-            <div className="ftb-orbit orbit-a" />
-            <div className="ftb-orbit orbit-b" />
+          {/* RIGHT */}
 
-            <span className="ftb-tech-label label-one">
-              FLUIDIZED MEDIA
-            </span>
+          <div className="hero-right">
 
-            <span className="ftb-tech-label label-two">
+            <div className="glow"></div>
+
+            <div className="circle circle1"></div>
+            <div className="circle circle2"></div>
+            <div className="circle circle3"></div>
+
+            <div className="floating-card card1">
               PID CONTROL
-            </span>
+            </div>
 
-            <img
-              src="/assets/images/products/fluidizedbath.png"
-              alt="Accurate Thermal Systems Fluidized Temperature Bath"
+            <div className="floating-card card2">
+              STAINLESS STEEL
+            </div>
+
+            <div className="floating-card card3">
+              MADE IN USA
+            </div>
+
+            <Image
+              src="/assets/images/fluidized/hero-machine.png"
+              alt="Fluidized Temperature Bath"
+              width={650}
+              height={650}
+              className="hero-machine"
+              priority
             />
+
           </div>
 
         </div>
+
       </section>
+{/* ================= PRODUCT OVERVIEW ================= */}
 
-      {/* STICKY PRODUCT NAV */}
-      <nav className="ftb-subnav">
-        <a href="#overview">OVERVIEW</a>
-        <a href="#applications">APPLICATIONS</a>
-        <a href="#technology">HOW IT WORKS</a>
-        <a href="#models">MODELS</a>
-        <a href="#specifications">SPECIFICATIONS</a>
-        <a href="#features">FEATURES</a>
-        <a href="#resources">RESOURCES</a>
-      </nav>
+<section className="overview-section" id="overview">
 
-      {/* OVERVIEW */}
-      <section id="overview" className="ftb-section ftb-overview">
-        <div className="ftb-container ftb-split">
+    <div className="overview-grid"></div>
 
-          <div>
-            <div className="ftb-section-number">01 / OVERVIEW</div>
+    <div className="overview-container">
+
+        {/* LEFT CONTENT */}
+
+        <div className="overview-left">
+
+            <span className="overview-tag">
+                01 / PRODUCT OVERVIEW
+            </span>
 
             <h2>
-              ENGINEERED FOR
-              <br />
-              CONTROLLED HEAT.
-            </h2>
-          </div>
-
-          <div className="ftb-body">
-            <p>
-              Accurate Thermal Systems manufactures fluidized temperature
-              baths for applications requiring a stable and uniform
-              temperature environment.
-            </p>
-
-            <p>
-              Fluidized baths have been used for decades to remove organic
-              material from extrusion tooling and metal components. They are
-              also used for medical device shape setting, sensor calibration,
-              heat treatment, reactor heating and specialized testing.
-            </p>
-
-            <p>
-              Compared with conventional ovens and furnaces, fluidized baths
-              provide rapid heat transfer, faster processing and excellent
-              temperature uniformity while immersed objects remain clean and
-              dry.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* APPLICATIONS */}
-      <section id="applications" className="ftb-section ftb-applications">
-        <div className="ftb-container">
-
-          <div className="ftb-heading">
-            <div>
-              <div className="ftb-section-number">02 / APPLICATIONS</div>
-              <h2>
-                BUILT AROUND
+                ENGINEERED
                 <br />
-                THE PROCESS.
-              </h2>
-            </div>
+                FOR
+                <br />
+                INDUSTRIAL
+                <br />
+                PRECISION.
+            </h2>
 
-            <p>
-              One thermal platform supporting demanding cleaning,
-              manufacturing, calibration and research workflows.
+            <p className="overview-description">
+
+                Accurate Thermal Systems Fluidized Temperature Baths are
+                engineered to deliver rapid, highly uniform dry heating using
+                fluidized aluminum oxide media. Designed for demanding
+                laboratory and industrial environments, the system combines
+                precision PID temperature control, stainless steel
+                construction, and exceptional thermal stability for reliable
+                and repeatable process performance.
+
             </p>
-          </div>
 
-          <div className="ftb-app-grid">
-            {applications.map((app) => (
-              <article className="ftb-app-card" key={app.number}>
+            <div className="overview-highlights">
 
-                <span className="ftb-card-number">
-                  {app.number}
-                </span>
+                <div className="highlight-card">
 
-                <h3>{app.title}</h3>
+                    <div className="highlight-number">
+                        01
+                    </div>
 
-                <p>{app.description}</p>
+                    <div>
 
-                <div className="ftb-recommended">
-                  RECOMMENDED MODELS
-                  <strong>{app.models}</strong>
+                        <h4>
+                            Dry Heating Technology
+                        </h4>
+
+                        <p>
+                            Cleaner and safer operation without molten salts
+                            while maintaining excellent thermal efficiency.
+                        </p>
+
+                    </div>
+
                 </div>
 
-              </article>
-            ))}
-          </div>
+
+                <div className="highlight-card">
+
+                    <div className="highlight-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Fluidized Aluminum Oxide Media
+                        </h4>
+
+                        <p>
+                            Provides rapid and extremely uniform heat transfer
+                            across the entire working zone.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div className="highlight-card">
+
+                    <div className="highlight-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Precision PID Control
+                        </h4>
+
+                        <p>
+                            Advanced digital closed-loop control maintains
+                            accurate temperatures with excellent repeatability.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div className="highlight-card">
+
+                    <div className="highlight-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Industrial Stainless Steel Build
+                        </h4>
+
+                        <p>
+                            Rugged construction designed for continuous
+                            laboratory and industrial operation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
-      </section>
 
-      {/* HOW IT WORKS */}
-      <section id="technology" className="ftb-technology">
-        <div className="ftb-container">
+        
 
-          <div className="ftb-heading dark">
-            <div>
-              <div className="ftb-section-number">
-                03 / HOW IT WORKS
-              </div>
+        {/* ================= RIGHT BLUEPRINT ================= */}
 
-              <h2>
-                HOW FLUIDIZED
-                <br />
-                BATH TECHNOLOGY
-                <br />
-                WORKS.
-              </h2>
+<div className="overview-right">
+
+    <div className="blueprint-frame">
+
+        {/* Background Grid */}
+
+        <div className="blueprint-bg"></div>
+
+        {/* MACHINE */}
+
+        <Image
+            src="/assets/images/fluidized/temp.png"
+            alt="ATS Fluidized Temperature Bath"
+            width={700}
+            height={700}
+            className="overview-machine"
+            priority
+        />
+
+        {/* ================================================= */}
+        {/* PID CONTROLLER */}
+        {/* ================================================= */}
+
+        
+
+        {/* ================================================= */}
+        {/* STAINLESS BODY */}
+        {/* ================================================= */}
+
+        <div className="blueprint-label body">
+
+            <div className="bp-dot"></div>
+
+            <div className="bp-line"></div>
+
+            <div className="bp-card">
+
+                <span>ATS-02</span>
+
+                <h4>Stainless Steel Body</h4>
+
+                <p>
+                    Heavy-duty corrosion resistant construction designed
+                    for continuous industrial use.
+                </p>
+
             </div>
 
-            <p>
-              Compressed air transforms heated aluminum oxide media into a
-              fluid-like thermal environment capable of transferring heat
-              rapidly and uniformly.
-            </p>
-          </div>
+        </div>
 
-          <div className="ftb-tech-grid">
+        {/* ================================================= */}
+        {/* CHAMBER */}
+        {/* ================================================= */}
 
-            <div className="ftb-diagram">
+        <div className="blueprint-label chamber">
 
-              <div className="ftb-airflow">
-                ↑ ↑ ↑ ↑ ↑
-              </div>
+            <div className="bp-dot"></div>
 
-              <div className="ftb-media">
-                <span>ALUMINUM OXIDE MEDIA</span>
-              </div>
+            <div className="bp-line"></div>
 
-              <div className="ftb-plate">
-                POROUS PLATE
-              </div>
+            <div className="bp-card">
 
-              <div className="ftb-air">
-                ↑ ↑ ↑ ↑ ↑
-                <span>COMPRESSED AIR</span>
-              </div>
+                <span>ATS-03</span>
+
+                <h4>Fluidized Chamber</h4>
+
+                <p>
+                    Provides rapid and highly uniform heat transfer
+                    using fluidized aluminum oxide media.
+                </p>
 
             </div>
 
-            <div className="ftb-video-card">
+        </div>
 
-            <video controls playsInline preload="metadata">
-  <source src="/videos/MVI_6338.mp4" type="video/mp4" />
-  Your browser does not support video playback.
+        {/* ================================================= */}
+        {/* AIR FLOW */}
+        {/* ================================================= */}
+
+        <div className="blueprint-label airflow">
+
+            <div className="bp-dot"></div>
+
+            <div className="bp-line"></div>
+
+            <div className="bp-card">
+
+                <span>ATS-04</span>
+
+                <h4>Precision Air Flow</h4>
+
+                <p>
+                    Engineered airflow system maintains consistent
+                    media fluidization for optimum performance.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+{/* ================= BOTTOM STRIP ================= */}
+
+<div className="overview-bottom">
+
+    <div className="bottom-item">
+
+        <h3>Rapid Heat Transfer</h3>
+
+        <p>
+            Fluidized media delivers faster thermal response than
+            conventional dry heating systems.
+        </p>
+
+    </div>
+
+    <div className="bottom-item">
+
+        <h3>Uniform Temperature</h3>
+
+        <p>
+            Outstanding temperature consistency across the complete
+            working area.
+        </p>
+
+    </div>
+
+    <div className="bottom-item">
+
+        <h3>Industrial Reliability</h3>
+
+        <p>
+            Designed for continuous laboratory and production
+            environments.
+        </p>
+
+    </div>
+
+    <div className="bottom-item">
+
+        <h3>Safer Dry Heating</h3>
+
+        <p>
+            Eliminates molten salts while providing a cleaner and
+            safer operating process.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+        
+
+
+
+
+{/* ================= VIDEO ================= */}
+
+<section className="video-section">
+
+<div className="video-header">
+
+<span>
+02 / PROCESS IN ACTION
+</span>
+
+<h2>
+
+SEE THE
+<br/>
+
+SYSTEM
+<br/>
+
+IN ACTION.
+
+</h2>
+
+<p>
+
+Watch how ATS Fluidized Temperature Baths deliver
+rapid heat transfer, precise temperature control,
+and industrial reliability.
+
+</p>
+
+</div>
+
+
+<div className="video-wrapper">
+
+<video
+
+autoPlay
+
+muted
+
+loop
+
+playsInline
+
+className="ats-video"
+
+>
+
+<source
+src="/assets/videos/fluidized-demo.mp4"
+type="video/mp4"
+/>
+
 </video>
 
-              <div className="ftb-video-copy">
-                <span>ATS / TECHNOLOGY</span>
-                <h3>How Does a Fluidized Bath Work?</h3>
-                <p>
-                  See fluidized temperature bath technology operating in a
-                  real ATS system.
-                </p>
-              </div>
+<div className="video-overlay"></div>
 
-            </div>
+</div>
 
-          </div>
+<div className="video-features">
 
-          <div className="ftb-how-copy">
-            <p>
-              A fluidized bath contains a lower air chamber separated from the
-              working chamber by a porous plate. Aluminum oxide media fills the
-              working chamber while compressed air enters below the plate.
-            </p>
+<div>
 
-            <p>
-              As air travels through the media, the particles become fluidized
-              and continuously circulate. Heat introduced into the bath is
-              distributed throughout this moving media, creating stable and
-              highly uniform thermal conditions.
-            </p>
+<h3>600°C</h3>
 
-            <p>
-              The resulting liquid-like behavior allows immersed components to
-              heat rapidly without using molten salts or liquid heat-transfer
-              media.
-            </p>
-          </div>
+<span>MAXIMUM TEMPERATURE</span>
 
+</div>
+
+<div>
+
+<h3>FAST</h3>
+
+<span>HEAT TRANSFER</span>
+
+</div>
+
+<div>
+
+<h3>PID</h3>
+
+<span>DIGITAL CONTROL</span>
+
+</div>
+
+<div>
+
+<h3>USA</h3>
+
+<span>ENGINEERED</span>
+
+</div>
+
+</div>
+
+{/* ================= BOTTOM FEATURES ================= */}
+
+<div className="overview-bottom">
+
+    <div className="bottom-card">
+
+        <div className="bottom-icon">
+            01
         </div>
-      </section>
 
-      {/* MODELS */}
-      <section id="models" className="ftb-section ftb-models">
-        <div className="ftb-container">
+        <h3>Rapid Heat Transfer</h3>
 
-          <div className="ftb-heading">
-            <div>
-              <div className="ftb-section-number">
-                04 / PRODUCT RANGE
-              </div>
+        <p>
+            Fluidized aluminum oxide media delivers significantly faster
+            and more uniform heat transfer than conventional dry heating
+            methods.
+        </p>
 
-              <h2>
-                EIGHT MODELS.
-                <br />
-                ONE TECHNOLOGY.
-              </h2>
-            </div>
+    </div>
 
-            <p>
-              Select a system according to working volume, heat load,
-              temperature performance and application requirements.
-            </p>
-          </div>
 
-          <div className="ftb-model-grid">
+    <div className="bottom-card">
 
-            {models.map((model) => (
-              <article className="ftb-model-card" key={model.name}>
-
-                <span>ATS</span>
-
-                <h3>{model.name}</h3>
-
-                <img
-                  src="/assets/images/products/fluidizedbath.png"
-                  alt={`ATS ${model.name}`}
-                />
-
-                <dl>
-                  <div>
-                    <dt>DIAMETER</dt>
-                    <dd>{model.diameter}</dd>
-                  </div>
-
-                  <div>
-                    <dt>DEPTH</dt>
-                    <dd>{model.depth}</dd>
-                  </div>
-
-                  <div>
-                    <dt>MAX LOAD</dt>
-                    <dd>{model.load}</dd>
-                  </div>
-                </dl>
-
-              </article>
-            ))}
-
-          </div>
-
+        <div className="bottom-icon">
+            02
         </div>
-      </section>
 
-      {/* SPECIFICATIONS */}
-      <section id="specifications" className="ftb-section ftb-specifications">
-        <div className="ftb-container">
+        <h3>Precision Temperature Control</h3>
 
-          <div className="ftb-heading">
-            <div>
-              <div className="ftb-section-number">
-                05 / SPECIFICATIONS
-              </div>
+        <p>
+            Advanced PID regulation continuously maintains stable process
+            temperatures with outstanding repeatability.
+        </p>
 
-              <h2>
-                DETAILED
-                <br />
-                PERFORMANCE.
-              </h2>
-            </div>
+    </div>
 
-            <p>
-              Core performance specifications across the ATS fluidized
-              temperature bath range.
-            </p>
-          </div>
 
-          <div className="ftb-table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>MODEL</th>
-                  <th>STABILITY @ 500°C</th>
-                  <th>HEAT-UP TO 600°C</th>
-                  <th>POWER</th>
-                  <th>MAX LOAD</th>
-                </tr>
-              </thead>
+    <div className="bottom-card">
 
-              <tbody>
-                {specs.map((row) => (
-                  <tr key={row[0]}>
-                    {row.map((value, index) => (
-                      <td key={index}>{value}</td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="ftb-spec-note">
-            Temperature, electrical and performance requirements vary by
-            configuration. Refer to ATS technical documentation before system
-            selection.
-          </p>
-
+        <div className="bottom-icon">
+            03
         </div>
-      </section>
 
-      {/* FEATURES */}
-      <section id="features" className="ftb-section ftb-features">
-        <div className="ftb-container ftb-feature-layout">
+        <h3>Industrial Grade Construction</h3>
 
-          <div>
-            <div className="ftb-section-number">
-              06 / ENGINEERING
-            </div>
+        <p>
+            Built using premium stainless steel and high-quality
+            industrial components for continuous operation.
+        </p>
 
-            <h2>
-              WHY ATS
-              <br />
-              FLUIDIZED
-              <br />
-              BATHS?
-            </h2>
-          </div>
+    </div>
 
-          <div className="ftb-feature-grid">
-            {features.map((feature, index) => (
-              <div className="ftb-feature" key={feature}>
-                <span>
-                  {String(index + 1).padStart(2, "0")}
-                </span>
 
-                <p>{feature}</p>
-              </div>
-            ))}
-          </div>
+    <div className="bottom-card">
 
+        <div className="bottom-icon">
+            04
         </div>
-      </section>
 
-      {/* RESOURCES */}
-      <section id="resources" className="ftb-resources">
-        <div className="ftb-container">
+        <h3>Cleaner Dry Heating</h3>
 
-          <div className="ftb-section-number">
-            07 / TECHNICAL LIBRARY
-          </div>
+        <p>
+            Eliminates the handling of molten salts while providing a
+            safer, cleaner and more efficient heating process.
+        </p>
 
-          <div className="ftb-resource-grid">
+    </div>
 
-            <div className="ftb-resource-title">
-              <h2>
-                TECHNICAL
-                <br />
-                RESOURCES.
-              </h2>
-            </div>
+</div>
 
-            <div className="ftb-resource-column">
-              <span>BROCHURES</span>
+</section>
 
-              <a href="#">FTBLL12 / FTBLL26 / FTBLL12W →</a>
-              <a href="#">FTBLL27 / FTBLL47 →</a>
-              <a href="#">FTBSL15 / FTBSL25 →</a>
-              <a href="#">FTBSL6 →</a>
-            </div>
-
-            <div className="ftb-resource-column">
-              <span>SAFETY DATA</span>
-
-              <a href="#">Brown Aluminum Oxide →</a>
-              <a href="#">White Activated Alumina →</a>
-            </div>
-
-            <div className="ftb-resource-column">
-              <span>REQUEST FORMS</span>
-
-              <a href="#">Sample Cleaning →</a>
-              <a href="#">Sample Heat Treatment →</a>
-            </div>
-
-            <div className="ftb-resource-cta">
-              <span>NEED HELP SELECTING A SYSTEM?</span>
-
-              <h3>
-                TALK TO AN
-                <br />
-                ATS ENGINEER.
-              </h3>
-
-              <a href="/#contact">
-                REQUEST A QUOTE →
-              </a>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-    </main>
+</>
   );
 }
