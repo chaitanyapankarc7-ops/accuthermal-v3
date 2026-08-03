@@ -1043,22 +1043,22 @@ footer {
 
 /* Industries styling */
 .industries {
-  padding: 120px 0;
+  padding: 160px 0;
   background: #dce5e7;
 }
 
 .industry-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: #b9c5ca;
-  margin-top: 55px;
+  margin-top: 70px;
 }
 
 .industry {
   background: #f6f3ed;
-  padding: 34px;
-  min-height: 210px;
+  padding: 44px;
+  min-height: 280px;
   position: relative;
   overflow: hidden;
   transition: .35s;
@@ -1089,12 +1089,13 @@ footer {
 }
 
 .industry h3 {
-  font-size: 24px;
+  font-size: 30px;
 }
 
 .industry p {
   color: #6c7982;
-  font-size: 13px;
+  font-size: 15.5px;
+  line-height: 1.75;
 }
 
 /* Custom engineering */
@@ -4582,4 +4583,64 @@ footer {
 
 .system-story:not(.thermcal-story) .specs small {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.industry .industry-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  font: 600 12px "IBM Plex Mono", monospace;
+  letter-spacing: 0.14em;
+  color: #fff;
+  text-decoration: none;
+  background: var(--red);
+  border: 0;
+  padding: 15px 22px;
+  transition: color 0.3s ease, gap 0.3s ease;
+}
+
+.industry .industry-link span {
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.industry:hover .industry-link {
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(217, 31, 56, 0.35);
+  gap: 12px;
+}
+
+@media (max-width: 1100px) {
+  .industry-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .industry-grid { grid-template-columns: 1fr; }
+}
+
+/* Application card images */
+.industry-img {
+  height: 210px;
+  margin: 0 0 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.industry-img img {
+  max-width: 100%;
+  max-height: 210px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: multiply;
+  transition: transform 0.5s ease;
+}
+
+.industry:hover .industry-img img {
+  transform: scale(1.08);
 }

@@ -353,56 +353,47 @@ export default function Home() {
         <div className="wrap">
           <div className="section-top reveal">
             <div>
-              <div className="eyebrow mono">05 · Industries</div>
-              <h2>Thermal engineering across demanding environments.</h2>
+              <div className="eyebrow mono">05 · Applications</div>
+              <h2>Start with the process, not the product number.</h2>
             </div>
-            <p>
-              Application-driven navigation helps technical buyers identify where ATS equipment fits
-              before diving into individual product specifications.
-            </p>
           </div>
           <div className="industry-grid reveal">
             {[
               {
                 num: "01",
-                title: "Medical Devices",
-                desc: "Nitinol shape setting, annealing and controlled thermal processing.",
+                title: "Tool & Parts Cleaning",
+                img: "/assets/images/tools/Tool%20%26%20Parts%20Cleaning.jpg",
+                desc: "Accurate Thermal Systems Fluidized Temperature Baths offer fast and labor-efficient removal of all organic-based material from tooling and hardware.",
               },
               {
                 num: "02",
-                title: "Plastics & Extrusion",
-                desc: "Thermal cleaning of dies, tooling and process components.",
+                title: "Nitinol Shape Setting",
+                img: "/assets/images/tools/heat-treatment-225x225.png",
+                desc: "Unmatched thermal performance and safety for medical device shape setting, heat treatment, and annealing of devices and components.",
               },
               {
                 num: "03",
-                title: "Calibration Laboratories",
-                desc: "Temperature calibration for sensors and instrumentation.",
+                title: "Reactor Heating",
+                img: "/assets/images/tools/reactor-heating-225x225.png",
+                desc: "Heating of laboratory and industrial reactors in both corporate and academic settings for research and development, process, and analysis work.",
               },
               {
                 num: "04",
-                title: "Research & Development",
-                desc: "Flexible thermal platforms for testing and development.",
-              },
-              {
-                num: "05",
-                title: "Manufacturing",
-                desc: "Heat treatment, maintenance and production support.",
-              },
-              {
-                num: "06",
-                title: "Chemical Processing",
-                desc: "Reactor heating and controlled process-temperature applications.",
+                title: "Temperature Calibration",
+                img: "/assets/images/tools/calobrationp-225x225.png",
+                desc: "We offer a choice of temperature sources for calibrating temperature sensors, thermometers, indicators, systems, and probes.",
               },
             ].map((ind) => (
-              <article
-                key={ind.num}
-                className="industry"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-              >
+              <article key={ind.num} className="industry">
+                <div className="industry-img">
+                  <img src={ind.img} alt={ind.title} loading="lazy" />
+                </div>
                 <small className="mono">{ind.num}</small>
                 <h3>{ind.title}</h3>
                 <p>{ind.desc}</p>
+                <a href="/#contact" className="industry-link">
+                  LEARN MORE <span>&#8594;</span>
+                </a>
               </article>
             ))}
           </div>
