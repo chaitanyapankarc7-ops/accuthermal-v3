@@ -30,6 +30,10 @@ export default function Navbar({ activePage, setActiveApp }) {
 
           {/* NAVIGATION LINKS */}
           <div className="links">
+
+            <Link href="/" className={activePage === "home" ? "active" : ""}>
+  HOME
+</Link>
             {/* PRODUCTS DROPDOWN */}
             <div className="nav-dropdown">
               <Link href="/products" className={activePage === "products" ? "active" : ""}>
