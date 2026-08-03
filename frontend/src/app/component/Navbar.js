@@ -36,13 +36,6 @@ export default function Navbar({ activePage, setActiveApp }) {
                 PRODUCTS <span className="nav-chevron">⌄</span>
               </Link>
               <div className="nav-dropdown-menu">
-                <Link href="/products" className="dropdown-all">
-                  <span>00</span>
-                  <div>
-                    <b>All Products</b>
-                    <small>Explore ATS thermal systems</small>
-                  </div>
-                </Link>
                 <Link href="/products/fluidized-temperature-baths">
                   <span>01</span>
                   <div>
@@ -73,13 +66,6 @@ export default function Navbar({ activePage, setActiveApp }) {
                 APPLICATIONS <span className="nav-chevron">⌄</span>
               </Link>
               <div className="nav-dropdown-menu">
-                <Link href="/#applications" className="dropdown-all" onClick={() => handleAppClick(0)}>
-                  <span>00</span>
-                  <div>
-                    <b>All Applications</b>
-                    <small>Explore ATS process capabilities</small>
-                  </div>
-                </Link>
                 <a href="#applications" onClick={(e) => { e.preventDefault(); handleAppClick(0); }}>
                   <span>01</span>
                   <div>
