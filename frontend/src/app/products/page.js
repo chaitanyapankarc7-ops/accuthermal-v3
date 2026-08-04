@@ -27,6 +27,7 @@ const selectorData = [
 
 export default function Products() {
   const [progressWidth, setProgressWidth] = useState("0%");
+  
 
   // Scroll progress handler
   useEffect(() => {
