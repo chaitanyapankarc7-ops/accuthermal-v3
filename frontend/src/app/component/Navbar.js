@@ -69,7 +69,7 @@ export default function Navbar({ activePage, setActiveApp }) {
                 <a href="#applications" onClick={(e) => { e.preventDefault(); handleAppClick(0); }}>
                   <span>01</span>
                   <div>
-                    <b>Tool and Parts Cleaning</b>
+                    <b>Thermal Cleaning</b>
                     <small>Remove plastics and organic compounds</small>
                   </div>
                 </a>
@@ -133,7 +133,7 @@ export default function Navbar({ activePage, setActiveApp }) {
           </div>
 
           {/* CTA & SEARCH */}
-          <div style={{ display: "flex", alignItems: "center" }}>
+          <div className="nav-actions" style={{ display: "flex", alignItems: "center" }}>
             <Link href="/form" className="nav-cta">
               GET A QUOTE
             </Link>
@@ -154,6 +154,12 @@ export default function Navbar({ activePage, setActiveApp }) {
 
       {/* MOBILE NAV OVERLAY */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        <button className="mobile-close" onClick={() => setMenuOpen(false)} aria-label="Close menu">
+          <span className="mobile-close-x">
+            <span></span>
+            <span></span>
+          </span>
+        </button>
         <div className="mobile-links" style={{ overflowY: "auto", maxHeight: "100vh", padding: "100px 20px 40px" }}>
           <span className="mobile-header-link">Products</span>
           <Link href="/products" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>All Products</Link>
@@ -162,7 +168,7 @@ export default function Navbar({ activePage, setActiveApp }) {
           <Link href="/products/hepa-air-filtration" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>HEPA Filtration</Link>
           
           <span className="mobile-header-link">Applications</span>
-          <a href="#" className="mobile-sub-link" onClick={(e) => { e.preventDefault(); handleAppClick(0); }}>Tool and Parts Cleaning</a>
+          <a href="#" className="mobile-sub-link" onClick={(e) => { e.preventDefault(); handleAppClick(0); }}>Thermal Cleaning</a>
           <a href="#" className="mobile-sub-link" onClick={(e) => { e.preventDefault(); handleAppClick(1); }}>Nitinol Shape Setting</a>
           <a href="#" className="mobile-sub-link" onClick={(e) => { e.preventDefault(); handleAppClick(3); }}>Reactor Heating</a>
           <a href="#" className="mobile-sub-link" onClick={(e) => { e.preventDefault(); handleAppClick(2); }}>Temperature Calibration</a>
