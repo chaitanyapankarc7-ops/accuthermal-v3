@@ -316,7 +316,7 @@ footer {
 
 .hero {
   min-height:650px;
-  background: radial-gradient(circle at 72% 48%, #12334b 0, transparent 26%), linear-gradient(120deg, #061321, #0b1e30);
+  background: radial-gradient(circle at 72% 48%, #14568f 0, transparent 26%), linear-gradient(120deg, #0b3a6e, #0e5a9b);
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -662,13 +662,13 @@ footer {
 /* ThermCal Specifics (Home Page) */
 .thermcal-story {
   margin-top: 80px;
-  background: #071421;
+  background: radial-gradient(circle at 72% 48%, #14568f 0, transparent 26%), linear-gradient(120deg, #0b3a6e, #0e5a9b);
   min-height: 600px;
 }
 
 .thermcal-copy {
   padding: 70px 65px;
-  background: #071421;
+  background: radial-gradient(circle at 72% 48%, #14568f 0, transparent 26%), linear-gradient(120deg, #0b3a6e, #0e5a9b);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -676,7 +676,7 @@ footer {
 }
 
 .thermcal-copy .num {
-  color: #00a7e8;
+  color: #a9dcf8;
 }
 
 .thermcal-copy h3 {
@@ -702,7 +702,7 @@ footer {
 }
 
 .thermcal-copy .specs small {
-  color: #8295a5;
+  color: #b6cbd9;
 }
 
 .thermcal-visual {
@@ -803,6 +803,35 @@ footer {
 .system-story:not(.thermcal-story) .system-product-img {
   position: relative;
   z-index: 2;
+}
+
+.system-story:not(.thermcal-story) .system-copy {
+  background: radial-gradient(circle at 72% 48%, #14568f 0, transparent 26%), linear-gradient(120deg, #0b3a6e, #0e5a9b);
+  color: #fff;
+}
+
+.system-story:not(.thermcal-story) .system-copy .num {
+  color: #a9dcf8;
+}
+
+.system-story:not(.thermcal-story) .system-copy h3 {
+  color: #fff;
+}
+
+.system-story:not(.thermcal-story) .system-copy p {
+  color: #e4eef6;
+}
+
+.system-story:not(.thermcal-story) .system-copy .specs {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.system-story:not(.thermcal-story) .system-copy .specs b {
+  color: #fff;
+}
+
+.system-story:not(.thermcal-story) .system-copy .specs small {
+  color: #b6cbd9;
 }
 
 /* Applications Tab Section */
@@ -4168,12 +4197,62 @@ footer {
   font-size: 14px;
 }
 
+.mobile-close {
+  position: absolute;
+  top: 33px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  cursor: pointer;
+  z-index: 2100;
+  display: grid;
+  place-items: center;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.mobile-close .mobile-close-x {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.mobile-close .mobile-close-x span {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 14px;
+  height: 1.5px;
+  background: #fff;
+  display: block;
+}
+
+.mobile-close .mobile-close-x span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.mobile-close .mobile-close-x span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.mobile-close:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
 @media (max-width: 900px) {
   .hamburger {
     display: flex;
   }
   .links {
     display: none;
+  }
+  .nav-actions {
+    margin-left: auto;
+    margin-right: 18px;
   }
 }
 
@@ -4552,38 +4631,6 @@ footer {
   }
 }
 
-
-/* =========================================
-   FTB SYSTEM STORY — BLUE THEME PANEL
-========================================= */
-.system-story:not(.thermcal-story) .system-copy {
-  background: #081726;
-  color: #fff;
-}
-
-.system-story:not(.thermcal-story) .system-copy .num {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.system-story:not(.thermcal-story) .system-copy h3 {
-  color: #fff;
-}
-
-.system-story:not(.thermcal-story) .system-copy p {
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.system-story:not(.thermcal-story) .specs {
-  border-top-color: rgba(255, 255, 255, 0.35);
-}
-
-.system-story:not(.thermcal-story) .specs b {
-  color: #fff;
-}
-
-.system-story:not(.thermcal-story) .specs small {
-  color: rgba(255, 255, 255, 0.8);
-}
 
 .industry .industry-link {
   display: inline-flex;
