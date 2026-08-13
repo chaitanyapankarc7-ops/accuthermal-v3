@@ -4400,6 +4400,7 @@ footer {
   .customer-grid { grid-template-columns: repeat(2, 1fr); }
   .customer-logo { min-height: 84px; padding: 14px; }
 }
+<<<<<<< HEAD
 
 
 /* =========================================
@@ -4691,3 +4692,5 @@ footer {
 .industry:hover .industry-img img {
   transform: scale(1.08);
 }
+=======
+>>>>>>> 762f87dd6f068ca2d414e777c743c7b29b0f1f8f
