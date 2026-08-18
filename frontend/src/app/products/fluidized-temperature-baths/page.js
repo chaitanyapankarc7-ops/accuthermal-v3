@@ -108,466 +108,551 @@ export default function FluidizedTemperatureBaths() {
         </div>
 
       </section>
-{/* ================= PRODUCT OVERVIEW ================= */}
+{/* ================= PRODUCT DETAILS ================= */}
 
-<section className="overview-section" id="overview">
+<section className="product-details-section" id="overview">
 
-    <div className="overview-grid"></div>
+  <div className="product-details-grid"></div>
 
-    <div className="overview-container">
+  <div className="product-details-container">
 
-        {/* LEFT CONTENT */}
+    {/* SECTION HEADER */}
 
-        <div className="overview-left">
+    <div className="product-details-header">
 
-            <span className="overview-tag">
-                01 / PRODUCT OVERVIEW
-            </span>
+      <span className="product-details-tag">
+        01 / PRODUCT DETAILS
+      </span>
 
-            <h2>
-                ENGINEERED
-                <br />
-                FOR
-                <br />
-                INDUSTRIAL
-                <br />
-                PRECISION.
-            </h2>
+      <h2>
+        ENGINEERED
+        <br />
+        DOWN TO
+        <br />
+        THE DETAIL.
+      </h2>
 
-            <p className="overview-description">
+      <p>
+        Explore the key components that make the ATS Fluidized Temperature
+        Bath precise, reliable, and practical for demanding thermal
+        processing applications.
+      </p>
 
-                Accurate Thermal Systems Fluidized Temperature Baths are
-                engineered to deliver rapid, highly uniform dry heating using
-                fluidized aluminum oxide media. Designed for demanding
-                laboratory and industrial environments, the system combines
-                precision PID temperature control, stainless steel
-                construction, and exceptional thermal stability for reliable
-                and repeatable process performance.
-
-            </p>
-
-            <div className="overview-highlights">
-
-                <div className="highlight-card">
-
-                    <div className="highlight-number">
-                        01
-                    </div>
-
-                    <div>
-
-                        <h4>
-                            Dry Heating Technology
-                        </h4>
-
-                        <p>
-                            Cleaner and safer operation without molten salts
-                            while maintaining excellent thermal efficiency.
-                        </p>
-
-                    </div>
-
-                </div>
+    </div>
 
 
-                <div className="highlight-card">
+    {/* ================= DETAIL 01 ================= */}
 
-                    <div className="highlight-number">
-                        02
-                    </div>
+    <div className="product-detail-row">
 
-                    <div>
+      <div className="product-detail-image-wrap">
 
-                        <h4>
-                            Fluidized Aluminum Oxide Media
-                        </h4>
+        <div className="product-detail-glow"></div>
 
-                        <p>
-                            Provides rapid and extremely uniform heat transfer
-                            across the entire working zone.
-                        </p>
+        <div className="product-detail-frame">
 
-                    </div>
+          <div className="product-detail-grid"></div>
 
-                </div>
-
-
-                <div className="highlight-card">
-
-                    <div className="highlight-number">
-                        03
-                    </div>
-
-                    <div>
-
-                        <h4>
-                            Precision PID Control
-                        </h4>
-
-                        <p>
-                            Advanced digital closed-loop control maintains
-                            accurate temperatures with excellent repeatability.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div className="highlight-card">
-
-                    <div className="highlight-number">
-                        04
-                    </div>
-
-                    <div>
-
-                        <h4>
-                            Industrial Stainless Steel Build
-                        </h4>
-
-                        <p>
-                            Rugged construction designed for continuous
-                            laboratory and industrial operation.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        
-
-        {/* ================= RIGHT BLUEPRINT ================= */}
-
-<div className="overview-right">
-
-    <div className="blueprint-frame">
-
-        {/* Background Grid */}
-
-        <div className="blueprint-bg"></div>
-
-        {/* MACHINE */}
-
-        <Image
+          <Image
             src="/assets/images/fluidized/temp.png"
-            alt="ATS Fluidized Temperature Bath"
+            alt="Digital PID Control Module"
             width={700}
             height={700}
-            className="overview-machine"
-            priority
-        />
+            className="product-detail-image"
+          />
 
-        {/* ================================================= */}
-        {/* PID CONTROLLER */}
-        {/* ================================================= */}
-
-        
-
-        {/* ================================================= */}
-        {/* STAINLESS BODY */}
-        {/* ================================================= */}
-
-        <div className="blueprint-label body">
-
-            <div className="bp-dot"></div>
-
-            <div className="bp-line"></div>
-
-            <div className="bp-card">
-
-                <span>ATS-02</span>
-
-                <h4>Stainless Steel Body</h4>
-
-                <p>
-                    Heavy-duty corrosion resistant construction designed
-                    for continuous industrial use.
-                </p>
-
-            </div>
+          <span className="image-index">
+            01
+          </span>
 
         </div>
 
-        {/* ================================================= */}
-        {/* CHAMBER */}
-        {/* ================================================= */}
+      </div>
 
-        <div className="blueprint-label chamber">
 
-            <div className="bp-dot"></div>
+      <div className="product-detail-content">
 
-            <div className="bp-line"></div>
+        <span className="detail-number">
+          01 / CONTROL
+        </span>
 
-            <div className="bp-card">
+        <h3>
+          DIGITAL
+          <br />
+          CONTROL
+          <br />
+          MODULE
+        </h3>
 
-                <span>ATS-03</span>
+        <p>
+          The integrated digital PID controller provides intuitive
+          operation, real-time temperature monitoring, and precise
+          closed-loop regulation.
+        </p>
 
-                <h4>Fluidized Chamber</h4>
+        <div className="detail-features">
 
-                <p>
-                    Provides rapid and highly uniform heat transfer
-                    using fluidized aluminum oxide media.
-                </p>
-
+          <div className="detail-feature">
+            <span>01</span>
+            <div>
+              <strong>Digital PID Control</strong>
+              <p>
+                Precise closed-loop temperature regulation.
+              </p>
             </div>
+          </div>
+
+          <div className="detail-feature">
+            <span>02</span>
+            <div>
+              <strong>Clear LED Display</strong>
+              <p>
+                Easy-to-read operating and status information.
+              </p>
+            </div>
+          </div>
 
         </div>
 
-        {/* ================================================= */}
-        {/* AIR FLOW */}
-        {/* ================================================= */}
+      </div>
 
-        <div className="blueprint-label airflow">
+    </div>
 
-            <div className="bp-dot"></div>
 
-            <div className="bp-line"></div>
+    {/* ================= DETAIL 02 ================= */}
 
-            <div className="bp-card">
+    <div className="product-detail-row reverse">
 
-                <span>ATS-04</span>
+      <div className="product-detail-image-wrap">
 
-                <h4>Precision Air Flow</h4>
+        <div className="product-detail-glow"></div>
 
-                <p>
-                    Engineered airflow system maintains consistent
-                    media fluidization for optimum performance.
-                </p>
+        <div className="product-detail-frame">
 
-            </div>
+          <div className="product-detail-grid"></div>
+
+          <Image
+            src="/assets/images/fluidized/airflow-control.jpg"
+            alt="Power and Air Flow Control"
+            width={700}
+            height={900}
+            className="product-detail-image"
+          />
+
+          <span className="image-index">
+            02
+          </span>
 
         </div>
 
-    </div>
+      </div>
 
-</div>
 
-</div>
+      <div className="product-detail-content">
 
-{/* ================= BOTTOM STRIP ================= */}
+        <span className="detail-number">
+          02 / AIRFLOW
+        </span>
 
-<div className="overview-bottom">
-
-    <div className="bottom-item">
-
-        <h3>Rapid Heat Transfer</h3>
-
-        <p>
-            Fluidized media delivers faster thermal response than
-            conventional dry heating systems.
-        </p>
-
-    </div>
-
-    <div className="bottom-item">
-
-        <h3>Uniform Temperature</h3>
+        <h3>
+          POWER &
+          <br />
+          AIR FLOW
+          <br />
+          CONTROL
+        </h3>
 
         <p>
-            Outstanding temperature consistency across the complete
-            working area.
+          A dedicated control interface provides independent power
+          switching and adjustable airflow control for the fluidized
+          system.
         </p>
+
+        <div className="detail-features">
+
+          <div className="detail-feature">
+            <span>01</span>
+            <div>
+              <strong>Adjustable Air Flow</strong>
+              <p>
+                Controlled airflow for consistent media fluidization.
+              </p>
+            </div>
+          </div>
+
+          <div className="detail-feature">
+            <span>02</span>
+            <div>
+              <strong>Integrated Flow Meter</strong>
+              <p>
+                Visual airflow indication during operation.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
-    <div className="bottom-item">
 
-        <h3>Industrial Reliability</h3>
+    {/* ================= DETAIL 03 ================= */}
+
+    <div className="product-detail-row">
+
+      <div className="product-detail-image-wrap">
+
+        <div className="product-detail-glow"></div>
+
+        <div className="product-detail-frame">
+
+          <div className="product-detail-grid"></div>
+
+          <Image
+            src="/assets/images/fluidized/lid-basket.jpg"
+            alt="Fluidized Bath Lid and Parts Basket"
+            width={900}
+            height={900}
+            className="product-detail-image"
+          />
+
+          <span className="image-index">
+            03
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div className="product-detail-content">
+
+        <span className="detail-number">
+          03 / HARDWARE
+        </span>
+
+        <h3>
+          LID &
+          <br />
+          PARTS
+          <br />
+          BASKET
+        </h3>
 
         <p>
-            Designed for continuous laboratory and production
-            environments.
+          The stainless-steel lid and removable parts basket provide
+          a practical setup for handling components during thermal
+          processing.
         </p>
+
+        <div className="detail-features">
+
+          <div className="detail-feature">
+            <span>01</span>
+            <div>
+              <strong>Stainless Construction</strong>
+              <p>
+                Durable hardware designed for repeated operation.
+              </p>
+            </div>
+          </div>
+
+          <div className="detail-feature">
+            <span>02</span>
+            <div>
+              <strong>Removable Parts Basket</strong>
+              <p>
+                Simplifies component placement and handling.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
-    <div className="bottom-item">
-
-        <h3>Safer Dry Heating</h3>
-
-        <p>
-            Eliminates molten salts while providing a cleaner and
-            safer operating process.
-        </p>
-
-    </div>
-
-</div>
+  </div>
 
 </section>
-        
 
 
 
+{/* =====================================================
+    PROCESS / TECHNOLOGY
+===================================================== */}
 
-{/* ================= VIDEO ================= */}
+<section className="process-section" id="process">
 
-<section className="video-section">
-
-<div className="video-header">
-
-<span>
-02 / PROCESS IN ACTION
-</span>
-
-<h2>
-
-SEE THE
-<br/>
-
-SYSTEM
-<br/>
-
-IN ACTION.
-
-</h2>
-
-<p>
-
-Watch how ATS Fluidized Temperature Baths deliver
-rapid heat transfer, precise temperature control,
-and industrial reliability.
-
-</p>
-
-</div>
+  {/* Background technical grid */}
+  <div className="process-grid"></div>
 
 
-<div className="video-wrapper">
+  {/* ================= HEADER ================= */}
+
+  <div className="process-header">
+
+    <div className="process-title">
+
+      <span className="process-tag">
+        02 / PROCESS TECHNOLOGY
+      </span>
+
+      <h2>
+        SEE HOW
+        <br />
+        THE SYSTEM
+        <br />
+        WORKS.
+      </h2>
+
+    </div>
+
+
+    <div className="process-intro">
+
+      <span>
+        FLUIDIZED TECHNOLOGY
+      </span>
+
+      <p>
+        A controlled fluidized thermal environment transfers
+        heat rapidly and uniformly, delivering precise and
+        repeatable temperature performance.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  {/* ================= MEDIA AREA ================= */}
+
+  <div className="process-media">
+
+    {/* LARGE VIDEO */}
+
+    <div className="process-video">
 
 <video
-
-autoPlay
-
-muted
-
-loop
-
-playsInline
-
-className="ats-video"
-
+  controls
+  muted
+  playsInline
+  preload="metadata"
+  className="process-video-player"
 >
-
-<source
-src="/assets/videos/fluidized-demo.mp4"
-type="video/mp4"
-/>
-
+  <source
+    src="/videos/MVI_6338.mp4"
+    type="video/mp4"
+  />
 </video>
 
-<div className="video-overlay"></div>
 
-</div>
+      {/* Video technical overlay */}
 
-<div className="video-features">
+      <div className="video-corner video-corner-top">
+        ATS / PROCESS DEMONSTRATION
+      </div>
 
-<div>
-
-<h3>600°C</h3>
-
-<span>MAXIMUM TEMPERATURE</span>
-
-</div>
-
-<div>
-
-<h3>FAST</h3>
-
-<span>HEAT TRANSFER</span>
-
-</div>
-
-<div>
-
-<h3>PID</h3>
-
-<span>DIGITAL CONTROL</span>
-
-</div>
-
-<div>
-
-<h3>USA</h3>
-
-<span>ENGINEERED</span>
-
-</div>
-
-</div>
-
-{/* ================= BOTTOM FEATURES ================= */}
-
-<div className="overview-bottom">
-
-    <div className="bottom-card">
-
-        <div className="bottom-icon">
-            01
-        </div>
-
-        <h3>Rapid Heat Transfer</h3>
-
-        <p>
-            Fluidized aluminum oxide media delivers significantly faster
-            and more uniform heat transfer than conventional dry heating
-            methods.
-        </p>
+      <div className="video-corner video-corner-bottom">
+        FLUIDIZED TEMPERATURE BATH
+      </div>
 
     </div>
 
 
-    <div className="bottom-card">
+    {/* ================= SIDE INFORMATION ================= */}
 
-        <div className="bottom-icon">
-            02
-        </div>
+    <div className="process-side">
 
-        <h3>Precision Temperature Control</h3>
+      <div className="process-side-image">
+
+        <Image
+          src="/assets/images/fluidized/hero-machine.png"
+          alt="Fluidized Temperature Bath"
+          width={700}
+          height={700}
+        />
+
+      </div>
+
+
+      <div className="process-side-content">
+
+        <span>
+          ATS / TECHNOLOGY
+        </span>
+
+        <h3>
+          HOW DOES A
+          <br />
+          FLUIDIZED BATH
+          <br />
+          WORK?
+        </h3>
 
         <p>
-            Advanced PID regulation continuously maintains stable process
-            temperatures with outstanding repeatability.
+          See fluidized temperature bath technology
+          operating as part of a real ATS thermal system.
         </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+ {/* =====================================================
+    SYSTEM CHARACTERISTICS
+===================================================== */}
+
+<div className="process-characteristics">
+
+  <div className="characteristics-heading">
+
+    <span>
+      SYSTEM CHARACTERISTICS
+    </span>
+
+    <p>
+      ENGINEERED FOR CONTROLLED THERMAL PERFORMANCE
+    </p>
+
+  </div>
+
+
+  <div className="characteristics-grid">
+
+    {/* 01 */}
+
+    <div className="characteristic">
+
+      <span className="characteristic-number">
+        01
+      </span>
+
+      <div>
+
+        <span className="characteristic-label">
+          THERMAL PERFORMANCE
+        </span>
+
+        <h4>
+          Rapid heat transfer
+        </h4>
+
+        <p>
+          A fluidized thermal environment provides
+          efficient and uniform heat transfer throughout
+          the working zone.
+        </p>
+
+      </div>
 
     </div>
 
 
-    <div className="bottom-card">
+    {/* 02 */}
 
-        <div className="bottom-icon">
-            03
-        </div>
+    <div className="characteristic">
 
-        <h3>Industrial Grade Construction</h3>
+      <span className="characteristic-number">
+        02
+      </span>
+
+      <div>
+
+        <span className="characteristic-label">
+          TEMPERATURE CONTROL
+        </span>
+
+        <h4>
+          Precise PID regulation
+        </h4>
 
         <p>
-            Built using premium stainless steel and high-quality
-            industrial components for continuous operation.
+          Digital closed-loop control maintains stable
+          operating conditions with accurate temperature
+          monitoring.
         </p>
+
+      </div>
 
     </div>
 
 
-    <div className="bottom-card">
+    {/* 03 */}
 
-        <div className="bottom-icon">
-            04
-        </div>
+    <div className="characteristic">
 
-        <h3>Cleaner Dry Heating</h3>
+      <span className="characteristic-number">
+        03
+      </span>
+
+      <div>
+
+        <span className="characteristic-label">
+          APPLICATION
+        </span>
+
+        <h4>
+          Continuous operation
+        </h4>
 
         <p>
-            Eliminates the handling of molten salts while providing a
-            safer, cleaner and more efficient heating process.
+          Designed for demanding industrial environments
+          where repeatable thermal processing is required.
         </p>
 
+      </div>
+
     </div>
+
+
+    {/* 04 */}
+
+    <div className="characteristic">
+
+      <span className="characteristic-number">
+        04
+      </span>
+
+      <div>
+
+        <span className="characteristic-label">
+          CONSTRUCTION
+        </span>
+
+        <h4>
+          Industrial build
+        </h4>
+
+        <p>
+          Robust construction and carefully selected
+          components support dependable long-term use.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div className="characteristics-footer">
+
+    <span>
+      ATS / FLUIDIZED TEMPERATURE BATH
+    </span>
+
+    <span>
+      PRECISION THERMAL SYSTEM
+    </span>
+
+  </div>
 
 </div>
 
