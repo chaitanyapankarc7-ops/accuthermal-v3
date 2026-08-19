@@ -310,9 +310,7 @@ footer {
   font-size: 11px;
 }
 
-/* =========================================
-   HOME PAGE SPECIFIC STYLES
-   ========================================= */
+
 
 .hero {
   min-height:650px;
@@ -1218,9 +1216,8 @@ footer {
   color: var(--red);
 }
 
-/* =========================================
-   PRODUCTS PAGE SPECIFIC STYLES
-   ========================================= */
+
+
 
 .product-stage {
   position: relative;
@@ -1651,9 +1648,7 @@ footer {
   color: var(--red);
 }
 
-/* =====================================================
-   PRODUCT PAGE — FTB TECHNICAL CATALOG
-   ===================================================== */
+
 
 .family-catalog {
   position: relative;
@@ -1841,9 +1836,8 @@ footer {
   letter-spacing: .14em;
 }
 
-/* ==================================================
-   THERMCAL PRODUCT FAMILY (PRODUCTS PAGE)
-   ================================================== */
+
+
 .thermcal-family {
   background: #f3f0e9;
   color: #0b1722;
@@ -2015,9 +2009,6 @@ footer {
   color: #536775;
 }
 
-/* =========================================
-   RESPONSIVE DESIGN (GLOBAL BREAKPOINTS)
-   ========================================= */
 
 @media (max-width: 900px) {
   .links {
@@ -2213,9 +2204,7 @@ footer {
 }
 
 
-/* ==========================================================
-   PRODUCTS PAGE — LAYOUT FIX
-   ========================================================== */
+
 
 /* Product hero */
 .hero {
@@ -2270,9 +2259,7 @@ footer {
     justify-content: center;
 }
 
-/* ==========================================================
-   PRODUCT PAGE CONTENT
-   ========================================================== */
+
 
 .family,
 .intro,
@@ -2309,9 +2296,7 @@ footer {
     height: auto;
 }
 
-/* ==========================================================
-   TABLET
-   ========================================================== */
+
 
 @media (max-width: 1000px) {
 
@@ -2333,9 +2318,6 @@ footer {
     }
 }
 
-/* ==========================================================
-   MOBILE
-   ========================================================== */
 
 @media (max-width: 650px) {
 
@@ -2360,9 +2342,7 @@ footer {
     }
 }
 
-/* ==================================================
-   PRODUCTS NAV DROPDOWN
-================================================== */
+
 
 .nav-dropdown {
     position: relative;
@@ -2526,9 +2506,6 @@ footer {
 .nav-dropdown-menu .dropdown-all:hover b {
     color: #00a7e8;
 }
-/* =========================================================
-   PRODUCT PAGE — VISUAL RHYTHM
-========================================================= */
 
 .family {
     position: relative;
@@ -2623,9 +2600,7 @@ footer {
   margin-top: 0;
 }
 
-/* =========================================================
-   FTB PRODUCT FAMILY PAGE
-========================================================= */
+
 
 .ftb-page {
   background: #f4f1ea;
@@ -3364,9 +3339,6 @@ footer {
 
 }
 
-/* =========================================================
-   FLUIDIZED TEMPERATURE BATH PRODUCT PAGE
-   ========================================================= */
 
 .ftb-page {
   background: #f5f5f2;
@@ -4100,9 +4072,7 @@ footer {
   }
 }
 
-/* ==========================================================
-   HAMBURGER & MOBILE MENU OVERLAY
-   ========================================================== */
+
 
 .hamburger {
   display: none;
@@ -4256,9 +4226,7 @@ footer {
   }
 }
 
-/* =========================================
-   SATISFIED CLIENTS & CUSTOMERS
-========================================= */
+
 .customers {
   padding: 120px 0;
   background: #fff;
@@ -4400,12 +4368,7 @@ footer {
   .customer-grid { grid-template-columns: repeat(2, 1fr); }
   .customer-logo { min-height: 84px; padding: 14px; }
 }
-<<<<<<< HEAD
 
-
-/* =========================================
-   CONTACT FORM PAGE
-========================================= */
 .form-hero {
   padding: 130px 0 70px;
   background: #071421;
@@ -4692,5 +4655,4 @@ footer {
 .industry:hover .industry-img img {
   transform: scale(1.08);
 }
-=======
->>>>>>> 762f87dd6f068ca2d414e777c743c7b29b0f1f8f
+
