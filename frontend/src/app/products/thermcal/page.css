@@ -1,0 +1,2234 @@
+/* =========================================================
+   THERMCAL PAGE
+========================================================= */
+
+.thermcal-page {
+    --thermcal-blue: #16558d;
+    --thermcal-light-blue: #20b8f5;
+    --thermcal-cyan: #24baf2;
+    --thermcal-red: #e51d3d;
+    --thermcal-dark: #071827;
+    --thermcal-text: #526274;
+    --thermcal-light: #f4f9fc;
+
+    background: #ffffff;
+    color: var(--thermcal-dark);
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.thermcal-container {
+    width: min(1380px, calc(100% - 120px));
+    margin: 0 auto;
+}
+
+.thermcal-section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--thermcal-cyan);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    margin-bottom: 55px;
+}
+
+.thermcal-section-label::before {
+    content: "";
+    width: 32px;
+    height: 1px;
+
+    background: var(--thermcal-cyan);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.thermcal-hero {
+    position: relative;
+
+    min-height: 760px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #124b7e 0%,
+            #16558d 48%,
+            #0d426f 100%
+        );
+
+    color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* Technical grid */
+
+.thermcal-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    pointer-events: none;
+}
+
+
+/* Decorative gradient */
+
+.thermcal-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    right: -180px;
+    bottom: -280px;
+
+    border-radius: 50%;
+
+    background: rgba(38,190,245,.16);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+
+.thermcal-hero-inner {
+    position: relative;
+
+    width: min(1500px, 100%);
+
+    min-height: 760px;
+
+    margin: auto;
+
+    padding: 0 70px;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.thermcal-breadcrumb {
+    position: absolute;
+
+    top: 68px;
+    left: 70px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #b6edff;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+}
+
+.thermcal-breadcrumb span {
+    width: 30px;
+    height: 1px;
+
+    background: var(--thermcal-cyan);
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.thermcal-hero-content {
+    position: absolute;
+
+    left: 70px;
+    top: 185px;
+
+    width: 560px;
+
+    z-index: 10;
+}
+
+
+.thermcal-eyebrow {
+    margin-bottom: 20px;
+
+    color: #b4ebff;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.thermcal-hero-content h1 {
+    margin: 0;
+
+    font-size: clamp(62px, 6vw, 88px);
+
+    line-height: .88;
+
+    font-weight: 800;
+
+    letter-spacing: -4px;
+
+    color: #ffffff;
+}
+
+
+.thermcal-hero-content h1 strong {
+    color: #39c5f7;
+}
+
+
+.thermcal-hero-content p {
+    width: 510px;
+
+    margin-top: 30px;
+
+    color: #e5f5ff;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.thermcal-actions {
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 34px;
+}
+
+
+.thermcal-btn-primary,
+.thermcal-btn-secondary {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 25px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: .8px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.thermcal-btn-primary {
+    background: var(--thermcal-red);
+
+    color: #ffffff;
+}
+
+
+.thermcal-btn-primary:hover {
+    transform: translateY(-3px);
+
+    background: #f52a49;
+
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.2);
+}
+
+
+.thermcal-btn-secondary {
+    border: 1px solid rgba(255,255,255,.42);
+
+    color: #ffffff;
+
+    background: transparent;
+}
+
+
+.thermcal-btn-secondary:hover {
+    background: #ffffff;
+
+    color: var(--thermcal-blue);
+}
+
+
+/* =========================================================
+   HERO PRODUCT
+========================================================= */
+
+.thermcal-hero-product {
+    position: absolute;
+
+    right: 15px;
+    top: 60px;
+
+    width: 720px;
+    height: 650px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 4;
+}
+
+
+/* Glow */
+
+.thermcal-product-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(85,215,255,.38),
+            rgba(85,215,255,0)
+        );
+
+    filter: blur(30px);
+}
+
+
+/* Main technical ring */
+
+.thermcal-product-ring {
+    position: absolute;
+
+    width: 570px;
+    height: 570px;
+
+    border-radius: 50%;
+
+    border:
+        1px dashed
+        rgba(255,255,255,.18);
+}
+
+
+/* Second ring */
+
+.thermcal-product-ring.ring-small {
+    width: 420px;
+    height: 420px;
+
+    border-color:
+        rgba(255,255,255,.1);
+}
+
+
+/* Product */
+
+.thermcal-main-image {
+    position: relative;
+
+    z-index: 5;
+
+    width: 520px;
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 35px 45px
+            rgba(0,0,0,.32)
+        );
+
+    transition:
+        transform .35s ease;
+}
+
+
+.thermcal-main-image:hover {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.thermcal-floating-card {
+    position: absolute;
+
+    z-index: 8;
+
+    min-width: 155px;
+
+    padding: 15px 18px;
+
+    background:
+        rgba(5,26,44,.72);
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    backdrop-filter: blur(14px);
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.16);
+}
+
+
+.thermcal-floating-card span {
+    display: block;
+
+    color: #7bdcff;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.thermcal-floating-card strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #ffffff;
+
+    font-size: 24px;
+    line-height: 1;
+}
+
+
+.thermcal-floating-card small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #c9eafa;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+.thermcal-card-top {
+    top: 115px;
+    right: 10px;
+}
+
+
+.thermcal-card-bottom {
+    bottom: 100px;
+    left: 25px;
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.thermcal-scroll {
+    position: absolute;
+
+    right: 70px;
+    bottom: 28px;
+
+    color: #b9eaff;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.thermcal-scroll span {
+    margin-left: 8px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.thermcal-intro {
+    position: relative;
+
+    padding: 145px 0;
+
+    background: #ffffff;
+}
+
+
+.thermcal-intro-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+
+.thermcal-intro-grid h2 {
+    margin: 0;
+
+    font-size: clamp(55px, 5vw, 78px);
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+}
+
+
+.thermcal-intro-grid h2 span {
+    color: var(--thermcal-blue);
+}
+
+
+.thermcal-intro-text {
+    padding-top: 8px;
+}
+
+
+.thermcal-intro-text p {
+    max-width: 590px;
+
+    margin: 0 0 25px;
+
+    color: var(--thermcal-text);
+
+    font-size: 18px;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   SERIES
+========================================================= */
+
+.thermcal-series {
+    padding: 100px 0;
+
+    background:
+        #f4f9fc;
+}
+
+
+.thermcal-section-heading {
+    display: grid;
+
+    grid-template-columns:
+        1fr 430px;
+
+    gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 75px;
+}
+
+
+.thermcal-section-heading > div > span {
+    color: var(--thermcal-blue);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.thermcal-section-heading h2 {
+    margin: 20px 0 0;
+
+    font-size: clamp(50px, 5vw, 74px);
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+}
+
+
+.thermcal-section-heading h2 strong {
+    color: var(--thermcal-blue);
+}
+
+
+.thermcal-section-heading > p {
+    color: var(--thermcal-text);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PRODUCT MODEL
+========================================================= */
+
+.thermcal-model {
+    display: grid;
+
+    grid-template-columns:
+        1.05fr .95fr;
+
+    min-height: 570px;
+
+    margin-bottom: 45px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        rgba(22,85,141,.08);
+
+    box-shadow:
+        0 30px 80px
+        rgba(7,24,39,.08);
+
+    overflow: hidden;
+}
+
+
+.thermcal-model-second {
+    grid-template-columns:
+        .95fr 1.05fr;
+}
+
+
+/* =========================================================
+   MODEL IMAGE
+========================================================= */
+
+.thermcal-model-image {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7fc,
+            #ffffff
+        );
+}
+
+
+.thermcal-image-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(22,85,141,.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(22,85,141,.055) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+}
+
+
+.thermcal-series-image {
+    position: relative;
+
+    z-index: 2;
+
+    width: 62%;
+    max-width: 400px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 30px 40px
+            rgba(0,0,0,.16)
+        );
+
+    transition:
+        transform .4s ease;
+}
+
+
+.thermcal-model-image:hover
+.thermcal-series-image {
+    transform: scale(1.025);
+}
+
+
+.thermcal-image-badge {
+    position: absolute;
+
+    left: 28px;
+    bottom: 28px;
+
+    z-index: 4;
+
+    padding: 14px 18px;
+
+    background:
+        rgba(7,24,39,.88);
+
+    color: #ffffff;
+}
+
+
+.thermcal-image-badge span {
+    display: block;
+
+    color: #66d8ff;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+.thermcal-image-badge strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   MODEL INFO
+========================================================= */
+
+.thermcal-model-info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 65px;
+}
+
+
+.thermcal-model-number {
+    color: var(--thermcal-blue);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.thermcal-model-info h3 {
+    margin: 15px 0 20px;
+
+    color: var(--thermcal-dark);
+
+    font-size: 55px;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+.thermcal-model-info > p {
+    max-width: 530px;
+
+    color: var(--thermcal-text);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* Stats */
+
+.thermcal-model-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-top: 38px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(7,24,39,.1);
+}
+
+
+.thermcal-model-stats div {
+    min-width: 0;
+}
+
+
+.thermcal-model-stats strong {
+    display: block;
+
+    color: var(--thermcal-blue);
+
+    font-size: 21px;
+}
+
+
+.thermcal-model-stats span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #788594;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* Tags */
+
+.thermcal-model-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 28px;
+}
+
+
+.thermcal-model-tags span {
+    padding: 8px 11px;
+
+    background: #eef7fb;
+
+    color: #35617c;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: .7px;
+}
+
+
+/* =========================================================
+   SECOND MODEL PLACEHOLDER
+========================================================= */
+
+.thermcal-model-placeholder {
+    position: relative;
+
+    min-height: 570px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dceff8,
+            #f8fcff
+        );
+
+    overflow: hidden;
+}
+
+
+.thermcal-placeholder-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(22,85,141,.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(22,85,141,.055) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+}
+
+
+.thermcal-placeholder-content {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+
+.thermcal-placeholder-content span {
+    display: block;
+
+    color: var(--thermcal-blue);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.thermcal-placeholder-content strong {
+    display: block;
+
+    margin-top: 12px;
+
+    color: var(--thermcal-dark);
+
+    font-size: 48px;
+
+    letter-spacing: -2px;
+}
+
+
+.thermcal-placeholder-content small {
+    display: block;
+
+    margin-top: 18px;
+
+    color: #728292;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.thermcal-features {
+    padding: 145px 0;
+
+    background: #ffffff;
+}
+
+
+.thermcal-features-header {
+    display: grid;
+
+    grid-template-columns:
+        1fr 430px;
+
+    gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 80px;
+}
+
+
+.thermcal-features-header h2 {
+    margin: 0;
+
+    font-size: clamp(55px, 5vw, 78px);
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+}
+
+
+.thermcal-features-header h2 span {
+    color: var(--thermcal-blue);
+}
+
+
+.thermcal-features-header p {
+    color: var(--thermcal-text);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.thermcal-feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        1px solid
+        rgba(7,24,39,.1);
+
+    border-left:
+        1px solid
+        rgba(7,24,39,.1);
+}
+
+
+.thermcal-feature {
+    min-height: 245px;
+
+    padding: 32px;
+
+    border-right:
+        1px solid
+        rgba(7,24,39,.1);
+
+    border-bottom:
+        1px solid
+        rgba(7,24,39,.1);
+
+    transition:
+        background .3s ease,
+        transform .3s ease;
+}
+
+
+.thermcal-feature:hover {
+    background: #f4faff;
+
+    transform: translateY(-4px);
+}
+
+
+.thermcal-feature > span {
+    color: var(--thermcal-cyan);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.thermcal-feature h3 {
+    margin: 35px 0 12px;
+
+    font-size: 22px;
+}
+
+
+.thermcal-feature p {
+    max-width: 300px;
+
+    color: var(--thermcal-text);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   APPLICATIONS
+========================================================= */
+
+.thermcal-applications {
+    padding: 130px 0;
+
+    background:
+        var(--thermcal-dark);
+
+    color: #ffffff;
+}
+
+
+.thermcal-applications-heading {
+    display: grid;
+
+    grid-template-columns:
+        1fr 470px;
+
+    gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 70px;
+}
+
+
+.thermcal-applications-heading h2 {
+    margin: 0;
+
+    font-size: clamp(55px, 5vw, 78px);
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+}
+
+
+.thermcal-applications-heading h2 span {
+    color: var(--thermcal-light-blue);
+}
+
+
+.thermcal-applications-heading p {
+    color: #b8c9d7;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.thermcal-application-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.thermcal-application-list span {
+    padding: 15px 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    color: #dcecf6;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease;
+}
+
+
+.thermcal-application-list span:hover {
+    background:
+        rgba(32,184,245,.12);
+
+    border-color:
+        rgba(32,184,245,.5);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SPECIFICATIONS
+========================================================= */
+
+.thermcal-specifications {
+    padding: 145px 0;
+
+    background: #f4f9fc;
+}
+
+
+.thermcal-specifications h2 {
+    margin: 0 0 65px;
+
+    font-size: clamp(55px, 5vw, 78px);
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+}
+
+
+.thermcal-specifications h2 span {
+    color: var(--thermcal-blue);
+}
+
+
+.thermcal-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 25px 70px
+        rgba(7,24,39,.07);
+}
+
+
+.thermcal-table-wrapper table {
+    width: 100%;
+
+    min-width: 850px;
+
+    border-collapse: collapse;
+}
+
+
+.thermcal-table-wrapper th {
+    padding: 22px 25px;
+
+    background: var(--thermcal-dark);
+
+    color: #ffffff;
+
+    text-align: left;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+.thermcal-table-wrapper th:not(:first-child) {
+    color: #69d9ff;
+}
+
+
+.thermcal-table-wrapper td {
+    padding: 20px 25px;
+
+    border-bottom:
+        1px solid
+        #e7eef3;
+
+    color: var(--thermcal-text);
+
+    font-size: 14px;
+}
+
+
+.thermcal-table-wrapper td:first-child {
+    color: var(--thermcal-dark);
+
+    font-weight: 700;
+}
+
+
+.thermcal-table-wrapper tr:last-child td {
+    border-bottom: none;
+}
+
+
+.thermcal-table-wrapper tbody tr:hover td {
+    background: #f7fbfd;
+}
+
+
+/* =========================================================
+   DOWNLOADS
+========================================================= */
+
+.thermcal-downloads {
+    padding: 130px 0;
+
+    background: #ffffff;
+}
+
+
+.thermcal-download-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
+}
+
+
+.thermcal-download-grid h2 {
+    margin: 0;
+
+    font-size: clamp(55px, 5vw, 75px);
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+}
+
+
+.thermcal-download-grid h2 span {
+    color: var(--thermcal-blue);
+}
+
+
+.thermcal-download-links {
+    display: flex;
+
+    flex-direction: column;
+
+    border-top:
+        1px solid
+        rgba(7,24,39,.12);
+}
+
+
+.thermcal-download-links a {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 25px 0;
+
+    border-bottom:
+        1px solid
+        rgba(7,24,39,.12);
+
+    text-decoration: none;
+}
+
+
+.thermcal-download-links a span {
+    color: #748291;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.thermcal-download-links a strong {
+    color: var(--thermcal-blue);
+
+    font-size: 11px;
+
+    letter-spacing: .7px;
+}
+
+
+.thermcal-download-links a:hover strong {
+    color: var(--thermcal-red);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.thermcal-cta {
+    position: relative;
+
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #124b7e,
+            #16558d
+        );
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+
+.thermcal-cta-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+}
+
+
+.thermcal-cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    padding: 60px 30px;
+}
+
+
+.thermcal-cta-content > span {
+    color: #9ee8ff;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.thermcal-cta-content h2 {
+    margin: 22px 0;
+
+    font-size: clamp(60px, 7vw, 100px);
+
+    line-height: .85;
+
+    letter-spacing: -4px;
+}
+
+
+.thermcal-cta-content h2 strong {
+    color: #32c2f7;
+}
+
+
+.thermcal-cta-content p {
+    max-width: 520px;
+
+    margin: 0 auto 32px;
+
+    color: #d8effa;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .thermcal-hero-content {
+        left: 50px;
+
+        width: 500px;
+    }
+
+    .thermcal-hero-product {
+        right: -100px;
+
+        transform: scale(.9);
+    }
+
+    .thermcal-container {
+        width: min(1100px, calc(100% - 80px));
+    }
+
+}
+
+
+@media (max-width: 950px) {
+
+    .thermcal-hero {
+        min-height: auto;
+    }
+
+    .thermcal-hero-inner {
+        min-height: auto;
+
+        padding:
+            100px 30px
+            70px;
+    }
+
+    .thermcal-breadcrumb {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        margin-bottom: 80px;
+    }
+
+    .thermcal-hero-content {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .thermcal-hero-content p {
+        width: auto;
+
+        max-width: 650px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .thermcal-actions {
+        justify-content: center;
+    }
+
+    .thermcal-hero-product {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        width: 100%;
+
+        height: 560px;
+
+        margin-top: 30px;
+
+        transform: none;
+    }
+
+    .thermcal-scroll {
+        display: none;
+    }
+
+    .thermcal-intro-grid,
+    .thermcal-section-heading,
+    .thermcal-features-header,
+    .thermcal-applications-heading,
+    .thermcal-download-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .thermcal-model,
+    .thermcal-model-second {
+        grid-template-columns: 1fr;
+    }
+
+    .thermcal-model-info {
+        padding: 50px 40px;
+    }
+
+    .thermcal-feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .thermcal-container {
+        width: calc(100% - 40px);
+    }
+
+    .thermcal-hero-inner {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .thermcal-breadcrumb {
+        margin-bottom: 60px;
+    }
+
+    .thermcal-hero-content h1 {
+        font-size: 55px;
+
+        letter-spacing: -2.5px;
+    }
+
+    .thermcal-hero-content p {
+        font-size: 15px;
+    }
+
+    .thermcal-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .thermcal-hero-product {
+        height: 430px;
+    }
+
+    .thermcal-main-image {
+        width: 360px;
+    }
+
+    .thermcal-product-ring {
+        width: 360px;
+        height: 360px;
+    }
+
+    .thermcal-product-ring.ring-small {
+        width: 270px;
+        height: 270px;
+    }
+
+    .thermcal-floating-card {
+        transform: scale(.8);
+    }
+
+    .thermcal-card-top {
+        right: -15px;
+    }
+
+    .thermcal-card-bottom {
+        left: -15px;
+    }
+
+    .thermcal-intro,
+    .thermcal-series,
+    .thermcal-features,
+    .thermcal-applications,
+    .thermcal-specifications,
+    .thermcal-downloads {
+        padding: 90px 0;
+    }
+
+    .thermcal-section-heading h2,
+    .thermcal-features-header h2,
+    .thermcal-applications-heading h2,
+    .thermcal-specifications h2,
+    .thermcal-download-grid h2 {
+        font-size: 50px;
+    }
+
+    .thermcal-model-info h3 {
+        font-size: 42px;
+    }
+
+    .thermcal-model-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .thermcal-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .thermcal-feature {
+        min-height: auto;
+    }
+
+    .thermcal-model-image,
+    .thermcal-model-placeholder {
+        min-height: 430px;
+    }
+
+    .thermcal-series-image {
+        width: 90%;
+    }
+
+    .thermcal-placeholder-content strong {
+        font-size: 38px;
+    }
+
+    .thermcal-download-links a {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .thermcal-cta {
+        min-height: 500px;
+    }
+
+    .thermcal-cta-content h2 {
+        font-size: 60px;
+    }
+
+}/* =========================================================
+   VIDEO / SYSTEM IN ACTION
+========================================================= */
+
+.thermcal-video-section {
+    position: relative;
+
+    padding: 145px 0 160px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SUBTLE TECHNICAL GRID
+========================================================= */
+
+.thermcal-video-section::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(22,85,141,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(22,85,141,.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   VIDEO HEADER
+========================================================= */
+
+.thermcal-video-header {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    gap: 100px;
+
+    align-items: end;
+
+    margin-bottom: 75px;
+}
+
+
+.thermcal-video-header h2 {
+    margin: 0;
+
+    max-width: 780px;
+
+    color: var(--thermcal-dark);
+
+    font-size: clamp(58px, 6vw, 90px);
+
+    line-height: .86;
+
+    letter-spacing: -5px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+.thermcal-video-header h2 span {
+    color: var(--thermcal-blue);
+}
+
+
+.thermcal-video-header p {
+    max-width: 500px;
+
+    margin: 0 0 8px;
+
+    color: var(--thermcal-text);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   VIDEO GRID
+========================================================= */
+
+/*
+   IMPORTANT:
+   Both video wrappers should sit inside the same
+   container. Desktop = 2 columns.
+*/
+
+.thermcal-video-wrapper {
+    position: relative;
+
+    display: inline-block;
+
+    vertical-align: top;
+
+    width: calc(50% - 18px);
+
+    margin-right: 32px;
+
+    overflow: hidden;
+
+    background: #071827;
+
+    border:
+        1px solid
+        rgba(7,24,39,.12);
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(7,24,39,.14);
+
+    isolation: isolate;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+
+/* Remove right gap from second video */
+
+.thermcal-video-wrapper:nth-of-type(2n + 1) {
+    margin-right: 0;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.thermcal-video {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    height: auto;
+
+    min-height: 0;
+
+    max-height: none;
+
+    object-fit: cover;
+
+    background: #071827;
+
+    outline: none;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.thermcal-video-wrapper:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 42px 100px
+        rgba(7,24,39,.20);
+}
+
+
+/* =========================================================
+   TECHNICAL BORDER
+========================================================= */
+
+.thermcal-video-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    border:
+        1px solid
+        rgba(32,184,245,.22);
+}
+
+
+/* =========================================================
+   MODEL LABEL
+========================================================= */
+
+.thermcal-video-label {
+    position: absolute;
+
+    left: 20px;
+    bottom: 20px;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    min-width: 165px;
+
+    padding: 13px 17px;
+
+    background:
+        rgba(7,24,39,.88);
+
+    border-left:
+        3px solid
+        var(--thermcal-light-blue);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-right:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.25);
+
+    pointer-events: none;
+}
+
+
+.thermcal-video-label span {
+    display: block;
+
+    color: #69d9ff;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+
+.thermcal-video-label strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MODEL NUMBER TAG
+========================================================= */
+
+.thermcal-video-wrapper::after {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    z-index: 5;
+
+    padding: 7px 10px;
+
+    background:
+        rgba(255,255,255,.92);
+
+    color:
+        var(--thermcal-blue);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    pointer-events: none;
+}
+
+
+/* First video */
+
+.thermcal-video-wrapper:first-of-type::after {
+    content: "THERMCAL400";
+}
+
+
+/* Second video */
+
+.thermcal-video-wrapper:nth-of-type(2)::after {
+    content: "THERMCAL130";
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.thermcal-video-section
+.thermcal-section-label {
+    position: relative;
+
+    margin-bottom: 38px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .thermcal-video-header {
+        grid-template-columns:
+            1.1fr .9fr;
+
+        gap: 130px;
+
+        margin-bottom: 85px;
+    }
+
+    .thermcal-video-header h2 {
+        font-size: 88px;
+    }
+
+    .thermcal-video-wrapper {
+        width: calc(50% - 20px);
+
+        margin-right: 36px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 999px) {
+
+    .thermcal-video-section {
+        padding: 110px 0;
+    }
+
+    .thermcal-video-header {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        margin-bottom: 55px;
+    }
+
+    .thermcal-video-header h2 {
+        font-size: clamp(52px, 8vw, 76px);
+
+        letter-spacing: -4px;
+    }
+
+    .thermcal-video-header p {
+        max-width: 650px;
+
+        font-size: 16px;
+    }
+
+    .thermcal-video-wrapper {
+        display: block;
+
+        width: 100%;
+
+        margin: 0 0 35px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .thermcal-video-section {
+        padding: 90px 0 100px;
+    }
+
+    .thermcal-video-header {
+        gap: 28px;
+
+        margin-bottom: 40px;
+    }
+
+    .thermcal-video-header h2 {
+        font-size: 48px;
+
+        line-height: .9;
+
+        letter-spacing: -3px;
+    }
+
+    .thermcal-video-header p {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .thermcal-video-wrapper {
+        width: 100%;
+
+        margin: 0 0 25px;
+
+        border-radius: 4px;
+    }
+
+    .thermcal-video {
+        aspect-ratio: 16 / 9;
+
+        min-height: 0;
+
+        object-fit: cover;
+    }
+
+    .thermcal-video-label {
+        left: 12px;
+
+        bottom: 12px;
+
+        min-width: 140px;
+
+        padding: 10px 12px;
+    }
+
+    .thermcal-video-label span {
+        font-size: 7px;
+    }
+
+    .thermcal-video-label strong {
+        font-size: 9px;
+    }
+
+}
+
+.thermcal-video-grid {
+    position: relative;
+
+    display: flex;
+
+    align-items: stretch;
+
+    gap: 32px;
+
+    width: 100%;
+}
+
+@media (max-width: 999px) {
+    .thermcal-video-grid {
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+    .thermcal-video-wrapper {
+        width: 100%;
+
+        margin: 0;
+    }
+}
