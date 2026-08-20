@@ -4,7 +4,7 @@
 
 
 
-.hero{
+.ftb-hero{
     position:relative;
     overflow:hidden;
     background:#071827;
@@ -1011,7 +1011,7 @@
 
 @media (max-width:768px){
 
-    .hero{
+    .ftb-hero{
         min-height:auto;
         padding:90px 0 60px;
     }

@@ -11,7 +11,7 @@ export default function FluidizedTemperatureBaths() {
 
       {/* ================= HERO ================= */}
 
-      <section className="hero">
+      <section className="ftb-hero">
 
         <div className="hero-grid"></div>
 

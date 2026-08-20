@@ -1,45 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "./component/Navbar";
 import Customers from "./component/Customers";
-const appData = [
-  [
-    "01",
-    "Thermal Cleaning",
-    "Remove organic material such as paint, oil, grease, epoxy, plastic, varnish, insulation, rubber and adhesives from industrial tooling and components using a controlled thermal process.",
-    ["TOOLING", "EXTRUSION", "MAINTENANCE"],
-  ],
-  [
-    "02",
-    "Nitinol Shape Setting",
-    "Use controlled thermal processing for Nitinol medical-device components, shape setting, annealing and other applications that require uniform heating.",
-    ["NITINOL", "MEDICAL DEVICES", "ANNEALING"],
-  ],
-  [
-    "03",
-    "Temperature Calibration",
-    "Create a stable thermal source for calibration and testing of temperature sensors, probes, thermometers, controllers and related instrumentation.",
-    ["SENSORS", "LABORATORY", "TESTING"],
-  ],
-  [
-    "04",
-    "Reactor Heating",
-    "Provide controlled heating around laboratory or process reactors used for research, development and temperature-dependent reactions.",
-    ["RESEARCH", "REACTORS", "PROCESS HEAT"],
-  ],
-  [
-    "05",
-    "Heat Treatment",
-    "Support annealing, tempering, shape setting and other thermal operations where rapid and uniform heating is required.",
-    ["ANNEALING", "MATERIALS", "PROCESSING"],
-  ],
-];
 
 export default function Home() {
   const [progressWidth, setProgressWidth] = useState("0%");
-  const [activeApp, setActiveApp] = useState(0);
   const [bubbles, setBubbles] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -48,10 +15,6 @@ export default function Home() {
     "/assets/images/pictures_2.jpeg",
     "/assets/images/pictures_3.jpeg"
   ];
-
-  const [menuOpen, setMenuOpen] = useState(false);
-  
-  const appTitleRef = useRef(null);
 
   // Scroll progress handler
   useEffect(() => {
@@ -86,24 +49,6 @@ export default function Home() {
     };
   }, []);
 
-  // URL parameters listener for active App selection
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      const appParam = params.get("app");
-      if (appParam !== null) {
-        const index = parseInt(appParam, 10);
-        if (!isNaN(index) && index >= 0 && index < appData.length) {
-          setActiveApp(index);
-          const el = document.getElementById("applications");
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-          }
-        }
-      }
-    }
-  }, []);
-
   // Generate fluidization bubbles
   useEffect(() => {
     const generatedBubbles = Array.from({ length: 65 }).map((_, i) => ({
@@ -124,19 +69,6 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [heroImages.length]);
 
-  // Animate app title on active tab switch
-  useEffect(() => {
-    if (appTitleRef.current) {
-      appTitleRef.current.animate(
-        [
-          { opacity: 0, transform: "translateY(12px)" },
-          { opacity: 1, transform: "none" },
-        ],
-        { duration: 350 }
-      );
-    }
-  }, [activeApp]);
-
   // Card 3D tilt handler
   const handleMouseMove = (e) => {
     const el = e.currentTarget;
@@ -150,13 +82,11 @@ export default function Home() {
     e.currentTarget.style.transform = "";
   };
 
-  const currentApp = appData[activeApp];
-
   return (
     <>
       <div className="progress" style={{ width: progressWidth }}></div>
       
-      <Navbar setActiveApp={setActiveApp} />
+      <Navbar />
 
       <header className="hero">
         <div className="wrap hero-inner">
@@ -364,24 +294,28 @@ export default function Home() {
                 title: "Tool & Parts Cleaning",
                 img: "/assets/images/tools/Tool%20%26%20Parts%20Cleaning.jpg",
                 desc: "Accurate Thermal Systems Fluidized Temperature Baths offer fast and labor-efficient removal of all organic-based material from tooling and hardware.",
+                link: "/applications/thermal-cleaning",
               },
               {
                 num: "02",
                 title: "Nitinol Shape Setting",
                 img: "/assets/images/tools/heat-treatment-225x225.png",
                 desc: "Unmatched thermal performance and safety for medical device shape setting, heat treatment, and annealing of devices and components.",
+                link: "/applications/nitinol-shape-setting",
               },
               {
                 num: "03",
                 title: "Reactor Heating",
                 img: "/assets/images/tools/reactor-heating-225x225.png",
                 desc: "Heating of laboratory and industrial reactors in both corporate and academic settings for research and development, process, and analysis work.",
+                link: "/applications/reactor-heating",
               },
               {
                 num: "04",
                 title: "Temperature Calibration",
                 img: "/assets/images/tools/calobrationp-225x225.png",
                 desc: "We offer a choice of temperature sources for calibrating temperature sensors, thermometers, indicators, systems, and probes.",
+                link: "/applications/temperature-calibration",
               },
             ].map((ind) => (
               <article key={ind.num} className="industry">
@@ -391,9 +325,9 @@ export default function Home() {
                 <small className="mono">{ind.num}</small>
                 <h3>{ind.title}</h3>
                 <p>{ind.desc}</p>
-                <a href="/#contact" className="industry-link">
+                <Link href={ind.link} className="industry-link">
                   LEARN MORE <span>&#8594;</span>
-                </a>
+                </Link>
               </article>
             ))}
           </div>
