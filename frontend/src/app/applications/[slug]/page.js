@@ -46,13 +46,13 @@ export default function ApplicationDetail() {
       {/* HERO */}
       <header className="app-detail-hero">
         <div className="wrap">
-          <nav className="app-breadcrumb">
+          <div className="app-breadcrumb">
             <Link href="/">Home</Link>
             <span>/</span>
             <Link href="/applications">Applications</Link>
             <span>/</span>
             <span className="active">{app.title}</span>
-          </nav>
+          </div>
           <div className="app-detail-hero-content">
             <h1>{app.title}</h1>
             <div className="app-detail-tags">

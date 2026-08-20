@@ -390,3 +390,22 @@
     flex-direction: column;
   }
 }
+
+.app-breadcrumb {
+    position: relative;
+    width: auto;
+    height: auto;
+    min-height: 0;
+
+    background: transparent;
+
+    padding: 0;
+    margin-bottom: 32px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font: 500 12px "IBM Plex Mono", monospace;
+    letter-spacing: .08em;
+}
