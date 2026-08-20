@@ -3,21 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export default function Navbar({ activePage, setActiveApp }) {
+export default function Navbar({ activePage }) {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleAppClick = (appIndex) => {
-    setMenuOpen(false);
-    if (setActiveApp) {
-      setActiveApp(appIndex);
-      const el = document.getElementById("applications");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      window.location.href = `/?app=${appIndex}`;
-    }
-  };
 
   return (
     <>
@@ -66,38 +53,44 @@ export default function Navbar({ activePage, setActiveApp }) {
 
             {/* APPLICATIONS DROPDOWN */}
             <div className="nav-dropdown">
-              <Link href="/#applications" className={activePage === "applications" ? "active" : ""}>
+              <Link href="/applications" className={activePage === "applications" ? "active" : ""}>
                 APPLICATIONS <span className="nav-chevron">⌄</span>
               </Link>
               <div className="nav-dropdown-menu">
-                <a href="#applications" onClick={(e) => { e.preventDefault(); handleAppClick(0); }}>
+                <Link href="/applications/thermal-cleaning">
                   <span>01</span>
                   <div>
                     <b>Thermal Cleaning</b>
                     <small>Remove plastics and organic compounds</small>
                   </div>
-                </a>
-                <a href="#applications" onClick={(e) => { e.preventDefault(); handleAppClick(1); }}>
+                </Link>
+                <Link href="/applications/nitinol-shape-setting">
                   <span>02</span>
                   <div>
                     <b>Nitinol Shape Setting</b>
                     <small>Controlled heating for medical devices</small>
                   </div>
-                </a>
-                <a href="#applications" onClick={(e) => { e.preventDefault(); handleAppClick(3); }}>
+                </Link>
+                <Link href="/applications/reactor-heating">
                   <span>03</span>
                   <div>
                     <b>Reactor Heating</b>
                     <small>Thermal support for process vessels</small>
                   </div>
-                </a>
-                <a href="#applications" onClick={(e) => { e.preventDefault(); handleAppClick(2); }}>
+                </Link>
+                <Link href="/applications/temperature-calibration">
                   <span>04</span>
                   <div>
                     <b>Temperature Calibration</b>
                     <small>Stable environments for sensors</small>
                   </div>
-                </a>
+                </Link>
+                <Link href="/applications">
+                  <span>&#8594;</span>
+                  <div>
+                    <b>View All Applications</b>
+                  </div>
+                </Link>
               </div>
             </div>
 
@@ -170,12 +163,13 @@ export default function Navbar({ activePage, setActiveApp }) {
           <Link href="/products/fluidized-temperature-baths" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Fluidized Temperature Baths</Link>
           <Link href="/products/thermcal" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Dry Block Calibrators</Link>
           <Link href="/products/hepa-air-filtration" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>HEPA Filtration</Link>
-          
+
           <span className="mobile-header-link">Applications</span>
-          <a href="#" className="mobile-sub-link" onClick={(e) => { e.preventDefault(); handleAppClick(0); }}>Thermal Cleaning</a>
-          <a href="#" className="mobile-sub-link" onClick={(e) => { e.preventDefault(); handleAppClick(1); }}>Nitinol Shape Setting</a>
-          <a href="#" className="mobile-sub-link" onClick={(e) => { e.preventDefault(); handleAppClick(3); }}>Reactor Heating</a>
-          <a href="#" className="mobile-sub-link" onClick={(e) => { e.preventDefault(); handleAppClick(2); }}>Temperature Calibration</a>
+          <Link href="/applications/thermal-cleaning" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Thermal Cleaning</Link>
+          <Link href="/applications/nitinol-shape-setting" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Nitinol Shape Setting</Link>
+          <Link href="/applications/reactor-heating" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Reactor Heating</Link>
+          <Link href="/applications/temperature-calibration" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Temperature Calibration</Link>
+          <Link href="/applications" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>View All Applications</Link>
 
           <span className="mobile-header-link">Navigation</span>
           <Link href="/#contact" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Contact</Link>
@@ -187,7 +181,7 @@ export default function Navbar({ activePage, setActiveApp }) {
           <Link href="/#systems" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Calibration Services</Link>
           <Link href="/#resources" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Resources</Link>
           <Link href="/#about" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>About</Link>
-          
+
           <Link href="/form" className="mobile-cta" onClick={() => setMenuOpen(false)}>GET A QUOTE</Link>
         </div>
       </div>
