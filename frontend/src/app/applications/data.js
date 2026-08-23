@@ -26,6 +26,41 @@ export const applications = [
       { name: "Fluidized Temperature Baths", link: "/products/fluidized-temperature-baths" },
       { name: "HEPA Air Filtration", link: "/products/hepa-air-filtration" },
     ],
+    beforeAfter: [
+      {
+        caption: "Sample 01",
+        before: {
+          src: "/assets/images/before-after/before-1.jpg",
+          alt: "Customer tooling before thermal cleaning",
+        },
+        after: {
+          src: "/assets/images/before-after/after-1.jpg",
+          alt: "Customer tooling after thermal cleaning",
+        },
+      },
+      {
+        caption: "Sample 02",
+        before: {
+          src: "/assets/images/before-after/before-2.jpg",
+          alt: "Customer part before thermal cleaning",
+        },
+        after: {
+          src: "/assets/images/before-after/after-2.jpg",
+          alt: "Customer part after thermal cleaning",
+        },
+      },
+      {
+        caption: "Sample 03",
+        before: {
+          src: "/assets/images/before-after/before-3.jpg",
+          alt: "Customer component before thermal cleaning",
+        },
+        after: {
+          src: "/assets/images/before-after/after-3.jpg",
+          alt: "Customer component after thermal cleaning",
+        },
+      },
+    ],
     customerCategory: "thermal-cleaning",
     ctaTitle: "Complimentary Sample Cleaning",
     ctaText: "Send us an example of your tooling for a complimentary cleaning. We\u2019ll perform a sample cleaning, produce a video of your part being cleaned, and ship it back within two days of receipt.",

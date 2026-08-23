@@ -1,0 +1,55 @@
+/* =========================================
+   BEFORE / AFTER GALLERY (multi-sample)
+========================================= */
+
+.bag {
+  width: 100%;
+}
+
+.bag-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.bag-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.bag-arrow {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ccd5d9;
+  color: var(--night, #071421);
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.bag-arrow:hover {
+  border-color: var(--red, #d91f38);
+  color: var(--red, #d91f38);
+}
+
+.bag-arrow:active {
+  transform: scale(0.94);
+}
+
+.bag-arrow:focus-visible {
+  outline: 3px solid var(--blue, #00a7e8);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .bag-arrow {
+    width: 38px;
+    height: 38px;
+  }
+}
