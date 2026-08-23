@@ -88,7 +88,7 @@ export default function Customers() {
     <section className="customers" id="customers">
       <div className="wrap">
         <div className="customers-head reveal">
-          <div className="eyebrow mono">03 · Customers</div>
+          <div className="eyebrow mono">Customers</div>
           <h2>Satisfied Clients &amp; Customers</h2>
           <p>
             From medical device manufacturing to thermal cleaning and temperature

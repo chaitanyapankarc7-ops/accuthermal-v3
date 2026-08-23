@@ -30,10 +30,10 @@ export default function ApplicationDetail() {
       <>
         <Navbar />
         <div style={{ padding: "200px 0", textAlign: "center" }}>
-          <h1>Application not found</h1>
-          <Link href="/applications" className="btn primary" style={{ marginTop: "20px" }}>
-            View All Applications
-          </Link>
+        <h1>Application not found</h1>
+        <Link href="/" className="btn primary" style={{ marginTop: "20px" }}>
+          Back to Home
+        </Link>
         </div>
       </>
     );
@@ -49,8 +49,6 @@ export default function ApplicationDetail() {
           <div className="app-breadcrumb">
             <Link href="/">Home</Link>
             <span>/</span>
-            <Link href="/applications">Applications</Link>
-            <span>/</span>
             <span className="active">{app.title}</span>
           </div>
           <div className="app-detail-hero-content">
@@ -64,7 +62,7 @@ export default function ApplicationDetail() {
               <Link href="/form" className="btn primary" style={{ background: "#fff", color: "var(--red)" }}>
                 Request a Quote &#8594;
               </Link>
-              <Link href="/products" className="btn" style={{ borderColor: "rgba(255,255,255,0.4)", color: "#fff" }}>
+              <Link href="/products/fluidized-temperature-baths" className="btn" style={{ borderColor: "rgba(255,255,255,0.4)", color: "#fff" }}>
                 View Products
               </Link>
             </div>
