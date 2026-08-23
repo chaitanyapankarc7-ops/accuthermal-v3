@@ -1,113 +1,154 @@
 "use client";
 
+import { useState } from "react";
 import "./page.css";
 import Navbar from "../../component/Navbar";
 import Image from "next/image";
 
+
 export default function FluidizedTemperatureBaths() {
+   const [videoPlaying, setVideoPlaying] = useState(false);
+
   return (
     <>
       <Navbar />
 
-      {/* ================= HERO ================= */}
+     {/* =====================================================
+    FLUIDIZED TEMPERATURE BATH — PRODUCT HERO
+===================================================== */}
 
-      <section className="ftb-hero">
+<section className="ftb-product-hero-new">
 
-        <div className="hero-grid"></div>
+  <div className="ftb-hero-grid"></div>
 
-        <div className="hero-container">
+  <div className="ftb-hero-inner">
 
-          {/* LEFT */}
+    {/* LEFT CONTENT */}
+    <div className="ftb-hero-content">
 
-          <div className="hero-left">
+      <span className="ftb-hero-kicker">
+        THERMAL PROCESSING SYSTEMS
+      </span>
 
-            <span className="hero-tag">
-              ACCURATE THERMAL SYSTEMS
-            </span>
+      <h1>
+        Fluidized
+        <br />
+        Temperature
+        <br />
+        <span>Baths.</span>
+      </h1>
 
-            <h1>
-              FLUIDIZED
-              <br />
-              TEMPERATURE
-              <br />
-              <span>BATHS</span>
-            </h1>
+      <p>
+        Precision fluidized temperature baths engineered for
+        rapid, uniform, and controlled thermal processing,
+        cleaning, calibration, testing and specialized
+        industrial applications.
+      </p>
 
-            <p>
-              Precision engineered thermal processing equipment delivering
-              rapid heat transfer, exceptional temperature uniformity and
-              industrial reliability.
-            </p>
+      <div className="ftb-hero-buttons">
 
-            <div className="hero-buttons">
+        <a
+          href="#overview"
+          className="ftb-hero-primary"
+        >
+          EXPLORE MODELS
+          <span>→</span>
+        </a>
 
-              <a href="#overview" className="btn-primary">
-                Explore Models
-              </a>
+        <a
+          href="/form"
+          className="ftb-hero-secondary"
+        >
+          REQUEST A QUOTE
+        </a>
 
-              <a href="#contact" className="btn-secondary">
-                Request Quote
-              </a>
+      </div>
 
-            </div>
+    </div>
 
-            <div className="hero-stats">
 
-              <div className="stat">
-                <h2>600°C</h2>
-                <span>Maximum Temperature</span>
-              </div>
+    {/* RIGHT PRODUCT VISUAL */}
+    <div className="ftb-hero-visual">
 
-              <div className="stat">
-                <h2>8</h2>
-                <span>Available Models</span>
-              </div>
+      {/* Technical rings */}
 
-              <div className="stat">
-                <h2>±1°C</h2>
-                <span>Temperature Stability</span>
-              </div>
+      <div className="ftb-ring ftb-ring-1"></div>
+      <div className="ftb-ring ftb-ring-2"></div>
+      <div className="ftb-ring ftb-ring-3"></div>
 
-            </div>
+      {/* Product image */}
 
-          </div>
+      <Image
+        src="/assets/images/fluidized/hero-machine.png"
+        alt="Fluidized Temperature Bath"
+        width={720}
+        height={720}
+        className="ftb-hero-machine"
+        priority
+      />
 
-          {/* RIGHT */}
 
-          <div className="hero-right">
+      {/* TOP SPEC */}
 
-            <div className="glow"></div>
+      <div className="ftb-floating-card ftb-temp-card">
 
-            <div className="circle circle1"></div>
-            <div className="circle circle2"></div>
-            <div className="circle circle3"></div>
+        <span>
+          FTB SERIES
+        </span>
 
-            <div className="floating-card card1">
-              PID CONTROL
-            </div>
+        <strong>
+          600°C
+        </strong>
 
-            <div className="floating-card card2">
-              STAINLESS STEEL
-            </div>
+        <small>
+          MAXIMUM TEMPERATURE
+        </small>
 
-            <div className="floating-card card3">
-              MADE IN USA
-            </div>
+      </div>
 
-            <Image
-              src="/assets/images/fluidized/hero-machine.png"
-              alt="Fluidized Temperature Bath"
-              width={650}
-              height={650}
-              className="hero-machine"
-              priority
-            />
 
-          </div>
+      {/* BOTTOM SPEC */}
 
-        </div>
+      <div className="ftb-floating-card ftb-stability-card">
 
-      </section>
+        <span>
+          PRECISION
+        </span>
+
+        <strong>
+          ±1°C
+        </strong>
+
+        <small>
+          TEMPERATURE STABILITY
+        </small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  {/* BOTTOM META */}
+
+  <div className="ftb-hero-bottom">
+
+    <span>
+      ATS / FLUIDIZED TEMPERATURE BATH
+    </span>
+
+    <span>
+      600°C MAXIMUM
+    </span>
+
+    <span>
+      SCROLL TO EXPLORE ↓
+    </span>
+
+  </div>
+
+</section>
 {/* ================= PRODUCT DETAILS ================= */}
 
 <section className="product-details-section" id="overview">
@@ -378,6 +419,147 @@ export default function FluidizedTemperatureBaths() {
 
 </section>
 
+{/* =====================================================
+    FLUIDIZED TEMPERATURE BATH — PRODUCT FEATURE
+===================================================== */}
+
+<section className="ftb-feature-section">
+
+  <div className="ftb-feature-panel">
+
+    {/* TECHNICAL GRID */}
+    <div className="ftb-feature-grid"></div>
+
+    {/* PRODUCT IMAGE RINGS */}
+    <div className="ftb-feature-ring ftb-feature-ring-1"></div>
+    <div className="ftb-feature-ring ftb-feature-ring-2"></div>
+    <div className="ftb-feature-ring ftb-feature-ring-3"></div>
+
+
+    {/* =================================================
+        LEFT CONTENT
+    ================================================= */}
+
+    <div className="ftb-feature-content">
+
+      <span className="ftb-feature-kicker">
+        ATS / FTB SERIES
+      </span>
+
+      <h2>
+        Fluidized
+        <br />
+        Temperature
+        <br />
+        Baths
+      </h2>
+
+      <p>
+        Engineered thermal systems for controlled
+        heating, cleaning, calibration, testing and
+        specialized industrial processing.
+      </p>
+
+    </div>
+
+
+    {/* =================================================
+        CENTER PRODUCT
+    ================================================= */}
+
+    <div className="ftb-feature-product">
+
+      <div className="ftb-feature-crosshair horizontal"></div>
+      <div className="ftb-feature-crosshair vertical"></div>
+
+      <Image
+        src="/assets/images/fluidized/hero-machine.png"
+        alt="Fluidized Temperature Bath"
+        width={700}
+        height={700}
+        className="ftb-feature-machine"
+      />
+
+    </div>
+
+
+    {/* =================================================
+        RIGHT APPLICATION MATRIX
+    ================================================= */}
+
+    <div className="ftb-feature-applications">
+
+      <span className="ftb-app-kicker">
+        APPLICATION MATRIX
+      </span>
+
+
+      <div className="ftb-app-row">
+
+        <span>01</span>
+
+        <strong>
+          Thermal Cleaning
+        </strong>
+
+      </div>
+
+
+      <div className="ftb-app-row">
+
+        <span>02</span>
+
+        <strong>
+          Temperature Calibration
+        </strong>
+
+      </div>
+
+
+      <div className="ftb-app-row">
+
+        <span>03</span>
+
+        <strong>
+          Heat Treatment
+        </strong>
+
+      </div>
+
+
+      <div className="ftb-app-row">
+
+        <span>04</span>
+
+        <strong>
+          Reactor Heating
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    {/* =================================================
+        BOTTOM META BAR
+    ================================================= */}
+
+    <div className="ftb-feature-footer">
+
+      <span>
+        ATS / FLUIDIZED TEMPERATURE BATH
+      </span>
+
+      <span>
+        08 MODELS AVAILABLE →
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 
 {/* =====================================================
@@ -428,84 +610,170 @@ export default function FluidizedTemperatureBaths() {
   </div>
 
 
-  {/* ================= MEDIA AREA ================= */}
+{/* ================= MEDIA AREA ================= */}
 
-  <div className="process-media">
+<div className="process-media">
 
-    {/* LARGE VIDEO */}
+  {/* =====================================================
+      LARGE VIDEO
+  ===================================================== */}
 
-    <div className="process-video">
+  <div className={`process-video ${videoPlaying ? "video-is-playing" : ""}`}>
 
-<video
-  controls
-  muted
-  playsInline
-  preload="metadata"
-  className="process-video-player"
->
-  <source
-    src="/videos/MVI_6338.mp4"
-    type="video/mp4"
-  />
-</video>
-
-
-      {/* Video technical overlay */}
-
-      <div className="video-corner video-corner-top">
-        ATS / PROCESS DEMONSTRATION
-      </div>
-
-      <div className="video-corner video-corner-bottom">
-        FLUIDIZED TEMPERATURE BATH
-      </div>
-
-    </div>
+    <video
+      controls
+      muted
+      playsInline
+      preload="metadata"
+      className="process-video-player"
+      onPlay={() => setVideoPlaying(true)}
+    >
+      <source
+        src="/videos/MVI_6338.mp4"
+        type="video/mp4"
+      />
+    </video>
 
 
-    {/* ================= SIDE INFORMATION ================= */}
+    {/* =================================================
+        VIDEO INTRO / POSTER
+    ================================================= */}
 
-    <div className="process-side">
+    {!videoPlaying && (
+      <div
+        className="process-video-intro"
+        onClick={(e) => {
+          const video = e.currentTarget
+            .closest(".process-video")
+            ?.querySelector("video");
 
-      <div className="process-side-image">
+          if (video) {
+            video.play();
+          }
+        }}
+      >
 
-        <Image
-          src="/assets/images/fluidized/hero-machine.png"
-          alt="Fluidized Temperature Bath"
-          width={700}
-          height={700}
-        />
+        {/* Technical label */}
 
-      </div>
-
-
-      <div className="process-side-content">
-
-        <span>
-          ATS / TECHNOLOGY
+        <span className="video-intro-kicker">
+          ATS / FLUIDIZED TECHNOLOGY
         </span>
+
+
+        {/* Main heading */}
 
         <h3>
           HOW DOES A
           <br />
           FLUIDIZED BATH
           <br />
-          WORK?
+          <span>WORK?</span>
         </h3>
 
-        <p>
-          See fluidized temperature bath technology
-          operating as part of a real ATS thermal system.
-        </p>
+
+        {/* Play button */}
+
+        <button
+          type="button"
+          className="video-intro-play"
+          aria-label="Play fluidized temperature bath video"
+        >
+          <span className="video-play-icon">
+            ▶
+          </span>
+        </button>
+
+
+        {/* ATS Logo */}
+
+        <div className="video-intro-logo">
+
+          <Image
+            src="/assets/images/ats-logo.png"
+            alt="Accurate Thermal Systems"
+            width={150}
+            height={70}
+          />
+
+        </div>
+
+
+        {/* Bottom metadata */}
+
+        <div className="video-intro-footer">
+
+          <span>
+            ATS / FLUIDIZED TEMPERATURE BATH
+          </span>
+
+          <span>
+            WATCH PROCESS ↓
+          </span>
+
+        </div>
 
       </div>
+    )}
 
+
+    {/* Video technical overlay */}
+
+    <div className="video-corner video-corner-top">
+      ATS / PROCESS DEMONSTRATION
+    </div>
+
+    <div className="video-corner video-corner-bottom">
+      FLUIDIZED TEMPERATURE BATH
     </div>
 
   </div>
 
 
- {/* =====================================================
+  {/* =====================================================
+      SIDE INFORMATION
+  ===================================================== */}
+
+  <div className="process-side">
+
+    <div className="process-side-image">
+
+      <Image
+        src="/assets/images/fluidized/hero-machine.png"
+        alt="Fluidized Temperature Bath"
+        width={700}
+        height={700}
+      />
+
+    </div>
+
+
+    <div className="process-side-content">
+
+      <span>
+        ATS / TECHNOLOGY
+      </span>
+
+      <h3>
+        HOW DOES A
+        <br />
+        FLUIDIZED BATH
+        <br />
+        WORK?
+      </h3>
+
+      <p>
+        See fluidized temperature bath technology
+        operating as part of a real ATS thermal system.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+{/* =====================================================
     SYSTEM CHARACTERISTICS
 ===================================================== */}
 
@@ -642,6 +910,8 @@ export default function FluidizedTemperatureBaths() {
   </div>
 
 
+  {/* Characteristics footer */}
+
   <div className="characteristics-footer">
 
     <span>
@@ -654,7 +924,236 @@ export default function FluidizedTemperatureBaths() {
 
   </div>
 
+
 </div>
+
+
+</section>
+{/* =====================================================
+    DOWNLOADS / PRODUCT DOCUMENTATION
+===================================================== */}
+
+<section className="ftb-downloads-section" id="downloads">
+
+  <div className="ftb-downloads-grid"></div>
+
+  <div className="ftb-downloads-container">
+
+    {/* LEFT SIDE */}
+
+    <div className="ftb-downloads-intro">
+
+      <div className="ftb-downloads-tag">
+        <span></span>
+        06 / RESOURCES
+      </div>
+
+      <h2>
+        TECHNICAL
+        <br />
+        <span>DOCUMENTATION.</span>
+      </h2>
+
+      <p>
+        Access product brochures, technical documentation,
+        safety information and application resources for
+        ATS Fluidized Temperature Bath systems.
+      </p>
+
+      <div className="ftb-downloads-meta">
+        <span>ATS / FLUIDIZED TEMPERATURE BATH</span>
+        <span>DOCUMENT LIBRARY</span>
+      </div>
+
+    </div>
+
+
+    {/* RIGHT SIDE */}
+
+    <div className="ftb-downloads-list">
+
+      {/* DOCUMENT 01 */}
+
+      <a
+        href="/downloads/FTBL12-FTBL26-FTBL12W-fluidized-bath-brochure.pdf"
+        className="ftb-download-item"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div className="ftb-download-number">
+          01
+        </div>
+
+        <div className="ftb-download-info">
+          <span>PRODUCT BROCHURE</span>
+          <h3>
+            FTB L12 / FTB L26 / FTB L12W
+          </h3>
+          <p>
+            Fluidized Temperature Bath Series
+          </p>
+        </div>
+
+        <div className="ftb-download-action">
+          <span>PDF</span>
+          <strong>↓</strong>
+        </div>
+
+      </a>
+
+
+      {/* DOCUMENT 02 */}
+
+      <a
+        href="/downloads/FTBLL27-FTBLL47-fluidized-bath-brochure.pdf"
+        className="ftb-download-item"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div className="ftb-download-number">
+          02
+        </div>
+
+        <div className="ftb-download-info">
+          <span>PRODUCT BROCHURE</span>
+          <h3>
+            FTB LL27 / FTB LL47
+          </h3>
+          <p>
+            Fluidized Temperature Bath Series
+          </p>
+        </div>
+
+        <div className="ftb-download-action">
+          <span>PDF</span>
+          <strong>↓</strong>
+        </div>
+
+      </a>
+
+
+      {/* DOCUMENT 03 */}
+
+      <a
+        href="/downloads/FTBSL15-FTBSL25-fluidized-bath-brochure.pdf"
+        className="ftb-download-item"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div className="ftb-download-number">
+          03
+        </div>
+
+        <div className="ftb-download-info">
+          <span>PRODUCT BROCHURE</span>
+          <h3>
+            FTB SL15 / FTB SL25
+          </h3>
+          <p>
+            Fluidized Temperature Bath Series
+          </p>
+        </div>
+
+        <div className="ftb-download-action">
+          <span>PDF</span>
+          <strong>↓</strong>
+        </div>
+
+      </a>
+
+
+      {/* DOCUMENT 04 */}
+
+      <a
+        href="/downloads/FTBSL6-fluidized-bath-brochure.pdf"
+        className="ftb-download-item"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div className="ftb-download-number">
+          04
+        </div>
+
+        <div className="ftb-download-info">
+          <span>PRODUCT BROCHURE</span>
+          <h3>
+            FTB SL6
+          </h3>
+          <p>
+            Fluidized Temperature Bath Documentation
+          </p>
+        </div>
+
+        <div className="ftb-download-action">
+          <span>PDF</span>
+          <strong>↓</strong>
+        </div>
+
+      </a>
+
+
+      {/* DOCUMENT 05 */}
+
+      <a
+        href="/downloads/fume-ventilation-diagrams.pdf"
+        className="ftb-download-item"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div className="ftb-download-number">
+          05
+        </div>
+
+        <div className="ftb-download-info">
+          <span>TECHNICAL RESOURCE</span>
+          <h3>
+            Fume Ventilation Diagrams
+          </h3>
+          <p>
+            Installation and ventilation reference
+          </p>
+        </div>
+
+        <div className="ftb-download-action">
+          <span>PDF</span>
+          <strong>↓</strong>
+        </div>
+
+      </a>
+
+
+      {/* SAFETY */}
+
+      <div className="ftb-download-category">
+
+        <span>
+          SAFETY DATA
+        </span>
+
+        <div className="ftb-safety-links">
+
+          <a href="/downloads/brown-aluminum-oxide.pdf">
+            Brown Aluminum Oxide
+            <strong>↓</strong>
+          </a>
+
+          <a href="/downloads/white-activated-alumina.pdf">
+            White Activated Alumina
+            <strong>↓</strong>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 

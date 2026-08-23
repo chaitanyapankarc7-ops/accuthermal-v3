@@ -1,0 +1,927 @@
+/* =========================================================
+   HEPA AIR FILTRATION — PRODUCT PAGE
+   ========================================================= */
+
+.hepa-hero {
+    position: relative;
+    min-height: 650px;
+    background: #15578d;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hepa-hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+    background-size: 38px 38px;
+}
+
+.hepa-hero-inner {
+    position: relative;
+    z-index: 2;
+    width: min(1200px, calc(100% - 80px));
+    min-height: 590px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.hepa-hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+.hepa-hero-kicker,
+.hepa-section-tag {
+    display: block;
+    color: #39c1f2;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.hepa-hero-kicker {
+    margin-bottom: 22px;
+}
+
+.hepa-hero-content h1 {
+    margin: 0;
+    font-size: clamp(60px, 6vw, 84px);
+    line-height: .88;
+    letter-spacing: -4px;
+    font-weight: 800;
+}
+
+.hepa-hero-content h1 span {
+    color: #32b9f1;
+}
+
+.hepa-hero-content p {
+    max-width: 510px;
+    margin: 28px 0 30px;
+    color: rgba(255,255,255,.82);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.hepa-hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.hepa-primary-btn,
+.hepa-secondary-btn {
+    min-height: 48px;
+    padding: 0 21px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hepa-primary-btn {
+    background: #ed1b3b;
+    color: #fff;
+    transition: .25s ease;
+}
+
+.hepa-primary-btn span {
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.hepa-primary-btn:hover {
+    background: #d91534;
+    transform: translateY(-2px);
+}
+
+.hepa-secondary-btn {
+    border: 1px solid rgba(255,255,255,.4);
+    color: #fff;
+    transition: .25s ease;
+}
+
+.hepa-secondary-btn:hover {
+    background: #fff;
+    color: #15578d;
+}
+
+/* =========================================================
+   HERO PRODUCT
+   ========================================================= */
+
+.hepa-hero-visual {
+    position: relative;
+    height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hepa-air-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hepa-air-ring-1 {
+    width: 340px;
+    height: 340px;
+    border: 1px solid rgba(255,255,255,.18);
+}
+
+.hepa-air-ring-2 {
+    width: 450px;
+    height: 450px;
+    border: 1px dashed rgba(255,255,255,.22);
+}
+
+.hepa-air-ring-3 {
+    width: 570px;
+    height: 570px;
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.hepa-hero-machine {
+    position: relative;
+    z-index: 3;
+    width: min(430px, 82%);
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 30px 35px rgba(0,0,0,.28));
+    transition: transform .6s cubic-bezier(.2,.8,.2,1);
+}
+
+.hepa-hero-visual:hover .hepa-hero-machine {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* =========================================================
+   PRODUCT LABEL
+   ========================================================= */
+
+.hepa-product-label {
+    position: absolute;
+    z-index: 6;
+    left: 7%;
+    top: 22%;
+    padding: 12px 15px;
+    background: #08243a;
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+.hepa-product-label span {
+    display: block;
+    margin-bottom: 5px;
+    color: #39c1f2;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+}
+
+.hepa-product-label strong {
+    font-size: 18px;
+}
+
+/* =========================================================
+   FLOATING TECH CARDS
+   ========================================================= */
+
+.hepa-tech-card {
+    position: absolute;
+    z-index: 7;
+    min-width: 145px;
+    padding: 14px 17px;
+    background: #08243a;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 5px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.22);
+}
+
+.hepa-tech-card span {
+    display: block;
+    margin-bottom: 5px;
+    color: #39c1f2;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.hepa-tech-card strong {
+    display: block;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.hepa-tech-card small {
+    display: block;
+    margin-top: 6px;
+    color: rgba(255,255,255,.58);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 6px;
+    letter-spacing: .7px;
+}
+
+.hepa-temp-card {
+    right: 2%;
+    top: 17%;
+}
+
+.hepa-efficiency-card {
+    left: 3%;
+    bottom: 19%;
+}
+
+/* =========================================================
+   HERO FOOTER
+   ========================================================= */
+
+.hepa-hero-bottom {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    bottom: 17px;
+    transform: translateX(-50%);
+    width: min(1200px, calc(100% - 80px));
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,.18);
+    color: rgba(255,255,255,.55);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+   ========================================================= */
+
+.hepa-overview,
+.hepa-applications,
+.hepa-process,
+.hepa-downloads {
+    position: relative;
+    overflow: hidden;
+}
+
+.hepa-overview {
+    padding: 130px 0;
+    background: #fff;
+    color: #071827;
+}
+
+.hepa-overview-container,
+.hepa-systems-container,
+.hepa-applications-container,
+.hepa-process-container,
+.hepa-downloads-container {
+    width: min(1200px, calc(100% - 80px));
+    margin: auto;
+}
+
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.hepa-overview-container {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.hepa-overview-heading h2 {
+    margin: 25px 0 0;
+    font-size: clamp(50px, 5vw, 70px);
+    line-height: .9;
+    letter-spacing: -3px;
+}
+
+.hepa-overview-content {
+    padding-top: 35px;
+}
+
+.hepa-overview-content p {
+    max-width: 600px;
+    margin: 0 0 22px;
+    color: #536575;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.hepa-overview-stat {
+    margin-top: 40px;
+    padding-left: 18px;
+    border-left: 2px solid #00a7e8;
+}
+
+.hepa-overview-stat strong {
+    display: block;
+    color: #008fd0;
+    font-size: 42px;
+    line-height: 1;
+}
+
+.hepa-overview-stat span {
+    display: block;
+    margin-top: 8px;
+    color: #71808c;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+/* =========================================================
+   SYSTEMS
+   ========================================================= */
+
+.hepa-systems {
+    padding: 130px 0;
+    background: #f1f7fa;
+}
+
+.hepa-systems-header,
+.hepa-applications-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+.hepa-systems-header h2,
+.hepa-applications-header h2 {
+    margin: 25px 0 0;
+    font-size: clamp(48px, 5vw, 68px);
+    line-height: .9;
+    letter-spacing: -3px;
+}
+
+.hepa-systems-header h2 span,
+.hepa-applications-header h2 span {
+    color: #17609a;
+}
+
+.hepa-systems-header > p,
+.hepa-applications-header > p {
+    max-width: 500px;
+    margin: 40px 0 0;
+    color: #617382;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.hepa-system-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 430px;
+    margin-bottom: 25px;
+    background: #fff;
+    box-shadow: 0 15px 45px rgba(7,24,39,.08);
+}
+
+.hepa-system-card.reverse .hepa-system-image {
+    order: 2;
+}
+
+.hepa-system-card.reverse .hepa-system-info {
+    order: 1;
+}
+
+.hepa-system-image {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #e9f3f7;
+}
+
+.hepa-system-image img {
+    width: 78%;
+    height: 390px;
+    object-fit: contain;
+    transition: transform .5s ease;
+}
+
+.hepa-system-card:hover .hepa-system-image img {
+    transform: scale(1.04);
+}
+
+.hepa-card-number {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 8px 12px;
+    background: #071827;
+    color: #39c1f2;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+}
+
+.hepa-system-info {
+    padding: 55px;
+}
+
+.hepa-product-type {
+    color: #009fe0;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.hepa-system-info h3 {
+    margin: 20px 0 18px;
+    color: #071827;
+    font-size: 38px;
+}
+
+.hepa-system-info p {
+    max-width: 500px;
+    color: #617382;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.hepa-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 35px 0;
+    padding-top: 20px;
+    border-top: 1px solid #dce3e8;
+}
+
+.hepa-spec-grid strong {
+    display: block;
+    color: #17609a;
+    font-size: 20px;
+}
+
+.hepa-spec-grid span {
+    display: block;
+    margin-top: 5px;
+    color: #7a8790;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 6px;
+    letter-spacing: 1px;
+}
+
+.hepa-card-link {
+    color: #071827;
+    text-decoration: none;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hepa-card-link:hover {
+    color: #ed1b3b;
+}
+
+/* =========================================================
+   APPLICATIONS
+   ========================================================= */
+
+.hepa-applications {
+    padding: 130px 0;
+    background: #fff;
+}
+
+.hepa-application-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #dce3e8;
+    border-left: 1px solid #dce3e8;
+}
+
+.hepa-application-item {
+    min-height: 210px;
+    padding: 30px;
+    border-right: 1px solid #dce3e8;
+    border-bottom: 1px solid #dce3e8;
+}
+
+.hepa-application-item > span {
+    color: #00a7e8;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+}
+
+.hepa-application-item h3 {
+    margin: 30px 0 12px;
+    font-size: 18px;
+}
+
+.hepa-application-item p {
+    margin: 0;
+    color: #71808c;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.hepa-process {
+    padding: 130px 0;
+    background: #071827;
+    color: #fff;
+}
+
+.hepa-process-header {
+    max-width: 700px;
+    margin-bottom: 65px;
+}
+
+.hepa-process-header h2 {
+    margin: 25px 0;
+    font-size: clamp(50px, 5vw, 70px);
+    line-height: .9;
+    letter-spacing: -3px;
+}
+
+.hepa-process-header h2 span {
+    color: #32b9f1;
+}
+
+.hepa-process-header p {
+    max-width: 600px;
+    color: rgba(255,255,255,.65);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.hepa-process-media {
+    display: grid;
+    grid-template-columns: 1.6fr .8fr;
+    gap: 30px;
+}
+
+.hepa-video-wrapper {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+    background: #020b12;
+}
+
+.hepa-video {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    display: block;
+    object-fit: cover;
+}
+
+.hepa-video-label {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    padding: 10px 13px;
+    background: #071827;
+    color: #39c1f2;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 1px;
+}
+
+.hepa-process-stages {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.hepa-process-stage {
+    padding: 25px;
+    border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.hepa-process-stage span {
+    color: #32b9f1;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+}
+
+.hepa-process-stage h3 {
+    margin: 15px 0 8px;
+    font-size: 18px;
+}
+
+.hepa-process-stage p {
+    margin: 0;
+    color: rgba(255,255,255,.55);
+    font-size: 12px;
+}
+
+/* =========================================================
+   DOWNLOADS
+   ========================================================= */
+
+.hepa-downloads {
+    padding: 130px 0;
+    background: #fff;
+}
+
+.hepa-downloads-container {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 100px;
+}
+
+.hepa-downloads-intro h2 {
+    margin: 25px 0;
+    font-size: clamp(48px, 5vw, 68px);
+    line-height: .9;
+    letter-spacing: -3px;
+}
+
+.hepa-downloads-intro h2 span {
+    color: #17609a;
+}
+
+.hepa-downloads-intro p {
+    max-width: 430px;
+    color: #71808c;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.hepa-download-list {
+    border-top: 1px solid #dce3e8;
+}
+
+.hepa-download-item {
+    min-height: 110px;
+    display: grid;
+    grid-template-columns: 55px 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #dce3e8;
+    color: #071827;
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.hepa-download-item:hover {
+    padding-left: 12px;
+}
+
+.hepa-download-item > span {
+    color: #00a7e8;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+}
+
+.hepa-download-item small {
+    color: #00a7e8;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+}
+
+.hepa-download-item h3 {
+    margin: 8px 0 0;
+    font-size: 17px;
+}
+
+.hepa-download-item strong {
+    color: #17609a;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .hepa-hero-inner {
+        grid-template-columns: 1fr 1fr;
+        width: calc(100% - 50px);
+    }
+
+    .hepa-hero-content h1 {
+        font-size: 58px;
+    }
+
+    .hepa-hero-machine {
+        width: min(360px, 90%);
+    }
+
+    .hepa-overview-container,
+    .hepa-downloads-container {
+        gap: 50px;
+    }
+
+    .hepa-system-info {
+        padding: 35px;
+    }
+
+    .hepa-process-media {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .hepa-hero {
+        min-height: auto;
+    }
+
+    .hepa-hero-inner {
+        width: calc(100% - 30px);
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding: 75px 0 100px;
+    }
+
+    .hepa-hero-content {
+        text-align: center;
+    }
+
+    .hepa-hero-content h1 {
+        font-size: clamp(48px, 13vw, 65px);
+        letter-spacing: -3px;
+    }
+
+    .hepa-hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 13px;
+    }
+
+    .hepa-hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hepa-hero-visual {
+        height: 430px;
+    }
+
+    .hepa-hero-machine {
+        width: 310px;
+    }
+
+    .hepa-air-ring-1 {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hepa-air-ring-2 {
+        width: 340px;
+        height: 340px;
+    }
+
+    .hepa-air-ring-3 {
+        width: 420px;
+        height: 420px;
+    }
+
+    .hepa-temp-card {
+        right: 0;
+        top: 8%;
+    }
+
+    .hepa-efficiency-card {
+        left: 0;
+        bottom: 8%;
+    }
+
+    .hepa-product-label {
+        display: none;
+    }
+
+    .hepa-hero-bottom {
+        display: none;
+    }
+
+    .hepa-overview,
+    .hepa-systems,
+    .hepa-applications,
+    .hepa-process,
+    .hepa-downloads {
+        padding: 85px 0;
+    }
+
+    .hepa-overview-container,
+    .hepa-downloads-container {
+        width: calc(100% - 30px);
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hepa-overview-heading h2,
+    .hepa-systems-header h2,
+    .hepa-applications-header h2,
+    .hepa-process-header h2,
+    .hepa-downloads-intro h2 {
+        font-size: clamp(42px, 11vw, 55px);
+    }
+
+    .hepa-overview-content {
+        padding-top: 0;
+    }
+
+    .hepa-systems-container,
+    .hepa-applications-container,
+    .hepa-process-container {
+        width: calc(100% - 30px);
+    }
+
+    .hepa-systems-header,
+    .hepa-applications-header {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    .hepa-systems-header > p,
+    .hepa-applications-header > p {
+        margin-top: 0;
+    }
+
+    .hepa-system-card {
+        grid-template-columns: 1fr;
+    }
+
+    .hepa-system-card.reverse .hepa-system-image,
+    .hepa-system-card.reverse .hepa-system-info {
+        order: initial;
+    }
+
+    .hepa-system-image {
+        min-height: 330px;
+    }
+
+    .hepa-system-image img {
+        height: 300px;
+    }
+
+    .hepa-system-info {
+        padding: 30px;
+    }
+
+    .hepa-system-info h3 {
+        font-size: 30px;
+    }
+
+    .hepa-spec-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .hepa-application-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hepa-application-item {
+        min-height: auto;
+    }
+
+    .hepa-process-media {
+        grid-template-columns: 1fr;
+    }
+
+    .hepa-video-wrapper,
+    .hepa-video {
+        min-height: 300px;
+    }
+
+    .hepa-download-item {
+        grid-template-columns: 35px 1fr auto;
+        gap: 10px;
+    }
+
+    .hepa-download-item h3 {
+        font-size: 14px;
+    }
+}

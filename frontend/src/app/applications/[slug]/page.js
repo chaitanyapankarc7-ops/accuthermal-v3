@@ -70,7 +70,7 @@ export default function ApplicationDetail() {
             </div>
           </div>
         </div>
-        <div className="app-hero-bar"></div>
+        
       </header>
 
       {/* OVERVIEW */}
