@@ -83,10 +83,6 @@
   gap: 12px;
 }
 
-.app-hero-bar {
-  height: 4px;
-  background: linear-gradient(90deg, var(--red), var(--heat), var(--blue));
-}
 
 /* Overview */
 .app-detail-overview {

@@ -1,10 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Navbar({ activePage }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const toggleDropdown = (key) => {
+    setOpenDropdown((prev) => (prev === key ? null : key));
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (!e.target.closest(".nav-dropdown")) setOpenDropdown(null);
+    };
+    const handleEscape = (e) => {
+      if (e.key === "Escape") setOpenDropdown(null);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
 
   return (
     <>
@@ -23,6 +43,7 @@ export default function Navbar({ activePage }) {
           {/* ================= NAVIGATION ================= */}
           <div className="links">
 
+<<<<<<< HEAD
             {/* HOME */}
             <Link
               href="/"
@@ -47,6 +68,22 @@ export default function Navbar({ activePage }) {
                 PRODUCTS <span className="nav-chevron">⌄</span>
               </a>
 
+=======
+            <Link href="/" className={activePage === "home" ? "active" : ""}>
+  HOME
+</Link>
+            {/* PRODUCTS DROPDOWN */}
+            <div className={`nav-dropdown ${openDropdown === "products" ? "open" : ""}`}>
+              <button
+                type="button"
+                className={activePage === "products" ? "active" : ""}
+                aria-haspopup="true"
+                aria-expanded={openDropdown === "products"}
+                onClick={() => toggleDropdown("products")}
+              >
+                PRODUCTS <span className="nav-chevron">⌄</span>
+              </button>
+>>>>>>> 7f764934ac9b18d81f784f070c2198bd981f1701
               <div className="nav-dropdown-menu">
 
                 <Link href="/products/fluidized-temperature-baths">
@@ -76,6 +113,7 @@ export default function Navbar({ activePage }) {
               </div>
             </div>
 
+<<<<<<< HEAD
 
             {/* ================= APPLICATIONS ================= */}
             <div className="nav-dropdown">
@@ -90,6 +128,19 @@ export default function Navbar({ activePage }) {
                 APPLICATIONS <span className="nav-chevron">⌄</span>
               </a>
 
+=======
+            {/* APPLICATIONS DROPDOWN */}
+            <div className={`nav-dropdown ${openDropdown === "applications" ? "open" : ""}`}>
+              <button
+                type="button"
+                className={activePage === "applications" ? "active" : ""}
+                aria-haspopup="true"
+                aria-expanded={openDropdown === "applications"}
+                onClick={() => toggleDropdown("applications")}
+              >
+                APPLICATIONS <span className="nav-chevron">⌄</span>
+              </button>
+>>>>>>> 7f764934ac9b18d81f784f070c2198bd981f1701
               <div className="nav-dropdown-menu">
 
                 <Link href="/applications/thermal-cleaning">
@@ -123,6 +174,7 @@ export default function Navbar({ activePage }) {
                     <small>Stable environments for sensors</small>
                   </div>
                 </Link>
+<<<<<<< HEAD
 
                 <Link href="/applications">
                   <span>→</span>
@@ -131,10 +183,13 @@ export default function Navbar({ activePage }) {
                   </div>
                 </Link>
 
+=======
+>>>>>>> 7f764934ac9b18d81f784f070c2198bd981f1701
               </div>
             </div>
 
 
+<<<<<<< HEAD
             {/* ================= MAIN LINKS ================= */}
 
             <Link
@@ -177,6 +232,18 @@ export default function Navbar({ activePage }) {
                 + MORE <span className="nav-chevron">⌄</span>
               </a>
 
+=======
+            <div className={`nav-dropdown ${openDropdown === "more" ? "open" : ""}`}>
+              <button
+                type="button"
+                className="nav-dropdown-trigger"
+                aria-haspopup="true"
+                aria-expanded={openDropdown === "more"}
+                onClick={() => toggleDropdown("more")}
+              >
+                + MORE <span className="nav-chevron">⌄</span>
+              </button>
+>>>>>>> 7f764934ac9b18d81f784f070c2198bd981f1701
               <div className="nav-dropdown-menu">
 
                 <Link href="/#systems">
@@ -280,7 +347,21 @@ export default function Navbar({ activePage }) {
             <span></span>
           </span>
         </button>
+<<<<<<< HEAD
 
+=======
+        <div className="mobile-links" style={{ overflowY: "auto", maxHeight: "100vh", padding: "100px 20px 40px" }}>
+          <span className="mobile-header-link">Products</span>
+          <Link href="/products/fluidized-temperature-baths" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Fluidized Temperature Baths</Link>
+          <Link href="/products/thermcal" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Dry Block Calibrators</Link>
+          <Link href="/products/hepa-air-filtration" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>HEPA Filtration</Link>
+
+          <span className="mobile-header-link">Applications</span>
+          <Link href="/applications/thermal-cleaning" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Thermal Cleaning</Link>
+          <Link href="/applications/nitinol-shape-setting" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Nitinol Shape Setting</Link>
+          <Link href="/applications/reactor-heating" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Reactor Heating</Link>
+          <Link href="/applications/temperature-calibration" className="mobile-sub-link" onClick={() => setMenuOpen(false)}>Temperature Calibration</Link>
+>>>>>>> 7f764934ac9b18d81f784f070c2198bd981f1701
 
         <div
           className="mobile-links"
