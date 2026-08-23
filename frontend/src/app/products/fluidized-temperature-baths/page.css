@@ -1,210 +1,1018 @@
-/* =========================================
-   HERO
-========================================= */
+/* =========================================================
+   FLUIDIZED TEMPERATURE BATH
+   UNIQUE BLUE PRODUCT HERO
+========================================================= */
 
-
-
-.ftb-hero{
-    position:relative;
-    overflow:hidden;
-    background:#071827;
-    color:#fff;
-    min-height:720px;
-    padding:95px 0 70px;
+.ftb-product-hero-new {
+    position: relative;
+    min-height: 700px;
+    background: #15578d;
+    color: #fff;
+    overflow: hidden;
 }
 
-.hero-grid{
-    position:absolute;
-    inset:0;
+
+/* =========================================================
+   TECHNICAL GRID
+========================================================= */
+
+.ftb-hero-grid {
+    position: absolute;
+    inset: 0;
+
     background-image:
-        linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-    background-size:60px 60px;
+        linear-gradient(
+            rgba(255,255,255,.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.055) 1px,
+            transparent 1px
+        );
+
+    background-size: 38px 38px;
+
+    pointer-events: none;
 }
 
-.hero-container{
-    width:100%;
-    max-width:1320px;
-    margin:auto;
-    padding:0 45px;
-    box-sizing:border-box;
 
-    display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    align-items:center;
-    gap:40px;
+/* =========================================================
+   INNER
+========================================================= */
 
-    position:relative;
-    z-index:2;
+.ftb-hero-inner {
+    position: relative;
+    z-index: 2;
+
+    width: min(1200px, calc(100% - 80px));
+
+    min-height: 640px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        .9fr
+        1.1fr;
+
+    align-items: center;
+
+    gap: 30px;
 }
 
-.hero-tag{
-    display:inline-block;
-    padding:8px 16px;
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:50px;
-    font-size:12px;
-    letter-spacing:2px;
-    color:#27b5ff;
-    margin-bottom:20px;
-    backdrop-filter:blur(10px);
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.ftb-hero-content {
+    position: relative;
+    z-index: 5;
+
+    padding-top: 20px;
 }
 
-.hero-left h1{
-    font-size:72px;
-    font-weight:800;
-    line-height:.92;
-    margin-bottom:22px;
-    letter-spacing:-2px;
+.ftb-hero-kicker {
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: #57c7f4;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
 }
 
-.hero-left h1 span{
-    color:#ef233c;
+
+.ftb-hero-content h1 {
+    margin: 0;
+
+    font-size: clamp(58px, 6vw, 82px);
+
+    line-height: .88;
+
+    letter-spacing: -4px;
+
+    font-weight: 800;
 }
 
-.hero-left p{
-    max-width:520px;
-    font-size:17px;
-    line-height:1.8;
-    opacity:.82;
-    margin-bottom:35px;
+
+.ftb-hero-content h1 span {
+    color: #32b9f1;
 }
 
-.hero-buttons{
-    display:flex;
-    gap:15px;
-    margin-bottom:45px;
+
+.ftb-hero-content p {
+    max-width: 510px;
+
+    margin: 25px 0 30px;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 14px;
+
+    line-height: 1.75;
 }
 
-.btn-primary{
-    background:#ef233c;
-    color:#fff;
-    padding:18px 34px;
-    text-decoration:none;
-    font-weight:700;
-    border-radius:8px;
-    transition:.35s;
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.ftb-hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
 }
 
-.btn-primary:hover{
-    transform:translateY(-5px);
-    box-shadow:0 20px 45px rgba(239,35,60,.4);
+
+.ftb-hero-primary,
+.ftb-hero-secondary {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 20px;
+
+    text-decoration: none;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
 }
 
-.btn-secondary{
-    border:1px solid rgba(255,255,255,.2);
-    padding:18px 34px;
-    color:#fff;
-    text-decoration:none;
-    border-radius:8px;
-    transition:.35s;
+
+.ftb-hero-primary {
+    background: #ed1b3b;
+
+    color: #fff;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
 }
 
-.btn-secondary:hover{
-    background:#fff;
-    color:#071827;
+
+.ftb-hero-primary span {
+    margin-left: 14px;
+
+    font-size: 15px;
 }
 
-.hero-stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
+
+.ftb-hero-primary:hover {
+    background: #d91534;
+
+    transform: translateY(-2px);
 }
 
-.stat{
-    padding-top:25px;
-    border-top:1px solid rgba(255,255,255,.12);
+
+.ftb-hero-secondary {
+    border: 1px solid rgba(255,255,255,.4);
+
+    color: #fff;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
 }
 
-.stat h2{
-    font-size:44px;
-    color:#27b5ff;
-    margin-bottom:10px;
+
+.ftb-hero-secondary:hover {
+    background: #fff;
+
+    color: #15578d;
 }
 
-.stat span{
-    font-size:13px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    opacity:.7;
+
+/* =========================================================
+   PRODUCT VISUAL
+========================================================= */
+
+.ftb-hero-visual {
+    position: relative;
+
+    height: 620px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
 }
 
-.hero-right{
-    position:relative;
-    height:760px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+
+/* =========================================================
+   TECHNICAL RINGS
+========================================================= */
+
+.ftb-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    pointer-events: none;
 }
 
-.glow{
-    position:absolute;
-    width:520px;
-    height:520px;
-    background:#1a6aa2;
-    filter:blur(180px);
-    opacity:.2;
-    border-radius:50%;
+
+.ftb-ring-1 {
+    width: 400px;
+    height: 400px;
+
+    border: 1px solid rgba(255,255,255,.18);
 }
 
-.circle{
-    position:absolute;
-    border-radius:50%;
-    border:1px dashed rgba(255,255,255,.1);
+
+.ftb-ring-2 {
+    width: 500px;
+    height: 500px;
+
+    border: 1px dashed rgba(255,255,255,.22);
 }
 
-.circle1{
-    width:760px;
-    height:760px;
+
+.ftb-ring-3 {
+    width: 590px;
+    height: 590px;
+
+    border: 1px solid rgba(255,255,255,.08);
 }
 
-.circle2{
-    width:560px;
-    height:560px;
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.ftb-hero-machine {
+    position: relative;
+
+    z-index: 3;
+
+    /* Smaller and better balanced */
+    width: 450px;
+
+    max-width: 88%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    transform: translate(15px, -5px);
+
+    filter:
+        drop-shadow(
+            0 25px 30px rgba(0,0,0,.20)
+        )
+        drop-shadow(
+            0 40px 45px rgba(0,0,0,.10)
+        );
+
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1),
+        filter .6s ease;
 }
 
-.circle3{
-    width:380px;
-    height:380px;
+
+/* Product hover */
+
+.ftb-hero-visual:hover .ftb-hero-machine {
+    transform:
+        translate(15px, -12px)
+        scale(1.015);
+
+    filter:
+        drop-shadow(
+            0 30px 35px rgba(0,0,0,.24)
+        )
+        drop-shadow(
+            0 45px 55px rgba(0,0,0,.12)
+        );
 }
 
-.hero-machine{
-    width:560px;
-    max-width:100%;
-    height:auto;
-    animation:floatMachine 5s ease-in-out infinite;
-    z-index:5;
-    filter:drop-shadow(0 40px 60px rgba(0,0,0,.4));
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.ftb-floating-card {
+    position: absolute;
+
+    z-index: 8;
+
+    min-width: 135px;
+
+    padding: 13px 16px;
+
+    background: #08243a;
+
+    border: 1px solid rgba(255,255,255,.16);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.22);
 }
 
-.floating-card{
-    position:absolute;
-    padding:14px 20px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(14px);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:12px;
-    font-size:13px;
-    letter-spacing:2px;
-    font-weight:700;
-    z-index:10;
+
+.ftb-floating-card span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #3fc1f2;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
 }
 
-.card1{
-    top:120px;
-    right:40px;
+
+.ftb-floating-card strong {
+    display: block;
+
+    font-size: 26px;
+
+    line-height: 1;
+
+    font-weight: 700;
 }
 
-.card2{
-    left:10px;
-    bottom:180px;
+
+.ftb-floating-card small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: rgba(255,255,255,.6);
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 6px;
+
+    letter-spacing: .7px;
 }
 
-.card3{
-    right:60px;
-    bottom:60px;
+
+/* =========================================================
+   FLOATING CARD POSITIONS
+========================================================= */
+
+/* TOP RIGHT */
+
+.ftb-temp-card {
+    right: 0;
+
+    top: 15%;
 }
 
+
+/* BOTTOM LEFT */
+
+.ftb-stability-card {
+    left: 0;
+
+    bottom: 16%;
+}
+
+
+/* =========================================================
+   BOTTOM META
+========================================================= */
+
+.ftb-hero-bottom {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    bottom: 16px;
+
+    transform: translateX(-50%);
+
+    width: min(1200px, calc(100% - 80px));
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 14px;
+
+    border-top: 1px solid rgba(255,255,255,.18);
+
+    color: rgba(255,255,255,.65);
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .ftb-product-hero-new {
+        min-height: auto;
+    }
+
+    .ftb-hero-inner {
+        width: min(100% - 40px, 1200px);
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding: 70px 0 100px;
+    }
+
+    .ftb-hero-content {
+        text-align: center;
+    }
+
+    .ftb-hero-content p {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .ftb-hero-buttons {
+        justify-content: center;
+    }
+
+    .ftb-hero-visual {
+        height: 520px;
+    }
+
+    .ftb-hero-machine {
+        width: 430px;
+
+        max-width: 85%;
+    }
+
+    .ftb-hero-bottom {
+        width: calc(100% - 40px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .ftb-hero-inner {
+        width: calc(100% - 30px);
+
+        padding-top: 50px;
+    }
+
+    .ftb-hero-content h1 {
+        font-size: 54px;
+
+        letter-spacing: -3px;
+    }
+
+    .ftb-hero-content p {
+        font-size: 13px;
+    }
+
+    .ftb-hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .ftb-hero-primary,
+    .ftb-hero-secondary {
+        width: 100%;
+    }
+
+    .ftb-hero-visual {
+        height: 420px;
+    }
+
+    .ftb-hero-machine {
+        width: 330px;
+
+        max-width: 90%;
+
+        transform: translateY(-5px);
+    }
+
+    .ftb-hero-visual:hover .ftb-hero-machine {
+        transform:
+            translateY(-10px)
+            scale(1.015);
+    }
+
+    .ftb-ring-1 {
+        width: 280px;
+        height: 280px;
+    }
+
+    .ftb-ring-2 {
+        width: 350px;
+        height: 350px;
+    }
+
+    .ftb-ring-3 {
+        width: 420px;
+        height: 420px;
+    }
+
+    .ftb-floating-card {
+        min-width: 110px;
+
+        padding: 10px 12px;
+    }
+
+    .ftb-floating-card strong {
+        font-size: 20px;
+    }
+
+    .ftb-temp-card {
+        right: 0;
+
+        top: 10%;
+    }
+
+    .ftb-stability-card {
+        left: 0;
+
+        bottom: 10%;
+    }
+
+    .ftb-hero-bottom {
+        display: none;
+    }
+}
+
+
+
+
+@keyframes ftbProductFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TECHNICAL CROSSHAIRS
+========================================================= */
+
+.ftb-crosshair {
+
+    position: absolute;
+
+    z-index: 6;
+
+    background: rgba(0,167,232,.35);
+}
+
+
+.crosshair-top {
+
+    width: 1px;
+    height: 70px;
+
+    top: 12px;
+    left: 50%;
+}
+
+
+.crosshair-right {
+
+    width: 70px;
+    height: 1px;
+
+    right: 8px;
+    top: 50%;
+}
+
+
+.crosshair-bottom {
+
+    width: 1px;
+    height: 55px;
+
+    bottom: 12px;
+    left: 50%;
+}
+
+
+/* =========================================================
+   PRODUCT LABELS
+========================================================= */
+
+.ftb-visual-label {
+
+    position: absolute;
+
+    z-index: 12;
+
+    padding: 8px 11px;
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    background:
+        rgba(7,24,39,.78);
+
+    color: #dbe6ed;
+
+    font-family:
+        'IBM Plex Mono',
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    backdrop-filter: blur(8px);
+}
+
+
+.label-top {
+
+    top: 65px;
+
+    right: 35px;
+}
+
+
+.label-left {
+
+    left: 0;
+
+    bottom: 170px;
+}
+
+
+.label-bottom {
+
+    right: 45px;
+
+    bottom: 80px;
+
+    color: #00a7e8;
+}
+
+
+/* =========================================================
+   PRODUCT CAPTION
+========================================================= */
+
+.ftb-product-caption {
+
+    position: absolute;
+
+    z-index: 12;
+
+    left: 50%;
+
+    bottom: 20px;
+
+    transform: translateX(-50%);
+
+    width: 560px;
+
+    max-width: 85%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 12px;
+
+    border-top:
+        1px solid rgba(255,255,255,.12);
+
+    color: #607484;
+
+    font-family:
+        'IBM Plex Mono',
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   BOTTOM PRODUCT BAR
+========================================================= */
+
+.ftb-hero-bottom {
+
+    position: relative;
+
+    z-index: 20;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    max-width: 1380px;
+
+    margin: 0 auto;
+
+    border-top:
+        1px solid rgba(255,255,255,.12);
+}
+
+
+.ftb-hero-bottom > div {
+
+    padding: 20px 35px;
+
+    border-right:
+        1px solid rgba(255,255,255,.10);
+}
+
+
+.ftb-hero-bottom > div:last-child {
+
+    border-right: none;
+}
+
+
+.ftb-hero-bottom span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #526675;
+
+    font-family:
+        'IBM Plex Mono',
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+}
+
+
+.ftb-hero-bottom strong {
+
+    color: #d8e2e9;
+
+    font-size: 10px;
+
+    letter-spacing: .8px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1050px) {
+
+    .ftb-hero-container {
+
+        grid-template-columns: 1fr;
+
+        padding-top: 70px;
+
+        text-align: center;
+    }
+
+    .ftb-hero-content {
+
+        max-width: 760px;
+
+        margin: auto;
+    }
+
+    .ftb-hero-description {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+        text-align: left;
+    }
+
+    .ftb-hero-actions {
+
+        justify-content: center;
+    }
+
+    .ftb-hero-specs {
+
+        margin: auto;
+
+        text-align: left;
+    }
+
+    .ftb-hero-visual {
+
+        height: 520px;
+    }
+
+    .ftb-product-image {
+
+        width: 470px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px) {
+
+    .ftb-hero {
+
+        min-height: auto;
+    }
+
+    .ftb-hero-container {
+
+        padding:
+            70px 20px 30px;
+    }
+
+    .ftb-hero-content h1 {
+
+        font-size:
+            clamp(43px, 12vw, 62px);
+
+        letter-spacing: -2.5px;
+    }
+
+    .ftb-hero-description {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .ftb-hero-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .ftb-btn-primary,
+    .ftb-btn-secondary {
+
+        justify-content: space-between;
+    }
+
+    .ftb-hero-specs {
+
+        grid-template-columns: 1fr;
+
+        text-align: left;
+    }
+
+    .ftb-spec {
+
+        border-right: none;
+
+        border-bottom:
+            1px solid rgba(255,255,255,.10);
+
+        padding: 15px 0 !important;
+    }
+
+    .ftb-spec:last-child {
+
+        border-bottom: none;
+    }
+
+    .ftb-hero-visual {
+
+        height: 420px;
+    }
+
+    .ftb-product-image {
+
+        width: 340px;
+
+        max-width: 88%;
+    }
+
+    .orbit-outer {
+
+        width: 390px;
+        height: 390px;
+    }
+
+    .orbit-middle {
+
+        width: 300px;
+        height: 300px;
+    }
+
+    .orbit-inner {
+
+        width: 220px;
+        height: 220px;
+    }
+
+    .label-top {
+
+        top: 25px;
+
+        right: 5px;
+    }
+
+    .label-left {
+
+        left: 5px;
+
+        bottom: 110px;
+    }
+
+    .label-bottom {
+
+        right: 10px;
+
+        bottom: 40px;
+    }
+
+    .ftb-product-caption {
+
+        bottom: 5px;
+
+        font-size: 6px;
+    }
+
+    .ftb-hero-bottom {
+
+        grid-template-columns: 1fr;
+    }
+
+    .ftb-hero-bottom > div {
+
+        border-right: none;
+
+        border-bottom:
+            1px solid rgba(255,255,255,.10);
+    }
+
+    .ftb-hero-bottom > div:last-child {
+
+        border-bottom: none;
+    }
+
+}
 @keyframes floatMachine{
     0%{
         transform:translateY(0);
@@ -763,441 +1571,420 @@
 }
 
 
-/* =======================================================
-   VIDEO SECTION
-======================================================= */
+/* =========================================================
+   VIDEO INTRO / CUSTOM POSTER
+   Replaces the black first frame of the video
+========================================================= */
 
-.video-section{
-    padding:140px 0;
-
-    background:#071827;
-
-    color:white;
-
-    overflow:hidden;
-
-    position:relative;
+.process-video {
+    position: relative;
+    overflow: hidden;
+    background: #071827;
 }
 
-.video-section::before{
-    content:"";
 
-    position:absolute;
+/* =========================================================
+   INTRO SCREEN
+========================================================= */
 
-    inset:0;
+.process-video-intro {
+    position: absolute;
+    inset: 0;
 
-    background-image:
-        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    z-index: 20;
 
-    background-size:60px 60px;
-}
-
-.video-header{
-    max-width:900px;
-
-    margin:auto;
-
-    text-align:center;
-
-    position:relative;
-
-    z-index:2;
-
-    margin-bottom:70px;
-
-    padding:0 20px;
-
-    box-sizing:border-box;
-}
-
-.video-header span{
-    color:#00A7E8;
-
-    letter-spacing:3px;
-
-    font-size:13px;
-
-    font-weight:700;
-}
-
-.video-header h2{
-    font-size:82px;
-
-    line-height:.9;
-
-    margin:28px 0;
-}
-
-.video-header p{
-    font-size:20px;
-
-    line-height:1.9;
-
-    color:#d5dbe3;
-}
-
-.video-wrapper{
-    position:relative;
-
-    width:calc(100% - 40px);
-
-    max-width:1350px;
-
-    margin:auto;
-
-    border-radius:28px;
-
-    overflow:hidden;
-
-    box-shadow:
-        0 40px 100px rgba(0,0,0,.45);
-}
-
-.ats-video{
-    width:100%;
-
-    display:block;
-
-    transition:.8s;
-}
-
-@media (hover:hover) and (pointer:fine){
-
-    .video-wrapper:hover .ats-video{
-        transform:scale(1.04);
-    }
-
-}
-
-.video-overlay{
-    position:absolute;
-
-    inset:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     background:
         linear-gradient(
-            to top,
-            rgba(7,24,39,.65),
-            transparent 45%
+            135deg,
+            #ffffff 0%,
+            #f5fafc 55%,
+            #edf5f7 100%
         );
-}
 
-.video-features{
-    width:calc(100% - 40px);
+    border: 1px solid #cbd9de;
 
-    max-width:1300px;
+    cursor: pointer;
 
-    margin:70px auto 0;
+    opacity: 1;
+    visibility: visible;
 
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    text-align:center;
-
-    gap:30px;
-}
-
-.video-features h3{
-    font-size:54px;
-
-    color:#ef233c;
-
-    margin-bottom:12px;
-}
-
-.video-features span{
-    letter-spacing:2px;
-
-    font-size:12px;
-
-    color:#c5ced9;
+    transition:
+        opacity .55s ease,
+        visibility .55s ease;
 }
 
 
-/* =======================================================
+/* =========================================================
+   TECHNICAL GRID
+========================================================= */
+
+.process-video-intro::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 167, 232, .055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 167, 232, .055) 1px,
+            transparent 1px
+        );
+
+    background-size: 38px 38px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TECHNICAL CIRCLE
+========================================================= */
+
+.process-video-intro::after {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 167, 232, .14);
+
+    box-shadow:
+        0 0 0 45px rgba(0, 167, 232, .035),
+        0 0 0 90px rgba(0, 167, 232, .025);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   KICKER
+========================================================= */
+
+.video-intro-kicker {
+    position: relative;
+
+    z-index: 5;
+
+    margin-bottom: 20px;
+
+    color: #00a7e8;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.process-video-intro h3 {
+    position: relative;
+
+    z-index: 5;
+
+    margin: 0;
+
+    color: #071827;
+
+    text-align: center;
+
+    font-size: clamp(30px, 4vw, 52px);
+
+    line-height: .95;
+
+    letter-spacing: -2px;
+
+    font-weight: 800;
+}
+
+.process-video-intro h3 span {
+    color: #00a7e8;
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+
+.video-intro-play {
+    position: relative;
+
+    z-index: 10;
+
+    width: 72px;
+    height: 72px;
+
+    margin-top: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #00a7e8;
+    border-radius: 50%;
+
+    background: #071827;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.video-intro-play:hover {
+    transform: scale(1.08);
+
+    background: #00a7e8;
+
+    box-shadow:
+        0 0 0 10px rgba(0, 167, 232, .10),
+        0 0 0 20px rgba(0, 167, 232, .05);
+}
+
+.video-play-icon {
+    margin-left: 3px;
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   ATS LOGO
+========================================================= */
+
+.video-intro-logo {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+    bottom: 55px;
+
+    transform: translateX(-50%);
+}
+
+.video-intro-logo img {
+    width: 125px;
+    height: auto;
+
+    object-fit: contain;
+
+    opacity: .85;
+}
+
+
+/* =========================================================
+   INTRO FOOTER
+========================================================= */
+
+.video-intro-footer {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 22px;
+    right: 22px;
+    bottom: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 12px;
+
+    border-top: 1px solid rgba(7, 24, 39, .15);
+
+    color: #718893;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 6px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   HIDE INTRO WHEN VIDEO STARTS
+========================================================= */
+
+.process-video.video-is-playing .process-video-intro {
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ACTUAL VIDEO
+========================================================= */
+
+.process-video-player {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    background: #071827;
+}
+
+
+/* =========================================================
+   VIDEO TECHNICAL LABELS
+========================================================= */
+
+.process-video .video-corner {
+    position: absolute;
+
+    z-index: 10;
+
+    color: rgba(255,255,255,.75);
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition: opacity .4s ease;
+}
+
+.process-video.video-is-playing .video-corner {
+    opacity: 1;
+}
+
+.process-video .video-corner-top {
+    top: 18px;
+    left: 20px;
+}
+
+.process-video .video-corner-bottom {
+    bottom: 18px;
+    left: 20px;
+}
+
+
+/* =========================================================
    TABLET
-======================================================= */
+========================================================= */
 
-@media (max-width:1100px){
+@media (max-width: 1100px) {
 
-    .hero-container{
-        grid-template-columns:1fr;
+    .process-video-intro h3 {
+        font-size: 46px;
     }
 
-    .hero-left{
-        text-align:center;
-    }
-
-    .hero-left p{
-        margin-left:auto;
-        margin-right:auto;
-    }
-
-    .hero-left h1{
-        font-size:58px;
-    }
-
-    .hero-buttons{
-        justify-content:center;
-    }
-
-    .hero-stats{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .hero-right{
-        height:500px;
-    }
-
-    .hero-machine{
-        width:340px;
-    }
-
-
-    /* OVERVIEW */
-
-    .overview-container{
-        grid-template-columns:minmax(0,1fr);
-        gap:65px;
-
-        padding:0 40px;
-
-        align-items:center;
-    }
-
-    .overview-left{
-        max-width:800px;
-        margin:0 auto;
-    }
-
-    .overview-left h2{
-        font-size:58px;
-    }
-
-    .overview-description{
-        max-width:700px;
-    }
-
-    .overview-right{
-        width:100%;
-    }
-
-    .blueprint-frame{
-        width:500px;
-        max-width:100%;
-        height:520px;
-    }
-
-    .overview-machine{
-        max-width:88%;
-        max-height:440px;
-    }
-
-
-    /* VIDEO */
-
-    .video-header h2{
-        font-size:65px;
+    .process-video-intro::after {
+        width: 320px;
+        height: 320px;
     }
 
 }
 
 
-/* =======================================================
+/* =========================================================
    MOBILE
-======================================================= */
+========================================================= */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-    .ftb-hero{
-        min-height:auto;
-        padding:90px 0 60px;
+    .process-video-intro h3 {
+        font-size: clamp(30px, 8vw, 42px);
+
+        letter-spacing: -1.5px;
     }
 
-    .hero-container{
-        padding:0 20px;
+    .video-intro-play {
+        width: 64px;
+        height: 64px;
+
+        margin-top: 25px;
     }
 
-    .hero-left h1{
-        font-size:clamp(40px,10vw,52px);
+    .video-intro-logo {
+        bottom: 52px;
     }
 
-    .hero-left p{
-        font-size:15px;
+    .video-intro-logo img {
+        width: 105px;
     }
 
-    .hero-buttons{
-        flex-wrap:wrap;
+    .video-intro-footer {
+        left: 15px;
+        right: 15px;
     }
 
-    .hero-stats{
-        grid-template-columns:1fr;
+    .process-video-intro::after {
+        width: 280px;
+        height: 280px;
     }
 
-    .hero-right{
-        height:420px;
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .process-video-intro h3 {
+        font-size: 29px;
     }
 
-    .hero-machine{
-        width:300px;
-        max-width:85%;
+    .video-intro-kicker {
+        font-size: 7px;
+        letter-spacing: 2px;
     }
 
-
-    /* OVERVIEW */
-
-    .overview-section{
-        padding:85px 0 95px;
+    .video-intro-play {
+        width: 58px;
+        height: 58px;
     }
 
-    .overview-container{
-        width:100%;
-        padding:0 20px;
-        gap:45px;
+    .video-play-icon {
+        font-size: 15px;
     }
 
-    .overview-left{
-        width:100%;
-        max-width:none;
+    .video-intro-logo img {
+        width: 90px;
     }
 
-    .overview-tag{
-        font-size:10px;
-        letter-spacing:2px;
-    }
-
-    .overview-left h2{
-        font-size:clamp(40px,11vw,52px);
-
-        line-height:.94;
-
-        letter-spacing:-1px;
-
-        margin-bottom:25px;
-    }
-
-    .overview-description{
-        font-size:15px;
-
-        line-height:1.75;
-
-        padding-left:16px;
-
-        margin-bottom:35px;
-    }
-
-    .highlight-card{
-        grid-template-columns:38px minmax(0,1fr);
-
-        gap:12px;
-
-        padding:22px 2px;
-    }
-
-    .highlight-card:hover{
-        padding-left:2px;
-    }
-
-    .highlight-card::before{
-        display:none;
-    }
-
-    .highlight-number{
-        font-size:12px;
-    }
-
-    .highlight-card h4{
-        font-size:17px;
-    }
-
-    .highlight-card p{
-        font-size:13px;
-        line-height:1.65;
-    }
-
-    .overview-right{
-        width:100%;
-    }
-
-    .blueprint-frame{
-        width:100%;
-        max-width:500px;
-
-        height:430px;
-
-        border-radius:7px;
-    }
-
-    .overview-machine{
-        width:auto;
-
-        max-width:88%;
-
-        max-height:350px;
-    }
-
-    .blueprint-spec-label{
-        top:22px;
-        left:22px;
-
-        font-size:9px;
-    }
-
-    .control-card{
-        left:18px;
-        right:18px;
-        bottom:18px;
-
-        padding:18px;
-    }
-
-    .control-card h3{
-        font-size:18px;
-    }
-
-    .control-card p{
-        font-size:13px;
-    }
-
-
-    /* VIDEO */
-
-    .video-section{
-        padding:85px 0;
-    }
-
-    .video-header{
-        margin-bottom:40px;
-    }
-
-    .video-header h2{
-        font-size:clamp(40px,10vw,55px);
-    }
-
-    .video-header p{
-        font-size:15px;
-        line-height:1.7;
-    }
-
-    .video-wrapper{
-        width:calc(100% - 30px);
-        border-radius:18px;
-    }
-
-    .video-features{
-        width:calc(100% - 30px);
-
-        grid-template-columns:repeat(2,1fr);
-
-        gap:35px 15px;
-
-        margin-top:45px;
-    }
-
-    .video-features h3{
-        font-size:36px;
+    .video-intro-footer {
+        font-size: 5px;
     }
 
 }
@@ -3750,4 +4537,1029 @@ body{
         top: 15px;
     }
 
+}
+
+/* =========================================================
+   FLUIDIZED TEMPERATURE BATH
+   PRODUCT FEATURE SECTION
+========================================================= */
+
+.ftb-feature-section {
+    position: relative;
+
+    padding: 70px 0 100px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN PANEL
+========================================================= */
+
+.ftb-feature-panel {
+    position: relative;
+
+    width: min(1200px, calc(100% - 100px));
+
+    min-height: 560px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            110deg,
+            #e4f2f5 0%,
+            #eef6f7 45%,
+            #f3f0e9 100%
+        );
+
+    border: 1px solid #d4dee0;
+}
+
+
+/* =========================================================
+   TECHNICAL GRID
+========================================================= */
+
+.ftb-feature-grid {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(8, 36, 58, .035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(8, 36, 58, .035) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TECHNICAL RINGS
+========================================================= */
+
+.ftb-feature-ring {
+    position: absolute;
+
+    left: 50%;
+
+    top: 48%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.ftb-feature-ring-1 {
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid rgba(30, 110, 145, .18);
+}
+
+
+.ftb-feature-ring-2 {
+    width: 390px;
+    height: 390px;
+
+    border: 1px solid rgba(30, 110, 145, .13);
+}
+
+
+.ftb-feature-ring-3 {
+    width: 480px;
+    height: 480px;
+
+    border: 1px dashed rgba(30, 110, 145, .12);
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.ftb-feature-content {
+    position: absolute;
+
+    left: 42px;
+
+    top: 105px;
+
+    z-index: 5;
+
+    width: 330px;
+}
+
+
+.ftb-feature-kicker {
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: #e7193f;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.ftb-feature-content h2 {
+    margin: 0;
+
+    color: #071827;
+
+    font-size: clamp(46px, 5vw, 70px);
+
+    line-height: .92;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+}
+
+
+.ftb-feature-content p {
+    max-width: 285px;
+
+    margin: 28px 0 0;
+
+    padding-left: 15px;
+
+    border-left: 1px solid #00a7e8;
+
+    color: #637b88;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CENTER PRODUCT
+========================================================= */
+
+.ftb-feature-product {
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 480px;
+
+    height: 470px;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 3;
+}
+
+
+/* Crosshair */
+
+.ftb-feature-crosshair {
+    position: absolute;
+
+    background: rgba(20, 110, 145, .18);
+
+    pointer-events: none;
+}
+
+
+.ftb-feature-crosshair.horizontal {
+    width: 100%;
+
+    height: 1px;
+
+    left: 0;
+
+    top: 50%;
+}
+
+
+.ftb-feature-crosshair.vertical {
+    width: 1px;
+
+    height: 100%;
+
+    left: 50%;
+
+    top: 0;
+}
+
+
+/* Product */
+
+.ftb-feature-machine {
+    position: relative;
+
+    z-index: 5;
+
+    width: 390px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 25px 25px rgba(0,0,0,.16)
+        );
+
+    transition:
+        transform .5s ease;
+}
+
+
+.ftb-feature-product:hover .ftb-feature-machine {
+    transform: translateY(-8px) scale(1.02);
+}
+
+
+/* =========================================================
+   RIGHT APPLICATION MATRIX
+========================================================= */
+
+.ftb-feature-applications {
+    position: absolute;
+
+    right: 40px;
+
+    top: 145px;
+
+    width: 250px;
+
+    z-index: 5;
+}
+
+
+.ftb-app-kicker {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #718893;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+}
+
+
+.ftb-app-row {
+    display: grid;
+
+    grid-template-columns: 32px 1fr;
+
+    align-items: center;
+
+    min-height: 50px;
+
+    border-top: 1px solid rgba(7, 24, 39, .18);
+}
+
+
+.ftb-app-row:last-child {
+    border-bottom: 1px solid rgba(7, 24, 39, .18);
+}
+
+
+.ftb-app-row span {
+    color: #00a7e8;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 7px;
+}
+
+
+.ftb-app-row strong {
+    color: #071827;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BOTTOM FOOTER
+========================================================= */
+
+.ftb-feature-footer {
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 18px;
+
+    border-top: 1px solid rgba(7, 24, 39, .13);
+
+    color: #718893;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 6px;
+
+    letter-spacing: 1.5px;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .ftb-feature-panel {
+        width: calc(100% - 50px);
+    }
+
+    .ftb-feature-content {
+        left: 30px;
+    }
+
+    .ftb-feature-content h2 {
+        font-size: 52px;
+    }
+
+    .ftb-feature-applications {
+        right: 25px;
+        width: 210px;
+    }
+
+    .ftb-feature-machine {
+        width: 330px;
+    }
+
+    .ftb-feature-ring-3 {
+        width: 420px;
+        height: 420px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .ftb-feature-section {
+        padding: 40px 0 60px;
+    }
+
+    .ftb-feature-panel {
+        width: calc(100% - 30px);
+
+        min-height: 900px;
+    }
+
+    .ftb-feature-content {
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: auto;
+
+        padding: 55px 35px 0;
+    }
+
+    .ftb-feature-content h2 {
+        font-size: 52px;
+    }
+
+    .ftb-feature-product {
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        transform: none;
+
+        width: 100%;
+
+        height: 420px;
+
+        margin-top: 10px;
+    }
+
+    .ftb-feature-machine {
+        width: 340px;
+    }
+
+    .ftb-feature-applications {
+        position: relative;
+
+        right: auto;
+        top: auto;
+
+        width: calc(100% - 70px);
+
+        margin: 0 35px;
+    }
+
+    .ftb-feature-footer {
+        padding: 0 15px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .ftb-feature-panel {
+        min-height: 850px;
+    }
+
+    .ftb-feature-content {
+        padding: 40px 25px 0;
+    }
+
+    .ftb-feature-content h2 {
+        font-size: 43px;
+
+        letter-spacing: -2px;
+    }
+
+    .ftb-feature-product {
+        height: 350px;
+    }
+
+    .ftb-feature-machine {
+        width: 280px;
+    }
+
+    .ftb-feature-ring-1 {
+        width: 240px;
+        height: 240px;
+    }
+
+    .ftb-feature-ring-2 {
+        width: 320px;
+        height: 320px;
+    }
+
+    .ftb-feature-ring-3 {
+        width: 390px;
+        height: 390px;
+    }
+
+    .ftb-feature-applications {
+        width: calc(100% - 50px);
+
+        margin: 0 25px;
+    }
+
+    .ftb-feature-footer {
+        font-size: 5px;
+    }
+}
+
+/* =========================================================
+   DOWNLOADS / PRODUCT DOCUMENTATION
+========================================================= */
+
+.ftb-downloads-section {
+    position: relative;
+    padding: 120px 0;
+    background: #ffffff;
+    color: #071827;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TECHNICAL BACKGROUND GRID
+========================================================= */
+
+.ftb-downloads-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 167, 232, 0.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 167, 232, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.ftb-downloads-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(1200px, calc(100% - 100px));
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   LEFT INTRO
+========================================================= */
+
+.ftb-downloads-intro {
+    position: sticky;
+    top: 120px;
+}
+
+
+.ftb-downloads-tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+    color: #00a7e8;
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+}
+
+
+.ftb-downloads-tag span {
+    display: block;
+
+    width: 28px;
+    height: 1px;
+
+    background: #00a7e8;
+}
+
+
+.ftb-downloads-intro h2 {
+    margin: 0;
+
+    font-size: clamp(48px, 5vw, 72px);
+
+    line-height: 0.9;
+
+    letter-spacing: -3.5px;
+
+    font-weight: 800;
+}
+
+
+.ftb-downloads-intro h2 span {
+    color: #15578d;
+}
+
+
+.ftb-downloads-intro > p {
+    max-width: 430px;
+
+    margin: 30px 0 0;
+
+    color: #64737d;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   LEFT META
+========================================================= */
+
+.ftb-downloads-meta {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 60px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #d9e1e5;
+
+    color: #7a8992;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   DOWNLOAD LIST
+========================================================= */
+
+.ftb-downloads-list {
+    border-top: 1px solid #d5dfe4;
+}
+
+
+/* =========================================================
+   DOWNLOAD ITEM
+========================================================= */
+
+.ftb-download-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 45px 1fr auto;
+
+    align-items: center;
+
+    gap: 20px;
+
+    min-height: 105px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #d5dfe4;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition:
+        padding 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.ftb-download-item:hover {
+    padding-left: 18px;
+    padding-right: 18px;
+
+    background: #f5fafc;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.ftb-download-number {
+    color: #00a7e8;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   DOCUMENT INFO
+========================================================= */
+
+.ftb-download-info {
+    min-width: 0;
+}
+
+
+.ftb-download-info span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #71818b;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+.ftb-download-info h3 {
+    margin: 0;
+
+    color: #071827;
+
+    font-size: 19px;
+
+    line-height: 1.25;
+
+    font-weight: 650;
+
+    letter-spacing: -0.3px;
+}
+
+
+.ftb-download-info p {
+    margin: 6px 0 0;
+
+    color: #7b8992;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   DOWNLOAD ACTION
+========================================================= */
+
+.ftb-download-action {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 65px;
+
+    color: #15578d;
+
+    font-family: "IBM Plex Mono", monospace;
+}
+
+
+.ftb-download-action span {
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.ftb-download-action strong {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid #15578d;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.ftb-download-item:hover .ftb-download-action strong {
+    background: #15578d;
+
+    color: #ffffff;
+
+    transform: translateY(2px);
+}
+
+
+/* =========================================================
+   SAFETY DATA
+========================================================= */
+
+.ftb-download-category {
+    padding-top: 30px;
+}
+
+
+.ftb-download-category > span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #71818b;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.ftb-safety-links {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+.ftb-safety-links a {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 17px 18px;
+
+    border: 1px solid #d5dfe4;
+
+    color: #071827;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.ftb-safety-links a strong {
+    color: #00a7e8;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+.ftb-safety-links a:hover {
+    border-color: #15578d;
+
+    background: #f5fafc;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .ftb-downloads-section {
+        padding: 100px 0;
+    }
+
+    .ftb-downloads-container {
+        width: calc(100% - 70px);
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .ftb-downloads-intro {
+        position: relative;
+        top: auto;
+    }
+
+    .ftb-downloads-intro > p {
+        max-width: 650px;
+    }
+
+    .ftb-downloads-meta {
+        margin-top: 35px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .ftb-downloads-section {
+        padding: 80px 0;
+    }
+
+    .ftb-downloads-container {
+        width: calc(100% - 40px);
+
+        gap: 45px;
+    }
+
+    .ftb-downloads-intro h2 {
+        font-size: clamp(44px, 11vw, 58px);
+
+        letter-spacing: -3px;
+    }
+
+    .ftb-downloads-intro > p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .ftb-downloads-meta {
+        margin-top: 35px;
+    }
+
+    .ftb-download-item {
+        grid-template-columns: 32px 1fr;
+
+        gap: 12px;
+
+        padding: 22px 0;
+    }
+
+    .ftb-download-item:hover {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .ftb-download-info h3 {
+        font-size: 16px;
+    }
+
+    .ftb-download-info p {
+        font-size: 11px;
+    }
+
+    .ftb-download-action {
+        grid-column: 2;
+
+        justify-self: start;
+
+        margin-top: 5px;
+    }
+
+    .ftb-safety-links {
+        grid-template-columns: 1fr;
+    }
 }
