@@ -64,10 +64,7 @@ export default function ApplicationDetail() {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-        
-=======
->>>>>>> 7f764934ac9b18d81f784f070c2198bd981f1701
+
       </header>
 
       {/* OVERVIEW */}
