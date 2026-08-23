@@ -62,6 +62,12 @@ export const applications = [
       },
     ],
     customerCategory: "thermal-cleaning",
+    video: {
+      heading: "Thermal Cleaning in Action.",
+      text: "Watch plastics, resin, and organic buildup thermally decompose and lift away from tooling in minutes \u2014 no solvents, no scraping, and no damage to expensive parts.",
+      src: "/videos/estane-polymer-removal.mp4",
+      title: "Fast Removal of Estane Polymer Using a Fluidized Bath",
+    },
     ctaTitle: "Complimentary Sample Cleaning",
     ctaText: "Send us an example of your tooling for a complimentary cleaning. We\u2019ll perform a sample cleaning, produce a video of your part being cleaned, and ship it back within two days of receipt.",
   },
