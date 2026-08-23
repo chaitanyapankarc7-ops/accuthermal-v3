@@ -354,6 +354,121 @@
   transform: translateX(4px);
 }
 
+/* Video - Thermal Cleaning in Action */
+.app-detail-video {
+  padding: 80px 0;
+  background: var(--blue);
+  color: #fff;
+}
+
+.app-detail-video .eyebrow {
+  color: #fff;
+}
+
+.app-detail-video .app-section-header h2 {
+  color: #fff;
+}
+
+.app-detail-video .app-section-header p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.app-video-slot {
+  position: relative;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 640px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(7, 20, 33, 0.18), transparent 55%),
+    rgba(255, 255, 255, 0.03);
+}
+
+.app-video-slot::before {
+  content: "FLUIDIZED BATH / CLEANING CYCLE";
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  z-index: 2;
+  pointer-events: none;
+  font: 500 9px "IBM Plex Mono", monospace;
+  letter-spacing: .14em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.app-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: rgba(7, 20, 33, 0.55);
+}
+
+.app-video-slot.video-playing {
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: var(--night);
+}
+
+.app-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  border: none;
+  background: linear-gradient(rgba(7, 20, 33, 0.38), rgba(7, 20, 33, 0.38));
+  color: #fff;
+  cursor: pointer;
+}
+
+.app-video-overlay:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+}
+
+.app-video-play {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  display: grid;
+  place-items: center;
+  padding-left: 5px;
+  color: var(--red);
+  font-size: 17px;
+  transition: transform .3s ease, border-color .3s ease, background .3s ease;
+}
+
+.app-video-slot:hover .app-video-play {
+  transform: scale(1.07);
+  border-color: var(--red);
+  background: rgba(217, 31, 56, 0.12);
+}
+
+.app-video-title {
+  font: 600 15px "DM Sans", sans-serif;
+  color: #fff;
+  margin-top: 8px;
+  max-width: min(560px, 80%);
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(7, 20, 33, 0.55);
+}
+
+.app-video-slot small {
+  font: 500 11px "IBM Plex Mono", monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .app-section-header {
@@ -376,6 +491,10 @@
     flex-direction: column;
     text-align: center;
   }
+  .app-video-slot {
+    max-height: none;
+    min-height: 240px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -384,6 +503,11 @@
   }
   .app-detail-hero-btns {
     flex-direction: column;
+  }
+  .app-video-play {
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
   }
 }
 
