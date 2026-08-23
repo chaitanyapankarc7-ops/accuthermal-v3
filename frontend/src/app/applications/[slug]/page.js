@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import Navbar from "../../component/Navbar";
+import BeforeAfterGallery from "../../component/BeforeAfterGallery";
 import { getApplicationBySlug, applications } from "../data";
 import "./page.css";
 
@@ -30,10 +31,10 @@ export default function ApplicationDetail() {
       <>
         <Navbar />
         <div style={{ padding: "200px 0", textAlign: "center" }}>
-          <h1>Application not found</h1>
-          <Link href="/applications" className="btn primary" style={{ marginTop: "20px" }}>
-            View All Applications
-          </Link>
+        <h1>Application not found</h1>
+        <Link href="/" className="btn primary" style={{ marginTop: "20px" }}>
+          Back to Home
+        </Link>
         </div>
       </>
     );
@@ -46,13 +47,6 @@ export default function ApplicationDetail() {
       {/* HERO */}
       <header className="app-detail-hero">
         <div className="wrap">
-          <div className="app-breadcrumb">
-            <Link href="/">Home</Link>
-            <span>/</span>
-            <Link href="/applications">Applications</Link>
-            <span>/</span>
-            <span className="active">{app.title}</span>
-          </div>
           <div className="app-detail-hero-content">
             <h1>{app.title}</h1>
             <div className="app-detail-tags">
@@ -64,13 +58,16 @@ export default function ApplicationDetail() {
               <Link href="/form" className="btn primary" style={{ background: "#fff", color: "var(--red)" }}>
                 Request a Quote &#8594;
               </Link>
-              <Link href="/products" className="btn" style={{ borderColor: "rgba(255,255,255,0.4)", color: "#fff" }}>
+              <Link href="/products/fluidized-temperature-baths" className="btn" style={{ borderColor: "rgba(255,255,255,0.4)", color: "#fff" }}>
                 View Products
               </Link>
             </div>
           </div>
         </div>
+<<<<<<< HEAD
         
+=======
+>>>>>>> 7f764934ac9b18d81f784f070c2198bd981f1701
       </header>
 
       {/* OVERVIEW */}
@@ -84,12 +81,16 @@ export default function ApplicationDetail() {
                 <p key={i}>{para}</p>
               ))}
             </div>
-            <div className="app-detail-image-placeholder">
-              <div className="app-image-slot">
-                <span>Application Image</span>
-                <small>Add Later</small>
+            {app.beforeAfter?.length > 0 ? (
+              <BeforeAfterGallery items={app.beforeAfter} />
+            ) : (
+              <div className="app-detail-image-placeholder">
+                <div className="app-image-slot">
+                  <span>Application Image</span>
+                  <small>Add Later</small>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

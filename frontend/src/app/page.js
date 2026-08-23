@@ -141,12 +141,7 @@ export default function Home() {
           </div>
 
         </div>
-        <div className="hero-index">
-          <div className="wrap mono">
-            <span>ATS / THERMAL SYSTEMS</span>
-            <span>SCROLL TO EXPLORE ↓</span>
-          </div>
-        </div>
+
       </header>
 
       <div className="signal" style={{ display: "none" }}></div>
@@ -189,7 +184,7 @@ export default function Home() {
         <div className="wrap">
           <div className="section-top reveal">
             <div>
-              <div className="eyebrow mono">01 · Product systems</div>
+              <div className="eyebrow mono">Product systems</div>
               <h2>Equipment that earns its place in the process.</h2>
             </div>
             <p>
@@ -198,7 +193,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* PRODUCT 01 — FLUIDIZED TEMPERATURE BATH */}
+          {/* FLUIDIZED TEMPERATURE BATH */}
           <div className="system-story reveal">
             <div className="system-visual">
               <img
@@ -208,7 +203,6 @@ export default function Home() {
               />
             </div>
             <div className="system-copy">
-              <span className="num">SYSTEM / FTB</span>
               <h3>Fluidized Temperature Baths</h3>
               <p>
                 Accurate Thermal Systems manufactures a complete line of fluidized temperature baths with an operating range of -100 to 1100°C to meet a wide range of applications requiring a stable and uniform temperature environment.
@@ -228,17 +222,16 @@ export default function Home() {
                 </div>
               </div>
               <div className="buttons">
-                <Link className="btn primary" href="/products">
+                <Link className="btn primary" href="/products/fluidized-temperature-baths">
                   Explore FTB Models →
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* PRODUCT 02 — THERMCAL 400 */}
+          {/* THERMCAL 400 */}
           <div className="system-story thermcal-story reveal">
             <div className="system-copy thermcal-copy">
-              <span className="num">SYSTEM / THERMCAL</span>
               <h3>Dry Block Temperature Calibrators</h3>
               <p>
                 ThermCal dry block temperature calibrators offer high accuracy and stability for field or laboratory use at an economical cost and are used to calibrate all types of temperature sensors, switches, and thermometers.
@@ -258,7 +251,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="buttons">
-                <Link className="btn primary" href="/products">
+                <Link className="btn primary" href="/products/thermcal">
                   Explore ThermCal →
                 </Link>
               </div>
@@ -271,7 +264,6 @@ export default function Home() {
                 alt="Accurate Thermal Systems ThermCal 400 Dry Block Temperature Calibrator"
                 className="thermcal-product-img"
               />
-              <span className="product-marker mono">ATS / THERMCAL 400</span>
             </div>
           </div>
         </div>
@@ -283,46 +275,41 @@ export default function Home() {
         <div className="wrap">
           <div className="section-top reveal">
             <div>
-              <div className="eyebrow mono">05 · Applications</div>
+              <div className="eyebrow mono">Applications</div>
               <h2>Start with the process, not the product number.</h2>
             </div>
           </div>
           <div className="industry-grid reveal">
             {[
               {
-                num: "01",
                 title: "Tool & Parts Cleaning",
                 img: "/assets/images/tools/Tool%20%26%20Parts%20Cleaning.jpg",
                 desc: "Accurate Thermal Systems Fluidized Temperature Baths offer fast and labor-efficient removal of all organic-based material from tooling and hardware.",
                 link: "/applications/thermal-cleaning",
               },
               {
-                num: "02",
                 title: "Nitinol Shape Setting",
                 img: "/assets/images/tools/heat-treatment-225x225.png",
                 desc: "Unmatched thermal performance and safety for medical device shape setting, heat treatment, and annealing of devices and components.",
                 link: "/applications/nitinol-shape-setting",
               },
               {
-                num: "03",
                 title: "Reactor Heating",
                 img: "/assets/images/tools/reactor-heating-225x225.png",
                 desc: "Heating of laboratory and industrial reactors in both corporate and academic settings for research and development, process, and analysis work.",
                 link: "/applications/reactor-heating",
               },
               {
-                num: "04",
                 title: "Temperature Calibration",
                 img: "/assets/images/tools/calobrationp-225x225.png",
                 desc: "We offer a choice of temperature sources for calibrating temperature sensors, thermometers, indicators, systems, and probes.",
                 link: "/applications/temperature-calibration",
               },
-            ].map((ind) => (
-              <article key={ind.num} className="industry">
+            ].map((ind, i) => (
+              <article key={i} className="industry">
                 <div className="industry-img">
                   <img src={ind.img} alt={ind.title} loading="lazy" />
                 </div>
-                <small className="mono">{ind.num}</small>
                 <h3>{ind.title}</h3>
                 <p>{ind.desc}</p>
                 <Link href={ind.link} className="industry-link">
@@ -334,31 +321,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="custom">
-        <div className="wrap custom-grid reveal">
-          <div>
-            <div className="eyebrow mono" style={{ color: "#fff" }}>
-              06 · Custom engineering
-            </div>
-            <h2>YOUR PROCESS DOESN'T HAVE TO FIT A CATALOG.</h2>
-          </div>
-          <div>
-            <p>
-              When standard equipment does not match the required temperature range, working volume or
-              application, Accurate Thermal Systems can develop an application-specific thermal solution.
-            </p>
-            <a className="btn" href="#contact">
-              Discuss Your Application →
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section className="resources" id="resources">
         <div className="wrap">
           <div className="section-top reveal">
             <div>
-              <div className="eyebrow mono">07 · Technical resources</div>
+              <div className="eyebrow mono">Technical resources</div>
               <h2>Information should be easy to reach.</h2>
             </div>
             <p>
@@ -368,13 +335,12 @@ export default function Home() {
           </div>
           <div className="resource-list reveal">
             {[
-              { num: "01", title: "Fluidized Bath Product Information", cat: "PRODUCT SYSTEMS" },
-              { num: "02", title: "Dry Block Calibrator Information", cat: "CALIBRATION" },
-              { num: "03", title: "Instruction Manuals & Technical Files", cat: "DOCUMENTATION" },
-              { num: "04", title: "Parts, Media & Accessories", cat: "SUPPORT" },
-            ].map((res) => (
-              <div key={res.num} className="resource">
-                <span>{res.num}</span>
+              { title: "Fluidized Bath Product Information", cat: "PRODUCT SYSTEMS" },
+              { title: "Dry Block Calibrator Information", cat: "CALIBRATION" },
+              { title: "Instruction Manuals & Technical Files", cat: "DOCUMENTATION" },
+              { title: "Parts, Media & Accessories", cat: "SUPPORT" },
+            ].map((res, i) => (
+              <div key={i} className="resource">
                 <b>{res.title}</b>
                 <small>{res.cat}</small>
                 <span>→</span>
