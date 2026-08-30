@@ -3,8 +3,14 @@
 import Image from "next/image";
 import Navbar from "../../component/Navbar";
 import "./page.css";
+import { useState } from "react";
 
 export default function ThermCalPage() {
+
+  const [thermcal400Started, setThermcal400Started] = useState(false);
+  const [thermcal130Started, setThermcal130Started] = useState(false);
+
+
   return (
      <>
       <Navbar />
@@ -548,8 +554,10 @@ export default function ThermCalPage() {
       </section>
 
 
-     {/* =====================================================
-    VIDEO / THERMCAL IN ACTION — THERMCAL400
+      
+
+{/* =====================================================
+    VIDEO / THERMCAL IN ACTION
 ===================================================== */}
 
 <section className="thermcal-video-section">
@@ -559,6 +567,7 @@ export default function ThermCalPage() {
     <div className="thermcal-section-label">
       04 / SYSTEM IN ACTION
     </div>
+
 
     <div className="thermcal-video-header">
 
@@ -578,7 +587,10 @@ export default function ThermCalPage() {
 
     </div>
 
-    {/* THERMCAL 400 VIDEO */}
+
+    {/* =====================================================
+        THERMCAL 400 VIDEO
+    ===================================================== */}
 
     <div className="thermcal-video-wrapper">
 
@@ -588,21 +600,138 @@ export default function ThermCalPage() {
         playsInline
         preload="metadata"
         className="thermcal-video"
+
+        onPlay={() => {
+          setThermcal400Started(true);
+        }}
       >
+
         <source
           src="/videos/20150203_140542.mp4"
           type="video/mp4"
         />
 
         Your browser does not support the video element.
+
       </video>
 
+
+      {/* =================================================
+          THERMCAL 400 INTRO WALLPAPER
+      ================================================= */}
+
+      {!thermcal400Started && (
+
+        <div
+          className="thermcal-video-intro"
+
+          onClick={(e) => {
+
+            const video = e.currentTarget
+              .closest(".thermcal-video-wrapper")
+              ?.querySelector("video");
+
+            if (video) {
+              video.play();
+            }
+
+          }}
+        >
+
+          {/* TOP LABEL */}
+
+          <span className="thermcal-intro-kicker">
+            ATS / PRECISION CALIBRATION
+          </span>
+
+
+          {/* MAIN HEADING */}
+
+          <h3>
+            SEE THE
+            <br />
+            SYSTEM
+            <br />
+            <span>IN ACTION.</span>
+          </h3>
+
+
+          {/* ATS LOGO */}
+
+          <div className="thermcal-intro-logo">
+
+            <img
+              src="/assets/images/ats-logo.png"
+              alt="Accurate Thermal Systems"
+            />
+
+          </div>
+
+
+          {/* PLAY BUTTON */}
+
+          <button
+            type="button"
+            className="thermcal-intro-play"
+            aria-label="Play ThermCal 400 video"
+
+            onClick={(e) => {
+
+              e.stopPropagation();
+
+              const video = e.currentTarget
+                .closest(".thermcal-video-wrapper")
+                ?.querySelector("video");
+
+              if (video) {
+                video.play();
+              }
+
+            }}
+          >
+
+            <span>
+              ▶
+            </span>
+
+          </button>
+
+
+          {/* BOTTOM META */}
+
+          <div className="thermcal-intro-footer">
+
+            <span>
+              ATS / THERMCAL400
+            </span>
+
+            <span>
+              WATCH PROCESS ↓
+            </span>
+
+          </div>
+
+        </div>
+
+      )}
+
+
+      {/* VIDEO LABEL */}
+
       <div className="thermcal-video-label">
-        <span>THERMCAL400</span>
-        <strong>PRECISION IN MOTION</strong>
+
+        <span>
+          THERMCAL400
+        </span>
+
+        <strong>
+          PRECISION IN MOTION
+        </strong>
+
       </div>
 
     </div>
+
 
 
     {/* =====================================================
@@ -617,18 +746,134 @@ export default function ThermCalPage() {
         playsInline
         preload="metadata"
         className="thermcal-video"
+
+        onPlay={() => {
+          setThermcal130Started(true);
+        }}
       >
+
         <source
           src="/videos/130.mp4"
           type="video/mp4"
         />
 
         Your browser does not support the video element.
+
       </video>
 
+
+      {/* =================================================
+          THERMCAL 130 INTRO WALLPAPER
+      ================================================= */}
+
+      {!thermcal130Started && (
+
+        <div
+          className="thermcal-video-intro"
+
+          onClick={(e) => {
+
+            const video = e.currentTarget
+              .closest(".thermcal-video-wrapper")
+              ?.querySelector("video");
+
+            if (video) {
+              video.play();
+            }
+
+          }}
+        >
+
+          {/* TOP LABEL */}
+
+          <span className="thermcal-intro-kicker">
+            ATS / PRECISION CALIBRATION
+          </span>
+
+
+          {/* MAIN HEADING */}
+
+          <h3>
+            SEE THE
+            <br />
+            SYSTEM
+            <br />
+            <span>IN ACTION.</span>
+          </h3>
+
+
+          {/* ATS LOGO */}
+
+          <div className="thermcal-intro-logo">
+
+            <img
+              src="/assets/images/ats-logo.png"
+              alt="Accurate Thermal Systems"
+            />
+
+          </div>
+
+
+          {/* PLAY BUTTON */}
+
+          <button
+            type="button"
+            className="thermcal-intro-play"
+            aria-label="Play ThermCal 130 video"
+
+            onClick={(e) => {
+
+              e.stopPropagation();
+
+              const video = e.currentTarget
+                .closest(".thermcal-video-wrapper")
+                ?.querySelector("video");
+
+              if (video) {
+                video.play();
+              }
+
+            }}
+          >
+
+            <span>
+              ▶
+            </span>
+
+          </button>
+
+
+          {/* BOTTOM META */}
+
+          <div className="thermcal-intro-footer">
+
+            <span>
+              ATS / THERMCAL130
+            </span>
+
+            <span>
+              WATCH PROCESS ↓
+            </span>
+
+          </div>
+
+        </div>
+
+      )}
+
+
+      {/* VIDEO LABEL */}
+
       <div className="thermcal-video-label">
-        <span>THERMCAL130</span>
-        <strong>PRECISION IN MOTION</strong>
+
+        <span>
+          THERMCAL130
+        </span>
+
+        <strong>
+          PRECISION IN MOTION
+        </strong>
+
       </div>
 
     </div>
