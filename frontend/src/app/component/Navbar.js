@@ -273,7 +273,10 @@ export default function Navbar({ activePage }) {
             <span></span>
           </span>
         </button>
+<<<<<<< HEAD
 
+=======
+>>>>>>> ae2df96 (siddhi)
 
         <div
           className="mobile-links"
