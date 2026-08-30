@@ -81,8 +81,8 @@ export default function FluidizedTemperatureBaths() {
       <Image
         src="/assets/images/fluidized/hero-machine.png"
         alt="Fluidized Temperature Bath"
-        width={720}
-        height={720}
+        width={700}
+        height={700}
         className="ftb-hero-machine"
         priority
       />
@@ -634,6 +634,8 @@ export default function FluidizedTemperatureBaths() {
       />
     </video>
 
+    
+
 
     {/* =================================================
         VIDEO INTRO / POSTER
@@ -738,7 +740,7 @@ export default function FluidizedTemperatureBaths() {
     <div className="process-side-image">
 
       <Image
-        src="/assets/images/fluidized/hero-machine.png"
+        src="/assets/images/fluidized/2015-02-23 20.46.16.jpg"
         alt="Fluidized Temperature Bath"
         width={700}
         height={700}
@@ -1156,6 +1158,486 @@ export default function FluidizedTemperatureBaths() {
   </div>
 
 </section>
+
+
+{/* =====================================================
+    FTBLL12 — PRODUCT SPECIFICATIONS
+===================================================== */}
+
+<section className="ftb-specifications-section" id="specifications">
+
+  <div className="ftb-specifications-grid"></div>
+
+  <div className="ftb-specifications-container">
+
+    {/* ================= HEADER ================= */}
+
+    <div className="ftb-specifications-header">
+
+      <div>
+        <span className="ftb-specifications-tag">
+          05 / PRODUCT SPECIFICATIONS
+        </span>
+
+        <h2>
+          FTBLL12
+          <br />
+          <span>SPECIFICATIONS.</span>
+        </h2>
+      </div>
+
+      <div className="ftb-specifications-intro">
+
+        <span>
+          ACCUTHERMAL FLUIDIZED TEMPERATURE BATH
+        </span>
+
+        <p>
+          Technical specifications for the FTBLL12 fluidized
+          temperature bath, designed for extrusion tool cleaning
+          and high-temperature thermal processing.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    {/* ================= MODEL BAR ================= */}
+
+    <div className="ftb-spec-model">
+
+      <div>
+        <span>MODEL</span>
+        <strong>FTBLL12</strong>
+      </div>
+
+      <div>
+        <span>CATALOG NUMBER</span>
+        <strong>ATS1012</strong>
+      </div>
+
+      <div>
+        <span>APPLICATION</span>
+        <strong>EXTRUSION TOOL CLEANING</strong>
+      </div>
+
+      <div>
+        <span>MAXIMUM TEMPERATURE</span>
+        <strong>600°C</strong>
+      </div>
+
+    </div>
+
+
+    {/* ================= SPECIFICATIONS TABLE ================= */}
+
+    <div className="ftb-spec-table-wrap">
+
+      <table className="ftb-spec-table">
+
+        <thead>
+          <tr>
+            <th>SPECIFICATION</th>
+            <th>FTBLL12</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Catalog Number</td>
+            <td>ATS1012</td>
+          </tr>
+
+          <tr>
+            <td>Recommended Applications</td>
+            <td>Extrusion tool cleaning</td>
+          </tr>
+
+          <tr>
+            <td>Temperature Stability at 500°C</td>
+            <td>±1.0°C</td>
+          </tr>
+
+          <tr>
+            <td>Calibrated Accuracy at 500°C</td>
+            <td>±5.0°C</td>
+          </tr>
+
+          <tr>
+            <td>Radial Temperature Uniformity at 500°C</td>
+            <td>3.0</td>
+          </tr>
+
+          <tr>
+            <td>Heat Up Time: Ambient to 600°C</td>
+            <td>150 minutes</td>
+          </tr>
+
+          <tr>
+            <td>Power Consumption</td>
+            <td>4.5 kW — 240V, 1 phase</td>
+          </tr>
+
+          <tr>
+            <td>Working Diameter</td>
+            <td>9.5 inches</td>
+          </tr>
+
+          <tr>
+            <td>Working Depth</td>
+            <td>12 inches</td>
+          </tr>
+
+          <tr>
+            <td>Working Area in Basket</td>
+            <td>8.4 × 12 inches</td>
+          </tr>
+
+          <tr>
+            <td>Maximum Load Capacity</td>
+            <td>25 lbs</td>
+          </tr>
+
+          <tr>
+            <td>Recovery from Quench</td>
+            <td>Good</td>
+          </tr>
+
+          <tr>
+            <td>Air Pressure Required</td>
+            <td>50 PSI</td>
+          </tr>
+
+          <tr>
+            <td>Maximum Air Consumption</td>
+            <td>3.6 SCFM</td>
+          </tr>
+
+          <tr>
+            <td>Total Unit Weight</td>
+            <td>115 lbs — without aluminum oxide</td>
+          </tr>
+
+          <tr>
+            <td>Aluminum Oxide Required & Included</td>
+            <td>85 / 100 lbs</td>
+          </tr>
+
+          <tr>
+            <td>Overall Footprint — H × W × D</td>
+            <td>33 × 25 × 23 inches</td>
+          </tr>
+
+          <tr>
+            <td>Warranty</td>
+            <td>1 Year</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    {/* ================= TEMPERATURE NOTE ================= */}
+
+    <div className="ftb-spec-note">
+
+      <div className="ftb-spec-note-icon">
+        °C
+      </div>
+
+      <div>
+
+        <span>
+          TEMPERATURE CONVERSION
+        </span>
+
+        <p>
+          To convert to degrees Fahrenheit, multiply by 1.8,
+          then add 32. For specifications, multiply by 1.8.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    {/* ================= KEY SPECIFICATIONS ================= */}
+
+    <div className="ftb-key-specs">
+
+      <div className="ftb-key-spec">
+
+        <span>01</span>
+
+        <strong>
+          ±1.0°C
+        </strong>
+
+        <p>
+          Temperature stability at 500°C
+        </p>
+
+      </div>
+
+
+      <div className="ftb-key-spec">
+
+        <span>02</span>
+
+        <strong>
+          600°C
+        </strong>
+
+        <p>
+          Maximum operating temperature
+        </p>
+
+      </div>
+
+
+      <div className="ftb-key-spec">
+
+        <span>03</span>
+
+        <strong>
+          150 MIN
+        </strong>
+
+        <p>
+          Ambient to 600°C heat-up time
+        </p>
+
+      </div>
+
+
+      <div className="ftb-key-spec">
+
+        <span>04</span>
+
+        <strong>
+          25 LBS
+        </strong>
+
+        <p>
+          Maximum load capacity
+        </p>
+
+      </div>
+
+    </div>
+
+
+    {/* ================= ACCESSORIES ================= */}
+
+    <div className="ftb-accessories">
+
+      <div className="ftb-accessories-header">
+
+        <span>
+          COMPATIBLE ACCESSORIES
+        </span>
+
+        <h3>
+          FTBLL12
+          <br />
+          ACCESSORIES.
+        </h3>
+
+      </div>
+
+
+      <div className="ftb-accessories-list">
+
+        <div className="ftb-accessory">
+
+          <span>ATS1121</span>
+
+          <div>
+            <h4>Standard Parts Basket</h4>
+
+            <p>
+              Standard parts basket for FTBLL12.
+              Size 8.4″ diameter × 12″ depth with
+              25 pound capacity.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div className="ftb-accessory">
+
+          <span>ATS1056</span>
+
+          <div>
+            <h4>Small Parts Basket</h4>
+
+            <p>
+              Small-parts basket with 3/16″ opening,
+              6 5/8″ diameter × 6 5/8″ deep.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div className="ftb-accessory">
+
+          <span>ATS1057</span>
+
+          <div>
+            <h4>Tiered Basket</h4>
+
+            <p>
+              Two-tier basket system for flexibility
+              in parts placement and cleaning efficiency.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div className="ftb-accessory">
+
+          <span>ATS1020<br />ATS1087<br />ATS1031</span>
+
+          <div>
+            <h4>Retort Lid</h4>
+
+            <p>
+              Retort lid compatible with the FTBLL
+              fluidized temperature bath series.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div className="ftb-accessory">
+
+          <span>ATS1026</span>
+
+          <div>
+            <h4>Air Filter / Regulator</h4>
+
+            <p>
+              Clean and dry air supply equipment
+              required for fluidized bath operation.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div className="ftb-accessory">
+
+          <span>ATS1033</span>
+
+          <div>
+            <h4>Extraction Fan</h4>
+
+            <p>
+              4″ OD inlet and outlet, 250 CFM,
+              1/2 HP, 120/230 volt extraction fan.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div className="ftb-accessory">
+
+          <span>ATS1032</span>
+
+          <div>
+            <h4>Cyclone</h4>
+
+            <p>
+              Collects sand and heavy material from
+              the exhaust air.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div className="ftb-accessory">
+
+          <span>ATS1041</span>
+
+          <div>
+            <h4>Cooling Stand & Sieve</h4>
+
+            <p>
+              Safely cool hot parts in the basket,
+              then sieve and reuse aluminum oxide media.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div className="ftb-accessory">
+
+          <span>ATS1100</span>
+
+          <div>
+            <h4>Activated White Alumina</h4>
+
+            <p>
+              Activated white alumina, 230 mesh,
+              supplied in a 55 pound pail.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div className="ftb-accessory">
+
+          <span>ATS1027</span>
+
+          <div>
+            <h4>Aluminum Oxide</h4>
+
+            <p>
+              Aluminum oxide supplied in a
+              100 pound pail.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div className="ftb-accessory">
+
+          <span>ATS1028</span>
+
+          <div>
+            <h4>Aluminum Oxide</h4>
+
+            <p>
+              Aluminum oxide supplied in a
+              400 pound drum.
+            </p>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 </>
   );
