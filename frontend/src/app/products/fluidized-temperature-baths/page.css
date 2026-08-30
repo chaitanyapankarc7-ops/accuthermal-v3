@@ -275,10 +275,8 @@
     /* Smaller and better balanced */
     width: 450px;
 
-    max-width: 88%;
-
+    width: min(460px, 88%);
     height: auto;
-
     object-fit: contain;
 
     transform: translate(15px, -5px);
@@ -5563,3 +5561,719 @@ body{
         grid-template-columns: 1fr;
     }
 }
+
+/* =====================================================
+   FTBLL12 — PRODUCT SPECIFICATIONS
+===================================================== */
+
+.ftb-specifications-section {
+  position: relative;
+  padding: 140px 7%;
+  background: #f4f8fd;
+  overflow: hidden;
+}
+
+.ftb-specifications-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+
+  background-image:
+    linear-gradient(rgba(17, 92, 170, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 92, 170, 0.055) 1px, transparent 1px);
+
+  background-size: 55px 55px;
+}
+
+.ftb-specifications-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1450px;
+  margin: auto;
+}
+
+
+/* HEADER */
+
+.ftb-specifications-header {
+  display: grid;
+  grid-template-columns: 1fr 0.75fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 70px;
+}
+
+.ftb-specifications-tag {
+  display: block;
+  margin-bottom: 20px;
+  color: #1769d2;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.ftb-specifications-header h2 {
+  margin: 0;
+  color: #08213f;
+  font-size: clamp(50px, 7vw, 100px);
+  line-height: 0.88;
+  letter-spacing: -5px;
+}
+
+.ftb-specifications-header h2 span {
+  color: #1769d2;
+}
+
+.ftb-specifications-intro {
+  padding-left: 30px;
+  border-left: 2px solid #1769d2;
+}
+
+.ftb-specifications-intro span {
+  color: #4d7197;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ftb-specifications-intro p {
+  max-width: 500px;
+  margin: 18px 0 0;
+  color: #60748b;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* MODEL BAR */
+
+.ftb-spec-model {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 35px;
+  border: 1px solid #cbdced;
+  background: #ffffff;
+}
+
+.ftb-spec-model > div {
+  min-height: 115px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+  border-right: 1px solid #d9e5f1;
+}
+
+.ftb-spec-model > div:last-child {
+  border-right: none;
+}
+
+.ftb-spec-model span {
+  color: #7990a8;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ftb-spec-model strong {
+  color: #092442;
+  font-size: 17px;
+}
+
+
+/* TABLE */
+
+.ftb-spec-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #cbdced;
+  background: #ffffff;
+  box-shadow: 0 25px 70px rgba(20, 72, 120, 0.07);
+}
+
+.ftb-spec-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.ftb-spec-table th {
+  padding: 22px 28px;
+  background: #092746;
+  color: #ffffff;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ftb-spec-table th:last-child {
+  text-align: right;
+}
+
+.ftb-spec-table td {
+  padding: 20px 28px;
+  border-bottom: 1px solid #e3ebf3;
+  font-size: 14px;
+}
+
+.ftb-spec-table td:first-child {
+  width: 65%;
+  color: #5e7289;
+  font-weight: 600;
+}
+
+.ftb-spec-table td:last-child {
+  color: #092442;
+  text-align: right;
+  font-weight: 700;
+}
+
+.ftb-spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ftb-spec-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.ftb-spec-table tbody tr:hover {
+  background: #f5f9fd;
+}
+
+
+/* NOTE */
+
+.ftb-spec-note {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 850px;
+  margin-top: 30px;
+  padding: 22px 25px;
+  border: 1px solid #cbdced;
+  background: #ffffff;
+}
+
+.ftb-spec-note-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #e6f1fc;
+  color: #1769d2;
+  font-weight: 800;
+}
+
+.ftb-spec-note span {
+  color: #1769d2;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ftb-spec-note p {
+  margin: 7px 0 0;
+  color: #65788e;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* KEY SPECS */
+
+.ftb-key-specs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 70px;
+  border-top: 1px solid #cbdced;
+  border-bottom: 1px solid #cbdced;
+}
+
+.ftb-key-spec {
+  min-height: 210px;
+  padding: 30px;
+  border-right: 1px solid #cbdced;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ftb-key-spec:last-child {
+  border-right: none;
+}
+
+.ftb-key-spec > span {
+  color: #7d95ad;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.ftb-key-spec strong {
+  color: #0a3159;
+  font-size: 42px;
+  letter-spacing: -2px;
+}
+
+.ftb-key-spec p {
+  margin: 0;
+  color: #6b7d92;
+  font-size: 12px;
+}
+
+
+/* ACCESSORIES */
+
+.ftb-accessories {
+  margin-top: 130px;
+}
+
+.ftb-accessories-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 45px;
+}
+
+.ftb-accessories-header > span {
+  color: #1769d2;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ftb-accessories-header h3 {
+  margin: 0;
+  color: #092442;
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 0.9;
+  letter-spacing: -3px;
+  text-align: right;
+}
+
+.ftb-accessories-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid #cbdced;
+}
+
+.ftb-accessory {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 25px;
+  padding: 30px 25px;
+  border-bottom: 1px solid #cbdced;
+  transition: background 0.2s ease;
+}
+
+.ftb-accessory:nth-child(odd) {
+  border-right: 1px solid #cbdced;
+}
+
+.ftb-accessory:hover {
+  background: #ffffff;
+}
+
+.ftb-accessory > span {
+  color: #1769d2;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.ftb-accessory h4 {
+  margin: 0;
+  color: #092442;
+  font-size: 17px;
+}
+
+.ftb-accessory p {
+  max-width: 550px;
+  margin: 9px 0 0;
+  color: #687b91;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .ftb-specifications-header {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ftb-spec-model {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ftb-spec-model > div:nth-child(2) {
+    border-right: none;
+  }
+
+  .ftb-key-specs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ftb-key-spec:nth-child(2) {
+    border-right: none;
+  }
+
+  .ftb-key-spec:nth-child(-n + 2) {
+    border-bottom: 1px solid #cbdced;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .ftb-specifications-section {
+    padding: 90px 20px;
+  }
+
+  .ftb-specifications-header h2 {
+    font-size: 54px;
+    letter-spacing: -3px;
+  }
+
+  .ftb-specifications-intro {
+    padding-left: 20px;
+  }
+
+  .ftb-spec-model {
+    grid-template-columns: 1fr;
+  }
+
+  .ftb-spec-model > div {
+    border-right: none;
+    border-bottom: 1px solid #d9e5f1;
+  }
+
+  .ftb-spec-model > div:last-child {
+    border-bottom: none;
+  }
+
+  .ftb-spec-table td,
+  .ftb-spec-table th {
+    padding: 17px 18px;
+  }
+
+  .ftb-spec-note {
+    align-items: flex-start;
+  }
+
+  .ftb-key-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .ftb-key-spec {
+    min-height: 160px;
+    border-right: none;
+    border-bottom: 1px solid #cbdced;
+  }
+
+  .ftb-key-spec:last-child {
+    border-bottom: none;
+  }
+
+  .ftb-accessories {
+    margin-top: 90px;
+  }
+
+  .ftb-accessories-header {
+    display: block;
+  }
+
+  .ftb-accessories-header h3 {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .ftb-accessories-list {
+    grid-template-columns: 1fr;
+  }
+
+  .ftb-accessory {
+    grid-template-columns: 90px 1fr;
+    gap: 15px;
+  }
+
+  .ftb-accessory:nth-child(odd) {
+    border-right: none;
+  }
+
+}
+
+/* =========================================================
+   COMPACT FULL PRODUCT PAGE
+   Reduces unnecessary vertical spacing everywhere
+========================================================= */
+
+
+/* =========================================================
+   01 — HERO
+========================================================= */
+
+.ftb-product-hero-new {
+    min-height: 560px;
+}
+
+.ftb-hero-inner {
+    min-height: 510px;
+}
+
+.ftb-hero-visual {
+    height: 500px;
+}
+
+
+/* =========================================================
+   02 — PRODUCT DETAILS
+========================================================= */
+
+.product-details-section {
+    padding: 65px 0 70px;
+}
+
+.product-details-header {
+    margin-bottom: 50px;
+}
+
+.product-detail-row {
+    margin-bottom: 55px;
+    gap: 45px;
+}
+
+.product-detail-frame {
+    height: 270px;
+}
+
+.product-detail-image {
+    height: 245px;
+}
+
+
+/* =========================================================
+   03 — PROCESS / VIDEO
+========================================================= */
+
+.process-section {
+    padding: 75px 0;
+}
+
+.process-header {
+    margin-bottom: 45px;
+}
+
+.process-media {
+    gap: 25px;
+}
+
+.process-video {
+    min-height: 420px;
+}
+
+.process-video-player {
+    min-height: 420px;
+}
+
+.process-side-image {
+    min-height: 250px;
+}
+
+.process-side-content {
+    padding-top: 25px;
+}
+
+.process-characteristics {
+    margin-top: 60px;
+    padding-top: 40px;
+}
+
+.characteristics-grid {
+    margin-top: 35px;
+}
+
+.characteristic {
+    padding: 25px 0;
+}
+
+
+/* =========================================================
+   04 — DOWNLOADS
+========================================================= */
+
+.ftb-downloads-section,
+.hepa-downloads {
+    padding: 60px 0;
+}
+
+.ftb-downloads-container,
+.hepa-downloads-container {
+    gap: 55px;
+}
+
+.ftb-download-item {
+    min-height: 65px;
+}
+
+.ftb-download-category {
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   05 — GENERAL SECTION SPACING
+========================================================= */
+
+section {
+    scroll-margin-top: 80px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .ftb-product-hero-new {
+        min-height: 520px;
+    }
+
+    .ftb-hero-inner {
+        min-height: 470px;
+    }
+
+    .ftb-hero-visual {
+        height: 430px;
+    }
+
+    .product-details-section {
+        padding: 55px 0 60px;
+    }
+
+    .product-detail-row {
+        margin-bottom: 45px;
+    }
+
+    .process-section {
+        padding: 65px 0;
+    }
+
+    .process-header {
+        margin-bottom: 35px;
+    }
+
+    .ftb-downloads-section,
+    .hepa-downloads {
+        padding: 50px 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .ftb-product-hero-new {
+        min-height: auto;
+    }
+
+    .ftb-hero-inner {
+        min-height: auto;
+        padding-top: 55px;
+        padding-bottom: 75px;
+    }
+
+    .ftb-hero-visual {
+        height: 390px;
+    }
+
+    .product-details-section {
+        padding: 50px 0 55px;
+    }
+
+    .product-detail-row,
+    .product-detail-row.reverse {
+        margin-bottom: 45px;
+    }
+
+    .process-section {
+        padding: 55px 0;
+    }
+
+    .process-header {
+        margin-bottom: 30px;
+    }
+
+    .process-characteristics {
+        margin-top: 45px;
+        padding-top: 30px;
+    }
+
+    .ftb-downloads-section,
+    .hepa-downloads {
+        padding: 45px 0;
+    }
+}
+
+/* =========================================================
+   HERO — RESTORE LARGER SCALE
+========================================================= */
+
+.ftb-product-hero-new {
+    min-height: 600px;
+}
+
+.ftb-hero-inner {
+    min-height: 570px;
+}
+
+/* Make the product visual larger */
+.ftb-hero-visual {
+    height: 560px;
+}
+
+.ftb-hero-machine {
+    width: min(520px, 95%);
+}
+
+/* Keep the technical rings proportional */
+.ftb-ring-1 {
+    width: 420px;
+    height: 420px;
+}
+
+.ftb-ring-2 {
+    width: 520px;
+    height: 520px;
+}
+
+.ftb-ring-3 {
+    width: 620px;
+    height: 620px;
+}
+
+/* =========================================================
+   HERO MACHINE — SMALLER / BALANCED
+========================================================= */
+
+.ftb-hero-machine {
+    width: 390px !important;
+    max-width: 82%;
+    height: auto;
+    object-fit: contain;
+}
+
