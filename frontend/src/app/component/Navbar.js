@@ -23,22 +23,6 @@ export default function Navbar({ activePage }) {
           {/* ================= NAVIGATION ================= */}
           <div className="links">
 
-<<<<<<< HEAD
-            <Link href="/" className={activePage === "home" ? "active" : ""}>
-  HOME
-</Link>
-            {/* PRODUCTS DROPDOWN */}
-            <div className={`nav-dropdown ${openDropdown === "products" ? "open" : ""}`}>
-              <button
-                type="button"
-                className={activePage === "products" ? "active" : ""}
-                aria-haspopup="true"
-                aria-expanded={openDropdown === "products"}
-                onClick={() => toggleDropdown("products")}
-              >
-                PRODUCTS <span className="nav-chevron">⌄</span>
-              </button>
-=======
             {/* HOME */}
             <Link
               href="/"
@@ -63,7 +47,6 @@ export default function Navbar({ activePage }) {
                 PRODUCTS <span className="nav-chevron">⌄</span>
               </a>
 
->>>>>>> fd83cfb22acdf360ad64871439b1ecc0edf3f60f
               <div className="nav-dropdown-menu">
 
                 <Link href="/products/fluidized-temperature-baths">
@@ -141,16 +124,6 @@ export default function Navbar({ activePage }) {
                   </div>
                 </Link>
 
-<<<<<<< HEAD
-                <Link href="/applications">
-                  <span>→</span>
-                  <div>
-                    <b>View All Applications</b>
-                  </div>
-                </Link>
-
-=======
->>>>>>> fd83cfb22acdf360ad64871439b1ecc0edf3f60f
               </div>
             </div>
 
@@ -300,10 +273,6 @@ export default function Navbar({ activePage }) {
             <span></span>
           </span>
         </button>
-<<<<<<< HEAD
-=======
-
->>>>>>> fd83cfb22acdf360ad64871439b1ecc0edf3f60f
 
         <div
           className="mobile-links"
