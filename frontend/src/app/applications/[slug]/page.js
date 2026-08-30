@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import Navbar from "../../component/Navbar";
@@ -11,6 +11,7 @@ import "./page.css";
 export default function ApplicationDetail() {
   const params = useParams();
   const app = getApplicationBySlug(params.slug);
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -112,10 +113,66 @@ export default function ApplicationDetail() {
         </div>
       </section>
 
+      {/* THERMAL CLEANING IN ACTION */}
+      {app.video && (
+        <section className="app-detail-video">
+          <div className="wrap">
+            <div className="app-section-header reveal">
+              <div>
+                <div className="eyebrow mono">03 / SEE IT IN ACTION</div>
+                <h2>{app.video.heading}</h2>
+              </div>
+              <p>{app.video.text}</p>
+            </div>
+            {app.video.src ? (
+              <div className={`app-video-slot reveal ${videoPlaying ? "video-playing" : ""}`}>
+                <video
+                  className="app-video-player"
+                  controls
+                  muted
+                  playsInline
+                  preload="metadata"
+                  onPlay={() => setVideoPlaying(true)}
+                >
+                  <source src={app.video.src} type="video/mp4" />
+                </video>
+
+                {!videoPlaying && (
+                  <button
+                    type="button"
+                    className="app-video-overlay"
+                    onClick={(e) => {
+                      const video = e.currentTarget
+                        .closest(".app-video-slot")
+                        ?.querySelector("video");
+
+                      if (video) {
+                        video.play();
+                      }
+                    }}
+                    aria-label={`Play video: ${app.video.title || app.title}`}
+                  >
+                    <span className="app-video-play" aria-hidden="true">&#9654;</span>
+                    <span className="app-video-title">{app.video.title}</span>
+                    <small>Watch the process</small>
+                  </button>
+                )}
+              </div>
+            ) : (
+              <div className="app-video-slot reveal">
+                <span className="app-video-play" aria-hidden="true">&#9654;</span>
+                <span className="app-video-title">Video Placeholder</span>
+                <small>{app.video.placeholder || "Video coming soon"}</small>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* RELATED PRODUCTS */}
       <section className="app-detail-products">
         <div className="wrap">
-          <div className="eyebrow mono reveal">03 / RELATED PRODUCTS</div>
+          <div className="eyebrow mono reveal">04 / RELATED PRODUCTS</div>
           <div className="app-detail-product-grid reveal">
             {app.relatedProducts.map((product) => (
               <Link key={product.link} href={product.link} className="app-detail-product-card">
@@ -134,7 +191,7 @@ export default function ApplicationDetail() {
         <div className="wrap">
           <div className="app-section-header reveal">
             <div>
-              <div className="eyebrow mono">04 / CUSTOMERS</div>
+              <div className="eyebrow mono">05 / CUSTOMERS</div>
               <h2>Trusted by industry leaders.</h2>
             </div>
             <p>

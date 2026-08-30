@@ -1,30 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 export default function Navbar({ activePage }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
-
-  const toggleDropdown = (key) => {
-    setOpenDropdown((prev) => (prev === key ? null : key));
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!e.target.closest(".nav-dropdown")) setOpenDropdown(null);
-    };
-    const handleEscape = (e) => {
-      if (e.key === "Escape") setOpenDropdown(null);
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("keydown", handleEscape);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, []);
 
   return (
     <>
@@ -43,6 +23,7 @@ export default function Navbar({ activePage }) {
           {/* ================= NAVIGATION ================= */}
           <div className="links">
 
+<<<<<<< HEAD
             <Link href="/" className={activePage === "home" ? "active" : ""}>
   HOME
 </Link>
@@ -57,6 +38,32 @@ export default function Navbar({ activePage }) {
               >
                 PRODUCTS <span className="nav-chevron">⌄</span>
               </button>
+=======
+            {/* HOME */}
+            <Link
+              href="/"
+              className={activePage === "home" ? "active" : ""}
+            >
+              HOME
+            </Link>
+
+
+            {/* ================= PRODUCTS ================= */}
+            <div className="nav-dropdown">
+
+              {/* Products is ONLY a dropdown trigger.
+                  There is NO /products landing page. */}
+              <a
+                href="#"
+                className={`nav-dropdown-trigger ${
+                  activePage === "products" ? "active" : ""
+                }`}
+                onClick={(e) => e.preventDefault()}
+              >
+                PRODUCTS <span className="nav-chevron">⌄</span>
+              </a>
+
+>>>>>>> fd83cfb22acdf360ad64871439b1ecc0edf3f60f
               <div className="nav-dropdown-menu">
 
                 <Link href="/products/fluidized-temperature-baths">
@@ -134,6 +141,7 @@ export default function Navbar({ activePage }) {
                   </div>
                 </Link>
 
+<<<<<<< HEAD
                 <Link href="/applications">
                   <span>→</span>
                   <div>
@@ -141,6 +149,8 @@ export default function Navbar({ activePage }) {
                   </div>
                 </Link>
 
+=======
+>>>>>>> fd83cfb22acdf360ad64871439b1ecc0edf3f60f
               </div>
             </div>
 
@@ -290,6 +300,10 @@ export default function Navbar({ activePage }) {
             <span></span>
           </span>
         </button>
+<<<<<<< HEAD
+=======
+
+>>>>>>> fd83cfb22acdf360ad64871439b1ecc0edf3f60f
 
         <div
           className="mobile-links"
@@ -365,14 +379,6 @@ export default function Navbar({ activePage }) {
             onClick={() => setMenuOpen(false)}
           >
             Temperature Calibration
-          </Link>
-
-          <Link
-            href="/applications"
-            className="mobile-sub-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            View All Applications
           </Link>
 
 
