@@ -66,6 +66,7 @@ export const applications = [
       heading: "Thermal Cleaning in Action.",
       text: "Watch plastics, resin, and organic buildup thermally decompose and lift away from tooling in minutes \u2014 no solvents, no scraping, and no damage to expensive parts.",
       src: "/videos/estane-polymer-removal.mp4",
+      poster: "/videos/posters/estane-polymer.jpg",
       title: "Fast Removal of Estane Polymer Using a Fluidized Bath",
     },
     ctaTitle: "Complimentary Sample Cleaning",

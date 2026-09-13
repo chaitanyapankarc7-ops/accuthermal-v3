@@ -132,6 +132,7 @@ export default function ApplicationDetail() {
                   muted
                   playsInline
                   preload="metadata"
+                  poster={app.video.poster}
                   onPlay={() => setVideoPlaying(true)}
                 >
                   <source src={app.video.src} type="video/mp4" />
