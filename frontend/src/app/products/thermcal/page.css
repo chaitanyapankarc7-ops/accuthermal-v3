@@ -2232,3 +2232,834 @@
         margin: 0;
     }
 }
+
+/* =====================================================
+   FLUIDIZED VIDEO INTRO
+===================================================== */
+
+.ftb-video-intro {
+    position: relative;
+    padding: 70px 0;
+    background: #071827;
+    overflow: hidden;
+}
+
+
+/* Technical background */
+
+.ftb-video-intro-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 167, 232, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 167, 232, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 38px 38px;
+}
+
+
+/* Main white panel */
+
+.ftb-video-intro-panel {
+    position: relative;
+    z-index: 2;
+
+    width: min(1100px, calc(100% - 80px));
+    height: 510px;
+
+    margin: 0 auto;
+
+    background: #f7fafc;
+
+    border: 1px solid rgba(0, 167, 232, 0.25);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Panel grid */
+
+.ftb-video-intro-panel::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 167, 232, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 167, 232, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 38px 38px;
+
+    pointer-events: none;
+}
+
+
+/* Large technical circles */
+
+.ftb-video-intro-panel::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 167, 232, 0.12);
+
+    box-shadow:
+        0 0 0 35px rgba(0, 167, 232, 0.025),
+        0 0 0 75px rgba(0, 167, 232, 0.018);
+
+    pointer-events: none;
+}
+
+
+/* Label */
+
+.ftb-video-intro-label {
+    position: relative;
+    z-index: 3;
+
+    margin-bottom: 20px;
+
+    color: #009fe3;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* Heading */
+
+.ftb-video-intro-panel h2 {
+    position: relative;
+    z-index: 3;
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #071827;
+
+    font-size: clamp(48px, 5vw, 72px);
+
+    line-height: 0.9;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+}
+
+.ftb-video-intro-panel h2 span {
+    color: #00a7e8;
+}
+
+
+/* Play button */
+
+.ftb-video-play {
+    position: relative;
+    z-index: 5;
+
+    width: 72px;
+    height: 72px;
+
+    margin-top: 32px;
+
+    border: 2px solid #00a7e8;
+
+    border-radius: 50%;
+
+    background: #071827;
+
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.ftb-video-play span {
+    font-size: 18px;
+
+    margin-left: 3px;
+}
+
+.ftb-video-play:hover {
+    transform: scale(1.08);
+
+    background: #00a7e8;
+
+    box-shadow:
+        0 0 0 10px rgba(0, 167, 232, 0.12);
+}
+
+
+/* Logo */
+
+.ftb-video-intro-logo {
+    position: relative;
+    z-index: 4;
+
+    margin-top: 22px;
+}
+
+.ftb-video-intro-logo img {
+    width: 145px;
+    height: auto;
+
+    display: block;
+}
+
+
+/* Bottom metadata */
+
+.ftb-video-intro-bottom {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 25px;
+    right: 25px;
+    bottom: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #8092a0;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .ftb-video-intro {
+        padding: 55px 0;
+    }
+
+    .ftb-video-intro-panel {
+        width: calc(100% - 40px);
+        height: 450px;
+    }
+
+    .ftb-video-intro-panel h2 {
+        font-size: clamp(42px, 7vw, 60px);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .ftb-video-intro {
+        padding: 40px 0;
+    }
+
+    .ftb-video-intro-panel {
+        width: calc(100% - 30px);
+        height: 430px;
+    }
+
+    .ftb-video-intro-label {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .ftb-video-intro-panel h2 {
+        font-size: 38px;
+        letter-spacing: -2px;
+    }
+
+    .ftb-video-play {
+        width: 62px;
+        height: 62px;
+
+        margin-top: 28px;
+    }
+
+    .ftb-video-intro-logo img {
+        width: 120px;
+    }
+
+    .ftb-video-intro-bottom {
+        left: 15px;
+        right: 15px;
+        bottom: 12px;
+
+        font-size: 6px;
+    }
+
+}
+
+/* =====================================================
+   THERMCAL VIDEO INTRO
+===================================================== */
+
+.thermcal-video-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   WHITE TECHNICAL WALLPAPER
+===================================================== */
+
+.thermcal-video-intro {
+    position: absolute;
+    inset: 0;
+
+    z-index: 10;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background-color: #f8fcfe;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 167, 232, .07) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 167, 232, .07) 1px,
+            transparent 1px
+        );
+
+    background-size: 38px 38px;
+}
+
+
+/* =====================================================
+   TECHNICAL CIRCLES
+===================================================== */
+
+.thermcal-video-intro::before {
+    content: "";
+
+    position: absolute;
+
+    width: 58%;
+    aspect-ratio: 1;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 167, 232, .12);
+
+    box-shadow:
+        0 0 0 45px rgba(0, 167, 232, .025),
+        0 0 0 90px rgba(0, 167, 232, .02);
+
+    pointer-events: none;
+}
+
+
+.thermcal-video-intro::after {
+    content: "";
+
+    position: absolute;
+
+    width: 42%;
+    aspect-ratio: 1;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 167, 232, .14);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   KICKER
+===================================================== */
+
+.thermcal-intro-kicker {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 25%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #00a7e8;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.thermcal-video-intro h3 {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 31%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    margin: 0;
+
+    color: #071827;
+
+    font-size: clamp(34px, 4.5vw, 62px);
+
+    line-height: .88;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+
+    text-align: center;
+}
+
+
+.thermcal-video-intro h3 span {
+    color: #00a7e8;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.thermcal-intro-logo {
+    position: absolute;
+
+    z-index: 4;
+
+    left: 50%;
+
+    top: 69%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.thermcal-intro-logo img {
+    width: 150px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   PLAY BUTTON
+===================================================== */
+
+.thermcal-intro-play {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    top: 66%;
+
+    transform: translate(-50%, -50%);
+
+    width: 72px;
+
+    height: 72px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #061827;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, .18);
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+
+.thermcal-intro-play:hover {
+    background: #00a7e8;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.08);
+}
+
+
+.thermcal-intro-play span {
+    margin-left: 4px;
+
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.thermcal-intro-footer {
+    position: absolute;
+
+    z-index: 4;
+
+    left: 22px;
+
+    right: 22px;
+
+    bottom: 14px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 10px;
+
+    border-top: 1px solid rgba(7, 24, 39, .15);
+
+    color: rgba(7, 24, 39, .5);
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 6px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   VIDEO PLAYING
+===================================================== */
+
+.thermcal-video-wrapper.video-is-playing
+.thermcal-video-intro {
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .thermcal-intro-kicker {
+        top: 22%;
+
+        font-size: 7px;
+    }
+
+    .thermcal-video-intro h3 {
+        top: 30%;
+
+        font-size: clamp(28px, 8vw, 45px);
+
+        letter-spacing: -2px;
+    }
+
+    .thermcal-intro-play {
+        width: 56px;
+
+        height: 56px;
+
+        top: 65%;
+    }
+
+    .thermcal-intro-play span {
+        font-size: 17px;
+    }
+
+    .thermcal-intro-logo {
+        top: 69%;
+    }
+
+    .thermcal-intro-logo img {
+        width: 110px;
+    }
+
+    .thermcal-intro-footer {
+        left: 12px;
+
+        right: 12px;
+
+        font-size: 5px;
+    }
+}
+
+/* =====================================================
+   MAIN HEADING — MOVE UP
+===================================================== */
+
+.thermcal-video-intro h3 {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 22%; /* was 31% */
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    margin: 0;
+
+    color: #071827;
+
+    font-size: clamp(34px, 4.5vw, 62px);
+
+    line-height: .88;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+
+    text-align: center;
+}
+
+.thermcal-video-intro h3 span {
+    color: #00a7e8;
+}
+
+
+/* =====================================================
+   LOGO — MOVE TO BOTTOM
+===================================================== */
+
+.thermcal-intro-logo {
+    position: absolute;
+
+    z-index: 4;
+
+    left: 50%;
+
+    top: auto;
+
+    bottom: 12%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.thermcal-intro-logo img {
+    width: 125px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   PLAY BUTTON — SMALLER + CENTERED
+===================================================== */
+
+.thermcal-intro-play {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    top: 61%;
+
+    transform: translate(-50%, -50%);
+
+    width: 54px;
+
+    height: 54px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #061827;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .18);
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.thermcal-intro-play:hover {
+    background: #00a7e8;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.08);
+}
+
+.thermcal-intro-play span {
+    margin-left: 3px;
+
+    font-size: 15px;
+
+    line-height: 1;
+}
+
+
+/* =====================================================
+   KICKER — SLIGHTLY HIGHER
+===================================================== */
+
+.thermcal-intro-kicker {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 16%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #00a7e8;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+}
+

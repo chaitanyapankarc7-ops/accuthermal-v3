@@ -274,7 +274,6 @@ export default function Navbar({ activePage }) {
           </span>
         </button>
 
-
         <div
           className="mobile-links"
           style={{
