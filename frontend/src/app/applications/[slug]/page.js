@@ -113,13 +113,57 @@ export default function ApplicationDetail() {
         </div>
       </section>
 
+      {/* COMPLEX GEOMETRY — same pattern as KEY BENEFITS, single-column */}
+      {app.complexGeometry && (
+        <section className="app-detail-benefits">
+          <div className="wrap">
+            <div className="app-detail-benefits-grid reveal">
+              <div className="app-benefits-left">
+                <div className="eyebrow mono">03 / {app.complexGeometry.heading.toUpperCase()}</div>
+                <h2>{app.complexGeometry.heading}</h2>
+              </div>
+              <div className="app-benefits-right">
+                <p>{app.complexGeometry.text}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* PROCESS STEPS — reuses .app-benefit-item card pattern from Key Benefits */}
+      {app.process && (
+        <section className="app-detail-benefits">
+          <div className="wrap">
+            <div className="app-section-header reveal">
+              <div>
+                <div className="eyebrow mono">04 / HOW THE PROCESS WORKS</div>
+                <h2>How the Cleaning Process Works</h2>
+              </div>
+            </div>
+            <div className="app-detail-benefits-grid reveal" style={{ gridTemplateColumns: "1fr", gap: "20px" }}>
+              <div className="app-benefits-right" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
+                {app.process.map((p) => (
+                  <div key={p.step} className="app-benefit-item">
+                    <span className="app-benefit-check mono">{p.step}</span>
+                    <div>
+                      <b>{p.title}</b>
+                      <p>{p.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* THERMAL CLEANING IN ACTION */}
       {app.video && (
         <section className="app-detail-video">
           <div className="wrap">
             <div className="app-section-header reveal">
               <div>
-                <div className="eyebrow mono">03 / SEE IT IN ACTION</div>
+                <div className="eyebrow mono">05 / SEE IT IN ACTION</div>
                 <h2>{app.video.heading}</h2>
               </div>
               <p>{app.video.text}</p>
@@ -132,6 +176,7 @@ export default function ApplicationDetail() {
                   muted
                   playsInline
                   preload="metadata"
+                  poster={app.video.poster}
                   onPlay={() => setVideoPlaying(true)}
                 >
                   <source src={app.video.src} type="video/mp4" />
@@ -172,10 +217,10 @@ export default function ApplicationDetail() {
       {/* RELATED PRODUCTS */}
       <section className="app-detail-products">
         <div className="wrap">
-          <div className="eyebrow mono reveal">04 / RELATED PRODUCTS</div>
+          <div className="eyebrow mono reveal">06 / RELATED PRODUCTS</div>
           <div className="app-detail-product-grid reveal">
             {app.relatedProducts.map((product) => (
-              <Link key={product.link} href={product.link} className="app-detail-product-card">
+              <Link key={product.name} href={product.link} className="app-detail-product-card">
                 <h3>{product.name}</h3>
                 <span className="app-detail-product-link">
                   Learn More <span>&#8594;</span>
@@ -191,7 +236,7 @@ export default function ApplicationDetail() {
         <div className="wrap">
           <div className="app-section-header reveal">
             <div>
-              <div className="eyebrow mono">05 / CUSTOMERS</div>
+              <div className="eyebrow mono">07 / CUSTOMERS</div>
               <h2>Trusted by industry leaders.</h2>
             </div>
             <p>

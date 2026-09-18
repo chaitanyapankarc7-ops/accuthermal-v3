@@ -108,7 +108,7 @@ export default function Customers() {
                 <div className="customer-grid">
                   {group.logos.map((logo, li) => (
                     <div className="customer-logo" key={li}>
-                      <img src={logo.src} alt={logo.alt} loading="lazy" />
+                      <img src={logo.src} alt={logo.alt} loading="lazy" decoding="async" />
                     </div>
                   ))}
                 </div>
