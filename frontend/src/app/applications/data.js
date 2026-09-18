@@ -23,8 +23,8 @@ export const applications = [
       "Removes all types of plastic and elastomers, including fluoropolymers, rubber, and silicone",
     ],
     relatedProducts: [
-      { name: "Fluidized Temperature Baths", link: "/products/fluidized-temperature-baths" },
-      { name: "HEPA Air Filtration", link: "/products/hepa-air-filtration" },
+      { name: "Fluidized Temperature Baths", link: "/applications/extrusion-die-cleaning" },
+      { name: "HEPA Air Filtration", link: "/applications/extrusion-die-cleaning" },
     ],
     beforeAfter: [
       {
@@ -96,7 +96,7 @@ export const applications = [
       "No jars to empty or dust extraction required \u2014 much safer than salt baths",
     ],
     relatedProducts: [
-      { name: "Fluidized Temperature Baths", link: "/products/fluidized-temperature-baths" },
+      { name: "Fluidized Temperature Baths", link: "/applications/thermal-cleaning" },
     ],
     customerCategory: "shape-setting",
     ctaTitle: "Complimentary Heat Treatment",
@@ -126,7 +126,7 @@ export const applications = [
       "Cryogenic models available down to -100\u00b0C",
     ],
     relatedProducts: [
-      { name: "Fluidized Temperature Baths", link: "/products/fluidized-temperature-baths" },
+      { name: "Fluidized Temperature Baths", link: "/applications/thermal-cleaning" },
     ],
     customerCategory: "reactor-heating",
     ctaTitle: "Discuss Your Application",
@@ -156,12 +156,55 @@ export const applications = [
       "Clean and easy to use",
     ],
     relatedProducts: [
-      { name: "Fluidized Temperature Baths", link: "/products/fluidized-temperature-baths" },
-      { name: "ThermCal Dry Block Calibrators", link: "/products/thermcal" },
+      { name: "Fluidized Temperature Baths", link: "/applications/thermal-cleaning" },
+      { name: "ThermCal Dry Block Calibrators", link: "/applications/thermal-cleaning" },
     ],
     customerCategory: "calibration",
     ctaTitle: "Request Calibration Guidance",
     ctaText: "Contact us to discuss your temperature calibration requirements and find the right thermal source for your sensors and instrumentation.",
+  },
+  {
+    num: "05",
+    title: "Extrusion Die Cleaning",
+    slug: "extrusion-die-cleaning",
+    navSubtitle: "Fast, Uniform Polymer Removal from Extrusion Dies",
+    shortDesc: "Reduce the time and labor required to clean plastic extrusion dies — fluidized bath thermal processing removes polymer from holes, flow passages, and grooves without damaging tooling.",
+    heroImage: "/assets/images/tools/Tool%20%26%20Parts%20Cleaning.jpg",
+    tags: ["EXTRUSION DIES", "POLYMER REMOVAL", "TOOLING", "FLUIDIZED BATH"],
+    description: [
+      "Extrusion dies require regular cleaning to maintain product quality, dimensional consistency, and reliable production. Polymer can accumulate on die surfaces and inside flow passages. As material degrades or hardens, manual removal can become increasingly difficult and time-consuming.",
+      "Traditional cleaning may require scraping, drilling, wire brushing, hand tools, extended oven cycles, and repeated disassembly and manual cleanup. Fluidized bath thermal cleaning provides a controlled alternative: the entire die is surrounded by hot, fluidized aluminum oxide media, transferring heat rapidly and uniformly throughout the tooling.",
+      "The polymer thermally decomposes, leaving a dry, non-binding residue that can typically be removed after cooling with light brushing and compressed air.",
+    ],
+    complexGeometry: {
+      heading: "Clean Complex Die Geometry",
+      text: "One of the major challenges with extrusion die cleaning is reaching areas that are difficult to access manually. Fluidized media surrounds the external surfaces of the tooling while heat conducts throughout the die \u2014 making the process particularly useful for components containing internal flow passages, small openings, grooves, slots, complex profiles, recessed areas, and multiple polymer flow paths. Instead of manually trying to reach every contaminated surface, the complete tooling assembly is exposed to a controlled thermal process.",
+    },
+    process: [
+      { step: "1", title: "Prepare the Die", text: "The die is disassembled as necessary and reviewed for size, weight, tooling material, and polymer type." },
+      { step: "2", title: "Heat the Fluidized Bath", text: "Aluminum oxide media is fluidized with compressed air and heated to the selected cleaning temperature." },
+      { step: "3", title: "Load the Die", text: "The die or individual tooling components are placed in a basket or suitable fixture and lowered into the fluidized bath." },
+      { step: "4", title: "Thermally Remove the Polymer", text: "Rapid, uniform heat transfer brings the tooling to process temperature and thermally breaks down the polymer." },
+      { step: "5", title: "Remove & Cool", text: "The tooling is removed from the bath and allowed to cool safely." },
+      { step: "6", title: "Final Cleanup", text: "Remaining non-binding residue and loose aluminum oxide can typically be removed using a soft brush and compressed shop air." },
+    ],
+    benefits: [
+      "No more scraping, drilling, wire brushing, or hand-tool cleanup",
+      "No more extended oven cycles or repeated disassembly",
+      "Fluidized media reaches internal flow passages, small openings, grooves, slots, and recessed areas manual tools can't access",
+      "Rapid, uniform heat transfer processes the entire die at once \u2014 not surface by surface",
+      "Leaves a dry, non-binding residue removable with light brushing and compressed air",
+      "Gentle fluidizing action preserves die geometry and surface finish",
+      "Reduces the time and labor required for routine die maintenance",
+      "Correct bath size is matched to your die's size, weight, and load",
+    ],
+    relatedProducts: [
+      { name: "Fluidized Temperature Baths", link: "/applications/thermal-cleaning" },
+      { name: "HEPA Air Filtration", link: "/applications/thermal-cleaning" },
+    ],
+    customerCategory: "thermal-cleaning",
+    ctaTitle: "Free Cleaning Trial",
+    ctaText: "Send us your die for a free cleaning trial. We\u2019ll clean it, show you the results, and help you identify the correct fluidized bath system based on your die's size and load.",
   },
 ];
 

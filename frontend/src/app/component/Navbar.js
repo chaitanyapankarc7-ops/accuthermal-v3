@@ -32,51 +32,6 @@ export default function Navbar({ activePage }) {
             </Link>
 
 
-            {/* ================= PRODUCTS ================= */}
-            <div className="nav-dropdown">
-
-              {/* Products is ONLY a dropdown trigger.
-                  There is NO /products landing page. */}
-              <a
-                href="#"
-                className={`nav-dropdown-trigger ${
-                  activePage === "products" ? "active" : ""
-                }`}
-                onClick={(e) => e.preventDefault()}
-              >
-                PRODUCTS <span className="nav-chevron">⌄</span>
-              </a>
-
-              <div className="nav-dropdown-menu">
-
-                <Link href="/products/fluidized-temperature-baths">
-                  <span>01</span>
-                  <div>
-                    <b>Fluidized Temperature Baths</b>
-                    <small>Thermal processing systems</small>
-                  </div>
-                </Link>
-
-                <Link href="/products/thermcal">
-                  <span>02</span>
-                  <div>
-                    <b>ThermCal Dry Block Calibrators</b>
-                    <small>Temperature calibration systems</small>
-                  </div>
-                </Link>
-
-                <Link href="/products/hepa-air-filtration">
-                  <span>03</span>
-                  <div>
-                    <b>HEPA Air Filtration</b>
-                    <small>Process air filtration systems</small>
-                  </div>
-                </Link>
-
-              </div>
-            </div>
-
-
             {/* ================= APPLICATIONS ================= */}
             <div className="nav-dropdown">
 
@@ -121,6 +76,59 @@ export default function Navbar({ activePage }) {
                   <div>
                     <b>Temperature Calibration</b>
                     <small>Stable environments for sensors</small>
+                  </div>
+                </Link>
+
+                <Link href="/applications/extrusion-die-cleaning">
+                  <span>05</span>
+                  <div>
+                    <b>Extrusion Die Cleaning</b>
+                    <small>Clear polymer buildup without damaging tooling</small>
+                  </div>
+                </Link>
+
+              </div>
+            </div>
+
+
+            {/* ================= PRODUCTS ================= */}
+            <div className="nav-dropdown">
+
+              {/* Products is ONLY a dropdown trigger.
+                  There is NO /products landing page. */}
+              <a
+                href="#"
+                className={`nav-dropdown-trigger ${
+                  activePage === "products" ? "active" : ""
+                }`}
+                onClick={(e) => e.preventDefault()}
+              >
+                PRODUCTS <span className="nav-chevron">⌄</span>
+              </a>
+
+              <div className="nav-dropdown-menu">
+
+                <Link href="/products/fluidized-temperature-baths">
+                  <span>01</span>
+                  <div>
+                    <b>Fluidized Temperature Baths</b>
+                    <small>Thermal processing systems</small>
+                  </div>
+                </Link>
+
+                <Link href="/products/thermcal">
+                  <span>02</span>
+                  <div>
+                    <b>ThermCal Dry Block Calibrators</b>
+                    <small>Temperature calibration systems</small>
+                  </div>
+                </Link>
+
+                <Link href="/products/hepa-air-filtration">
+                  <span>03</span>
+                  <div>
+                    <b>HEPA Air Filtration</b>
+                    <small>Process air filtration systems</small>
                   </div>
                 </Link>
 
@@ -283,36 +291,6 @@ export default function Navbar({ activePage }) {
           }}
         >
 
-          {/* PRODUCTS */}
-          <span className="mobile-header-link">
-            PRODUCTS
-          </span>
-
-          <Link
-            href="/products/fluidized-temperature-baths"
-            className="mobile-sub-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            Fluidized Temperature Baths
-          </Link>
-
-          <Link
-            href="/products/thermcal"
-            className="mobile-sub-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            ThermCal Dry Block Calibrators
-          </Link>
-
-          <Link
-            href="/products/hepa-air-filtration"
-            className="mobile-sub-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            HEPA Air Filtration
-          </Link>
-
-
           {/* APPLICATIONS */}
           <span className="mobile-header-link">
             APPLICATIONS
@@ -348,6 +326,44 @@ export default function Navbar({ activePage }) {
             onClick={() => setMenuOpen(false)}
           >
             Temperature Calibration
+          </Link>
+
+          <Link
+            href="/applications/extrusion-die-cleaning"
+            className="mobile-sub-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Extrusion Die Cleaning
+          </Link>
+
+
+          {/* PRODUCTS */}
+          <span className="mobile-header-link">
+            PRODUCTS
+          </span>
+
+          <Link
+            href="/products/fluidized-temperature-baths"
+            className="mobile-sub-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Fluidized Temperature Baths
+          </Link>
+
+          <Link
+            href="/products/thermcal"
+            className="mobile-sub-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            ThermCal Dry Block Calibrators
+          </Link>
+
+          <Link
+            href="/products/hepa-air-filtration"
+            className="mobile-sub-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            HEPA Air Filtration
           </Link>
 
 
