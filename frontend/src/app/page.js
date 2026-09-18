@@ -117,10 +117,12 @@ export default function Home() {
           </div>
           <div className="blueprint" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "700px", position: "relative" }}>
             {heroImages.map((src, idx) => (
-              <img 
+              <img
                 key={src}
-                src={src} 
-                alt={`Accurate Thermal Systems Products ${idx + 1}`} 
+                src={src}
+                alt={`Accurate Thermal Systems Products ${idx + 1}`}
+                fetchPriority={idx === 0 ? "high" : "auto"}
+                decoding="async"
                 style={{
                   width: "auto",
                   height: "100%",
@@ -200,6 +202,7 @@ export default function Home() {
                 src="/assets/images/products/fluidizedbath.png"
                 alt="Accurate Thermal Systems Fluidized Temperature Bath"
                 className="system-product-img"
+                decoding="async"
               />
             </div>
             <div className="system-copy">
@@ -263,6 +266,7 @@ export default function Home() {
                 src="/assets/images/products/ats-thermcal400.png"
                 alt="Accurate Thermal Systems ThermCal 400 Dry Block Temperature Calibrator"
                 className="thermcal-product-img"
+                decoding="async"
               />
             </div>
           </div>
@@ -308,7 +312,7 @@ export default function Home() {
             ].map((ind, i) => (
               <article key={i} className="industry">
                 <div className="industry-img">
-                  <img src={ind.img} alt={ind.title} loading="lazy" />
+                  <img src={ind.img} alt={ind.title} loading="lazy" decoding="async" />
                 </div>
                 <h3>{ind.title}</h3>
                 <p>{ind.desc}</p>

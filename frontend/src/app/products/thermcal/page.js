@@ -599,6 +599,7 @@ export default function ThermCalPage() {
         muted
         playsInline
         preload="metadata"
+        poster="/videos/posters/thermcal400.jpg"
         className="thermcal-video"
 
         onPlay={() => {
@@ -745,6 +746,7 @@ export default function ThermCalPage() {
         muted
         playsInline
         preload="metadata"
+        poster="/videos/posters/thermcal130.jpg"
         className="thermcal-video"
 
         onPlay={() => {

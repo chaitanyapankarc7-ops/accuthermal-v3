@@ -625,6 +625,7 @@ export default function FluidizedTemperatureBaths() {
       muted
       playsInline
       preload="metadata"
+      poster="/videos/posters/fluidized-process.jpg"
       className="process-video-player"
       onPlay={() => setVideoPlaying(true)}
     >
