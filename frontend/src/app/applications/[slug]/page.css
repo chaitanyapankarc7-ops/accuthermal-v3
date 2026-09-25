@@ -138,6 +138,19 @@
   margin-top: 4px;
 }
 
+.app-detail-image-frame {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+  border: 1px solid var(--line-light);
+  background: var(--paper);
+}
+
+.app-detail-image-frame img {
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Benefits */
 .app-detail-benefits {
   padding: 80px 0;
