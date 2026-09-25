@@ -58,6 +58,14 @@ export default function Navbar({ activePage }) {
                   </Link>
                 ))}
 
+                <Link href="/applications/thermal-cleaning/breaker-plate-cleaning">
+                  <span>07</span>
+                  <div>
+                    <b>Breaker Plate Cleaning</b>
+                    <small>Thermal cleaning for polymer-filled holes</small>
+                  </div>
+                </Link>
+
               </div>
             </div>
 
@@ -277,6 +285,14 @@ export default function Navbar({ activePage }) {
               {app.title}
             </Link>
           ))}
+
+          <Link
+            href="/applications/thermal-cleaning/breaker-plate-cleaning"
+            className="mobile-sub-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Breaker Plate Cleaning
+          </Link>
 
 
           {/* PRODUCTS */}

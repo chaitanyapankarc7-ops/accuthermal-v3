@@ -103,8 +103,7 @@ export default function Home() {
               </span>
             </h1>
             <p>
-              Thermal systems for calibration, cleaning, heat treatment, Nitinol processing, reactor
-              heating, research and demanding industrial applications.
+              Precision thermal systems for demanding industrial processes.
             </p>
             <div className="buttons">
               <a className="btn primary" href="#systems">

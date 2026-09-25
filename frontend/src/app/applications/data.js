@@ -79,6 +79,10 @@ export const applications = [
     navSubtitle: "Controlled heating for medical devices",
     shortDesc: "Stable and uniform temperature environments for nitinol shape setting, heat treatment, annealing, and medical device processing.",
     heroImage: "/assets/images/tools/heat-treatment-225x225.png",
+    detailImage: {
+      src: "/assets/images/tools/nitinol-heat-treatment-shape-setting.jpg",
+      alt: "Nitinol Shape Setting and Heat Treatment",
+    },
     tags: ["NITINOL", "MEDICAL DEVICES", "ANNEALING", "SHAPE SETTING"],
     description: [
       "Accurate Thermal Systems, a leader in medical device shape setting technology, offers several models of fluidized baths that provide very stable and uniform temperature environments for nitinol shape setting, heat treatment, annealing, tempering, thermal stress analysis, and heat setting of various metal components, parts, and assemblies.",
@@ -109,6 +113,10 @@ export const applications = [
     navSubtitle: "Thermal support for process vessels",
     shortDesc: "Fast and efficient heating of laboratory and industrial reactors for research, development, and temperature-dependent reactions.",
     heroImage: "/assets/images/tools/reactor-heating-225x225.png",
+    detailImage: {
+      src: "/assets/images/tools/reactor-heating-methods.jpg",
+      alt: "Reactor Heating Methods",
+    },
     tags: ["RESEARCH", "REACTORS", "PROCESS HEAT", "LABORATORY"],
     description: [
       "Fortune 500 companies and university biochemistry and engineering departments use fluidized temperature baths for fast and efficient heating of many processes, including heating reactors and coils for dependable endothermic and exothermic reactions.",
@@ -139,6 +147,10 @@ export const applications = [
     navSubtitle: "Stable environments for sensors",
     shortDesc: "Choice of temperature sources for calibrating temperature sensors, thermometers, indicators, systems, and probes.",
     heroImage: "/assets/images/tools/calobrationp-225x225.png",
+    detailImage: {
+      src: "/assets/images/tools/thermcal400.jpg",
+      alt: "ThermCal dry block temperature calibrator",
+    },
     tags: ["SENSORS", "LABORATORY", "TESTING", "CALIBRATION"],
     description: [
       "We offer a choice of temperature sources for calibrating temperature sensors, thermometers, indicators, systems, and probes. Our dry block temperature calibrators and fluidized temperature baths provide stable, accurate thermal environments for calibration workflows.",
@@ -251,10 +263,6 @@ export const applications = [
     extendedContent: {
       hero: {
         title: "Extruder Screw Cleaning Without Heavy Scraping",
-        subtitle: "Fluidized bath cleaning for polymer removal from flights, roots, and mixing sections.",
-        description: [
-          "Thermal cleaning breaks down polymer on extruder screws. After cooling, remove the dry residue with light brushing and compressed air.",
-        ],
         primaryCta: "Request a Free Screw Cleaning Trial",
         secondaryCta: "View Fluidized Bath Systems",
       },

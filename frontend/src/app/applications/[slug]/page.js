@@ -115,6 +115,17 @@ export default function ApplicationDetail() {
                   <small>Thermal processing / fluidized bath</small>
                 </div>
               </div>
+            ) : app.detailImage ? (
+              <div className="app-detail-image-placeholder">
+                <div className="app-detail-image-frame">
+                  <Image
+                    src={app.detailImage.src}
+                    alt={app.detailImage.alt}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 40vw"
+                  />
+                </div>
+              </div>
             ) : (
               <div className="app-detail-image-placeholder">
                 <div className="app-image-slot">
