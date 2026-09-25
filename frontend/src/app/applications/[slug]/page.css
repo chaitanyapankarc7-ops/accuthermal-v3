@@ -529,3 +529,878 @@
     font: 500 12px "IBM Plex Mono", monospace;
     letter-spacing: .08em;
 }
+
+.app-detail-hero-subtitle {
+  max-width: 700px;
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, .92);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.app-detail-hero-description {
+  max-width: 700px;
+  margin-bottom: 28px;
+}
+
+.app-detail-hero-description p {
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, .72);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.app-detail-hero-description p:last-child {
+  margin-bottom: 0;
+}
+
+.app-buildup-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+  padding: 0;
+  margin: 24px 0;
+  list-style: none;
+}
+
+.app-buildup-list li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.app-buildup-list li::before {
+  content: "";
+  position: absolute;
+  top: .55em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+}
+
+.app-extended-image-slot {
+  min-height: 360px;
+}
+
+.app-benefit-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line-light);
+  border-left: 1px solid var(--line-light);
+}
+
+.app-benefit-detail-card {
+  min-height: 190px;
+  padding: 28px;
+  border-right: 1px solid var(--line-light);
+  border-bottom: 1px solid var(--line-light);
+  transition: background .25s ease, transform .25s ease;
+}
+
+.app-benefit-detail-card:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+.app-benefit-detail-card > span {
+  color: var(--blue);
+  font: 500 10px "IBM Plex Mono", monospace;
+  letter-spacing: .14em;
+}
+
+.app-benefit-detail-card h3 {
+  margin: 28px 0 10px;
+  font-size: 19px;
+  letter-spacing: -.02em;
+}
+
+.app-benefit-detail-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.app-extended-benefits-grid {
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+.app-extended-benefits-grid .app-benefits-left {
+  max-width: 760px;
+}
+
+.app-extended-benefits-grid .app-benefit-details-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.app-extended-benefits-grid .app-benefit-detail-card {
+  min-height: 160px;
+  padding: 24px;
+}
+
+.app-extended-benefits-grid .app-benefit-detail-card h3 {
+  margin-top: 20px;
+}
+
+.app-extended-section {
+  padding: 100px 0;
+  background: var(--paper);
+}
+
+.app-polymer-section,
+.app-guidance-section,
+.app-comparison-section {
+  background: #fff;
+}
+
+.app-screw-length-section,
+.app-temperature-section,
+.app-oven-section {
+  background: var(--night);
+  color: #fff;
+}
+
+.app-extended-section-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr);
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 54px;
+}
+
+.app-extended-section-header h2 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: .98;
+  letter-spacing: -.05em;
+}
+
+.app-extended-section-header > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.app-screw-length-section .app-extended-section-header > p,
+.app-temperature-section .app-extended-section-header > p {
+  color: rgba(255, 255, 255, .72);
+}
+
+.app-polymer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line-light);
+  border-left: 1px solid var(--line-light);
+}
+
+.app-polymer-card {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  padding: 30px;
+  border-right: 1px solid var(--line-light);
+  border-bottom: 1px solid var(--line-light);
+  transition: background .25s ease, transform .25s ease;
+}
+
+.app-polymer-card:hover {
+  background: var(--paper);
+  transform: translateY(-3px);
+}
+
+.app-polymer-index {
+  color: var(--blue);
+}
+
+.app-polymer-card h3 {
+  margin: 32px 0 12px;
+  font-size: 22px;
+  letter-spacing: -.025em;
+}
+
+.app-polymer-card p {
+  flex: 1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.app-inline-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin-top: 26px;
+  color: var(--red);
+  font: 700 10px "IBM Plex Mono", monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: color .25s ease, transform .25s ease;
+}
+
+.app-inline-cta:hover {
+  color: var(--blue);
+  transform: translateX(4px);
+}
+
+.app-polymer-card .app-inline-cta {
+  margin-top: 24px;
+}
+
+.app-screw-length-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.app-screw-length-copy p,
+.app-temperature-copy p {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, .74);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.app-sectional-copy p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.app-screw-length-copy .app-inline-cta,
+.app-temperature-copy .app-inline-cta,
+.app-oven-section > .wrap > .app-inline-cta {
+  color: var(--blue);
+}
+
+.app-screw-length-section .app-inline-cta:hover,
+.app-temperature-section .app-inline-cta:hover,
+.app-oven-section .app-inline-cta:hover {
+  color: #fff;
+}
+
+.app-sectional-section {
+  background: var(--paper);
+}
+
+.app-sectional-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr);
+  gap: 70px;
+  align-items: start;
+}
+
+.app-factor-panel {
+  padding: 32px;
+  border: 1px solid var(--line-light);
+  background: #fff;
+}
+
+.app-factor-panel-label,
+.app-oven-label {
+  color: var(--blue);
+  font: 500 10px "IBM Plex Mono", monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.app-factor-panel ul,
+.app-temperature-factors ul {
+  padding: 0;
+  margin: 24px 0 0;
+  list-style: none;
+}
+
+.app-factor-panel li,
+.app-temperature-factors li {
+  position: relative;
+  padding: 14px 0 14px 20px;
+  border-top: 1px solid var(--line-light);
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.app-factor-panel li::before,
+.app-temperature-factors li::before {
+  content: "";
+  position: absolute;
+  top: 21px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+}
+
+.app-guidance-card {
+  max-width: 980px;
+  padding: 42px;
+  border-left: 4px solid var(--blue);
+  background: var(--paper);
+}
+
+.app-guidance-card p {
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.app-guidance-card p:last-child {
+  margin-bottom: 0;
+}
+
+.app-temperature-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .8fr);
+  gap: 70px;
+  align-items: start;
+}
+
+.app-temperature-factors {
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .06);
+}
+
+.app-temperature-factors .app-factor-panel-label {
+  color: var(--blue);
+}
+
+.app-temperature-factors li {
+  border-color: rgba(255, 255, 255, .14);
+  color: rgba(255, 255, 255, .82);
+}
+
+.app-comparison-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line-light);
+  background: #fff;
+}
+
+.app-comparison-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.app-comparison-table th {
+  padding: 20px 24px;
+  background: var(--night);
+  color: #fff;
+  text-align: left;
+  font: 700 10px "IBM Plex Mono", monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.app-comparison-table th:not(:first-child) {
+  color: var(--blue);
+}
+
+.app-comparison-table td {
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line-light);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.app-comparison-table td:first-child {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.app-comparison-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.app-comparison-table tbody tr:hover td {
+  background: var(--paper);
+}
+
+.app-comparison-section > .wrap > .app-inline-cta {
+  margin-top: 30px;
+}
+
+.app-oven-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.app-oven-column {
+  min-height: 280px;
+  padding: 34px;
+  border: 1px solid var(--line-light);
+  background: #fff;
+}
+
+.app-oven-column-featured {
+  border-color: var(--night);
+  background: var(--night2);
+  color: #fff;
+}
+
+.app-oven-column h3 {
+  margin: 30px 0 14px;
+  font-size: 24px;
+  letter-spacing: -.03em;
+}
+
+.app-oven-column p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.app-oven-column-featured p {
+  color: rgba(255, 255, 255, .72);
+}
+
+.app-oven-section > .wrap > .app-inline-cta {
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .app-extended-section-header,
+  .app-screw-length-layout,
+  .app-sectional-layout,
+  .app-temperature-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .app-polymer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .app-detail-hero-subtitle {
+    font-size: 16px;
+  }
+
+  .app-detail-hero-description p {
+    font-size: 13px;
+  }
+
+  .app-buildup-list,
+  .app-benefit-details-grid,
+  .app-polymer-grid,
+  .app-oven-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .app-detail-hero-btns .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .app-factor-panel,
+  .app-temperature-factors,
+  .app-guidance-card,
+  .app-oven-column {
+    padding: 24px;
+  }
+
+  .app-extended-section {
+    padding: 80px 0;
+  }
+
+  .app-extended-section-header {
+    gap: 24px;
+    margin-bottom: 38px;
+  }
+
+  .app-extended-section-header h2 {
+    font-size: 38px;
+  }
+}
+
+.app-detail-hero-content {
+  max-width: 960px;
+}
+
+.app-detail-hero-subtitle {
+  max-width: 720px;
+  margin: 0 0 20px;
+  color: rgba(255, 255, 255, .94);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.app-detail-hero-description {
+  max-width: 780px;
+  margin-bottom: 28px;
+}
+
+.app-detail-hero-description p {
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, .78);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.app-detail-hero-description p:last-child {
+  margin-bottom: 0;
+}
+
+.app-extended-section {
+  padding: 80px 0;
+  background: var(--paper);
+}
+
+.app-polymer-section,
+.app-temperature-section,
+.app-oven-section {
+  background: #fff;
+}
+
+.app-guidance-section,
+.app-comparison-section {
+  background: var(--paper);
+}
+
+.app-screw-length-section,
+.app-temperature-section,
+.app-oven-section {
+  color: var(--ink);
+}
+
+.app-extended-section-header {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .85fr);
+  gap: 60px;
+  margin-bottom: 44px;
+}
+
+.app-extended-section-header h2 {
+  max-width: 760px;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+}
+
+.app-extended-section-header-single {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+}
+
+.app-extended-section-header > p,
+.app-screw-length-section .app-extended-section-header > p,
+.app-temperature-section .app-extended-section-header > p {
+  color: var(--muted);
+}
+
+.app-screw-length-copy p,
+.app-temperature-copy p,
+.app-sectional-copy p {
+  color: var(--muted);
+}
+
+.app-polymer-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.app-polymer-card {
+  min-height: 240px;
+  background: #fff;
+}
+
+.app-polymer-card:hover {
+  transform: translateY(-2px);
+}
+
+.app-screw-length-layout {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 60px;
+}
+
+.app-depth-panel {
+  min-height: 320px;
+  padding: 30px;
+  border: 1px solid var(--line-light);
+  background: #fff;
+}
+
+.app-depth-panel-label {
+  color: var(--blue);
+  font: 500 10px "IBM Plex Mono", monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.app-depth-visual {
+  position: relative;
+  height: 150px;
+  margin: 26px 0 22px;
+  overflow: hidden;
+  border: 1px solid var(--line-light);
+  background: var(--paper);
+}
+
+.app-depth-line {
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  left: 28px;
+  height: 8px;
+  background: var(--blue);
+  transform: translateY(-50%);
+}
+
+.app-depth-screw {
+  position: absolute;
+  top: 32px;
+  right: 40px;
+  left: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 78px;
+}
+
+.app-depth-screw span {
+  width: 46px;
+  height: 54px;
+  border: 2px solid var(--red);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  transform: skewX(-24deg) rotate(12deg);
+}
+
+.app-depth-measure {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  left: 16px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font: 500 8px "IBM Plex Mono", monospace;
+  letter-spacing: .1em;
+}
+
+.app-depth-panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.app-sectional-section {
+  background: #fff;
+}
+
+.app-factor-panel {
+  background: var(--paper);
+}
+
+.app-guidance-card {
+  max-width: none;
+  background: #fff;
+}
+
+.app-temperature-section {
+  background: #fff;
+}
+
+.app-temperature-factors {
+  border-color: var(--line-light);
+  background: var(--paper);
+}
+
+.app-temperature-factors li {
+  border-color: var(--line-light);
+  color: var(--ink);
+}
+
+.app-comparison-section {
+  background: var(--paper);
+}
+
+.app-oven-section {
+  background: #fff;
+}
+
+.app-oven-column {
+  background: var(--paper);
+}
+
+.app-oven-column-featured {
+  border-color: var(--blue);
+  background: var(--blue);
+}
+
+.app-oven-column-featured p {
+  color: rgba(255, 255, 255, .82);
+}
+
+.app-screw-length-section .app-inline-cta,
+.app-temperature-section .app-inline-cta,
+.app-oven-section > .wrap > .app-inline-cta,
+.app-inline-cta {
+  color: var(--red);
+}
+
+.app-screw-length-section .app-inline-cta:hover,
+.app-temperature-section .app-inline-cta:hover,
+.app-oven-section .app-inline-cta:hover {
+  color: var(--blue);
+}
+
+@media (max-width: 900px) {
+  .app-extended-section-header,
+  .app-screw-length-layout,
+  .app-temperature-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .app-polymer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .app-buildup-list,
+  .app-benefit-details-grid,
+  .app-polymer-grid,
+  .app-oven-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .app-extended-section {
+    padding: 64px 0;
+  }
+
+  .app-depth-panel {
+    padding: 24px;
+  }
+
+  .app-depth-screw {
+    right: 24px;
+    left: 24px;
+  }
+}
+
+.app-screw-overview-card {
+  border: 1px solid var(--line-light);
+  background: #fff;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 42px;
+  text-align: left;
+}
+
+.app-screw-overview-card span {
+  margin-bottom: 24px;
+  color: var(--blue);
+}
+
+.app-screw-overview-card strong {
+  max-width: 360px;
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -.03em;
+}
+
+.app-screw-overview-card small {
+  margin-top: 16px;
+  color: var(--muted);
+}
+
+.app-screw-process-media-visual img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.app-screw-media-label {
+  position: absolute;
+  z-index: 2;
+  left: 22px;
+  bottom: 20px;
+  padding: 8px 11px;
+  background: rgba(7, 20, 33, .72);
+  color: #fff;
+  font: 500 9px "IBM Plex Mono", monospace;
+  letter-spacing: .14em;
+  pointer-events: none;
+}
+
+.app-screw-process-media {
+  display: grid;
+  grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  margin-top: 44px;
+  padding-top: 44px;
+  border-top: 1px solid var(--line-light);
+}
+
+.app-screw-process-media-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 1px solid var(--line-light);
+  background: var(--paper);
+}
+
+.app-screw-process-media-copy {
+  max-width: 520px;
+}
+
+.app-screw-process-media-copy .eyebrow {
+  margin-bottom: 18px;
+}
+
+.app-screw-process-media-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .app-screw-process-media {
+    grid-template-columns: 1fr;
+  }
+
+  .app-screw-process-media-visual {
+    width: min(100%, 420px);
+    justify-self: start;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-screw-process-media {
+    gap: 24px;
+    margin-top: 32px;
+    padding-top: 32px;
+  }
+
+  .app-screw-process-media-visual {
+    width: min(100%, 360px);
+  }
+}
+
+@media (max-width: 900px) {
+  .app-extended-benefits-grid .app-benefit-details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .app-extended-benefits-grid .app-benefit-details-grid {
+    grid-template-columns: 1fr;
+  }
+}

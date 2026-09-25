@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { applications } from "../applications/data";
 
 export default function Navbar({ activePage }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,45 +48,15 @@ export default function Navbar({ activePage }) {
 
               <div className="nav-dropdown-menu">
 
-                <Link href="/applications/thermal-cleaning">
-                  <span>01</span>
-                  <div>
-                    <b>Thermal Cleaning</b>
-                    <small>Remove plastics and organic compounds</small>
-                  </div>
-                </Link>
-
-                <Link href="/applications/nitinol-shape-setting">
-                  <span>02</span>
-                  <div>
-                    <b>Nitinol Shape Setting</b>
-                    <small>Controlled heating for medical devices</small>
-                  </div>
-                </Link>
-
-                <Link href="/applications/reactor-heating">
-                  <span>03</span>
-                  <div>
-                    <b>Reactor Heating</b>
-                    <small>Thermal support for process vessels</small>
-                  </div>
-                </Link>
-
-                <Link href="/applications/temperature-calibration">
-                  <span>04</span>
-                  <div>
-                    <b>Temperature Calibration</b>
-                    <small>Stable environments for sensors</small>
-                  </div>
-                </Link>
-
-                <Link href="/applications/extrusion-die-cleaning">
-                  <span>05</span>
-                  <div>
-                    <b>Extrusion Die Cleaning</b>
-                    <small>Clear polymer buildup without damaging tooling</small>
-                  </div>
-                </Link>
+                {applications.map((app) => (
+                  <Link key={app.slug} href={`/applications/${app.slug}`}>
+                    <span>{app.num}</span>
+                    <div>
+                      <b>{app.title}</b>
+                      <small>{app.navSubtitle}</small>
+                    </div>
+                  </Link>
+                ))}
 
               </div>
             </div>
@@ -296,45 +267,16 @@ export default function Navbar({ activePage }) {
             APPLICATIONS
           </span>
 
-          <Link
-            href="/applications/thermal-cleaning"
-            className="mobile-sub-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            Thermal Cleaning
-          </Link>
-
-          <Link
-            href="/applications/nitinol-shape-setting"
-            className="mobile-sub-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            Nitinol Shape Setting
-          </Link>
-
-          <Link
-            href="/applications/reactor-heating"
-            className="mobile-sub-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            Reactor Heating
-          </Link>
-
-          <Link
-            href="/applications/temperature-calibration"
-            className="mobile-sub-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            Temperature Calibration
-          </Link>
-
-          <Link
-            href="/applications/extrusion-die-cleaning"
-            className="mobile-sub-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            Extrusion Die Cleaning
-          </Link>
+          {applications.map((app) => (
+            <Link
+              key={app.slug}
+              href={`/applications/${app.slug}`}
+              className="mobile-sub-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              {app.title}
+            </Link>
+          ))}
 
 
           {/* PRODUCTS */}
