@@ -1,7 +1,7 @@
 "use client";
 
 import "./page.css";
-import Navbar from "../../component/Navbar";
+import Navbar from "../../../components/Navbar";
 import Image from "next/image";
 
 export default function HEPAAirFiltration() {
@@ -190,7 +190,7 @@ export default function HEPAAirFiltration() {
           <div className="hepa-overview-content">
 
             <p>
-              Accurate Thermal Systems' HEPA Air Filtration
+              Accurate Thermal Systems&apos; HEPA Air Filtration
               systems are designed to capture and remove smoke,
               particles, fumes and VOCs generated during
               industrial thermal processing operations.

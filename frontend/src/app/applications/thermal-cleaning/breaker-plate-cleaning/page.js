@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import Navbar from "../../../component/Navbar";
+import Navbar from "../../../../components/Navbar";
 import { breakerPlateContent } from "./data";
 import "./page.css";
 
@@ -480,7 +480,7 @@ export default function BreakerPlateCleaningPage() {
               <a href="mailto:sales@accuthermal.com">sales@accuthermal.com</a>
             </div>
           </div>
-          <div className="legal">&copy; Accuthermal LLC d/b/a Accurate Thermal Systems.</div>
+            <div className="legal">&copy; Accuthermal LLC d/b/a Accurate Thermal Systems.</div>
         </div>
       </footer>
     </>

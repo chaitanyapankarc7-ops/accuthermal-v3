@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import "./page.css";
-import Navbar from "../../component/Navbar";
+import Navbar from "../../../components/Navbar";
 import Image from "next/image";
 
 

@@ -1,4 +1,6 @@
 import "./globals.css";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export const metadata = {
   title: "Accurate Thermal Systems | Precision Thermal Engineering",
@@ -7,7 +9,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body>
         {/* Preload above-the-fold fonts (React 19 hoists these to <head>) */}
         <link
@@ -31,7 +33,9 @@ export default function RootLayout({ children }) {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

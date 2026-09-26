@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Navbar from "../component/Navbar";
+import Navbar from "../../components/Navbar";
 
 export default function ContactFormPage() {
   const [department, setDepartment] = useState("");
@@ -144,7 +144,7 @@ export default function ContactFormPage() {
                   <span className="captcha-box">
                     <input type="checkbox" id="captcha" required />
                     <label htmlFor="captcha">
-                      I'm not a robot
+                      I&apos;m not a robot
                     </label>
                   </span>
                   <span className="captcha-badge">reCAPTCHA</span>

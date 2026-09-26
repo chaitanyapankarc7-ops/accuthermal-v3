@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import Navbar from "../../component/Navbar";
-import BeforeAfterGallery from "../../component/BeforeAfterGallery";
+import Navbar from "../../../components/Navbar";
+import BeforeAfterGallery from "../../../components/BeforeAfterGallery";
 import { getApplicationBySlug, applications } from "../data";
 import "./page.css";
 
@@ -31,7 +31,6 @@ export default function ApplicationDetail() {
   if (!app) {
     return (
       <>
-        <Navbar />
         <div style={{ padding: "200px 0", textAlign: "center" }}>
         <h1>Application not found</h1>
         <Link href="/" className="btn primary" style={{ marginTop: "20px" }}>
@@ -46,8 +45,6 @@ export default function ApplicationDetail() {
 
   return (
     <>
-      <Navbar activePage="applications" />
-
       {/* HERO */}
       <header className="app-detail-hero">
         <div className="wrap">
@@ -250,7 +247,7 @@ export default function ApplicationDetail() {
               <p>{app.video.text}</p>
             </div>
             {app.video.src ? (
-              <div className={`app-video-slot reveal ${videoPlaying ? "video-playing" : ""}`}>
+              <div className={`app-video-slot ${videoPlaying ? "video-playing" : ""}`}>
                 <video
                   className="app-video-player"
                   controls
@@ -259,6 +256,8 @@ export default function ApplicationDetail() {
                   preload="metadata"
                   poster={app.video.poster}
                   onPlay={() => setVideoPlaying(true)}
+                  onPause={() => setVideoPlaying(false)}
+                  onEnded={() => setVideoPlaying(false)}
                 >
                   <source src={app.video.src} type="video/mp4" />
                 </video>
@@ -268,13 +267,12 @@ export default function ApplicationDetail() {
                     type="button"
                     className="app-video-overlay"
                     onClick={(e) => {
+                      e.stopPropagation();
+                      setVideoPlaying(true);
                       const video = e.currentTarget
                         .closest(".app-video-slot")
                         ?.querySelector("video");
-
-                      if (video) {
-                        video.play();
-                      }
+                      if (video) video.play();
                     }}
                     aria-label={`Play video: ${app.video.title || app.title}`}
                   >
@@ -578,40 +576,7 @@ export default function ApplicationDetail() {
         </div>
       </section>
 
-      <footer>
-        <div className="wrap">
-          <div className="footer-grid">
-            <div>
-              <h3>Accurate Thermal Systems</h3>
-              <p>
-                Laboratory and industrial temperature products, application engineering, service and
-                support.
-              </p>
-            </div>
-            <div>
-              <b>Products</b>
-              <Link href="/products/fluidized-temperature-baths">Fluidized Baths</Link>
-              <Link href="/products/thermcal">Dry Block Calibrators</Link>
-              <Link href="/products/hepa-air-filtration">HEPA Filtration</Link>
-            </div>
-            <div>
-              <b>Applications</b>
-              {applications.map((application) => (
-                <Link key={application.slug} href={`/applications/${application.slug}`}>
-                  {application.title}
-                </Link>
-              ))}
-            </div>
-            <div>
-              <b>Contact</b>
-              <a href="tel:6093263190">609-326-3190</a>
-              <a href="mailto:sales@accuthermal.com">sales@accuthermal.com</a>
-              <span>Hainesport, New Jersey, USA</span>
-            </div>
-          </div>
-          <div className="legal">&copy; Accuthermal LLC d/b/a Accurate Thermal Systems.</div>
-        </div>
-      </footer>
+      
     </>
   );
 }

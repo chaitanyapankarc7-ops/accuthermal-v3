@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Navbar from "./component/Navbar";
-import Customers from "./component/Customers";
+import Navbar from "../components/Navbar";
+import Customers from "../components/Customers";
 
 export default function Home() {
   const [progressWidth, setProgressWidth] = useState("0%");
@@ -159,7 +159,7 @@ export default function Home() {
               Accurate Thermal Systems manufactures fluidized temperature baths and dry block
               calibrators, while supporting thermal cleaning, heat treatment, temperature
               calibration, testing and reactor-heating applications. The experience is designed
-              around the engineer's task: understand the process, evaluate the system and reach
+              around the engineer&apos;s task: understand the process, evaluate the system and reach
               technical information quickly.
             </div>
           </div>
@@ -364,38 +364,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer>
-        <div className="wrap">
-          <div className="footer-grid">
-            <div>
-              <h3>Accurate Thermal Systems</h3>
-              <p>
-                Laboratory and industrial temperature products, application engineering, service and
-                support.
-              </p>
-            </div>
-            <div>
-              <b>Products</b>
-              <a href="#systems">Fluidized Baths</a>
-              <a href="#systems">Dry Block Calibrators</a>
-              <a href="#contact">Custom Systems</a>
-            </div>
-            <div>
-              <b>Explore</b>
-              <a href="#applications">Applications</a>
-              <a href="#customers">Customers</a>
-              <a href="#industries">Industries</a>
-            </div>
-            <div>
-              <b>Contact</b>
-              <a href="tel:6093263190">609-326-3190</a>
-              <a href="mailto:sales@accuthermal.com">sales@accuthermal.com</a>
-              <span>Hainesport, New Jersey, USA</span>
-            </div>
-          </div>
-          <div className="legal">© Accuthermal LLC d/b/a Accurate Thermal Systems.</div>
-        </div>
-      </footer>
+      
     </>
   );
 }

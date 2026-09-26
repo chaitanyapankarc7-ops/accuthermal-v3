@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { applications } from "../applications/data";
+import { applications } from "../app/applications/data";
 
 export default function Navbar({ activePage }) {
   const [menuOpen, setMenuOpen] = useState(false);
