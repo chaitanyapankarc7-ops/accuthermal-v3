@@ -268,7 +268,7 @@ export default function HEPAAirFiltration() {
             <div className="hepa-system-image">
 
               <Image
-                src="\assets\images\heap_air\20191105_104207.jpg"
+                src="/assets/images/heap_air/20191105_104207.jpg"
                 alt="ECU1 HEPA Air Filtration System"
                 width={800}
                 height={800}
