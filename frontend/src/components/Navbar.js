@@ -109,7 +109,7 @@ export default function Navbar({ activePage }) {
             {/* ================= MAIN LINKS ================= */}
 
             <Link
-              href="/#contact"
+              href="/form"
               className={current === "contact" ? "active" : ""}
             >
               CONTACT
@@ -293,7 +293,7 @@ export default function Navbar({ activePage }) {
           </Link>
 
           <Link
-            href="/#contact"
+            href="/form"
             className="mobile-sub-link"
             onClick={() => setMenuOpen(false)}
           >
