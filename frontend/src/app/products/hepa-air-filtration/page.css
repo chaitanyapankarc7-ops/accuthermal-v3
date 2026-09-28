@@ -925,3 +925,3163 @@
         font-size: 14px;
     }
 }
+/* =====================================================
+   HEPA DIGITAL CONTROL
+===================================================== */
+
+.hepa-control-section {
+  position: relative;
+  overflow: hidden;
+
+  background: #061a2a;
+
+  color: #ffffff;
+
+  padding: 130px 0;
+}
+
+
+/* =====================================================
+   TECHNICAL GRID
+===================================================== */
+
+.hepa-control-grid {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(56, 182, 238, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(56, 182, 238, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.hepa-control-glow {
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  right: -250px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(18, 174, 239, 0.12),
+      transparent 65%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.hepa-control-container {
+
+  position: relative;
+  z-index: 2;
+
+  width: min(
+    1200px,
+    calc(100% - 80px)
+  );
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(360px, 0.9fr);
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   VISUAL FRAME
+===================================================== */
+
+.hepa-control-frame {
+
+  position: relative;
+
+  border: 1px solid
+    rgba(63, 190, 245, 0.32);
+
+  background: #081d2d;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.3);
+
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.hepa-control-topbar {
+
+  height: 46px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.1);
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color: rgba(255,255,255,0.42);
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.hepa-control-image {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  aspect-ratio: 1.2 / 1;
+}
+
+
+.hepa-control-image img {
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s cubic-bezier(.2,.7,.2,1),
+    filter 0.7s ease;
+
+}
+
+
+.hepa-control-frame:hover
+.hepa-control-image img {
+
+  transform: scale(1.045);
+
+  filter:
+    contrast(1.03)
+    brightness(1.02);
+
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.hepa-control-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(11,183,242,0.05),
+      transparent 45%,
+      rgba(0,0,0,0.08)
+    );
+
+}
+
+
+/* =====================================================
+   SCAN LINE
+===================================================== */
+
+.hepa-control-scan {
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: -10%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #1fc4ff,
+      transparent
+    );
+
+  opacity: 0;
+
+  box-shadow:
+    0 0 14px rgba(31,196,255,0.8);
+
+  pointer-events: none;
+
+}
+
+
+.hepa-control-frame:hover
+.hepa-control-scan {
+
+  opacity: 1;
+
+  animation:
+    hepaScan 2.8s linear infinite;
+
+}
+
+
+@keyframes hepaScan {
+
+  0% {
+    top: 0%;
+  }
+
+  100% {
+    top: 100%;
+  }
+
+}
+
+
+/* =====================================================
+   CALLOUT POINTS
+===================================================== */
+
+.hepa-control-point {
+
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+
+  pointer-events: none;
+
+}
+
+
+.hepa-point-dot {
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #18baf3;
+
+  border: 2px solid #ffffff;
+
+  box-shadow:
+    0 0 0 5px rgba(24,186,243,0.15),
+    0 0 18px rgba(24,186,243,0.7);
+
+}
+
+
+.hepa-point-line {
+
+  width: 55px;
+
+  height: 1px;
+
+  background:
+    rgba(24,186,243,0.7);
+
+}
+
+
+.hepa-point-label {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  padding-left: 10px;
+
+  white-space: nowrap;
+
+}
+
+
+.hepa-point-label small {
+
+  font-size: 8px;
+
+  color: #20baf3;
+
+  letter-spacing: 2px;
+
+}
+
+
+.hepa-point-label strong {
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+
+  color: #071b2b;
+
+}
+
+
+/* POINT POSITIONS */
+
+.hepa-point-1 {
+
+  top: 34%;
+  right: 7%;
+
+}
+
+
+.hepa-point-2 {
+
+  bottom: 26%;
+  left: 7%;
+
+  flex-direction: row-reverse;
+
+}
+
+
+.hepa-point-2
+.hepa-point-label {
+
+  padding-left: 0;
+  padding-right: 10px;
+
+  text-align: right;
+
+}
+
+
+/* =====================================================
+   CORNER LABEL
+===================================================== */
+
+.hepa-control-corner {
+
+  position: absolute;
+
+  left: 20px;
+  bottom: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 12px 15px;
+
+  background: rgba(5,23,37,0.92);
+
+  border-left:
+    3px solid #19baf2;
+
+  backdrop-filter:
+    blur(10px);
+
+}
+
+
+.hepa-control-corner span {
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color: #21baf3;
+
+  margin-bottom: 5px;
+
+}
+
+
+.hepa-control-corner strong {
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+}
+
+
+/* =====================================================
+   BOTTOM BAR
+===================================================== */
+
+.hepa-control-bottom {
+
+  min-height: 42px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr 1fr;
+
+  align-items: center;
+
+  border-top:
+    1px solid rgba(255,255,255,0.1);
+
+}
+
+
+.hepa-control-bottom span {
+
+  padding: 0 16px;
+
+  font-size: 7px;
+
+  letter-spacing: 1.8px;
+
+  color:
+    rgba(255,255,255,0.38);
+
+}
+
+
+.hepa-control-bottom span + span {
+
+  border-left:
+    1px solid rgba(255,255,255,0.1);
+
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hepa-control-content {
+
+  max-width: 500px;
+
+}
+
+
+.hepa-control-kicker {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  color: #1dbbf4;
+
+}
+
+
+.hepa-control-kicker span {
+
+  width: 30px;
+  height: 1px;
+
+  background: #1dbbf4;
+
+}
+
+
+.hepa-control-content h2 {
+
+  margin: 0 0 30px;
+
+  font-size:
+    clamp(48px, 5vw, 76px);
+
+  line-height: 0.9;
+
+  letter-spacing: -4px;
+
+  font-weight: 800;
+
+}
+
+
+.hepa-control-content h2 span {
+
+  color: #20baf3;
+
+}
+
+
+.hepa-control-description {
+
+  max-width: 470px;
+
+  margin: 0 0 40px;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,0.62);
+
+}
+
+
+/* =====================================================
+   FEATURE ROWS
+===================================================== */
+
+.hepa-control-features {
+
+  border-top:
+    1px solid rgba(255,255,255,0.14);
+
+}
+
+
+.hepa-control-feature {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    42px 1fr 25px;
+
+  gap: 16px;
+
+  padding: 22px 0;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.14);
+
+  transition:
+    padding-left 0.3s ease,
+    background 0.3s ease;
+
+}
+
+
+.hepa-control-feature:hover {
+
+  padding-left: 12px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20,186,243,0.08),
+      transparent
+    );
+
+}
+
+
+.hepa-feature-index {
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  color: #1ebbf3;
+
+}
+
+
+.hepa-feature-content h3 {
+
+  margin: 0 0 7px;
+
+  font-size: 14px;
+
+  letter-spacing: 0.3px;
+
+}
+
+
+.hepa-feature-content p {
+
+  margin: 0;
+
+  max-width: 360px;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+
+  color:
+    rgba(255,255,255,0.48);
+
+}
+
+
+.hepa-feature-arrow {
+
+  color: #20baf3;
+
+  font-size: 14px;
+
+  transition:
+    transform 0.3s ease;
+
+}
+
+
+.hepa-control-feature:hover
+.hepa-feature-arrow {
+
+  transform:
+    translate(3px,-3px);
+
+}
+
+
+/* =====================================================
+   META
+===================================================== */
+
+.hepa-control-meta {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  margin-top: 35px;
+
+  border-top:
+    1px solid rgba(255,255,255,0.13);
+
+}
+
+
+.hepa-control-meta div {
+
+  padding-top: 16px;
+
+}
+
+
+.hepa-control-meta div + div {
+
+  padding-left: 18px;
+
+  border-left:
+    1px solid rgba(255,255,255,0.1);
+
+}
+
+
+.hepa-control-meta span {
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+
+  color:
+    rgba(255,255,255,0.3);
+
+}
+
+
+.hepa-control-meta strong {
+
+  font-size: 9px;
+
+  letter-spacing: 0.8px;
+
+  color:
+    rgba(255,255,255,0.72);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .hepa-control-section {
+    padding: 90px 0;
+  }
+
+  .hepa-control-container {
+
+    width:
+      min(700px, calc(100% - 40px));
+
+    grid-template-columns: 1fr;
+
+    gap: 65px;
+
+  }
+
+  .hepa-control-content {
+    max-width: none;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .hepa-control-section {
+    padding: 65px 0;
+  }
+
+  .hepa-control-container {
+    width: calc(100% - 30px);
+  }
+
+  .hepa-control-content h2 {
+
+    font-size: 45px;
+
+    letter-spacing: -2.5px;
+
+  }
+
+  .hepa-control-point {
+    display: none;
+  }
+
+  .hepa-control-bottom span {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+
+  .hepa-control-meta {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .hepa-control-meta div + div {
+    padding-left: 0;
+    border-left: none;
+  }
+
+}
+/* =========================================================
+   HEPA CONTROL PANEL — FINAL LAYOUT FIX
+========================================================= */
+
+
+/* =========================================================
+   MAIN FRAME
+========================================================= */
+
+.hepa-control-frame {
+
+  position: relative !important;
+
+  width: 100% !important;
+
+  max-width: 610px !important;
+
+  height: 600px !important;
+
+  margin: 0 auto !important;
+
+  overflow: hidden !important;
+
+  box-sizing: border-box !important;
+
+  background: #081d2d !important;
+
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.hepa-control-topbar {
+
+  height: 46px !important;
+
+  min-height: 46px !important;
+
+  box-sizing: border-box !important;
+
+  position: relative !important;
+
+  z-index: 30 !important;
+
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.hepa-control-image {
+
+  position: relative !important;
+
+  width: 100% !important;
+
+  height: calc(100% - 88px) !important;
+
+  min-height: 0 !important;
+
+  aspect-ratio: auto !important;
+
+  overflow: hidden !important;
+
+  background: #ffffff !important;
+
+}
+
+
+/* =========================================================
+   ACTUAL PHOTO
+========================================================= */
+
+.hepa-control-image img {
+
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  width: 100% !important;
+
+  height: 100% !important;
+
+  max-width: none !important;
+
+  min-width: 0 !important;
+
+  object-fit: cover !important;
+
+  /*
+     THIS CONTROLS WHICH PART OF THE
+     ORIGINAL PORTRAIT PHOTO IS VISIBLE
+  */
+
+  object-position: center 43% !important;
+
+  display: block !important;
+
+  transform: none !important;
+
+}
+
+
+/* =========================================================
+   REMOVE OLD IMAGE HOVER ZOOM
+========================================================= */
+
+.hepa-control-frame:hover
+.hepa-control-image img {
+
+  transform: none !important;
+
+  filter: none !important;
+
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.hepa-control-overlay {
+
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  z-index: 5 !important;
+
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(11,183,242,0.02),
+      transparent 45%,
+      rgba(0,0,0,0.04)
+    ) !important;
+
+}
+
+
+/* =========================================================
+   CALLOUT SYSTEM
+========================================================= */
+
+.hepa-control-point {
+
+  position: absolute !important;
+
+  z-index: 20 !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  pointer-events: none !important;
+
+}
+
+
+/* =========================================================
+   CALLOUT DOT
+========================================================= */
+
+.hepa-point-dot {
+
+  width: 7px !important;
+
+  height: 7px !important;
+
+  min-width: 7px !important;
+
+  min-height: 7px !important;
+
+  padding: 0 !important;
+
+  border-radius: 50% !important;
+
+  background: #7ea3ae !important;
+
+  border: 1px solid
+    rgba(255,255,255,0.9) !important;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(126,163,174,0.12) !important;
+
+}
+
+
+/* =========================================================
+   CALLOUT LINE
+========================================================= */
+
+.hepa-point-line {
+
+  width: 38px !important;
+
+  min-width: 38px !important;
+
+  height: 1px !important;
+
+  background:
+    rgba(126,163,174,0.65) !important;
+
+  box-shadow: none !important;
+
+}
+
+
+/* =========================================================
+   CALLOUT LABEL
+========================================================= */
+
+.hepa-point-label {
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  gap: 3px !important;
+
+  padding: 6px 8px !important;
+
+  min-width: 90px !important;
+
+  box-sizing: border-box !important;
+
+  background:
+    rgba(6,26,42,0.88) !important;
+
+  border:
+    1px solid
+    rgba(126,163,174,0.25) !important;
+
+  backdrop-filter: blur(6px) !important;
+
+  white-space: nowrap !important;
+
+}
+
+
+.hepa-point-label small {
+
+  font-size: 6px !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: 1.7px !important;
+
+  color:
+    rgba(126,183,196,0.9) !important;
+
+}
+
+
+.hepa-point-label strong {
+
+  font-size: 7px !important;
+
+  line-height: 1.2 !important;
+
+  letter-spacing: 1px !important;
+
+  color:
+    rgba(255,255,255,0.82) !important;
+
+}
+
+
+/* =========================================================
+   DIGITAL DISPLAY CALLOUT
+========================================================= */
+
+.hepa-point-1 {
+
+  top: 45% !important;
+
+  right: 3% !important;
+
+  flex-direction: row !important;
+
+}
+
+
+/* =========================================================
+   CONTROL INPUT CALLOUT
+========================================================= */
+
+.hepa-point-2 {
+
+  bottom: 22% !important;
+
+  left: 3% !important;
+
+  flex-direction: row-reverse !important;
+
+}
+
+
+.hepa-point-2
+.hepa-point-label {
+
+  padding-left: 0 !important;
+
+  padding-right: 8px !important;
+
+  text-align: right !important;
+
+}
+
+
+/* =========================================================
+   CORNER CARD
+========================================================= */
+
+.hepa-control-corner {
+
+  z-index: 25 !important;
+
+  left: 20px !important;
+
+  bottom: 20px !important;
+
+}
+
+
+/* =========================================================
+   BOTTOM BAR
+========================================================= */
+
+.hepa-control-bottom {
+
+  position: relative !important;
+
+  z-index: 30 !important;
+
+  height: 42px !important;
+
+  min-height: 42px !important;
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 951px) {
+
+  .hepa-control-frame {
+
+    width: 610px !important;
+
+    max-width: 610px !important;
+
+    height: 600px !important;
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .hepa-control-frame {
+
+    width: 100% !important;
+
+    max-width: 610px !important;
+
+    height: 560px !important;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .hepa-control-frame {
+
+    width: 100% !important;
+
+    height: 430px !important;
+
+  }
+   
+  .hepa-control-point {
+
+    display: none !important;
+
+  }
+
+} 
+/* =====================================================
+   HEPA VIDEO OVERLAY
+===================================================== */
+
+.hepa-video-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: #061827;
+}
+
+
+/* =====================================================
+   ACTUAL VIDEO
+===================================================== */
+
+.hepa-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   CUSTOM OVERLAY
+===================================================== */
+
+.hepa-video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+
+    overflow: hidden;
+
+    background: #f7fbfd;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   TECHNICAL GRID
+===================================================== */
+
+.hepa-overlay-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 157, 224, 0.10) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 157, 224, 0.10) 1px,
+            transparent 1px
+        );
+
+    background-size: 38px 38px;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   TECHNICAL RINGS
+===================================================== */
+
+.hepa-overlay-rings {
+    position: absolute;
+
+    width: 62%;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 157, 224, 0.16);
+
+    box-shadow:
+        0 0 0 45px rgba(0, 157, 224, 0.035),
+        0 0 0 90px rgba(0, 157, 224, 0.025),
+        0 0 0 140px rgba(0, 157, 224, 0.018);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   TOP LABEL
+===================================================== */
+
+.hepa-overlay-kicker {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 24px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: #009fe3;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
+
+.hepa-overlay-title {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    font-size: clamp(32px, 4vw, 64px);
+
+    line-height: 0.94;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 800;
+
+    color: #071827;
+
+    text-transform: uppercase;
+}
+
+
+.hepa-overlay-title span {
+    color: #08a7e8;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.hepa-overlay-logo {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 28px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.hepa-overlay-logo img {
+    width: 145px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   PLAY BUTTON
+===================================================== */
+
+.hepa-overlay-play {
+    position: absolute;
+
+    left: 50%;
+    top: 69%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 5;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 159, 227, 0.8);
+
+    background: #061827;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.hepa-overlay-play span {
+    font-size: 17px;
+
+    margin-left: 3px;
+}
+
+
+.hepa-overlay-play:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+
+    background: #0b2639;
+
+    box-shadow:
+        0 0 0 8px rgba(0, 159, 227, 0.08),
+        0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =====================================================
+   FOOTER META
+===================================================== */
+
+.hepa-overlay-footer {
+    position: absolute;
+
+    left: 24px;
+    right: 24px;
+    bottom: 16px;
+
+    z-index: 3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 12px;
+
+    border-top: 1px solid rgba(7, 24, 39, 0.16);
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    color: #587080;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+.hepa-video-label {
+    position: absolute;
+
+    left: 18px;
+    bottom: 18px;
+
+    z-index: 20;
+
+    padding: 12px 18px;
+
+    background: #071827;
+
+    color: #ffffff;
+
+    border-left: 3px solid #09a8e8;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   PLAYING STATE
+===================================================== */
+
+.hepa-video-playing .hepa-video-overlay {
+    display: none;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .hepa-overlay-title {
+        font-size: 32px;
+        letter-spacing: -1.5px;
+    }
+
+    .hepa-overlay-kicker {
+        font-size: 7px;
+        letter-spacing: 2.5px;
+    }
+
+    .hepa-overlay-logo img {
+        width: 110px;
+    }
+
+    .hepa-overlay-play {
+        width: 48px;
+        height: 48px;
+        top: 72%;
+    }
+
+    .hepa-overlay-footer {
+        left: 14px;
+        right: 14px;
+
+        font-size: 6px;
+        letter-spacing: 1.5px;
+    }
+
+}
+/* =====================================================
+   ECU1 / ECU2 — MODEL COMPARISON
+===================================================== */
+
+.hepa-comparison-section {
+  position: relative;
+  width: 100%;
+  padding: 120px 0;
+  background: #ffffff;
+  color: #061a29;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.hepa-comparison-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(20, 120, 170, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(20, 120, 170, 0.07) 1px,
+      transparent 1px
+    );
+
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.hepa-comparison-container {
+  position: relative;
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+  z-index: 1;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.hepa-comparison-header {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 60px;
+  align-items: end;
+
+  margin-bottom: 55px;
+}
+
+
+.hepa-comparison-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+
+  color: #079bd8;
+}
+
+
+.hepa-comparison-tag::before {
+  content: "";
+
+  width: 30px;
+  height: 1px;
+
+  background: #079bd8;
+}
+
+
+.hepa-comparison-header h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 5vw, 76px);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+
+  color: #061a29;
+}
+
+
+.hepa-comparison-header h2 span {
+  color: #079bd8;
+}
+
+
+.hepa-comparison-header p {
+  margin: 0;
+
+  max-width: 360px;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  color: #536575;
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.hepa-comparison-table-wrapper {
+  width: 94%;
+  margin: 0 auto;
+
+  overflow-x: auto;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(6, 26, 41, 0.15);
+
+  box-shadow:
+    0 20px 50px rgba(6, 26, 41, 0.08);
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.hepa-comparison-table {
+  width: 100%;
+  min-width: 850px;
+
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.hepa-comparison-table thead {
+  background: #f3f8fb;
+}
+
+
+.hepa-comparison-table thead th {
+  height: 82px;
+
+  padding: 16px 22px;
+
+  border-bottom: 1px solid rgba(6, 26, 41, 0.14);
+
+  text-align: left;
+
+  font-size: 9px;
+  letter-spacing: 0.18em;
+
+  color: #5b6d7b;
+}
+
+
+.hepa-comparison-table thead th:first-child {
+  width: 31%;
+}
+
+
+.hepa-comparison-table .hepa-model-column {
+  width: 34.5%;
+
+  border-left: 1px solid rgba(6, 26, 41, 0.10);
+}
+
+
+.hepa-model-number {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 28px;
+  line-height: 1;
+
+  font-weight: 800;
+  letter-spacing: -0.04em;
+
+  color: #061a29;
+}
+
+
+.hepa-model-subtitle {
+  display: block;
+
+  font-size: 8px;
+  letter-spacing: 0.18em;
+
+  color: #079bd8;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.hepa-comparison-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+
+.hepa-comparison-table tbody tr:hover {
+  background: rgba(7, 155, 216, 0.045);
+}
+
+
+.hepa-comparison-table tbody tr:not(:last-child) {
+  border-bottom: 1px solid rgba(6, 26, 41, 0.09);
+}
+
+
+.hepa-comparison-table tbody th,
+.hepa-comparison-table tbody td {
+  padding: 15px 22px;
+
+  vertical-align: top;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+.hepa-comparison-table tbody th {
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: #243746;
+
+  text-align: left;
+}
+
+
+.hepa-comparison-table tbody td {
+  color: #526574;
+
+  border-left: 1px solid rgba(6, 26, 41, 0.07);
+}
+
+
+.hepa-comparison-table tbody td strong {
+  color: #079bd8;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   DIFFERENCE HIGHLIGHTS
+===================================================== */
+
+.hepa-comparison-table tbody tr:nth-child(2) td,
+.hepa-comparison-table tbody tr:nth-child(9) td {
+  background: rgba(7, 155, 216, 0.035);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.hepa-comparison-footer {
+  width: 94%;
+  margin: 18px auto 0;
+
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 30px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid rgba(6, 26, 41, 0.12);
+
+  font-size: 8px;
+  letter-spacing: 0.18em;
+
+  color: #7b8b97;
+}
+
+
+.hepa-comparison-footer span:nth-child(2),
+.hepa-comparison-footer span:nth-child(3) {
+  color: #079bd8;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .hepa-comparison-section {
+    padding: 90px 0;
+  }
+
+  .hepa-comparison-container {
+    width: calc(100% - 40px);
+  }
+
+  .hepa-comparison-header {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .hepa-comparison-header p {
+    max-width: 550px;
+  }
+
+  .hepa-comparison-table-wrapper,
+  .hepa-comparison-footer {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .hepa-comparison-section {
+    padding: 70px 0;
+  }
+
+  .hepa-comparison-container {
+    width: calc(100% - 24px);
+  }
+
+  .hepa-comparison-header h2 {
+    font-size: 48px;
+  }
+
+  .hepa-comparison-table-wrapper {
+    width: 100%;
+  }
+
+  .hepa-comparison-table {
+    min-width: 780px;
+  }
+
+  .hepa-comparison-table tbody th,
+  .hepa-comparison-table tbody td {
+    padding: 13px 17px;
+    font-size: 11px;
+  }
+
+  .hepa-comparison-footer {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+}
+/* =====================================================
+   ECU1 / ECU2 — MODEL COMPARISON
+===================================================== */
+
+.hepa-comparison-section {
+  position: relative;
+  width: 100%;
+  padding: 140px 0;
+  background: #ffffff;
+  color: #061a29;
+  overflow: hidden;
+}
+
+/* GRID */
+.hepa-comparison-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(20, 120, 170, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(20, 120, 170, 0.07) 1px,
+      transparent 1px
+    );
+
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.hepa-comparison-tag {
+  color: #079bd8;
+}
+
+.hepa-comparison-tag::before {
+  background: #079bd8;
+}
+
+.hepa-comparison-header h2 {
+  color: #061a29;
+}
+
+.hepa-comparison-header h2 span {
+  color: #079bd8;
+}
+
+.hepa-comparison-header p {
+  color: #536575;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.hepa-comparison-table-wrapper {
+  background: #ffffff;
+
+  border: 1px solid rgba(6, 26, 41, 0.16);
+
+  box-shadow:
+    0 25px 60px rgba(6, 26, 41, 0.10);
+}
+
+
+.hepa-comparison-table thead {
+  background: #f3f8fb;
+}
+
+
+.hepa-comparison-table thead th {
+  color: #5b6d7b;
+
+  border-bottom: 1px solid rgba(6, 26, 41, 0.14);
+}
+
+
+.hepa-model-number {
+  color: #061a29;
+}
+
+
+.hepa-model-subtitle {
+  color: #079bd8;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.hepa-comparison-table tbody tr {
+  transition: background 0.25s ease;
+}
+
+.hepa-comparison-table tbody tr:hover {
+  background: rgba(7, 155, 216, 0.045);
+}
+
+.hepa-comparison-table tbody tr:not(:last-child) {
+  border-bottom: 1px solid rgba(6, 26, 41, 0.10);
+}
+
+
+.hepa-comparison-table tbody th {
+  color: #243746;
+}
+
+
+.hepa-comparison-table tbody td {
+  color: #526574;
+
+  border-left: 1px solid rgba(6, 26, 41, 0.08);
+}
+
+
+.hepa-comparison-table tbody td strong {
+  color: #079bd8;
+}
+
+
+/* Difference highlights */
+
+.hepa-comparison-table tbody tr:nth-child(2) td,
+.hepa-comparison-table tbody tr:nth-child(9) td {
+  background: rgba(7, 155, 216, 0.035);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.hepa-comparison-footer {
+  border-top: 1px solid rgba(6, 26, 41, 0.12);
+
+  color: #7b8b97;
+}
+
+.hepa-comparison-footer span:nth-child(2),
+.hepa-comparison-footer span:nth-child(3) {
+  color: #079bd8;
+}
+
+/* =====================================================
+   06 / RESOURCES — FILTRATION DOCUMENTATION
+===================================================== */
+
+.hepa-resources {
+  position: relative;
+
+  width: 100%;
+
+  padding: 150px 0;
+
+  background: #ffffff;
+
+  color: #061a29;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   TECHNICAL GRID
+===================================================== */
+
+.hepa-resources::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(20, 120, 170, 0.065) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(20, 120, 170, 0.065) 1px,
+      transparent 1px
+    );
+
+  background-size: 56px 56px;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.hepa-resources-container {
+  position: relative;
+
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 100px;
+
+  z-index: 1;
+}
+
+
+/* =====================================================
+   LEFT INTRO
+===================================================== */
+
+.hepa-resources-intro {
+  padding-top: 5px;
+}
+
+
+.hepa-resources-tag {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 28px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.28em;
+
+  color: #079bd8;
+}
+
+
+.hepa-resources-tag::before {
+  content: "";
+
+  width: 32px;
+
+  height: 1px;
+
+  background: #079bd8;
+}
+
+
+.hepa-resources-intro h2 {
+  margin: 0;
+
+  font-size: clamp(52px, 5vw, 78px);
+
+  line-height: 0.87;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 800;
+
+  color: #061a29;
+}
+
+
+.hepa-resources-intro h2 span {
+  color: #17629b;
+}
+
+
+.hepa-resources-intro p {
+  max-width: 420px;
+
+  margin-top: 32px;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: #607382;
+}
+
+
+/* =====================================================
+   DOCUMENT LIST
+===================================================== */
+
+.hepa-resources-list {
+  width: 100%;
+
+  border-top: 1px solid rgba(6, 26, 41, 0.16);
+}
+
+
+/* =====================================================
+   DOCUMENT ITEM
+===================================================== */
+
+.hepa-resource-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 55px 1fr 60px;
+
+  align-items: center;
+
+  min-height: 105px;
+
+  padding: 22px 0;
+
+  border-bottom: 1px solid rgba(6, 26, 41, 0.14);
+
+  text-decoration: none;
+
+  color: inherit;
+
+  transition:
+    background 0.25s ease,
+    padding 0.25s ease;
+}
+
+
+.hepa-resource-item:hover {
+  padding-left: 14px;
+
+  background: rgba(7, 155, 216, 0.035);
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.hepa-resource-number {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  color: #079bd8;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hepa-resource-content {
+  min-width: 0;
+}
+
+
+.hepa-resource-type {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+
+  color: #079bd8;
+}
+
+
+.hepa-resource-content h3 {
+  margin: 0;
+
+  font-size: 16px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  letter-spacing: -0.01em;
+
+  color: #061a29;
+}
+
+
+/* =====================================================
+   PDF ACTION
+===================================================== */
+
+.hepa-resource-action {
+  justify-self: end;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  color: #17629b;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.hepa-resource-item:hover .hepa-resource-action {
+  color: #079bd8;
+
+  transform: translateX(4px);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .hepa-resources {
+    padding: 100px 0;
+  }
+
+  .hepa-resources-container {
+    width: calc(100% - 50px);
+
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .hepa-resources {
+    padding: 80px 0;
+  }
+
+  .hepa-resources-container {
+    width: calc(100% - 30px);
+
+    gap: 45px;
+  }
+
+  .hepa-resources-intro h2 {
+    font-size: 50px;
+  }
+
+  .hepa-resource-item {
+    grid-template-columns: 38px 1fr 45px;
+
+    min-height: 90px;
+
+    padding: 18px 0;
+  }
+
+  .hepa-resource-content h3 {
+    font-size: 13px;
+  }
+
+  .hepa-resource-type {
+    font-size: 6px;
+  }
+
+}
+/* =====================================================
+   CONTROL IMAGE
+===================================================== */
+
+.hepa-control-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.hepa-control-image > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* =====================================================
+   CALLOUT BASE
+===================================================== */
+
+.hepa-control-point {
+  position: absolute;
+  z-index: 20;
+
+  width: 1px;
+  height: 1px;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   POINTER DOT
+===================================================== */
+
+.hepa-point-dot {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #071c2b;
+
+  border: 2px solid #35c7ff;
+
+  box-shadow:
+    0 0 0 3px rgba(53, 199, 255, 0.12),
+    0 0 10px rgba(53, 199, 255, 0.45);
+
+  transform: translate(-50%, -50%);
+}
+
+
+/* =====================================================
+   POINTER LINE
+===================================================== */
+
+.hepa-point-line {
+  position: absolute;
+
+  height: 1px;
+
+  background: #35c7ff;
+
+  box-shadow:
+    0 0 6px rgba(53, 199, 255, 0.35);
+
+  top: 0;
+}
+
+
+/* =====================================================
+   POINTER LABEL
+===================================================== */
+
+.hepa-point-label {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 11px;
+
+  background: rgba(5, 25, 39, 0.95);
+
+  border: 1px solid rgba(53, 199, 255, 0.25);
+
+  white-space: nowrap;
+
+  color: #ffffff;
+
+  font-size: 7px;
+
+  letter-spacing: 1px;
+}
+
+.hepa-point-label small {
+  color: #35c7ff;
+
+  font-size: 6px;
+
+  letter-spacing: 1px;
+}
+
+.hepa-point-label strong {
+  color: #ffffff;
+
+  font-size: 7px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   01 — DIGITAL DISPLAY
+===================================================== */
+
+/*
+   These coordinates are RELATIVE TO THE IMAGE.
+
+   Adjust ONLY these two values if required.
+*/
+
+.hepa-point-1 {
+
+  /*
+     X = horizontal position
+     Y = vertical position
+  */
+
+  left: 58%;
+  top: 44%;
+}
+
+
+/* Line goes from display → right */
+
+.hepa-point-1 .hepa-point-line {
+
+  left: 5px;
+
+  width: 100px;
+}
+
+
+/* Label */
+
+.hepa-point-1 .hepa-point-label {
+
+  left: 108px;
+
+  top: -17px;
+}
+
+
+/* =====================================================
+   02 — CONTROL INPUT
+===================================================== */
+
+.hepa-point-2 {
+
+  left: 27%;
+  top: 70%;
+}
+
+
+/* Line goes from control input → left */
+
+.hepa-point-2 .hepa-point-line {
+
+  right: 5px;
+
+  width: 90px;
+}
+
+
+/* Label */
+
+.hepa-point-2 .hepa-point-label {
+
+  right: 98px;
+
+  top: -17px;
+}
+/* =====================================================
+   CONTROL IMAGE
+===================================================== */
+
+.hepa-control-image {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+
+  /*
+    IMPORTANT:
+    Keep overflow visible so the technical labels
+    are not cut off.
+  */
+  overflow: visible;
+}
+
+.hepa-control-image > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* =====================================================
+   CALLOUT BASE
+===================================================== */
+
+.hepa-control-point {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  z-index: 20;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   TARGET DOT
+===================================================== */
+
+.hepa-point-dot {
+
+  position: absolute;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #061a29;
+
+  border: 2px solid #39c8ff;
+
+  transform: translate(-50%, -50%);
+
+  box-shadow:
+    0 0 0 3px rgba(57, 200, 255, 0.12),
+    0 0 10px rgba(57, 200, 255, 0.65),
+    0 0 20px rgba(57, 200, 255, 0.25);
+}
+
+
+/* Small bright center */
+
+.hepa-point-dot::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+
+/* =====================================================
+   POINTER LINE
+===================================================== */
+
+.hepa-point-line {
+
+  position: absolute;
+
+  top: 0;
+
+  height: 1px;
+
+  background: #39c8ff;
+
+  box-shadow:
+    0 0 5px rgba(57, 200, 255, 0.65),
+    0 0 12px rgba(57, 200, 255, 0.25);
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.hepa-point-label {
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 31px;
+
+  padding: 7px 11px;
+
+  background: rgba(4, 24, 38, 0.96);
+
+  border: 1px solid rgba(57, 200, 255, 0.28);
+
+  color: #ffffff;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 0 14px rgba(57, 200, 255, 0.08);
+
+  line-height: normal;
+}
+
+
+/* Number */
+
+.hepa-point-label small {
+
+  color: #39c8ff;
+
+  font-size: 6px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* Text */
+
+.hepa-point-label strong {
+
+  color: #ffffff;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   01 — DIGITAL DISPLAY
+===================================================== */
+
+/*
+   TARGET:
+
+   This point sits directly on the
+   lower-right area of the display.
+*/
+
+.hepa-point-1 {
+
+  left: 57.5%;
+  top: 51%;
+}
+
+
+/*
+   Display → right
+*/
+
+.hepa-point-1 .hepa-point-line {
+
+  left: 5px;
+
+  width: 105px;
+}
+
+
+/*
+   Display label
+*/
+
+.hepa-point-1 .hepa-point-label {
+
+  left: 110px;
+
+  top: -16px;
+}
+
+
+/* =====================================================
+   02 — CONTROL INPUT
+===================================================== */
+
+/*
+   TARGET:
+
+   This points to the lower control/status
+   area of the panel.
+
+   The point itself stays inside the image.
+*/
+
+.hepa-point-2 {
+
+  left: 48%;
+  top: 72%;
+}
+
+
+/*
+   Line goes LEFT from the target
+*/
+
+.hepa-point-2 .hepa-point-line {
+
+  right: 5px;
+
+  width: 175px;
+}
+
+
+/*
+   Label sits at the end of the line.
+
+   IMPORTANT:
+   It stays INSIDE the image instead of
+   being pushed outside the container.
+*/
+
+.hepa-point-2 .hepa-point-label {
+
+  right: 180px;
+
+  top: -16px;
+}
+
+
+/* =====================================================
+   CORNER LABEL
+===================================================== */
+
+.hepa-control-corner {
+
+  position: absolute;
+
+  left: 20px;
+  bottom: 20px;
+
+  z-index: 15;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 12px 16px;
+
+  background: rgba(4, 24, 38, 0.95);
+
+  border-left: 3px solid #39c8ff;
+
+  line-height: normal;
+
+  box-shadow:
+    0 0 18px rgba(0, 0, 0, 0.18);
+}
+
+
+.hepa-control-corner span {
+
+  color: #39c8ff;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+}
+
+
+.hepa-control-corner strong {
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  letter-spacing: 0.8px;
+}
+/* =====================================================
+   CALLOUT SYSTEM — FINAL
+===================================================== */
+
+.hepa-control-image {
+  position: relative !important;
+  width: 100%;
+  overflow: visible !important;
+}
+
+
+/* =====================================================
+   POINTER BASE
+===================================================== */
+
+.hepa-control-point {
+  position: absolute !important;
+
+  width: 1px !important;
+  height: 1px !important;
+
+  z-index: 50 !important;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   TARGET DOT
+===================================================== */
+
+.hepa-point-dot {
+  position: absolute !important;
+
+  width: 9px !important;
+  height: 9px !important;
+
+  left: 0 !important;
+  top: 0 !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  border-radius: 50% !important;
+
+  background: #071c2b !important;
+
+  border: 2px solid #45d2ff !important;
+
+  box-sizing: border-box !important;
+
+  box-shadow:
+    0 0 0 3px rgba(69, 210, 255, 0.15),
+    0 0 10px rgba(69, 210, 255, 0.65) !important;
+}
+
+
+/* WHITE CENTER */
+
+.hepa-point-dot::after {
+  content: "" !important;
+
+  position: absolute !important;
+
+  width: 3px !important;
+  height: 3px !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  border-radius: 50% !important;
+
+  background: #ffffff !important;
+}
+
+
+/* =====================================================
+   POINTER LINE
+===================================================== */
+
+.hepa-point-line {
+  position: absolute !important;
+
+  top: 0 !important;
+
+  height: 1px !important;
+
+  background: #45d2ff !important;
+
+  box-shadow:
+    0 0 5px rgba(69, 210, 255, 0.8),
+    0 0 12px rgba(69, 210, 255, 0.3) !important;
+}
+
+
+/* =====================================================
+   POINTER LABEL
+===================================================== */
+
+.hepa-point-label {
+  position: absolute !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 8px !important;
+
+  min-width: max-content !important;
+
+  height: 32px !important;
+
+  padding: 0 12px !important;
+
+  box-sizing: border-box !important;
+
+  background: #061b2b !important;
+
+  border: 1px solid rgba(69, 210, 255, 0.35) !important;
+
+  color: #ffffff !important;
+
+  white-space: nowrap !important;
+
+  line-height: normal !important;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.18) !important;
+}
+
+
+.hepa-point-label small {
+  color: #45d2ff !important;
+
+  font-size: 6px !important;
+
+  font-weight: 700 !important;
+
+  letter-spacing: 1.5px !important;
+}
+
+
+.hepa-point-label strong {
+  color: #ffffff !important;
+
+  font-size: 7px !important;
+
+  font-weight: 700 !important;
+
+  letter-spacing: 1px !important;
+}
+
+
+/* =====================================================
+   01 — DIGITAL DISPLAY
+===================================================== */
+
+/*
+   TARGET IS THE LOWER-RIGHT EDGE OF THE DISPLAY
+*/
+
+.hepa-control-point.hepa-point-1 {
+
+  left: 57.5% !important;
+
+  top: 50% !important;
+}
+
+
+/* line → RIGHT */
+
+.hepa-control-point.hepa-point-1 .hepa-point-line {
+
+  left: 5px !important;
+
+  right: auto !important;
+
+  width: 95px !important;
+}
+
+
+/* label → RIGHT */
+
+.hepa-control-point.hepa-point-1 .hepa-point-label {
+
+  left: 100px !important;
+
+  right: auto !important;
+
+  top: -16px !important;
+}
+
+
+/* =====================================================
+   02 — CONTROL INPUT
+===================================================== */
+
+/*
+   THIS IS THE IMPORTANT FIX.
+
+   The target is now INSIDE the image,
+   around the lower indicator/control area.
+*/
+
+.hepa-control-point.hepa-point-2 {
+
+  left: 60% !important;
+
+  top: 66% !important;
+}
+
+
+/* line goes LEFT */
+
+.hepa-control-point.hepa-point-2 .hepa-point-line {
+
+  right: 5px !important;
+
+  left: auto !important;
+
+  width: 125px !important;
+}
+
+
+/* label sits at LEFT end */
+
+.hepa-control-point.hepa-point-2 .hepa-point-label {
+
+  right: 130px !important;
+
+  left: auto !important;
+
+  top: -16px !important;
+}
+
+
+/* =====================================================
+   CORNER LABEL
+===================================================== */
+
+.hepa-control-corner {
+  position: absolute;
+
+  left: 20px;
+
+  bottom: 20px;
+
+  z-index: 30;
+}
+/* =====================================================
+   01 — DIGITAL DISPLAY
+===================================================== */
+
+.hepa-control-point.hepa-point-1 {
+  left: 57.5% !important;
+  top: 46% !important;
+}
+
+.hepa-control-point.hepa-point-1 .hepa-point-line {
+  left: 5px !important;
+  right: auto !important;
+  width: 95px !important;
+}
+
+.hepa-control-point.hepa-point-1 .hepa-point-label {
+  left: 100px !important;
+  right: auto !important;
+  top: -16px !important;
+}
+
+
+/* =====================================================
+   02 — CONTROL INPUT
+===================================================== */
+
+.hepa-control-point.hepa-point-2 {
+  left: 60% !important;
+  top: 59% !important;
+}
+
+.hepa-control-point.hepa-point-2 .hepa-point-line {
+  right: 5px !important;
+  left: auto !important;
+  width: 125px !important;
+}
+
+.hepa-control-point.hepa-point-2 .hepa-point-label {
+  right: 130px !important;
+  left: auto !important;
+  top: -16px !important;
+}

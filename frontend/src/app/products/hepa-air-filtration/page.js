@@ -2,10 +2,17 @@
 
 import "./page.css";
 import Image from "next/image";
+import { useState } from "react";
+
 
 export default function HEPAAirFiltration() {
+  const [hepaVideoStarted, setHepaVideoStarted] = useState(false);
+
   return (
+    
     <>
+      <Navbar />
+
       {/* =====================================================
           01 / HEPA HERO
       ===================================================== */}
@@ -262,7 +269,7 @@ export default function HEPAAirFiltration() {
             <div className="hepa-system-image">
 
               <Image
-                src="/assets/images/hepa/ecu1.jpg"
+                src="\assets\images\heap_air\20191105_104207.jpg"
                 alt="ECU1 HEPA Air Filtration System"
                 width={800}
                 height={800}
@@ -393,6 +400,323 @@ export default function HEPAAirFiltration() {
         </div>
 
       </section>
+{/* =====================================================
+    DIGITAL CONTROL / MONITORING
+===================================================== */}
+
+<section
+  className="hepa-control-section"
+  id="digital-control"
+>
+
+  {/* TECHNICAL GRID */}
+  <div className="hepa-control-grid"></div>
+
+  {/* GLOW */}
+  <div className="hepa-control-glow"></div>
+
+
+  <div className="hepa-control-container">
+
+
+    {/* =================================================
+        LEFT — CONTROL PANEL VISUAL
+    ================================================= */}
+
+    <div className="hepa-control-visual">
+
+      <div className="hepa-control-frame">
+
+
+        {/* =================================================
+            TOP TECHNICAL BAR
+        ================================================= */}
+
+        <div className="hepa-control-topbar">
+
+          <span>
+            ATS / HEPA FILTRATION
+          </span>
+
+          <span>
+            CONTROL INTERFACE
+          </span>
+
+        </div>
+
+
+        {/* =================================================
+            IMAGE AREA
+        ================================================= */}
+
+        <div className="hepa-control-image">
+
+          <img
+            src="/assets/images/heap_air/digital-control-panel.jpg"
+            alt="Digital control panel of Accurate Thermal Systems HEPA filtration system"
+          />
+
+
+          {/* =================================================
+              IMAGE OVERLAY
+          ================================================= */}
+
+          <div className="hepa-control-overlay"></div>
+
+
+          {/* =================================================
+              SCANNING LINE
+          ================================================= */}
+
+          <div className="hepa-control-scan"></div>
+
+
+          {/* =================================================
+              CALLOUT 01 — DIGITAL DISPLAY
+          ================================================= */}
+
+          <div className="hepa-control-point hepa-point-1">
+
+            <span className="hepa-point-dot"></span>
+
+            <div className="hepa-point-line"></div>
+
+            <div className="hepa-point-label">
+
+              <small>
+                01
+              </small>
+
+              <strong>
+                DIGITAL DISPLAY
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          {/* =================================================
+              CALLOUT 02 — CONTROL INPUT
+          ================================================= */}
+
+          <div className="hepa-control-point hepa-point-2">
+
+            <span className="hepa-point-dot"></span>
+
+            <div className="hepa-point-line"></div>
+
+            <div className="hepa-point-label">
+
+              <small>
+                02
+              </small>
+
+              <strong>
+                CONTROL INPUT
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          {/* =================================================
+              IMAGE CORNER LABEL
+          ================================================= */}
+
+          <div className="hepa-control-corner">
+
+            <span>
+              ATS / ECU
+            </span>
+
+            <strong>
+              DIGITAL CONTROL
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        {/* =================================================
+            BOTTOM BAR
+        ================================================= */}
+
+        <div className="hepa-control-bottom">
+
+          <span>
+            SYSTEM INTERFACE
+          </span>
+
+          <span>
+            DIGITAL MONITORING
+          </span>
+
+          <span>
+            ATS HEPA
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    {/* =================================================
+        RIGHT — CONTENT
+    ================================================= */}
+
+    <div className="hepa-control-content">
+
+      <div className="hepa-control-kicker">
+
+        <span></span>
+
+        04 / CONTROL SYSTEM
+
+      </div>
+
+
+      <h2>
+        CONTROL
+        <br />
+        <span>AT A GLANCE.</span>
+      </h2>
+
+
+      <p className="hepa-control-description">
+
+        A dedicated digital control interface provides
+        a clear view of the filtration system and keeps
+        essential operating information accessible from
+        the front of the unit.
+
+      </p>
+
+
+      {/* FEATURE LIST */}
+
+      <div className="hepa-control-features">
+
+
+        {/* FEATURE 01 */}
+
+        <div className="hepa-control-feature">
+
+          <div className="hepa-feature-index">
+            01
+          </div>
+
+          <div className="hepa-feature-content">
+
+            <h3>
+              Digital Display
+            </h3>
+
+            <p>
+              Clear digital information presented directly
+              through the integrated front-panel interface.
+            </p>
+
+          </div>
+
+          <div className="hepa-feature-arrow">
+            ↗
+          </div>
+
+        </div>
+
+
+        {/* FEATURE 02 */}
+
+        <div className="hepa-control-feature">
+
+          <div className="hepa-feature-index">
+            02
+          </div>
+
+          <div className="hepa-feature-content">
+
+            <h3>
+              System Controls
+            </h3>
+
+            <p>
+              Dedicated controls provide direct access to
+              the filtration system interface.
+            </p>
+
+          </div>
+
+          <div className="hepa-feature-arrow">
+            ↗
+          </div>
+
+        </div>
+
+
+        {/* FEATURE 03 */}
+
+        <div className="hepa-control-feature">
+
+          <div className="hepa-feature-index">
+            03
+          </div>
+
+          <div className="hepa-feature-content">
+
+            <h3>
+              Status Indication
+            </h3>
+
+            <p>
+              Integrated visual indicators provide immediate
+              feedback from the control panel.
+            </p>
+
+          </div>
+
+          <div className="hepa-feature-arrow">
+            ↗
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      {/* TECHNICAL FOOTER */}
+
+      <div className="hepa-control-meta">
+
+        <div>
+          <span>APPLICATION</span>
+          <strong>HEPA AIR FILTRATION</strong>
+        </div>
+
+        <div>
+          <span>INTERFACE</span>
+          <strong>DIGITAL CONTROL</strong>
+        </div>
+
+        <div>
+          <span>DESIGN</span>
+          <strong>FRONT PANEL</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
       {/* =====================================================
@@ -491,121 +815,267 @@ export default function HEPAAirFiltration() {
         </div>
 
       </section>
+      
 
 
-      {/* =====================================================
-          05 / FILTRATION PROCESS
-      ===================================================== */}
+    
 
-      <section className="hepa-process">
+  
 
-        <div className="hepa-process-container">
+    <>
+      
+      <main className="hepa-page">
 
-          <div className="hepa-process-header">
-
-            <span className="hepa-section-tag">
-              04 / FILTRATION PROCESS
-            </span>
-
-            <h2>
-              HOW DOES
-              <br />
-              THE SYSTEM
-              <br />
-              <span>WORK?</span>
-            </h2>
-
-            <p>
-              A multi-stage filtration system captures
-              contaminants before treated air is discharged
-              from the system.
-            </p>
-
-          </div>
+        {/* ALL YOUR SECTIONS GO HERE */}
 
 
-          <div className="hepa-process-media">
+        {/* =====================================================
+            05 / FILTRATION PROCESS
+        ===================================================== */}
 
-            <div className="hepa-video-wrapper">
+        <section className="hepa-process">
 
-              <video
-                controls
-                muted
-                playsInline
-                preload="metadata"
-                className="hepa-video"
+          <div className="hepa-process-container">
+
+            <div className="hepa-process-header">
+
+              <span className="hepa-section-tag">
+                04 / FILTRATION PROCESS
+              </span>
+
+              <h2>
+                HOW DOES
+                <br />
+                THE SYSTEM
+                <br />
+                <span>WORK?</span>
+              </h2>
+
+              <p>
+                A multi-stage filtration system captures
+                contaminants before treated air is discharged
+                from the system.
+              </p>
+
+            </div>
+
+
+            {/* =================================================
+                MEDIA AREA
+            ================================================= */}
+
+            <div className="hepa-process-media">
+
+
+              {/* =================================================
+                  VIDEO
+              ================================================= */}
+
+              <div
+                className={`hepa-video-wrapper ${
+                  hepaVideoStarted
+                    ? "hepa-video-playing"
+                    : ""
+                }`}
               >
-                <source
-                  src="/videos/hepa-filtration.mp4"
-                  type="video/mp4"
-                />
-              </video>
 
-              <div className="hepa-video-label">
-                ATS / FILTRATION PROCESS
+                <video
+                  controls
+                  muted
+                  playsInline
+                  preload="metadata"
+                  className="hepa-video"
+
+                  onPlay={() => {
+                    setHepaVideoStarted(true);
+                  }}
+                >
+
+                  <source
+                    src="/videos/ECU1 HEPA Air Filtration System.mp4"
+                    type="video/mp4"
+                  />
+
+                  Your browser does not support the video element.
+
+                </video>
+
+
+                {/* =================================================
+                    CUSTOM WALLPAPER
+                ================================================= */}
+
+                {!hepaVideoStarted && (
+
+                  <div
+                    className="hepa-video-overlay"
+
+                    onClick={(e) => {
+
+                      const video =
+                        e.currentTarget
+                          .closest(".hepa-video-wrapper")
+                          ?.querySelector("video");
+
+                      if (video) {
+                        video.play();
+                      }
+
+                    }}
+                  >
+
+                    <div className="hepa-overlay-grid"></div>
+
+                    <div className="hepa-overlay-rings"></div>
+
+
+                    {/* TOP LABEL */}
+
+                    <span className="hepa-overlay-kicker">
+                      ATS / HEPA FILTRATION TECHNOLOGY
+                    </span>
+
+
+                    {/* TITLE */}
+
+                    <h3 className="hepa-overlay-title">
+                      HOW DOES A
+                      <br />
+                      HEPA FILTRATION
+                      <br />
+                      <span>SYSTEM WORK?</span>
+                    </h3>
+
+
+                    {/* PLAY BUTTON */}
+
+                    <button
+                      type="button"
+                      className="hepa-overlay-play"
+                      aria-label="Play HEPA filtration video"
+
+                      onClick={(e) => {
+
+                        e.stopPropagation();
+
+                        const video =
+                          e.currentTarget
+                            .closest(".hepa-video-wrapper")
+                            ?.querySelector("video");
+
+                        if (video) {
+                          video.play();
+                        }
+
+                      }}
+                    >
+                      <span>▶</span>
+                    </button>
+
+
+                    {/* LOGO */}
+
+                    <div className="hepa-overlay-logo">
+
+                      <img
+                        src="/assets/images/ats-logo.png"
+                        alt="Accurate Thermal Systems"
+                      />
+
+                    </div>
+
+
+                    {/* FOOTER */}
+
+                    <div className="hepa-overlay-footer">
+
+                      <span>
+                        ATS / HEPA AIR FILTRATION
+                      </span>
+
+                      <span>
+                        WATCH PROCESS ↓
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                )}
+
+
+                {/* VIDEO LABEL */}
+
+                
               </div>
 
-            </div>
+
+              {/* =================================================
+                  FILTRATION STAGES
+              ================================================= */}
+
+              <div className="hepa-process-stages">
 
 
-            <div className="hepa-process-stages">
+                <div className="hepa-process-stage">
 
-              <div className="hepa-process-stage">
+                  <span>01</span>
 
-                <span>01</span>
+                  <h3>
+                    PRE-FILTER
+                  </h3>
 
-                <h3>
-                  PRE-FILTER
-                </h3>
+                  <p>
+                    Initial particulate filtration.
+                  </p>
 
-                <p>
-                  Initial particulate filtration.
-                </p>
-
-              </div>
+                </div>
 
 
-              <div className="hepa-process-stage">
+                <div className="hepa-process-stage">
 
-                <span>02</span>
+                  <span>02</span>
 
-                <h3>
-                  HEPA FILTER
-                </h3>
+                  <h3>
+                    HEPA FILTER
+                  </h3>
 
-                <p>
-                  High-efficiency particle capture.
-                </p>
+                  <p>
+                    High-efficiency particle capture.
+                  </p>
 
-              </div>
-
-
-              <div className="hepa-process-stage">
-
-                <span>03</span>
-
-                <h3>
-                  ACTIVATED CARBON
-                </h3>
-
-                <p>
-                  Odor and VOC capture.
-                </p>
-
-              </div>
+                </div>
 
 
-              <div className="hepa-process-stage">
+                <div className="hepa-process-stage">
 
-                <span>04</span>
+                  <span>03</span>
 
-                <h3>
-                  CLEAN AIR
-                </h3>
+                  <h3>
+                    ACTIVATED CARBON
+                  </h3>
 
-                <p>
-                  Filtered air discharge.
-                </p>
+                  <p>
+                    Odor and VOC capture.
+                  </p>
+
+                </div>
+
+
+                <div className="hepa-process-stage">
+
+                  <span>04</span>
+
+                  <h3>
+                    CLEAN AIR
+                  </h3>
+
+                  <p>
+                    Filtered air discharge.
+                  </p>
+
+                </div>
+
 
               </div>
 
@@ -613,118 +1083,452 @@ export default function HEPAAirFiltration() {
 
           </div>
 
-        </div>
-
-      </section>
+        </section>
 
 
-      {/* =====================================================
-          06 / PRODUCT DOCUMENTATION
-      ===================================================== */}
+      </main>
+    </>
 
-      <section
-        className="hepa-downloads"
-        id="downloads"
+  {/* =====================================================
+    ECU1 / ECU2 — MODEL COMPARISON
+===================================================== */}
+
+<section className="hepa-comparison-section">
+
+  <div className="hepa-comparison-container">
+
+    {/* HEADER */}
+    <div className="hepa-comparison-header">
+
+      <div>
+        <span className="hepa-comparison-tag">
+          06 / MODEL COMPARISON
+        </span>
+
+        <h2>
+          COMPARE
+          <br />
+          <span>THE SYSTEMS.</span>
+        </h2>
+      </div>
+
+  
+
+    </div>
+
+
+    {/* COMPARISON TABLE */}
+    <div className="hepa-comparison-table-wrapper">
+
+      <table className="hepa-comparison-table">
+
+        <thead>
+          <tr>
+
+            <th>
+              SPECIFICATION
+            </th>
+
+            <th className="hepa-model-column">
+
+              <span className="hepa-model-number">
+                ECU1
+              </span>
+
+              <span className="hepa-model-subtitle">
+                STANDARD CAPACITY
+              </span>
+
+            </th>
+
+            <th className="hepa-model-column">
+
+              <span className="hepa-model-number">
+                ECU2
+              </span>
+
+              <span className="hepa-model-subtitle">
+                HIGH CAPACITY
+              </span>
+
+            </th>
+
+          </tr>
+        </thead>
+
+
+        <tbody>
+
+          <tr>
+            <th>Inlet / Outlet Plenum</th>
+            <td>6″ OD inlet / 4″ OD outlet</td>
+            <td>6″ OD inlet / 6″ OD outlet</td>
+          </tr>
+
+          <tr>
+            <th>Maximum Air Flow</th>
+            <td>
+              <strong>210 CFM</strong> @ 19 WC
+            </td>
+            <td>
+              <strong>750 CFM</strong> @ 19 WC
+            </td>
+          </tr>
+
+          <tr>
+            <th>Applications</th>
+            <td>
+              Light to moderate-duty capture of
+              smoke, fumes, odor &amp; VOC removal
+            </td>
+            <td>
+              Moderate to heavy-duty capture of
+              smoke, fumes, odor &amp; VOC removal
+            </td>
+          </tr>
+
+          <tr>
+            <th>Filter Configuration</th>
+            <td>3-stage filtration</td>
+            <td>3-stage filtration</td>
+          </tr>
+
+          <tr>
+            <th>Filter Access</th>
+            <td>Easy front door access</td>
+            <td>Easy front door access</td>
+          </tr>
+
+          <tr>
+            <th>Filter Status Display</th>
+            <td>
+              Individual electronic filter monitoring
+              with display &amp; LED alerts
+            </td>
+            <td>
+              Individual electronic filter monitoring
+              with display &amp; LED alerts
+            </td>
+          </tr>
+
+          <tr>
+            <th>1st Stage Filter</th>
+            <td>
+              Deep-pleat pre-filter,
+              99% efficient @ 1 micron
+            </td>
+            <td>
+              Deep-pleat pre-filter,
+              99% efficient @ 1 micron
+            </td>
+          </tr>
+
+          <tr>
+            <th>2nd Stage Filter</th>
+            <td>
+              HEPA filter,
+              99.97% efficient @ 0.3 micron
+            </td>
+            <td>
+              HEPA filter,
+              99.97% efficient @ 0.3 micron
+            </td>
+          </tr>
+
+          <tr>
+            <th>3rd Stage Filter</th>
+            <td>
+              2 modules × 30 lbs activated carbon
+            </td>
+            <td>
+              2 modules × 40 lbs activated carbon
+            </td>
+          </tr>
+
+          <tr>
+            <th>Configuration</th>
+            <td>
+              Mobile with 4 castor wheels,
+              2 locking
+            </td>
+            <td>
+              Mobile with 4 castor wheels,
+              2 locking
+            </td>
+          </tr>
+
+          <tr>
+            <th>Blower Capacity</th>
+            <td>Integrated up to 210 CFM</td>
+            <td>Integrated up to 750 CFM</td>
+          </tr>
+
+          <tr>
+            <th>Noise Level</th>
+            <td>59 dBA</td>
+            <td>60 dBA</td>
+          </tr>
+
+          <tr>
+            <th>Remote Interface</th>
+            <td>
+              Integrated 24 VDC remote start/stop
+            </td>
+            <td>
+              Integrated 24 VDC remote start/stop
+            </td>
+          </tr>
+
+          <tr>
+            <th>Gas / VOC Sensor</th>
+            <td>
+              Calibrated at 600 PPM ethanol
+            </td>
+            <td>
+              Calibrated at 600 PPM ethanol
+            </td>
+          </tr>
+
+          <tr>
+            <th>Dimensions</th>
+            <td>
+              23″ W × 23″ D × 35″ H
+            </td>
+            <td>
+              24″ W × 35″ D × 52″ H
+            </td>
+          </tr>
+
+          <tr>
+            <th>Weight</th>
+            <td>
+              200 lbs. with filters installed
+            </td>
+            <td>
+              490 lbs. with filters installed
+            </td>
+          </tr>
+
+          <tr>
+            <th>Catalog Number</th>
+            <td>
+              <strong>ATS1119</strong>
+            </td>
+            <td>
+              <strong>ATS1126</strong>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    {/* BOTTOM NOTE */}
+    <div className="hepa-comparison-footer">
+
+      <span>
+        ATS / HEPA AIR FILTRATION
+      </span>
+
+      <span>
+        ECU1 — ATS1119
+      </span>
+
+      <span>
+        ECU2 — ATS1126
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+  
+
+
+
+  {/* =====================================================
+    06 / PRODUCT DOCUMENTATION
+===================================================== */}
+
+<section
+  className="hepa-downloads"
+  id="downloads"
+>
+
+  <div className="hepa-downloads-container">
+
+    {/* ================= LEFT CONTENT ================= */}
+
+    <div className="hepa-downloads-intro">
+
+      <span className="hepa-section-tag">
+        06 / RESOURCES
+      </span>
+
+      <h2>
+        FILTRATION
+        <br />
+        <span>DOCUMENTATION.</span>
+      </h2>
+
+      <p>
+        Access technical documentation, product
+        information and filtration resources for ATS
+        HEPA systems.
+      </p>
+
+    </div>
+
+
+    {/* ================= DOCUMENT LIST ================= */}
+
+    <div className="hepa-download-list">
+
+
+      {/* =================================================
+          ECU1 BROCHURE
+      ================================================= */}
+
+      <a
+        href="/downloads/ECU1-brochure-V1-11-2019.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hepa-download-item"
       >
 
-        <div className="hepa-downloads-container">
+        <span>
+          01
+        </span>
 
-          <div className="hepa-downloads-intro">
+        <div>
 
-            <span className="hepa-section-tag">
-              06 / RESOURCES
-            </span>
+          <small>
+            PRODUCT BROCHURE
+          </small>
 
-            <h2>
-              FILTRATION
-              <br />
-              <span>DOCUMENTATION.</span>
-            </h2>
-
-            <p>
-              Access technical documentation, product
-              information and filtration resources for ATS
-              HEPA systems.
-            </p>
-
-          </div>
-
-
-          <div className="hepa-download-list">
-
-            <a
-              href="/downloads/ECU1-brochure.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hepa-download-item"
-            >
-
-              <span>01</span>
-
-              <div>
-                <small>PRODUCT BROCHURE</small>
-                <h3>
-                  ECU1 HEPA FILTRATION SYSTEM
-                </h3>
-              </div>
-
-              <strong>
-                PDF ↓
-              </strong>
-
-            </a>
-
-
-            <a
-              href="/downloads/ECU2-brochure.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hepa-download-item"
-            >
-
-              <span>02</span>
-
-              <div>
-                <small>PRODUCT BROCHURE</small>
-                <h3>
-                  ECU2 HEPA FILTRATION SYSTEM
-                </h3>
-              </div>
-
-              <strong>
-                PDF ↓
-              </strong>
-
-            </a>
-
-
-            <a
-              href="/downloads/hepa-safety-data.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hepa-download-item"
-            >
-
-              <span>03</span>
-
-              <div>
-                <small>TECHNICAL RESOURCE</small>
-                <h3>
-                  HEPA FILTER / SAFETY DATA
-                </h3>
-              </div>
-
-              <strong>
-                PDF ↓
-              </strong>
-
-            </a>
-
-          </div>
+          <h3>
+            ECU1 HEPA FILTRATION SYSTEM
+          </h3>
 
         </div>
 
-      </section>
+        <strong>
+          PDF ↓
+        </strong>
+
+      </a>
+
+
+      {/* =================================================
+          ECU1 LAYOUT
+      ================================================= */}
+
+      <a
+        href="/downloads/diagram-2-system-layout-LL12-LL26-ECU1.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hepa-download-item"
+      >
+
+        <span>
+          02
+        </span>
+
+        <div>
+
+          <small>
+            SYSTEM LAYOUT
+          </small>
+
+          <h3>
+            ECU1 HEPA FILTRATION SYSTEM LAYOUT
+          </h3>
+
+        </div>
+
+        <strong>
+          PDF ↓
+        </strong>
+
+      </a>
+
+
+      {/* =================================================
+          ECU2 BROCHURE
+      ================================================= */}
+
+      <a
+        href="/downloads/ecu2-brochure-v2-11-2023.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hepa-download-item"
+      >
+
+        <span>
+          03
+        </span>
+
+        <div>
+
+          <small>
+            PRODUCT BROCHURE
+          </small>
+
+          <h3>
+            ECU2 HEPA FILTRATION SYSTEM
+          </h3>
+
+        </div>
+
+        <strong>
+          PDF ↓
+        </strong>
+
+      </a>
+
+
+      {/* =================================================
+          ECU2 LAYOUT
+      ================================================= */}
+
+      <a
+        href="/downloads/ECU2-layout.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hepa-download-item"
+      >
+
+        <span>
+          04
+        </span>
+
+        <div>
+
+          <small>
+            SYSTEM LAYOUT
+          </small>
+
+          <h3>
+            ECU2 HEPA FILTRATION SYSTEM LAYOUT
+          </h3>
+
+        </div>
+
+        <strong>
+          PDF ↓
+        </strong>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
     </>
   );

@@ -296,11 +296,10 @@
 
 
 /* Product hover */
-
 .ftb-hero-visual:hover .ftb-hero-machine {
     transform:
-        translate(15px, -12px)
-        scale(1.015);
+        translate(10px, 0px)
+        scale(1.012);
 
     filter:
         drop-shadow(
@@ -310,8 +309,6 @@
             0 45px 55px rgba(0,0,0,.12)
         );
 }
-
-
 /* =========================================================
    FLOATING CARDS
 ========================================================= */
@@ -6275,5 +6272,190 @@ section {
     max-width: 82%;
     height: auto;
     object-fit: contain;
+}
+
+/* =====================================================
+   ALL PRODUCT COMPARISON
+===================================================== */
+
+.ftb-series-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ftb-series-label span {
+  color: #1769d2;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ftb-series-label strong {
+  color: #6e8298;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+
+/* TABLE WRAPPER */
+
+.ftb-comparison-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #cbdced;
+  background: #ffffff;
+}
+
+
+/* TABLE */
+
+.ftb-comparison-table {
+  width: 100%;
+  min-width: 1500px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+
+/* HEADER */
+
+.ftb-comparison-table th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
+  width: 145px;
+  padding: 14px 10px;
+
+  background: #092746;
+  color: #ffffff;
+
+  text-align: center;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ftb-comparison-table th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+
+  width: 230px;
+
+  text-align: left;
+}
+
+.ftb-comparison-table th small {
+  display: block;
+  margin-top: 5px;
+
+  color: #8fb6dd;
+
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+
+/* BODY */
+
+.ftb-comparison-table td {
+  padding: 13px 10px;
+
+  border-right: 1px solid #e1e9f1;
+  border-bottom: 1px solid #e1e9f1;
+
+  color: #092442;
+
+  text-align: center;
+
+  font-size: 8.5px;
+  line-height: 1.5;
+}
+
+.ftb-comparison-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+
+  width: 230px;
+
+  background: #f7faff;
+
+  color: #536a82;
+
+  text-align: left;
+
+  font-weight: 600;
+}
+
+.ftb-comparison-table tr:hover td {
+  background: #f4f8fd;
+}
+
+.ftb-comparison-table tr:hover td:first-child {
+  background: #edf4fb;
+}
+
+
+/* MODEL COLUMNS */
+
+.ftb-comparison-table th:not(:first-child),
+.ftb-comparison-table td:not(:first-child) {
+  width: 145px;
+}
+
+
+/* LAST ROW */
+
+.ftb-comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* NOTE */
+
+.ftb-spec-note {
+  margin-top: 18px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .ftb-comparison-wrap {
+    margin-right: -20px;
+    border-left: none;
+    border-right: none;
+  }
+
+  .ftb-comparison-table {
+    min-width: 1450px;
+  }
+
+  .ftb-comparison-table th:first-child,
+  .ftb-comparison-table td:first-child {
+    width: 180px;
+  }
+
+  .ftb-comparison-table th:not(:first-child),
+  .ftb-comparison-table td:not(:first-child) {
+    width: 135px;
+  }
+
+  .ftb-comparison-table th {
+    font-size: 8px;
+  }
+
+  .ftb-comparison-table td {
+    font-size: 8px;
+    padding: 12px 8px;
+  }
+
 }
 

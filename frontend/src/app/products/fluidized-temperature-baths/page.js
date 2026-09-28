@@ -1201,167 +1201,494 @@ export default function FluidizedTemperatureBaths() {
     </div>
 
 
-    {/* ================= MODEL BAR ================= */}
+   {/* ================= MODEL BAR ================= */}
 
-    <div className="ftb-spec-model">
+<div className="ftb-spec-model">
 
-      <div>
-        <span>MODEL</span>
-        <strong>FTBLL12</strong>
-      </div>
+  <div>
+    <span>MODELS</span>
+    <strong>08 MODELS</strong>
+  </div>
 
-      <div>
-        <span>CATALOG NUMBER</span>
-        <strong>ATS1012</strong>
-      </div>
+  <div>
+    <span>LL SERIES</span>
+    <strong>FTBLL12 / 12W / 26 / 27 / 47</strong>
+  </div>
 
-      <div>
-        <span>APPLICATION</span>
-        <strong>EXTRUSION TOOL CLEANING</strong>
-      </div>
+  <div>
+    <span>SL SERIES</span>
+    <strong>FTBSL15 / 25 / 6</strong>
+  </div>
 
-      <div>
-        <span>MAXIMUM TEMPERATURE</span>
-        <strong>600°C</strong>
-      </div>
+  <div>
+    <span>MAXIMUM TEMPERATURE</span>
+    <strong>600°C</strong>
+  </div>
 
-    </div>
-
-
-    {/* ================= SPECIFICATIONS TABLE ================= */}
-
-    <div className="ftb-spec-table-wrap">
-
-      <table className="ftb-spec-table">
-
-        <thead>
-          <tr>
-            <th>SPECIFICATION</th>
-            <th>FTBLL12</th>
-          </tr>
-        </thead>
-
-        <tbody>
-
-          <tr>
-            <td>Catalog Number</td>
-            <td>ATS1012</td>
-          </tr>
-
-          <tr>
-            <td>Recommended Applications</td>
-            <td>Extrusion tool cleaning</td>
-          </tr>
-
-          <tr>
-            <td>Temperature Stability at 500°C</td>
-            <td>±1.0°C</td>
-          </tr>
-
-          <tr>
-            <td>Calibrated Accuracy at 500°C</td>
-            <td>±5.0°C</td>
-          </tr>
-
-          <tr>
-            <td>Radial Temperature Uniformity at 500°C</td>
-            <td>3.0</td>
-          </tr>
-
-          <tr>
-            <td>Heat Up Time: Ambient to 600°C</td>
-            <td>150 minutes</td>
-          </tr>
-
-          <tr>
-            <td>Power Consumption</td>
-            <td>4.5 kW — 240V, 1 phase</td>
-          </tr>
-
-          <tr>
-            <td>Working Diameter</td>
-            <td>9.5 inches</td>
-          </tr>
-
-          <tr>
-            <td>Working Depth</td>
-            <td>12 inches</td>
-          </tr>
-
-          <tr>
-            <td>Working Area in Basket</td>
-            <td>8.4 × 12 inches</td>
-          </tr>
-
-          <tr>
-            <td>Maximum Load Capacity</td>
-            <td>25 lbs</td>
-          </tr>
-
-          <tr>
-            <td>Recovery from Quench</td>
-            <td>Good</td>
-          </tr>
-
-          <tr>
-            <td>Air Pressure Required</td>
-            <td>50 PSI</td>
-          </tr>
-
-          <tr>
-            <td>Maximum Air Consumption</td>
-            <td>3.6 SCFM</td>
-          </tr>
-
-          <tr>
-            <td>Total Unit Weight</td>
-            <td>115 lbs — without aluminum oxide</td>
-          </tr>
-
-          <tr>
-            <td>Aluminum Oxide Required & Included</td>
-            <td>85 / 100 lbs</td>
-          </tr>
-
-          <tr>
-            <td>Overall Footprint — H × W × D</td>
-            <td>33 × 25 × 23 inches</td>
-          </tr>
-
-          <tr>
-            <td>Warranty</td>
-            <td>1 Year</td>
-          </tr>
-
-        </tbody>
-
-      </table>
-
-    </div>
+</div>
 
 
-    {/* ================= TEMPERATURE NOTE ================= */}
+{/* ================= ALL MODEL SPECIFICATIONS ================= */}
 
-    <div className="ftb-spec-note">
+<div className="ftb-comparison-wrap">
 
-      <div className="ftb-spec-note-icon">
-        °C
-      </div>
+  <table className="ftb-comparison-table">
 
-      <div>
+    <thead>
 
-        <span>
-          TEMPERATURE CONVERSION
-        </span>
+      <tr>
 
-        <p>
-          To convert to degrees Fahrenheit, multiply by 1.8,
-          then add 32. For specifications, multiply by 1.8.
-        </p>
+        <th className="comparison-label">
+          SPECIFICATION
+        </th>
 
-      </div>
+        <th>
+          FTBLL12
+          <small>ATS1012</small>
+        </th>
 
-    </div>
+        <th>
+          FTBLL12W
+          <small>ATS1017</small>
+        </th>
+
+        <th>
+          FTBLL26
+          <small>ATS1013</small>
+        </th>
+
+        <th>
+          FTBLL27
+          <small>ATS1016</small>
+        </th>
+
+        <th>
+          FTBLL47
+          <small>ATS1015</small>
+        </th>
+
+        <th>
+          FTBSL15
+          <small>ATS2019</small>
+        </th>
+
+        <th>
+          FTBSL25
+          <small>ATS2021</small>
+        </th>
+
+        <th>
+          FTBSL6
+          <small>ATS2016 / ATS2018</small>
+        </th>
+
+      </tr>
+
+    </thead>
+
+
+    <tbody>
+
+      {/* APPLICATION */}
+
+      <tr>
+
+        <td>Recommended Applications</td>
+
+        <td>Extrusion tool cleaning</td>
+        <td>Extrusion tool cleaning</td>
+        <td>Extrusion tool cleaning</td>
+        <td>Extrusion tool cleaning</td>
+        <td>Extrusion tool cleaning</td>
+
+        <td>
+          Medical device shape setting,
+          calibration, reactor heating
+        </td>
+
+        <td>
+          Medical device shape setting,
+          calibration, reactor heating
+        </td>
+
+        <td>
+          Medical device shape setting,
+          calibration, reactor heating
+        </td>
+
+      </tr>
+
+
+      {/* TEMPERATURE STABILITY */}
+
+      <tr>
+
+        <td>Temperature Stability at 500°C</td>
+
+        <td>±1.0°C</td>
+        <td>±1.5°C</td>
+        <td>±1.0°C</td>
+        <td>±5.0°C</td>
+        <td>±5.0°C</td>
+
+        <td>±0.3°C</td>
+        <td>±0.4°C</td>
+        <td>±0.2°C</td>
+
+      </tr>
+
+
+      {/* CALIBRATED ACCURACY */}
+
+      <tr>
+
+        <td>Calibrated Accuracy at 500°C</td>
+
+        <td>±5.0°C</td>
+        <td>±10.0°C</td>
+        <td>±10.0°C</td>
+        <td>±20.0°C</td>
+        <td>±20.0°C</td>
+
+        <td>±3.0°C</td>
+        <td>±3.0°C</td>
+        <td>±2.0°C</td>
+
+      </tr>
+
+
+      {/* RADIAL UNIFORMITY */}
+
+      <tr>
+
+        <td>Radial Temperature Uniformity at 500°C</td>
+
+        <td>3.0</td>
+        <td>3.0</td>
+        <td>3.0</td>
+        <td>10.0</td>
+        <td>10.0</td>
+
+        <td>&lt;1.0</td>
+        <td>&lt;1.0</td>
+        <td>&lt;0.5</td>
+
+      </tr>
+
+
+      {/* HEAT UP */}
+
+      <tr>
+
+        <td>Heat Up Time: Ambient to 600°C</td>
+
+        <td>150 min</td>
+        <td>200 min</td>
+        <td>180 min</td>
+        <td>240 min</td>
+        <td>220 min</td>
+
+        <td>150 min</td>
+        <td>180 min</td>
+        <td>70 min</td>
+
+      </tr>
+
+
+      {/* POWER */}
+
+      <tr>
+
+        <td>Power Consumption</td>
+
+        <td>
+          4.5 kW
+          <br />
+          240V 1 phase
+        </td>
+
+        <td>
+          6.8 kW
+          <br />
+          240V 1 phase
+        </td>
+
+        <td>
+          6.2 kW
+          <br />
+          240V 1 phase
+        </td>
+
+        <td>
+          12.9 kW
+          <br />
+          480V / 380V 3 phase
+        </td>
+
+        <td>
+          18 kW
+          <br />
+          480V / 380V 3 phase
+        </td>
+
+        <td>
+          4 kW
+          <br />
+          240V 1 phase
+        </td>
+
+        <td>
+          6 kW
+          <br />
+          240V 1 phase
+        </td>
+
+        <td>
+          1.9 kW
+          <br />
+          120V / 240V 1 phase
+        </td>
+
+      </tr>
+
+
+      {/* WORKING DIAMETER */}
+
+      <tr>
+
+        <td>Working Diameter</td>
+
+        <td>9.5"</td>
+        <td>13.5"</td>
+        <td>9.5"</td>
+        <td>17.7"</td>
+        <td>17.7"</td>
+
+        <td>7.0"</td>
+        <td>7.0"</td>
+        <td>5.3"</td>
+
+      </tr>
+
+
+      {/* WORKING DEPTH */}
+
+      <tr>
+
+        <td>Working Depth</td>
+
+        <td>12"</td>
+        <td>13"</td>
+        <td>28"</td>
+        <td>28"</td>
+        <td>47"</td>
+
+        <td>15"</td>
+        <td>25"</td>
+        <td>6"</td>
+
+      </tr>
+
+
+      {/* BASKET AREA */}
+
+      <tr>
+
+        <td>Working Area in Basket</td>
+
+        <td>8.4 × 12"</td>
+        <td>12.4 × 13"</td>
+        <td>8.4 × 26"</td>
+        <td>15.8 × 27"</td>
+        <td>15.8 × 47"</td>
+
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+
+      </tr>
+
+
+      {/* LOAD CAPACITY */}
+
+      <tr>
+
+        <td>Maximum Load Capacity</td>
+
+        <td>25 lbs</td>
+        <td>50 lbs</td>
+        <td>50 lbs</td>
+        <td>130 lbs</td>
+        <td>200 lbs</td>
+
+        <td>8 lbs</td>
+        <td>15 lbs</td>
+        <td>1.5 lbs</td>
+
+      </tr>
+
+
+      {/* QUENCH */}
+
+      <tr>
+
+        <td>Recovery from Quench</td>
+
+        <td>Good</td>
+        <td>Good</td>
+        <td>Good</td>
+        <td>Good</td>
+        <td>Good</td>
+
+        <td>Very good</td>
+        <td>Very good</td>
+        <td>Very good</td>
+
+      </tr>
+
+
+      {/* AIR PRESSURE */}
+
+      <tr>
+
+        <td>Air Pressure Required</td>
+
+        <td>50 PSI</td>
+        <td>60 PSI</td>
+        <td>50 PSI</td>
+        <td>70 PSI</td>
+        <td>90 PSI</td>
+
+        <td>50 PSI</td>
+        <td>50 PSI</td>
+        <td>30 PSI</td>
+
+      </tr>
+
+
+      {/* AIR CONSUMPTION */}
+
+      <tr>
+
+        <td>Maximum Air Consumption</td>
+
+        <td>3.6 SCFM</td>
+        <td>8.0 SCFM</td>
+        <td>3.7 SCFM</td>
+        <td>10.0 SCFM</td>
+        <td>12.0 SCFM</td>
+
+        <td>3.6 SCFM</td>
+        <td>3.7 SCFM</td>
+        <td>1.7 SCFM</td>
+
+      </tr>
+
+
+      {/* UNIT WEIGHT */}
+
+      <tr>
+
+        <td>Total Unit Weight</td>
+
+        <td>115 lbs</td>
+        <td>175 lbs</td>
+        <td>160 lbs</td>
+        <td>500 lbs</td>
+        <td>750 lbs</td>
+
+        <td>120 lbs</td>
+        <td>175 lbs</td>
+        <td>32 lbs</td>
+
+      </tr>
+
+
+      {/* ALUMINUM OXIDE */}
+
+      <tr>
+
+        <td>Aluminum Oxide Required & Included</td>
+
+        <td>85 / 100 lbs</td>
+        <td>160 / 200 lbs</td>
+        <td>160 / 200 lbs</td>
+        <td>450 / 500 lbs</td>
+        <td>670 / 700 lbs</td>
+
+        <td>85 / 100 lbs</td>
+        <td>160 / 200 lbs</td>
+        <td>13 / 20 lbs</td>
+
+      </tr>
+
+
+      {/* FOOTPRINT */}
+
+      <tr>
+
+        <td>Overall Footprint — H × W × D</td>
+
+        <td>33 × 25 × 23"</td>
+        <td>38 × 30 × 26"</td>
+        <td>49 × 25 × 23"</td>
+        <td>53 × 42 × 32"</td>
+        <td>72 × 42 × 32"</td>
+
+        <td>30 × 25 × 23"</td>
+        <td>43.5 × 25 × 23"</td>
+        <td>15 × 17 × 13"</td>
+
+      </tr>
+
+
+      {/* WARRANTY */}
+
+      <tr>
+
+        <td>Warranty</td>
+
+        <td>1 Year</td>
+        <td>1 Year</td>
+        <td>1 Year</td>
+        <td>1 Year</td>
+        <td>1 Year</td>
+
+        <td>1 Year</td>
+        <td>1 Year</td>
+        <td>1 Year</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+
+
+{/* ================= TEMPERATURE NOTE ================= */}
+
+<div className="ftb-spec-note">
+
+  <div className="ftb-spec-note-icon">
+    °C
+  </div>
+
+  <div>
+
+    <span>
+      TEMPERATURE CONVERSION
+    </span>
+
+    <p>
+      To convert to degrees Fahrenheit, multiply by 1.8,
+      then add 32. For specifications, multiply by 1.8.
+    </p>
+
+  </div>
+
+</div>
 
 
     {/* ================= KEY SPECIFICATIONS ================= */}
