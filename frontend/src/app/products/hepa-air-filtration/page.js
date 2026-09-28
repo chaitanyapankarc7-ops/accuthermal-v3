@@ -1,9 +1,8 @@
 "use client";
-
 import "./page.css";
 import Image from "next/image";
 import { useState } from "react";
-
+import Navbar from "../../../components/Navbar";
 
 export default function HEPAAirFiltration() {
   const [hepaVideoStarted, setHepaVideoStarted] = useState(false);
