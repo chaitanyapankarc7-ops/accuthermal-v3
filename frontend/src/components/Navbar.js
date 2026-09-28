@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { applications } from "../app/applications/data";
 import SearchOverlay, { openSearch } from "./SearchOverlay";
 
 /* The Navbar lives in the root layout, which cannot know which page it is
@@ -54,40 +53,12 @@ export default function Navbar({ activePage }) {
 
 
             {/* ================= APPLICATIONS ================= */}
-            <div className="nav-dropdown">
-
-              <a
-                href="#"
-                className={`nav-dropdown-trigger ${
-                  current === "applications" ? "active" : ""
-                }`}
-                onClick={(e) => e.preventDefault()}
-              >
-                APPLICATIONS <span className="nav-chevron">⌄</span>
-              </a>
-
-              <div className="nav-dropdown-menu">
-
-                {applications.map((app) => (
-                  <Link key={app.slug} href={`/applications/${app.slug}`}>
-                    <span>{app.num}</span>
-                    <div>
-                      <b>{app.title}</b>
-                      <small>{app.navSubtitle}</small>
-                    </div>
-                  </Link>
-                ))}
-
-                <Link href="/applications/thermal-cleaning/breaker-plate-cleaning">
-                  <span>07</span>
-                  <div>
-                    <b>Breaker Plate Cleaning</b>
-                    <small>Thermal cleaning for polymer-filled holes</small>
-                  </div>
-                </Link>
-
-              </div>
-            </div>
+            <Link
+              href="/applications"
+              className={current === "applications" ? "active" : ""}
+            >
+              APPLICATIONS
+            </Link>
 
 
             {/* ================= PRODUCTS ================= */}
@@ -269,27 +240,12 @@ export default function Navbar({ activePage }) {
         >
 
           {/* APPLICATIONS */}
-          <span className="mobile-header-link">
-            APPLICATIONS
-          </span>
-
-          {applications.map((app) => (
-            <Link
-              key={app.slug}
-              href={`/applications/${app.slug}`}
-              className="mobile-sub-link"
-              onClick={() => setMenuOpen(false)}
-            >
-              {app.title}
-            </Link>
-          ))}
-
           <Link
-            href="/applications/thermal-cleaning/breaker-plate-cleaning"
+            href="/applications"
             className="mobile-sub-link"
             onClick={() => setMenuOpen(false)}
           >
-            Breaker Plate Cleaning
+            Applications
           </Link>
 
 

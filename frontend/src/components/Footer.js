@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
           <div>
             <b>Explore</b>
-            <Link href="/applications/thermal-cleaning">Applications</Link>
+            <Link href="/applications">Applications</Link>
           </div>
           <div>
             <b>Contact</b>

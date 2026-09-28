@@ -317,3 +317,23 @@ export function getApplicationRecommendations(slug, options = {}) {
     products: getProductsForApplication(slug),
   };
 }
+
+/**
+ * Every application, in catalogue order, with its canonical href.
+ *
+ * The applications index page renders from this rather than from the
+ * `applications` array directly, so the seventh application and the nested
+ * breaker plate URL are included automatically.
+ */
+export function getAllApplications() {
+  return CATALOGUE.map((app) => ({
+    slug: app.slug,
+    num: app.num,
+    title: app.title,
+    subtitle: app.navSubtitle,
+    shortDesc: app.shortDesc,
+    href: applicationHref(app.slug),
+    image: app.heroImage,
+    category: app.customerCategory,
+  })).sort((a, b) => a.num.localeCompare(b.num));
+}
