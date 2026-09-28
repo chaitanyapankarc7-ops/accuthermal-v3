@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Navbar from "../../components/Navbar";
 
 export default function ContactFormPage() {
   const [department, setDepartment] = useState("");
@@ -21,8 +20,6 @@ export default function ContactFormPage() {
 
   return (
     <>
-      <Navbar />
-
       <header className="form-hero">
         <div className="wrap">
           <div className="eyebrow mono">Accurate Thermal Systems</div>
@@ -205,39 +202,6 @@ export default function ContactFormPage() {
           </aside>
         </div>
       </section>
-
-      <footer>
-        <div className="wrap">
-          <div className="footer-grid">
-            <div>
-              <h3>Accurate Thermal Systems</h3>
-              <p>
-                Laboratory and industrial temperature products, application engineering, service and
-                support.
-              </p>
-            </div>
-            <div>
-              <b>Products</b>
-              <a href="#systems">Fluidized Baths</a>
-              <a href="#systems">Dry Block Calibrators</a>
-              <a href="#contact">Custom Systems</a>
-            </div>
-            <div>
-              <b>Explore</b>
-              <a href="#applications">Applications</a>
-              <a href="#technology">Technology</a>
-              <a href="#industries">Industries</a>
-            </div>
-            <div>
-              <b>Contact</b>
-              <a href="tel:6093263190">609-326-3190</a>
-              <a href="mailto:sales@accuthermal.com">sales@accuthermal.com</a>
-              <span>Hainesport, New Jersey, USA</span>
-            </div>
-          </div>
-          <div className="legal">© Accuthermal LLC d/b/a Accurate Thermal Systems.</div>
-        </div>
-      </footer>
     </>
   );
 }

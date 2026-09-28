@@ -1,0 +1,212 @@
+/* =====================================================
+   SEARCH RESULTS PAGE
+   Complements SearchOverlay.css, which styles the in-nav autocomplete.
+   ===================================================== */
+
+.search-page {
+    padding: 80px 0 110px;
+}
+
+.search-page h1 {
+    max-width: 18ch;
+    margin: 0 0 40px;
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.05;
+}
+
+
+/* ================= FIELD ================= */
+
+.search-page-field {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 18px 22px;
+
+    background: #fff;
+    border: 1px solid var(--line-light);
+    box-shadow: 0 10px 30px rgba(7, 24, 39, 0.06);
+
+    color: var(--muted);
+}
+
+.search-page-field:focus-within {
+    border-color: var(--blue);
+}
+
+.search-page-input {
+    flex: 1;
+    min-width: 0;
+
+    border: 0;
+    background: none;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 18px;
+    color: var(--ink);
+}
+
+.search-page-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+/* ================= RESULTS ================= */
+
+.search-page-count {
+    margin: 34px 0 0;
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.search-page-section {
+    margin-top: 34px;
+}
+
+.search-page-h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid var(--line-light);
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.search-page-h2 span {
+    color: var(--blue);
+}
+
+.search-page-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search-page-hit {
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    grid-template-areas:
+        "badge title"
+        "badge sub";
+    column-gap: 16px;
+    row-gap: 2px;
+
+    padding: 14px 16px;
+    border-left: 2px solid transparent;
+
+    text-decoration: none;
+    color: var(--ink);
+}
+
+.search-page-hit:hover,
+.search-page-hit:focus-visible {
+    background: #fff;
+    border-left-color: var(--blue);
+    outline: none;
+}
+
+.search-page-hit b {
+    grid-area: title;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.search-page-hit small {
+    grid-area: sub;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.search-page-hit mark {
+    background: rgba(0, 167, 232, 0.18);
+    color: inherit;
+    font-weight: 700;
+}
+
+.search-page-badge {
+    grid-area: badge;
+    align-self: center;
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.search-page-none {
+    margin: 0 0 22px;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+.search-page-none b {
+    color: var(--ink);
+}
+
+
+/* ================= FALLBACK ================= */
+
+.search-page-fallback {
+    padding-top: 18px;
+}
+
+.search-page-bar,
+.search-page-line {
+    height: 14px;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #eceff1 25%, #f6f8f9 50%, #eceff1 75%);
+    background-size: 200% 100%;
+    animation: search-shimmer 1.4s ease-in-out infinite;
+}
+
+.search-page-bar {
+    height: 56px;
+}
+
+.search-page-line.short {
+    width: 60%;
+}
+
+@keyframes search-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 650px) {
+    .search-page {
+        padding: 50px 0 70px;
+    }
+
+    .search-page-hit {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "badge"
+            "title"
+            "sub";
+        row-gap: 4px;
+    }
+
+    .search-page-input {
+        font-size: 16px;
+    }
+}

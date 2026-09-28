@@ -2,10 +2,30 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { applications } from "../app/applications/data";
+import SearchOverlay, { openSearch } from "./SearchOverlay";
+
+/* The Navbar lives in the root layout, which cannot know which page it is
+   rendering, so fall back to the pathname. All routes are prerendered with
+   output: "export" and there are no rewrites, so this resolves on the server
+   and matches on hydration. */
+function activePageFromPath(pathname) {
+  if (!pathname) return undefined;
+  const section = pathname.split("/").filter(Boolean)[0];
+  return section === "applications" || section === "products" || section === "form"
+    ? section === "form"
+      ? "contact"
+      : section
+    : section === ""
+      ? "home"
+      : section;
+}
 
 export default function Navbar({ activePage }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const current = activePage || activePageFromPath(pathname);
 
   return (
     <>
@@ -27,7 +47,7 @@ export default function Navbar({ activePage }) {
             {/* HOME */}
             <Link
               href="/"
-              className={activePage === "home" ? "active" : ""}
+              className={current === "home" ? "active" : ""}
             >
               HOME
             </Link>
@@ -39,7 +59,7 @@ export default function Navbar({ activePage }) {
               <a
                 href="#"
                 className={`nav-dropdown-trigger ${
-                  activePage === "applications" ? "active" : ""
+                  current === "applications" ? "active" : ""
                 }`}
                 onClick={(e) => e.preventDefault()}
               >
@@ -78,7 +98,7 @@ export default function Navbar({ activePage }) {
               <a
                 href="#"
                 className={`nav-dropdown-trigger ${
-                  activePage === "products" ? "active" : ""
+                  current === "products" ? "active" : ""
                 }`}
                 onClick={(e) => e.preventDefault()}
               >
@@ -119,28 +139,28 @@ export default function Navbar({ activePage }) {
 
             <Link
               href="/#contact"
-              className={activePage === "contact" ? "active" : ""}
+              className={current === "contact" ? "active" : ""}
             >
               CONTACT
             </Link>
 
             <Link
               href="/#resources"
-              className={activePage === "support" ? "active" : ""}
+              className={current === "support" ? "active" : ""}
             >
               SUPPORT
             </Link>
 
             <Link
               href="/#technology"
-              className={activePage === "videos" ? "active" : ""}
+              className={current === "videos" ? "active" : ""}
             >
               VIDEOS
             </Link>
 
             <Link
               href="/#resources"
-              className={activePage === "shop" ? "active" : ""}
+              className={current === "shop" ? "active" : ""}
             >
               SHOP
             </Link>
@@ -202,29 +222,7 @@ export default function Navbar({ activePage }) {
               GET A QUOTE
             </Link>
 
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              style={{
-                marginLeft: "18px",
-                cursor: "pointer",
-                color: "#00a7e8",
-              }}
-            >
-              <circle cx="11" cy="11" r="8" />
-              <line
-                x1="21"
-                y1="21"
-                x2="16.65"
-                y2="16.65"
-              />
-            </svg>
+            <SearchOverlay />
 
           </div>
 
@@ -402,6 +400,23 @@ export default function Navbar({ activePage }) {
           >
             About ATS
           </Link>
+
+
+          {/* SEARCH */}
+          <span className="mobile-header-link">
+            SEARCH
+          </span>
+
+          <button
+            type="button"
+            className="mobile-sub-link mobile-search-btn"
+            onClick={() => {
+              setMenuOpen(false);
+              openSearch();
+            }}
+          >
+            Search the site
+          </button>
 
 
           {/* CTA */}

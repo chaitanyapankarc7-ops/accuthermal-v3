@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import Navbar from "../../../components/Navbar";
 import BeforeAfterGallery from "../../../components/BeforeAfterGallery";
-import { getApplicationBySlug, applications } from "../data";
+import ApplicationRecommendations from "../../../components/ApplicationRecommendations";
+import { getApplicationBySlug } from "../data";
 import "./page.css";
 
 export default function ApplicationDetail() {
@@ -504,29 +504,12 @@ export default function ApplicationDetail() {
         </section>
       )}
 
-      {/* RELATED PRODUCTS */}
-      <section className="app-detail-products">
-        <div className="wrap">
-          <div className="eyebrow mono reveal">{extendedContent ? "12 / RELATED PRODUCTS" : "06 / RELATED PRODUCTS"}</div>
-          <div className="app-detail-product-grid reveal">
-            {app.relatedProducts.map((product) => (
-              <Link key={product.name} href={product.link} className="app-detail-product-card">
-                <h3>{product.name}</h3>
-                <span className="app-detail-product-link">
-                  Learn More <span>&#8594;</span>
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CUSTOMERS */}
       <section className="app-detail-customers">
         <div className="wrap">
           <div className="app-section-header reveal">
             <div>
-              <div className="eyebrow mono">{extendedContent ? "13 / CUSTOMERS" : "07 / CUSTOMERS"}</div>
+              <div className="eyebrow mono">{extendedContent ? "12 / CUSTOMERS" : "06 / CUSTOMERS"}</div>
               <h2>Trusted by industry leaders.</h2>
             </div>
             <p>
@@ -555,28 +538,12 @@ export default function ApplicationDetail() {
         </div>
       </section>
 
-      {/* OTHER APPLICATIONS */}
+      {/* RECOMMENDATIONS */}
       <section className="app-detail-other">
         <div className="wrap">
-          <div className="eyebrow mono reveal">EXPLORE MORE APPLICATIONS</div>
-          <div className="app-detail-other-grid reveal">
-            {applications
-              .filter((a) => a.slug !== app.slug)
-              .map((a) => (
-                <Link key={a.slug} href={`/applications/${a.slug}`} className="app-detail-other-card">
-                  <span className="app-detail-other-num mono">{a.num}</span>
-                  <h3>{a.title}</h3>
-                  <p>{a.shortDesc}</p>
-                  <span className="app-detail-other-link">
-                    Explore <span>&#8594;</span>
-                  </span>
-                </Link>
-              ))}
-          </div>
+          <ApplicationRecommendations slug={app.slug} title={app.title} />
         </div>
       </section>
-
-      
     </>
   );
 }

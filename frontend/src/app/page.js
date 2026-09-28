@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
 import Customers from "../components/Customers";
 
 export default function Home() {
@@ -85,8 +84,6 @@ export default function Home() {
   return (
     <>
       <div className="progress" style={{ width: progressWidth }}></div>
-      
-      <Navbar />
 
       <header className="hero">
         <div className="wrap hero-inner">

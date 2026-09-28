@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer>
@@ -12,15 +14,13 @@ export default function Footer() {
           </div>
           <div>
             <b>Products</b>
-            <a href="/products/fluidized-temperature-baths">Fluidized Baths</a>
-            <a href="/products/thermcal">Dry Block Calibrators</a>
-            <a href="custom-systems">Custom Systems</a>
+            <Link href="/products/fluidized-temperature-baths">Fluidized Baths</Link>
+            <Link href="/products/hepa-air-filtration">HEPA Filtration</Link>
+            <Link href="/products/thermcal">Dry Block Calibrators</Link>
           </div>
           <div>
             <b>Explore</b>
-            <a href="applications">Applications</a>
-            <a href="customers">Customers</a>
-            <a href="industries">Industries</a>
+            <Link href="/applications/thermal-cleaning">Applications</Link>
           </div>
           <div>
             <b>Contact</b>

@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import Navbar from "../../../../components/Navbar";
+import ApplicationRecommendations from "../../../../components/ApplicationRecommendations";
 import { breakerPlateContent } from "./data";
 import "./page.css";
 
@@ -22,7 +22,6 @@ export default function BreakerPlateCleaningPage() {
     batchCapacity,
     system,
     contact,
-    related,
   } = breakerPlateContent;
 
   useEffect(() => {
@@ -43,7 +42,6 @@ export default function BreakerPlateCleaningPage() {
 
   return (
     <>
-      <Navbar activePage="applications" />
       <main>
         <header className="breaker-hero">
           <div className="wrap breaker-hero-grid breaker-hero-grid-single">
@@ -440,49 +438,10 @@ export default function BreakerPlateCleaningPage() {
 
         <section className="breaker-section breaker-related-section" id="breaker-plate-related">
           <div className="wrap">
-            <div className="breaker-related-heading breaker-reveal">
-              <div className="eyebrow mono">RELATED APPLICATIONS</div>
-              <h2>Continue Exploring Thermal Cleaning</h2>
-            </div>
-            <div className="breaker-related-grid">
-              {related.map((item) => (
-                <Link href={item.href} className="breaker-related-card breaker-reveal" key={item.name}>
-                  <span>{item.name}</span>
-                  <b aria-hidden="true">→</b>
-                </Link>
-              ))}
-            </div>
+            <ApplicationRecommendations slug="breaker-plate-cleaning" title="Breaker Plate Cleaning" />
           </div>
         </section>
       </main>
-
-      <footer className="breaker-footer">
-        <div className="wrap">
-          <div className="footer-grid">
-            <div>
-              <h3>Accurate Thermal Systems</h3>
-              <p>Fluidized temperature baths for polymer removal, thermal processing, and controlled heat transfer.</p>
-            </div>
-            <div>
-              <b>Explore</b>
-              <Link href="/applications/thermal-cleaning">Thermal Cleaning</Link>
-              <Link href="/applications/extrusion-die-cleaning">Extrusion Die Cleaning</Link>
-              <Link href="/applications/extruder-screw-cleaning">Extruder Screw Cleaning</Link>
-            </div>
-            <div>
-              <b>Products</b>
-              <Link href="/products/fluidized-temperature-baths">Fluidized Baths</Link>
-              <Link href="/products/hepa-air-filtration">HEPA Filtration</Link>
-            </div>
-            <div>
-              <b>Contact</b>
-              <a href="tel:6093263190">609-326-3190</a>
-              <a href="mailto:sales@accuthermal.com">sales@accuthermal.com</a>
-            </div>
-          </div>
-            <div className="legal">&copy; Accuthermal LLC d/b/a Accurate Thermal Systems.</div>
-        </div>
-      </footer>
     </>
   );
 }

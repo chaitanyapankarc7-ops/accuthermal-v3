@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Navbar from "../../../components/Navbar";
 import "./page.css";
 import { useState } from "react";
 
@@ -13,7 +12,6 @@ export default function ThermCalPage() {
 
   return (
      <>
-      <Navbar />
     <main className="thermcal-page">
 
       {/* =====================================================

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import "./page.css";
-import Navbar from "../../../components/Navbar";
 import Image from "next/image";
 
 
@@ -11,8 +10,6 @@ export default function FluidizedTemperatureBaths() {
 
   return (
     <>
-      <Navbar />
-
      {/* =====================================================
     FLUIDIZED TEMPERATURE BATH — PRODUCT HERO
 ===================================================== */}

@@ -1,0 +1,255 @@
+/* =====================================================
+   APPLICATION RECOMMENDATIONS
+   Three rails on every application page: the equipment that does the job,
+   applications that overlap, and a personalised discovery rail.
+   ===================================================== */
+
+.rec {
+    padding: 90px 0 0;
+}
+
+.rec-rail + .rec-rail {
+    margin-top: 80px;
+}
+
+.rec-rail-head {
+    margin-bottom: 28px;
+}
+
+.rec-rail-head h2 {
+    margin: 8px 0 0;
+    font-size: clamp(24px, 3.2vw, 34px);
+    line-height: 1.1;
+}
+
+.rec-rail-head p {
+    max-width: 58ch;
+    margin: 10px 0 0;
+    color: var(--muted);
+}
+
+
+/* ================= APPLICATION CARDS ================= */
+
+.rec-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.rec-grid-1 { grid-template-columns: minmax(0, 1fr); }
+.rec-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.rec-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.rec-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 22px 22px 20px;
+
+    background: #fff;
+    border: 1px solid var(--line-light);
+    border-left: 2px solid var(--line-light);
+
+    text-decoration: none;
+    color: var(--ink);
+
+    transition:
+        border-left-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.rec-card:hover,
+.rec-card:focus-visible {
+    border-left-color: var(--blue);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(7, 24, 39, 0.1);
+    outline: none;
+}
+
+.rec-card-num {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+}
+
+.rec-card-body h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.rec-card-body p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.rec-card-reason {
+    display: inline-block;
+    margin-top: 12px;
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: var(--blue);
+}
+
+.rec-card-go {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    font-size: 18px;
+    color: var(--line-light);
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.rec-card:hover .rec-card-go,
+.rec-card:focus-visible .rec-card-go {
+    color: var(--blue);
+    transform: translateX(3px);
+}
+
+
+/* ================= PRODUCT CARDS ================= */
+
+.rec-products {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.rec-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 22px;
+
+    padding: 26px;
+    background: var(--night);
+    color: #fff;
+}
+
+.rec-product-body h3 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.rec-product-body p {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.rec-product-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+}
+
+.rec-product-tags li {
+    padding: 4px 9px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.rec-product-reason {
+    display: block;
+    margin-top: 14px;
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: var(--blue);
+}
+
+.rec-product-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.rec-product-link,
+.rec-product-quote {
+    padding: 11px 18px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.rec-product-link {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.rec-product-link:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.rec-product-quote {
+    background: var(--red);
+    color: #fff;
+}
+
+.rec-product-quote:hover {
+    filter: brightness(1.08);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 950px) {
+    .rec-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 650px) {
+    .rec {
+        padding-top: 60px;
+    }
+
+    .rec-rail + .rec-rail {
+        margin-top: 56px;
+    }
+
+    .rec-grid-2,
+    .rec-grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .rec-product-actions {
+        flex-direction: column;
+    }
+
+    .rec-product-link,
+    .rec-product-quote {
+        text-align: center;
+    }
+}

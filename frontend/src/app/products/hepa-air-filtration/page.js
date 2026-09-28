@@ -1,14 +1,11 @@
 "use client";
 
 import "./page.css";
-import Navbar from "../../../components/Navbar";
 import Image from "next/image";
 
 export default function HEPAAirFiltration() {
   return (
     <>
-      <Navbar />
-
       {/* =====================================================
           01 / HEPA HERO
       ===================================================== */}
