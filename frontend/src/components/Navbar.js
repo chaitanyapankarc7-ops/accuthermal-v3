@@ -116,7 +116,7 @@ export default function Navbar({ activePage }) {
             </Link>
 
             <Link
-              href="/#resources"
+              href="/support"
               className={current === "support" ? "active" : ""}
             >
               SUPPORT
@@ -298,7 +298,7 @@ export default function Navbar({ activePage }) {
           </Link>
 
           <Link
-            href="/#resources"
+            href="/support"
             className="mobile-sub-link"
             onClick={() => setMenuOpen(false)}
           >

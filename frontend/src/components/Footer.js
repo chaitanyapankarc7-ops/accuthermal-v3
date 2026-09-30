@@ -21,6 +21,7 @@ export default function Footer() {
           <div>
             <b>Explore</b>
             <Link href="/applications">Applications</Link>
+            <Link href="/support">Support &amp; Service</Link>
           </div>
           <div>
             <b>Contact</b>
