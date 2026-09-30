@@ -129,12 +129,9 @@ export default function Navbar({ activePage }) {
               VIDEOS
             </Link>
 
-            <Link
-              href="/#resources"
-              className={current === "shop" ? "active" : ""}
-            >
+            <a href="https://shop.accuthermal.com/">
               SHOP
-            </Link>
+            </a>
 
 
             {/* ================= MORE ================= */}
@@ -316,13 +313,13 @@ export default function Navbar({ activePage }) {
             Videos
           </Link>
 
-          <Link
-            href="/#resources"
+          <a
+            href="https://shop.accuthermal.com/"
             className="mobile-sub-link"
             onClick={() => setMenuOpen(false)}
           >
             Shop
-          </Link>
+          </a>
 
 
           {/* MORE */}
