@@ -1,0 +1,816 @@
+/* =========================================================
+   ftbl26L26 — PRODUCT PAGE
+========================================================= */
+
+.ftbl26-product-page {
+  background: #ffffff;
+  color: #071827;
+  overflow: hidden;
+}
+
+.ftbl26-product-container {
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.ftbl26-product-hero {
+  background: #f1f8fa;
+  border-bottom: 1px solid #d4e2e8;
+}
+
+.ftbl26-product-topline {
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 0 18px;
+  color: #009fe3;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.ftbl26-product-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+}
+
+.ftbl26-product-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 55px 50px 65px 0;
+}
+
+.ftbl26-product-kicker {
+  margin-bottom: 20px;
+  color: #547287;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.ftbl26-product-intro h1 {
+  margin: 0;
+  color: #071827;
+  font-size: clamp(70px, 7vw, 120px);
+  line-height: 0.88;
+  font-weight: 800;
+  letter-spacing: -6px;
+}
+
+.ftbl26-product-subtitle {
+  margin: 24px 0 0;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #0b2030;
+}
+
+.ftbl26-product-description {
+  max-width: 540px;
+  margin: 16px 0 0;
+  color: #5e7b8d;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ftbl26-product-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.ftbl26-btn {
+  min-height: 48px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  text-decoration: none;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  transition: all 0.25s ease;
+}
+
+.ftbl26-btn span {
+  font-size: 16px;
+  color: #00a7e8;
+}
+
+.ftbl26-btn-primary {
+  background: #071827;
+  color: #ffffff;
+}
+
+.ftbl26-btn-primary:hover {
+  background: #00a7e8;
+  color: #ffffff;
+}
+
+.ftbl26-btn-secondary {
+  border: 1px solid #a9c9d8;
+  background: transparent;
+  color: #071827;
+}
+
+.ftbl26-btn-secondary:hover {
+  border-color: #00a7e8;
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   PRODUCT VISUAL
+========================================================= */
+
+.ftbl26-product-visual {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff;
+  border-left: 1px solid #d4e2e8;
+}
+
+.ftbl26-product-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(20, 120, 160, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 120, 160, 0.055) 1px, transparent 1px);
+
+  background-size: 28px 28px;
+}
+
+.ftbl26-product-orbit {
+  position: absolute;
+  border: 1px solid rgba(0, 167, 232, 0.18);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ftbl26-orbit-one{
+  width: 390px;
+  height: 390px;
+}
+
+.ftbl26-orbit-two {
+  width: 500px;
+  height: 500px;
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+.ftbl26-product-image-wrap {
+  position: relative;
+  z-index: 5;
+
+  width: 72%;
+  height: 88%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  overflow: hidden;
+}
+.ftbl26-product-image {
+    width: 100% !important;
+    max-width: 430px !important;
+    height: auto !important;
+
+    object-fit: contain;
+    object-position: center;
+
+    transform: scale(0.65) !important;
+
+    filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.14));
+}
+.ftbl26-product-visual:hover .ftbl26-product-image {
+  transform: translateY(-8px) scale(1.015);
+}
+
+
+/* =========================================================
+   CAPACITY BADGE
+========================================================= */
+
+.ftbl26-product-capacity {
+  position: absolute;
+  z-index: 10;
+
+  right: 22px;
+  bottom: 30px;
+
+  width: 90px;
+  min-height: 90px;
+
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: #071827;
+  color: #ffffff;
+}
+
+.ftbl26-product-capacity span {
+  font-size: 7px;
+  letter-spacing: 2px;
+  color: #63c9ed;
+}
+
+.ftbl26-product-capacity strong {
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.ftbl26-product-capacity strong span {
+  margin-left: 2px;
+  font-size: 20px;
+  letter-spacing: 0;
+  color: #00a7e8;
+}
+
+
+/* =========================================================
+   QUICK OVERVIEW
+========================================================= */
+
+.ftbl26-product-overview {
+  border-bottom: 1px solid #d4e2e8;
+  background: #ffffff;
+}
+
+.ftbl26-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.ftbl26-overview-item {
+  min-height: 105px;
+  padding: 28px 24px;
+
+  border-left: 1px solid #d4e2e8;
+}
+
+.ftbl26-overview-item:last-child {
+  border-right: 1px solid #d4e2e8;
+}
+
+.ftbl26-overview-item span {
+  display: block;
+  margin-bottom: 12px;
+
+  color: #78909e;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.ftbl26-overview-item strong {
+  font-size: 14px;
+  color: #071827;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.ftbl26-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.ftbl26-section-heading > div {
+  flex-shrink: 0;
+}
+
+.ftbl26-section-heading span,
+.ftbl26-small-label {
+  display: block;
+  margin-bottom: 12px;
+
+  color: #00a7e8;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.ftbl26-section-heading h2 {
+  margin: 0;
+
+  color: #071827;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 0.92;
+  letter-spacing: -3px;
+  font-weight: 800;
+}
+
+.ftbl26-section-heading > p {
+  max-width: 300px;
+  margin: 0 0 4px;
+
+  color: #688293;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.ftbl26-benefits {
+  padding: 95px 0;
+  background: #ffffff;
+}
+
+.ftbl26-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid #c8dce5;
+  border-left: 1px solid #c8dce5;
+}
+
+.ftbl26-benefit-card {
+  min-height: 230px;
+  padding: 26px;
+
+  border-right: 1px solid #c8dce5;
+  border-bottom: 1px solid #c8dce5;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.ftbl26-benefit-card:hover {
+  background: #f1f8fa;
+  transform: translateY(-4px);
+}
+
+.ftbl26-benefit-card > span {
+  color: #00a7e8;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ftbl26-benefit-card h3 {
+  margin: 55px 0 12px;
+
+  font-size: 18px;
+  line-height: 1.2;
+  color: #071827;
+}
+
+.ftbl26-benefit-card p {
+  margin: 0;
+
+  color: #6a8290;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   APPLICATIONS
+========================================================= */
+
+.ftbl26-applications {
+  padding: 90px 0;
+
+  background: #f5fafc;
+  border-top: 1px solid #d7e5eb;
+  border-bottom: 1px solid #d7e5eb;
+}
+
+.ftbl26-application-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #bdd4df;
+  border-left: 1px solid #bdd4df;
+}
+
+.ftbl26-application-card {
+  min-height: 230px;
+  padding: 28px;
+
+  border-right: 1px solid #bdd4df;
+  border-bottom: 1px solid #bdd4df;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  transition: background 0.25s ease;
+}
+
+.ftbl26-application-card:hover {
+  background: #ffffff;
+}
+
+.ftbl26-application-card > span {
+  color: #00a7e8;
+  font-size: 8px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.ftbl26-application-card h3 {
+  margin: 55px 0 12px;
+
+  font-size: 18px;
+  color: #071827;
+}
+
+.ftbl26-application-card p {
+  max-width: 330px;
+
+  margin: 0;
+
+  color: #66808f;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SPECIFICATIONS
+========================================================= */
+
+.ftbl26-specifications {
+  padding: 90px 0;
+  background: #f5fafc;
+}
+
+.ftbl26-spec-card {
+  border-top: 1px solid #9fc3d3;
+}
+
+.ftbl26-spec-row {
+  display: grid;
+  grid-template-columns: 36% 64%;
+
+  min-height: 40px;
+
+  border-bottom: 1px solid #c7dbe4;
+}
+
+.ftbl26-spec-row span,
+.ftbl26-spec-row strong {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 18px;
+}
+
+.ftbl26-spec-row span {
+  color: #78919f;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.ftbl26-spec-row strong {
+  color: #173042;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   REQUIREMENTS
+========================================================= */
+
+.ftbl26-requirements {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.ftbl26-requirements-grid {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 70px;
+  align-items: start;
+}
+
+.ftbl26-requirements-grid h2 {
+  margin: 0;
+
+  font-size: clamp(38px, 4vw, 56px);
+  line-height: 0.9;
+  letter-spacing: -3px;
+  color: #071827;
+}
+
+.ftbl26-requirement-list {
+  border-top: 1px solid #a9c7d5;
+}
+
+.ftbl26-requirement {
+  padding: 20px 0;
+  border-bottom: 1px solid #c9dce4;
+}
+
+.ftbl26-requirement span {
+  display: block;
+  margin-bottom: 7px;
+
+  color: #00a7e8;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ftbl26-requirement strong {
+  display: block;
+
+  color: #071827;
+  font-size: 15px;
+}
+
+.ftbl26-requirement p {
+  margin: 4px 0 0;
+
+  color: #78909d;
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   INCLUDED
+========================================================= */
+
+.ftbl26-included {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.ftbl26-included-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #bdd4df;
+  border-left: 1px solid #bdd4df;
+}
+
+.ftbl26-included-grid > div {
+  min-height: 120px;
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-right: 1px solid #bdd4df;
+  border-bottom: 1px solid #bdd4df;
+}
+
+.ftbl26-included-grid span {
+  color: #00a7e8;
+  font-size: 7px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.ftbl26-included-grid strong {
+  color: #173042;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   SUPPORT / QUOTE
+========================================================= */
+
+.ftbl26-support {
+  padding: 20px 0 80px;
+  background: #ffffff;
+}
+
+.ftbl26-support-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+
+  padding: 40px 44px;
+
+  background: #071827;
+  color: #ffffff;
+}
+
+.ftbl26-support-box > div:first-child span {
+  display: block;
+  margin-bottom: 10px;
+
+  color: #00a7e8;
+  font-size: 8px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.ftbl26-support-box h2 {
+  margin: 0;
+
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: 0.92;
+  letter-spacing: -2px;
+}
+
+.ftbl26-support-info p {
+  max-width: 430px;
+  margin: 0 0 20px;
+
+  color: #a8beca;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.ftbl26-support-info .ftbl26-btn {
+  display: inline-flex;
+}
+
+
+/* =========================================================
+   BACK NAVIGATION
+========================================================= */
+
+.ftbl26-model-navigation {
+  padding: 25px 0 45px;
+  background: #ffffff;
+}
+
+.ftbl26-back-models {
+  color: #536f7e;
+  text-decoration: none;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.ftbl26-back-models:hover {
+  color: #00a7e8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .ftbl26-product-container {
+    width: min(100% - 40px, 850px);
+  }
+
+  .ftbl26-product-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ftbl26-product-intro {
+    padding: 50px 0 35px;
+  }
+
+  .ftbl26-product-visual {
+    min-height: 430px;
+    border-left: 0;
+    border-top: 1px solid #d4e2e8;
+  }
+
+  .ftbl26-overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ftbl26-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ftbl26-application-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ftbl26-requirements-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ftbl26-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ftbl26-section-heading > p {
+    max-width: 500px;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .ftbl26-product-container {
+    width: calc(100% - 30px);
+  }
+
+  .ftbl26-product-topline {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+
+  .ftbl26-product-intro h1 {
+    font-size: 64px;
+    letter-spacing: -4px;
+  }
+
+  .ftbl26-product-subtitle {
+    font-size: 18px;
+  }
+
+  .ftbl26-product-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ftbl26-btn {
+    width: 100%;
+  }
+
+  .ftbl26-product-visual {
+    min-height: 360px;
+  }
+
+  .ftbl26-product-image-wrap {
+    width: 85%;
+  }
+
+  .ftbl26-product-image {
+    max-height: 340px;
+  }
+
+  .orbit-one {
+    width: 270px;
+    height: 270px;
+  }
+
+  .orbit-two {
+    width: 340px;
+    height: 340px;
+  }
+
+  .ftbl26-product-capacity {
+    right: 8px;
+    bottom: 15px;
+    width: 75px;
+    min-height: 75px;
+  }
+
+  .ftbl26-product-capacity strong {
+    font-size: 30px;
+  }
+
+  .ftbl26-overview-grid,
+  .ftbl26-benefits-grid,
+  .ftbl26-included-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ftbl26-overview-item {
+    border-right: 1px solid #d4e2e8;
+  }
+
+  .ftbl26-spec-row {
+    grid-template-columns: 42% 58%;
+  }
+
+  .ftbl26-spec-row span,
+  .ftbl26-spec-row strong {
+    padding: 9px 10px;
+  }
+
+  .ftbl26-support-box {
+    grid-template-columns: 1fr;
+    padding: 30px;
+    gap: 25px;
+  }
+
+}

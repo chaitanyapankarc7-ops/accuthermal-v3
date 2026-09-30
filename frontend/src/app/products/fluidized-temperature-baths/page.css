@@ -4716,28 +4716,86 @@ body{
    CENTER PRODUCT
 ========================================================= */
 
+/* =========================================================
+   CENTER PRODUCT
+========================================================= */
+
 .ftb-feature-product {
     position: absolute;
 
-    left: 50%;
+    /* MOVE THE PRODUCT LEFT */
+    left: 52%;
 
     top: 50%;
 
+    /* KEEP ORIGINAL SIZE */
     width: 480px;
-
     height: 470px;
 
     transform: translate(-50%, -50%);
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     z-index: 3;
 }
 
+
+/* =========================================================
+   CROSSHAIR
+========================================================= */
+
+.ftb-feature-crosshair {
+    position: absolute;
+
+    background: rgba(20, 110, 145, .18);
+
+    pointer-events: none;
+}
+
+.ftb-feature-crosshair.horizontal {
+    width: 100%;
+    height: 1px;
+
+    left: 0;
+    top: 50%;
+}
+
+.ftb-feature-crosshair.vertical {
+    width: 1px;
+    height: 100%;
+
+    left: 50%;
+    top: 0;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.ftb-feature-machine {
+    position: relative;
+    z-index: 5;
+    width: 390px;
+    height: auto;
+    object-fit: contain;
+
+    transform: translateX(30px);
+
+    filter:
+        drop-shadow(
+            0 25px 25px rgba(0,0,0,.16)
+        );
+
+    transition: transform .5s ease;
+}
+
+
+.ftb-feature-product:hover .ftb-feature-machine {
+    transform: translateY(-8px) scale(1.02);
+}
 
 /* Crosshair */
 
@@ -6459,3 +6517,661 @@ section {
 
 }
 
+/* =========================================================
+   FTB MODEL SELECTOR
+========================================================= */
+
+.ftb-model-selector {
+    position: relative;
+
+    padding: 110px 0 120px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+.ftb-model-selector-container {
+    width: min(1200px, calc(100% - 100px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.ftb-model-selector-header {
+    max-width: 760px;
+
+    margin-bottom: 55px;
+}
+
+.ftb-model-selector-kicker {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #00a7e8;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.ftb-model-selector-header h2 {
+    margin: 0;
+
+    color: #071827;
+
+    font-size: clamp(38px, 5vw, 64px);
+
+    line-height: .95;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 800;
+}
+
+.ftb-model-selector-header p {
+    max-width: 600px;
+
+    margin: 22px 0 0;
+
+    color: #637b88;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MODEL GRID
+========================================================= */
+
+.ftb-model-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   MODEL CARD
+========================================================= */
+
+.ftb-model-card {
+    position: relative;
+
+    min-height: 390px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7fa 0%,
+            #ffffff 100%
+        );
+
+    border: 1px solid #cbdde3;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+
+/* Technical grid */
+
+.ftb-model-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(8, 36, 58, .035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(8, 36, 58, .035) 1px,
+            transparent 1px
+        );
+
+    background-size: 36px 36px;
+
+    pointer-events: none;
+}
+
+
+/* Hover */
+
+.ftb-model-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #00a7e8;
+
+    box-shadow:
+        0 18px 45px rgba(7, 24, 39, .10);
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.ftb-model-top {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.ftb-model-number {
+    color: #00a7e8;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.ftb-model-series {
+    color: #718893;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.ftb-model-main {
+    position: relative;
+}
+
+.ftb-capacity-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #718893;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* BIG CAPACITY */
+
+.ftb-capacity {
+    color: #071827;
+
+    font-size: clamp(64px, 7vw, 90px);
+
+    line-height: .9;
+
+    font-weight: 800;
+
+    letter-spacing: -4px;
+}
+
+.ftb-capacity span {
+    margin-left: 5px;
+
+    color: #00a7e8;
+
+    font-size: .45em;
+
+    letter-spacing: -1px;
+}
+
+
+/* MODEL */
+
+.ftb-model-main h3 {
+    margin: 18px 0 5px;
+
+    color: #071827;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+.ftb-model-main p {
+    margin: 0;
+
+    color: #637b88;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BOTTOM ACTION
+========================================================= */
+
+.ftb-model-bottom {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #cbdde3;
+
+    color: #071827;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.ftb-model-arrow {
+    color: #00a7e8;
+
+    font-size: 20px;
+
+    transition:
+        transform .3s ease;
+}
+
+.ftb-model-card:hover .ftb-model-arrow {
+    transform: translateX(7px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .ftb-model-selector {
+        padding: 80px 0;
+    }
+
+    .ftb-model-selector-container {
+        width: calc(100% - 40px);
+    }
+
+    .ftb-model-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .ftb-model-card {
+        min-height: 330px;
+
+        padding: 25px;
+    }
+
+    .ftb-capacity {
+        font-size: 68px;
+    }
+
+}
+/* =========================================================
+   FTB MODEL SELECTOR
+========================================================= */
+
+.ftb-model-selector {
+    padding: 75px 0 90px;
+    background: #ffffff;
+}
+
+.ftb-model-selector-container {
+    width: min(1050px, calc(100% - 70px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.ftb-model-selector-header {
+    margin-bottom: 30px;
+}
+
+.ftb-model-selector-kicker {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #00a7e8;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.ftb-model-selector-header h2 {
+    margin: 0;
+
+    color: #071827;
+
+    font-size: clamp(32px, 4vw, 46px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    font-weight: 800;
+}
+
+.ftb-model-selector-header p {
+    margin: 12px 0 0;
+
+    color: #637b88;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MODEL LIST
+========================================================= */
+
+.ftb-model-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   MODEL ROW
+========================================================= */
+
+.ftb-model-row {
+    position: relative;
+
+    min-height: 105px;
+
+    padding: 18px 22px;
+
+    display: grid;
+
+    grid-template-columns:
+        45px
+        100px
+        1fr
+        150px;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: #f5fafc;
+
+    border: 1px solid #d3e2e7;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+
+/* Technical grid */
+
+.ftb-model-row::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(8, 36, 58, .025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(8, 36, 58, .025) 1px,
+            transparent 1px
+        );
+
+    background-size: 30px 30px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.ftb-model-row:hover {
+    background: #eef8fb;
+
+    border-color: #00a7e8;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   INDEX
+========================================================= */
+
+.ftb-model-index {
+    position: relative;
+
+    color: #00a7e8;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   CAPACITY
+========================================================= */
+
+.ftb-model-capacity-small {
+    position: relative;
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 3px;
+}
+
+.ftb-model-capacity-small strong {
+    color: #071827;
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+}
+
+.ftb-model-capacity-small span {
+    color: #00a7e8;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MODEL INFO
+========================================================= */
+
+.ftb-model-info {
+    position: relative;
+}
+
+.ftb-model-info h3 {
+    margin: 0 0 5px;
+
+    color: #071827;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 15px;
+
+    letter-spacing: .5px;
+}
+
+.ftb-model-info p {
+    margin: 0;
+
+    color: #718893;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.ftb-model-action {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-left: 20px;
+
+    border-left: 1px solid #d3e2e7;
+
+    color: #071827;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.ftb-model-action b {
+    color: #00a7e8;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    transition: transform .25s ease;
+}
+
+.ftb-model-row:hover .ftb-model-action b {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .ftb-model-selector-container {
+        width: calc(100% - 40px);
+    }
+
+    .ftb-model-row {
+        grid-template-columns:
+            35px
+            80px
+            1fr;
+
+        gap: 12px;
+
+        padding: 18px;
+    }
+
+    .ftb-model-action {
+        grid-column: 2 / -1;
+
+        padding-left: 0;
+
+        padding-top: 12px;
+
+        border-left: 0;
+
+        border-top: 1px solid #d3e2e7;
+    }
+
+}

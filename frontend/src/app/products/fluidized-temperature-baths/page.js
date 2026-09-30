@@ -3,6 +3,7 @@
 import { useState } from "react";
 import "./page.css";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function FluidizedTemperatureBaths() {
@@ -556,7 +557,91 @@ export default function FluidizedTemperatureBaths() {
   </div>
 
 </section>
+{/* =====================================================
+    FTB MODEL SELECTOR
+===================================================== */}
 
+<section className="ftb-model-selector" id="models">
+
+  <div className="ftb-model-selector-container">
+
+    <div className="ftb-model-selector-header">
+
+      <span className="ftb-model-selector-kicker">
+        FTB SERIES
+      </span>
+
+      <h2>CHOOSE YOUR CONFIGURATION</h2>
+
+      <p>
+        Select the capacity that matches your requirements.
+      </p>
+
+    </div>
+
+
+    <div className="ftb-model-list">
+
+      {/* MODEL 01 */}
+  <Link
+  href="/products/fluidized-temperature-baths/ftbls12"
+  className="ftb-model-row"
+>
+
+        <div className="ftb-model-index">
+          01
+        </div>
+
+        <div className="ftb-model-capacity-small">
+          <strong>12</strong>
+          <span>L</span>
+        </div>
+
+        <div className="ftb-model-info">
+          <h3>FTBLS12</h3>
+          <p>Fluidized Temperature Bath</p>
+        </div>
+
+        <div className="ftb-model-action">
+          <span>VIEW MODEL</span>
+          <b>→</b>
+        </div>
+
+     </Link>
+
+
+      {/* MODEL 02 */}
+      <Link
+  href="/products/fluidized-temperature-baths/ftbls26"
+  className="ftb-model-row"
+>
+
+        <div className="ftb-model-index">
+          02
+        </div>
+
+        <div className="ftb-model-capacity-small">
+          <strong>26</strong>
+          <span>L</span>
+        </div>
+
+        <div className="ftb-model-info">
+          <h3>FTBLS26</h3>
+          <p>Fluidized Temperature Bath</p>
+        </div>
+
+        <div className="ftb-model-action">
+          <span>VIEW MODEL</span>
+          <b>→</b>
+        </div>
+
+  </Link>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 {/* =====================================================

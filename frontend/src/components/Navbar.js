@@ -76,7 +76,12 @@ export default function Navbar({ activePage }) {
                 PRODUCTS <span className="nav-chevron">⌄</span>
               </a>
 
-              <div className="nav-dropdown-menu">
+  <div
+  className="nav-dropdown-menu"
+  style={{
+    zIndex: 10001,
+  }}
+ >
 
                 <Link href="/products/fluidized-temperature-baths">
                   <span>01</span>
@@ -147,8 +152,7 @@ export default function Navbar({ activePage }) {
               >
                 + MORE <span className="nav-chevron">⌄</span>
               </a>
-
-              <div className="nav-dropdown-menu">
+<div className="nav-dropdown-menu">
 
                 <Link href="/#systems">
                   <span>01</span>
