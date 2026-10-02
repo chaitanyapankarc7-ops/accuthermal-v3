@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SearchOverlay, { openSearch } from "./SearchOverlay";
@@ -33,10 +34,13 @@ export default function Navbar({ activePage }) {
 
           {/* BRAND LOGO */}
           <Link className="brand" href="/">
-            <img
+            <Image
               src="/assets/images/ats-logo.png"
               alt="Accurate Thermal Systems"
+              width={180}
+              height={40}
               className="nav-logo"
+              unoptimized
             />
           </Link>
 
