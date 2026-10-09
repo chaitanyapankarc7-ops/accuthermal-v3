@@ -1,0 +1,647 @@
+
+/* ==========================================
+   FTBSL25 — ACCURATE THERMAL SYSTEMS
+   Technical product page styling
+========================================== */
+
+.ftbsl25-page {
+  --ftbsl25-ink: #071827;
+  --ftbsl25-blue: #00a7e8;
+  --ftbsl25-muted: #637b88;
+  color: var(--ftbsl25-ink);
+  background: #fff;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ftbsl25-page *,
+.ftbsl25-page *::before,
+.ftbsl25-page *::after {
+  box-sizing: border-box;
+}
+
+.ftbsl25-product-container {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* HERO */
+
+.ftbsl25-product-hero {
+  background: linear-gradient(110deg, #eff8fa, #f9fcfd 62%, #fff);
+  padding: 34px 0 58px;
+}
+
+.ftbsl25-product-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #d5e5eb;
+  color: #188fc1;
+  font: 700 9px/1.5 "IBM Plex Mono", "Courier New", monospace;
+  letter-spacing: 2px;
+}
+
+.ftbsl25-product-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  align-items: stretch;
+  min-height: 450px;
+}
+
+.ftbsl25-product-intro {
+  align-self: center;
+  padding: 48px 46px 48px 0;
+}
+
+.ftbsl25-product-kicker,
+.ftbsl25-section-heading > div > span,
+.ftbsl25-small-label,
+.ftbsl25-support-box > div > span {
+  display: block;
+  color: #148fc1;
+  font: 700 10px/1.5 "IBM Plex Mono", "Courier New", monospace;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.ftbsl25-product-intro h1 {
+  margin: 0 0 16px;
+  font-size: clamp(58px, 7vw, 104px);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+  font-weight: 800;
+}
+
+.ftbsl25-product-subtitle {
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.35;
+  margin: 0 0 14px;
+}
+
+.ftbsl25-product-description {
+  max-width: 510px;
+  color: var(--ftbsl25-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.ftbsl25-product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.ftbsl25-btn {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 0 17px;
+  font: 700 9px/1.2 "IBM Plex Mono", "Courier New", monospace;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.ftbsl25-btn:hover {
+  transform: translateY(-2px);
+}
+
+.ftbsl25-btn span {
+  color: #00b3f3;
+  font-size: 16px;
+}
+
+.ftbsl25-btn-primary {
+  color: #fff;
+  background: #071827;
+  border: 1px solid #071827;
+}
+
+.ftbsl25-btn-primary:hover {
+  background: #10354d;
+}
+
+.ftbsl25-btn-secondary {
+  color: #071827;
+  border: 1px solid #b8d0dc;
+  background: transparent;
+}
+
+.ftbsl25-btn-secondary:hover {
+  background: #fff;
+}
+
+/* PRODUCT IMAGE — LARGE AND CENTERED */
+
+.ftbsl25-product-visual {
+  min-height: 450px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #fbfdfe;
+  border-left: 1px solid #d5e5eb;
+}
+
+.ftbsl25-product-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(rgba(36, 132, 167, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 132, 167, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.ftbsl25-product-orbit {
+  position: absolute;
+  z-index: -1;
+  width: 310px;
+  height: 310px;
+  border: 1px solid rgba(0, 167, 232, 0.22);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ftbsl25-orbit-two {
+  width: 390px;
+  height: 390px;
+}
+
+.ftbsl25-product-image-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  padding: 10px;
+}
+
+.ftbsl25-product-image {
+  display: block;
+  width: 125%;
+  max-width: none;
+  height: 440px;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.12);
+  transform-origin: center;
+  filter: drop-shadow(0 22px 25px rgba(7, 24, 39, 0.16));
+  transition: transform 0.35s ease;
+}
+
+.ftbsl25-product-visual:hover .ftbsl25-product-image {
+  transform: scale(1.2) translateY(-4px);
+}
+
+.ftbsl25-product-capacity {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  z-index: 5;
+  background: #071827;
+  color: #fff;
+  min-width: 100px;
+  padding: 15px 16px;
+}
+
+.ftbsl25-product-capacity > span {
+  display: block;
+  font: 700 8px/1.4 "IBM Plex Mono", "Courier New", monospace;
+  letter-spacing: 1.5px;
+  color: #6bd5ff;
+  margin-bottom: 7px;
+}
+
+.ftbsl25-product-capacity strong {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.ftbsl25-product-capacity strong span {
+  color: #00b3f3;
+  font-size: 16px;
+}
+
+/* QUICK OVERVIEW */
+
+.ftbsl25-product-overview {
+  border-bottom: 1px solid #d5e5eb;
+}
+
+.ftbsl25-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ftbsl25-overview-item {
+  padding: 25px 22px;
+  border-left: 1px solid #d5e5eb;
+}
+
+.ftbsl25-overview-item:last-child {
+  border-right: 1px solid #d5e5eb;
+}
+
+.ftbsl25-overview-item span,
+.ftbsl25-requirement > span {
+  display: block;
+  color: #718b98;
+  font: 700 8px/1.4 "IBM Plex Mono", "Courier New", monospace;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.ftbsl25-overview-item strong {
+  font-size: 14px;
+}
+
+/* SECTION SPACING */
+
+.ftbsl25-benefits,
+.ftbsl25-applications,
+.ftbsl25-specifications,
+.ftbsl25-included {
+  padding: 95px 0;
+}
+
+.ftbsl25-benefits {
+  color: #fff;
+  background: #071827;
+}
+
+.ftbsl25-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 35px;
+  margin-bottom: 38px;
+}
+
+.ftbsl25-section-heading h2,
+.ftbsl25-requirements h2,
+.ftbsl25-support-box h2 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.ftbsl25-section-heading > p {
+  max-width: 410px;
+  margin: 0;
+  color: #7e97a4;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.ftbsl25-benefits .ftbsl25-section-heading > p {
+  color: #a6b7c1;
+}
+
+/* BENEFITS */
+
+.ftbsl25-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid #29404f;
+  border-bottom: 1px solid #29404f;
+}
+
+.ftbsl25-benefit-card {
+  padding: 25px 22px 28px;
+  border-right: 1px solid #29404f;
+}
+
+.ftbsl25-benefit-card:first-child {
+  border-left: 1px solid #29404f;
+}
+
+.ftbsl25-benefit-card > span,
+.ftbsl25-application-card > span,
+.ftbsl25-included-grid > div > span {
+  color: #00a7e8;
+  font: 700 9px/1.4 "IBM Plex Mono", "Courier New", monospace;
+}
+
+.ftbsl25-benefit-card h3,
+.ftbsl25-application-card h3 {
+  margin: 28px 0 10px;
+  font-size: 17px;
+}
+
+.ftbsl25-benefit-card p,
+.ftbsl25-application-card p {
+  color: #7c929e;
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* APPLICATIONS */
+
+.ftbsl25-applications {
+  background: #f5fafb;
+}
+
+.ftbsl25-application-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ftbsl25-application-card {
+  min-height: 200px;
+  padding: 25px;
+  border: 1px solid #d4e4e9;
+  background: linear-gradient(140deg, #fff, #f3f9fb);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.ftbsl25-application-card:hover {
+  transform: translateY(-4px);
+  border-color: #8bcde0;
+}
+
+.ftbsl25-application-card h3 {
+  margin-top: 38px;
+}
+
+.ftbsl25-application-card p {
+  color: #718995;
+}
+
+/* SPECIFICATIONS */
+
+.ftbsl25-specifications {
+  background: #fff;
+}
+
+.ftbsl25-spec-card {
+  border: 1px solid #d5e5eb;
+}
+
+.ftbsl25-spec-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px;
+  padding: 17px 22px;
+  border-bottom: 1px solid #e0ebef;
+  font-size: 13px;
+}
+
+.ftbsl25-spec-row:last-child {
+  border-bottom: 0;
+}
+
+.ftbsl25-spec-row > span {
+  color: #6c8591;
+}
+
+.ftbsl25-spec-row > strong {
+  font-weight: 600;
+}
+
+/* REQUIREMENTS */
+
+.ftbsl25-requirements {
+  padding: 75px 0;
+  background: #edf7f9;
+}
+
+.ftbsl25-requirements-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.ftbsl25-requirements h2 {
+  font-size: clamp(34px, 4vw, 48px);
+}
+
+.ftbsl25-requirement-list {
+  border-top: 1px solid #cbdfe6;
+}
+
+.ftbsl25-requirement {
+  padding: 22px 0;
+  border-bottom: 1px solid #cbdfe6;
+}
+
+.ftbsl25-requirement strong {
+  display: block;
+  font-size: 16px;
+}
+
+.ftbsl25-requirement p {
+  color: #6c8591;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 7px 0 0;
+}
+
+/* INCLUDED ITEMS */
+
+.ftbsl25-included-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid #d5e5eb;
+}
+
+.ftbsl25-included-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 25px;
+  border-right: 1px solid #d5e5eb;
+}
+
+.ftbsl25-included-grid > div:last-child {
+  border-right: 0;
+}
+
+.ftbsl25-included-grid strong {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* SUPPORT */
+
+.ftbsl25-support {
+  padding: 75px 0;
+  background: #f5fafb;
+}
+
+.ftbsl25-support-box {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 45px;
+  padding: 38px;
+  background: #fff;
+  border: 1px solid #d5e5eb;
+}
+
+.ftbsl25-support-box h2 {
+  font-size: clamp(30px, 3.5vw, 44px);
+}
+
+.ftbsl25-support-info p {
+  margin: 0 0 22px;
+  color: #6c8591;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* MODEL NAVIGATION */
+
+.ftbsl25-model-navigation {
+  padding: 22px 0 35px;
+}
+
+.ftbsl25-back-models {
+  color: #0b8fbd;
+  font: 700 9px/1.5 "IBM Plex Mono", "Courier New", monospace;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .ftbsl25-product-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ftbsl25-product-intro {
+    padding: 45px 0 35px;
+  }
+
+  .ftbsl25-product-visual {
+    border-left: 0;
+    border-top: 1px solid #d5e5eb;
+  }
+
+  .ftbsl25-overview-grid,
+  .ftbsl25-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ftbsl25-application-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ftbsl25-requirements-grid,
+  .ftbsl25-support-box {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 560px) {
+  .ftbsl25-product-container {
+    width: calc(100% - 30px);
+  }
+
+  .ftbsl25-product-hero {
+    padding-top: 22px;
+  }
+
+  .ftbsl25-product-topline {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .ftbsl25-product-intro h1 {
+    font-size: clamp(48px, 15vw, 76px);
+  }
+
+  .ftbsl25-product-visual,
+  .ftbsl25-product-image-wrap {
+    min-height: 340px;
+  }
+
+  .ftbsl25-product-image {
+    height: 330px;
+    width: 120%;
+    transform: scale(1.08);
+  }
+
+  .ftbsl25-product-visual:hover .ftbsl25-product-image {
+    transform: scale(1.12) translateY(-3px);
+  }
+
+  .ftbsl25-product-orbit {
+    width: 240px;
+    height: 240px;
+  }
+
+  .ftbsl25-orbit-two {
+    width: 300px;
+    height: 300px;
+  }
+
+  .ftbsl25-overview-grid,
+  .ftbsl25-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ftbsl25-overview-item {
+    padding: 18px 12px;
+  }
+
+  .ftbsl25-benefit-card,
+  .ftbsl25-benefit-card:first-child {
+    border-left: 1px solid #29404f;
+    border-right: 1px solid #29404f;
+  }
+
+  .ftbsl25-section-heading {
+    display: block;
+  }
+
+  .ftbsl25-section-heading > p {
+    margin-top: 20px;
+  }
+
+  .ftbsl25-spec-row {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 15px;
+  }
+
+  .ftbsl25-included-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ftbsl25-included-grid > div {
+    border-right: 0;
+    border-bottom: 1px solid #d5e5eb;
+  }
+
+  .ftbsl25-included-grid > div:last-child {
+    border-bottom: 0;
+  }
+
+  .ftbsl25-support-box {
+    padding: 24px;
+  }
+}
