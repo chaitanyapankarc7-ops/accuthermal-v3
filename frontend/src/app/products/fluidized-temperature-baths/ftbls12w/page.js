@@ -84,14 +84,12 @@ export default function FTBLL12WPage() {
 
               <div className="ftbl12w-image-wrap">
 
-                <Image
-                  src="/assets/images/fluidized/ftbll12w.png"
-                  alt="Accurate Thermal Systems FTBLL12W Fluidized Temperature Bath"
-                  width={700}
-                  height={700}
-                  className="ftbl12w-image"
-                  priority
-                />
+                <img
+                    src="/assets/images/products/fluidizedbath.png"
+                    alt="FTBLL12 Fluidized Temperature Bath"
+                    className="ftbl12-product-image"
+                  />
+
 
               </div>
 

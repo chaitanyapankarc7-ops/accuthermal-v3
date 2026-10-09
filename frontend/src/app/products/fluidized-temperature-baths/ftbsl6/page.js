@@ -65,14 +65,12 @@ export default function FTBSL6Page() {
               <div className="ftbsl6-ring ring-one"></div>
               <div className="ftbsl6-ring ring-two"></div>
 
-              <Image
-                src="/assets/images/fluidized/hero-machine.png"
-                alt="ATS FTBSL6 Fluidized Temperature Bath"
-                width={650}
-                height={650}
-                className="ftbsl6-product"
-                priority
-              />
+            <img
+                    src="/assets/images/products/fluidizedbath.png"
+                    alt="FTBLL12 Fluidized Temperature Bath"
+                    className="ftbl12-product-image"
+                  />
+
 
               <div className="ftbsl6-floating">
 
