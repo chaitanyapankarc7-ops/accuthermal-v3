@@ -306,7 +306,7 @@ export default function ThermCal400Page() {
 
         {/* BACK TO PRODUCT RANGE */}
         <div className="tc400-container tc400-back">
-          <a href="/products/thermcal-dry-block-calibrators">
+          <a href="/products/thermcal">
             ← BACK TO THERMCAL PRODUCT RANGE
           </a>
         </div>

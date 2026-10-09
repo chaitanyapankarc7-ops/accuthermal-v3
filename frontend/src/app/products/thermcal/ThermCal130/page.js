@@ -126,7 +126,7 @@ export default function ThermCal130Page() {
 
                 <div className="tc130-actions">
                   <a
-                    href="/contact"
+                    href="/form"
                     className="tc130-btn tc130-btn-primary"
                   >
                     REQUEST A QUOTE <span>↗</span>
@@ -304,7 +304,7 @@ export default function ThermCal130Page() {
               </p>
             </div>
 
-            <a href="/contact" className="tc130-btn tc130-btn-light">
+            <a href="/form" className="tc130-btn tc130-btn-light">
               ENQUIRE ABOUT THERMCAL130 <span>↗</span>
             </a>
           </div>
