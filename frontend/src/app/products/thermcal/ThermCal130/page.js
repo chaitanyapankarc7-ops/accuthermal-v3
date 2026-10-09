@@ -312,7 +312,7 @@ export default function ThermCal130Page() {
 
         {/* BACK TO PRODUCT RANGE */}
         <div className="tc130-container tc130-back">
-          <a href="/products/thermcal-dry-block-calibrators">
+          <a href="/products/thermcal">
             ← BACK TO THERMCAL PRODUCT RANGE
           </a>
         </div>
