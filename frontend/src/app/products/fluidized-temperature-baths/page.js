@@ -560,18 +560,25 @@ export default function FluidizedTemperatureBaths() {
 {/* =====================================================
     FTB MODEL SELECTOR
 ===================================================== */}
-
 <section className="ftb-model-selector" id="models">
 
   <div className="ftb-model-selector-container">
 
+    {/* =====================================================
+        HEADER
+    ===================================================== */}
+
     <div className="ftb-model-selector-header">
 
-      <span className="ftb-model-selector-kicker">
-        FTB SERIES
-      </span>
+      <div>
+        <span className="ftb-model-selector-kicker">
+          FTB SERIES
+        </span>
 
-      <h2>CHOOSE YOUR CONFIGURATION</h2>
+        <h2>
+          CHOOSE YOUR MODEL
+        </h2>
+      </div>
 
       <p>
         Select the capacity that matches your requirements.
@@ -580,62 +587,582 @@ export default function FluidizedTemperatureBaths() {
     </div>
 
 
-    <div className="ftb-model-list">
+    {/* =====================================================
+        MODEL GRID
+    ===================================================== */}
 
-      {/* MODEL 01 */}
-  <Link
-  href="/products/fluidized-temperature-baths/ftbls12"
-  className="ftb-model-row"
->
-
-        <div className="ftb-model-index">
-          01
-        </div>
-
-        <div className="ftb-model-capacity-small">
-          <strong>12</strong>
-          <span>L</span>
-        </div>
-
-        <div className="ftb-model-info">
-          <h3>FTBLS12</h3>
-          <p>Fluidized Temperature Bath</p>
-        </div>
-
-        <div className="ftb-model-action">
-          <span>VIEW MODEL</span>
-          <b>→</b>
-        </div>
-
-     </Link>
+    <div className="ftb-model-grid">
 
 
-      {/* MODEL 02 */}
+      {/* =================================================
+          01 — FTBLS12
+      ================================================= */}
+
       <Link
-  href="/products/fluidized-temperature-baths/ftbls26"
-  className="ftb-model-row"
->
+        href="/products/fluidized-temperature-baths/ftbls12"
+        className="ftb-model-card"
+      >
 
-        <div className="ftb-model-index">
-          02
+        <div className="ftb-model-card-content">
+
+          <span className="ftb-model-index">
+            01
+          </span>
+
+          <div className="ftb-model-capacity">
+
+            <strong>
+              12
+            </strong>
+
+            <span>
+              L
+            </span>
+
+          </div>
+
+          <h3>
+            FTBLS12
+          </h3>
+
+          <p>
+            Fluidized Temperature Bath
+          </p>
+
         </div>
 
-        <div className="ftb-model-capacity-small">
-          <strong>26</strong>
-          <span>L</span>
+
+       <div className="ftb-model-image">
+  <img
+    src="/assets/images/fluidized/Screenshot 2026-10-08 212245.png"
+    alt="FTBLS12"
+  />
+</div>
+
+        <div className="ftb-model-image">
+
+          {/* ADD PRODUCT IMAGE HERE */}
+
+          {/*
+
+          <img
+            src="/assets/images/fluidized/models/ftbls12.png"
+            alt="FTBLS12"
+          />
+
+          */}
+
         </div>
 
-        <div className="ftb-model-info">
-          <h3>FTBLS26</h3>
-          <p>Fluidized Temperature Bath</p>
-        </div>
 
         <div className="ftb-model-action">
-          <span>VIEW MODEL</span>
-          <b>→</b>
+
+          <span>
+            VIEW MODEL
+          </span>
+
+          <b>
+            →
+          </b>
+
         </div>
 
-  </Link>
+      </Link>
+
+
+
+      {/* =================================================
+          02 — FTBLS26
+      ================================================= */}
+
+      <Link
+        href="/products/fluidized-temperature-baths/ftbls26"
+        className="ftb-model-card"
+      >
+
+        <div className="ftb-model-card-content">
+
+          <span className="ftb-model-index">
+            02
+          </span>
+
+          <div className="ftb-model-capacity">
+
+            <strong>
+              26
+            </strong>
+
+            <span>
+              L
+            </span>
+
+          </div>
+
+          <h3>
+            FTBLS26
+          </h3>
+
+          <p>
+            Fluidized Temperature Bath
+          </p>
+
+        </div>
+
+
+        <div className="ftb-model-image">
+<div className="ftb-model-image">
+  <img
+    src="/assets/images/fluidized/Screenshot 2026-10-08 212252.png"
+    alt="FTBLS26"
+  />
+</div>
+
+        </div>
+
+
+        <div className="ftb-model-action">
+
+          <span>
+            VIEW MODEL
+          </span>
+
+          <b>
+            →
+          </b>
+
+        </div>
+
+      </Link>
+
+
+
+      {/* =================================================
+          03 — FTBLL12W
+      ================================================= */}
+
+      <Link
+        href="/products/fluidized-temperature-baths/ftbls12w"
+        className="ftb-model-card ftb-model-card-dark"
+      >
+
+        <div className="ftb-model-card-content">
+
+          <span className="ftb-model-index">
+            03
+          </span>
+
+          <div className="ftb-model-capacity">
+
+            <strong>
+              12
+            </strong>
+
+            <span>
+              L
+            </span>
+
+          </div>
+
+          <h3>
+            FTBLL12W
+          </h3>
+
+          <p>
+            Wide Fluidized Temperature Bath
+          </p>
+
+        </div>
+        <div className="ftb-model-image">
+  <img
+    src="/assets/images/fluidized/Screenshot 2026-10-08 212257.png"
+    alt="FTBLL12W"
+  />
+</div>
+
+
+        <div className="ftb-model-image">
+
+          {/* ADD PRODUCT IMAGE HERE */}
+
+          {/*
+
+          <img
+            src="/assets/images/fluidized/models/ftbll12w.png"
+            alt="FTBLL12W"
+          />
+
+          */}
+
+        </div>
+
+
+        <div className="ftb-model-action">
+
+          <span>
+            VIEW MODEL
+          </span>
+
+          <b>
+            →
+          </b>
+
+        </div>
+
+      </Link>
+
+
+
+      {/* =================================================
+          04 — FTBLL27
+          WIDE CARD
+      ================================================= */}
+
+      <Link
+        href="/products/fluidized-temperature-baths/ftbls27"
+        className="ftb-model-card ftb-model-card-wide"
+      >
+
+        <div className="ftb-model-card-content">
+
+          <span className="ftb-model-index">
+            04
+          </span>
+
+          <div className="ftb-model-capacity">
+
+            <strong>
+              27
+            </strong>
+
+            <span>
+              L
+            </span>
+
+          </div>
+
+          <h3>
+            FTBLL27
+          </h3>
+
+          <p>
+            Fluidized Temperature Bath
+          </p>
+
+        </div>
+        <div className="ftb-model-image">
+  <img
+    src="/assets/images/fluidized/Screenshot 2026-10-08 212306.png"
+    alt="FTBLL27"
+  />
+</div>
+
+
+        <div className="ftb-model-image">
+
+          {/* ADD PRODUCT IMAGE HERE */}
+
+          {/*
+
+          <img
+            src="/assets/images/fluidized/models/ftbll27.png"
+            alt="FTBLL27"
+          />
+
+          */}
+
+        </div>
+
+
+        <div className="ftb-model-action">
+
+          <span>
+            VIEW MODEL
+          </span>
+
+          <b>
+            →
+          </b>
+
+        </div>
+
+      </Link>
+
+
+
+      {/* =================================================
+          05 — FTBLL47
+          WIDE CARD
+      ================================================= */}
+
+      <Link
+        href="/products/fluidized-temperature-baths/ftbls47"
+        className="ftb-model-card ftb-model-card-wide"
+      >
+
+        <div className="ftb-model-card-content">
+
+          <span className="ftb-model-index">
+            05
+          </span>
+
+          <div className="ftb-model-capacity">
+
+            <strong>
+              47
+            </strong>
+
+            <span>
+              L
+            </span>
+
+          </div>
+
+          <h3>
+            FTBLL47
+          </h3>
+
+          <p>
+            Fluidized Temperature Bath
+          </p>
+
+        </div>
+        <div className="ftb-model-image">
+  <img
+    src="/assets/images/fluidized/Screenshot 2026-10-08 212313.png"
+    alt="FTBLL47"
+  />
+</div>
+
+
+        <div className="ftb-model-image">
+
+          {/* ADD PRODUCT IMAGE HERE */}
+
+          {/*
+
+          <img
+            src="/assets/images/fluidized/models/ftbll47.png"
+            alt="FTBLL47"
+          />
+
+          */}
+
+        </div>
+
+
+        <div className="ftb-model-action">
+
+          <span>
+            VIEW MODEL
+          </span>
+
+          <b>
+            →
+          </b>
+
+        </div>
+
+      </Link>
+
+
+
+      {/* =================================================
+          06 — FTBSL6
+      ================================================= */}
+
+      <Link
+        href="/products/fluidized-temperature-baths/ftbsl6"
+        className="ftb-model-card ftb-model-card-dark"
+      >
+
+        <div className="ftb-model-card-content">
+
+          <span className="ftb-model-index">
+            06
+          </span>
+
+          <div className="ftb-model-capacity ftb-model-depth">
+
+            <strong>
+              6
+            </strong>
+
+            <span>
+              DEPTH
+            </span>
+
+          </div>
+
+          <h3>
+            FTBSL6
+          </h3>
+
+          <p>
+            Fluidized Temperature Bath
+          </p>
+
+        </div>
+        <div className="ftb-model-image">
+  <img
+    src="/assets/images/fluidized/Screenshot 2026-10-08 212319.png"
+    alt="FTBSL6"
+  />
+</div>
+        
+
+
+        <div className="ftb-model-image">
+
+          {/*
+
+          ADD FTBSL6 IMAGE HERE
+
+          <img
+            src="/assets/images/fluidized/models/ftbsl6.png"
+            alt="FTBSL6"
+          />
+
+          */}
+
+        </div>
+
+
+        <div className="ftb-model-action">
+
+          <span>
+            VIEW MODEL
+          </span>
+
+          <b>
+            →
+          </b>
+
+        </div>
+
+      </Link>
+
+
+
+      {/* =================================================
+          07 — FTBSL15
+      ================================================= */}
+
+      <Link
+        href="/products/fluidized-temperature-baths/ftbsl15"
+        className="ftb-model-card"
+      >
+
+        <div className="ftb-model-card-content">
+
+          <span className="ftb-model-index">
+            07
+          </span>
+
+          <div className="ftb-model-capacity ftb-model-depth">
+
+            <strong>
+              15
+            </strong>
+
+            <span>
+              DEPTH
+            </span>
+
+          </div>
+
+          <h3>
+            FTBSL15
+          </h3>
+
+          <p>
+            Fluidized Temperature Bath
+          </p>
+
+        </div>
+
+
+        <div className="ftb-model-image">
+  <img
+    src="/assets/images/fluidized/Screenshot 2026-10-08 212344.png"
+    alt="FTBSL15"
+  />
+</div>
+
+        <div className="ftb-model-action">
+
+          <span>
+            VIEW MODEL
+          </span>
+
+          <b>
+            →
+          </b>
+
+        </div>
+
+      </Link>
+
+
+
+      {/* =================================================
+          08 — FTBSL25
+      ================================================= */}
+
+      <Link
+        href="/products/fluidized-temperature-baths/ftbsl25"
+        className="ftb-model-card"
+      >
+
+        <div className="ftb-model-card-content">
+
+          <span className="ftb-model-index">
+            08
+          </span>
+
+          <div className="ftb-model-capacity ftb-model-depth">
+
+            <strong>
+              25
+            </strong>
+
+            <span>
+              DEPTH
+            </span>
+
+          </div>
+
+          <h3>
+            FTBSL25
+          </h3>
+
+          <p>
+            Fluidized Temperature Bath
+          </p>
+
+        </div>
+
+
+        <div className="ftb-model-image">
+  <img
+    src="/assets/images/fluidized/Screenshot 2026-10-08 212351.png"
+    alt="FTBSL25"
+  />
+</div>
+
+        <div className="ftb-model-action">
+
+          <span>
+            VIEW MODEL
+          </span>
+
+          <b>
+            →
+          </b>
+
+        </div>
+
+      </Link>
+
 
     </div>
 

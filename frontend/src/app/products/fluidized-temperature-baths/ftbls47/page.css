@@ -1,0 +1,889 @@
+/* =========================================================
+   FTBLL47 PRODUCT PAGE
+========================================================= */
+
+.ftbl47-page {
+    background: #ffffff;
+    color: #071827;
+}
+
+.ftbl47-container {
+    width: min(1280px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.ftbl47-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #edf8fb 0%,
+            #ffffff 75%
+        );
+
+    border-bottom: 1px solid #d6e4e9;
+    padding: 35px 0 50px;
+}
+
+.ftbl47-topline {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #cbdde3;
+
+    color: #009fe3;
+
+    font-family: monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.ftbl47-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 480px;
+
+    align-items: center;
+
+    gap: 45px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.ftbl47-kicker {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: #6b8793;
+
+    font-family: monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.ftbl47-intro h1 {
+    margin: 0;
+
+    font-size: clamp(70px, 8vw, 110px);
+    line-height: .85;
+    letter-spacing: -6px;
+    font-weight: 800;
+}
+
+.ftbl47-intro h1 span {
+    color: #009fe3;
+}
+
+.ftbl47-intro h2 {
+    margin: 25px 0 0;
+
+    color: #183544;
+
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.ftbl47-intro > p {
+    max-width: 520px;
+
+    margin: 16px 0 0;
+
+    color: #63808e;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.ftbl47-actions {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 28px;
+
+    flex-wrap: wrap;
+}
+
+.ftbl47-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    min-width: 200px;
+
+    padding: 14px 16px;
+
+    text-decoration: none;
+
+    font-family: monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+.ftbl47-btn span {
+    color: #00a7e8;
+    font-size: 15px;
+}
+
+.ftbl47-btn-primary {
+    background: #071827;
+    color: #ffffff;
+}
+
+.ftbl47-btn-primary:hover {
+    background: #009fe3;
+    transform: translateY(-2px);
+}
+
+.ftbl47-btn-secondary {
+    background: #ffffff;
+
+    border: 1px solid #a9c4ce;
+
+    color: #071827;
+}
+
+.ftbl47-btn-secondary:hover {
+    border-color: #009fe3;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PRODUCT VISUAL
+========================================================= */
+
+.ftbl47-visual {
+    position: relative;
+
+    height: 440px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.ftbl47-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(7, 24, 39, .045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(7, 24, 39, .045) 1px,
+            transparent 1px
+        );
+
+    background-size: 30px 30px;
+}
+
+.ftbl47-orbit {
+    position: absolute;
+
+    border: 1px solid rgba(0, 167, 232, .18);
+
+    border-radius: 50%;
+}
+
+.ftbl47-orbit-one {
+    width: 410px;
+    height: 410px;
+}
+
+.ftbl47-orbit-two {
+    width: 310px;
+    height: 310px;
+}
+
+.ftbl47-image-wrap {
+    position: relative;
+
+    z-index: 3;
+
+    width: 390px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.ftbl47-image {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 25px 30px rgba(7,24,39,.18)
+        );
+}
+
+
+/* =========================================================
+   CAPACITY
+========================================================= */
+
+.ftbl47-capacity {
+    position: absolute;
+
+    right: 5px;
+    bottom: 35px;
+
+    z-index: 5;
+
+    padding: 14px 18px;
+
+    background: #071827;
+
+    color: #ffffff;
+}
+
+.ftbl47-capacity > span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #7da1b0;
+
+    font-family: monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+}
+
+.ftbl47-capacity strong {
+    font-size: 36px;
+    line-height: 1;
+}
+
+.ftbl47-capacity strong span {
+    color: #00a7e8;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.ftbl47-overview {
+    border-bottom: 1px solid #d6e4e9;
+}
+
+.ftbl47-overview-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.ftbl47-overview-item {
+    padding: 25px;
+
+    border-right: 1px solid #d6e4e9;
+}
+
+.ftbl47-overview-item:first-child {
+    border-left: 1px solid #d6e4e9;
+}
+
+.ftbl47-overview-item span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #78929d;
+
+    font-family: monospace;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+.ftbl47-overview-item strong {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+.ftbl47-benefits,
+.ftbl47-applications,
+.ftbl47-specifications,
+.ftbl47-requirements,
+.ftbl47-included {
+    padding: 70px 0;
+}
+
+.ftbl47-section-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 50px;
+
+    margin-bottom: 45px;
+}
+
+.ftbl47-section-heading > div > span {
+    color: #009fe3;
+
+    font-family: monospace;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.ftbl47-section-heading h2 {
+    margin: 12px 0 0;
+
+    font-size: clamp(38px, 5vw, 65px);
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+}
+
+.ftbl47-section-heading > p {
+    max-width: 390px;
+
+    color: #67828e;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.ftbl47-benefits {
+    background: #071827;
+    color: #ffffff;
+}
+
+.ftbl47-benefits .ftbl47-section-heading > div > span {
+    color: #00a7e8;
+}
+
+.ftbl47-benefits .ftbl47-section-heading > p {
+    color: #9bb1bd;
+}
+
+.ftbl47-benefits-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid rgba(255,255,255,.14);
+    border-bottom: 1px solid rgba(255,255,255,.14);
+}
+
+.ftbl47-benefit {
+    min-height: 230px;
+
+    padding: 30px 25px;
+
+    border-right: 1px solid rgba(255,255,255,.14);
+}
+
+.ftbl47-benefit:last-child {
+    border-right: none;
+}
+
+.ftbl47-benefit > span {
+    color: #00a7e8;
+
+    font-family: monospace;
+    font-size: 9px;
+}
+
+.ftbl47-benefit h3 {
+    margin: 45px 0 10px;
+
+    font-size: 17px;
+}
+
+.ftbl47-benefit p {
+    margin: 0;
+
+    color: #9bb1bd;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   APPLICATION
+========================================================= */
+
+.ftbl47-application-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.ftbl47-application {
+    min-height: 220px;
+
+    padding: 28px;
+
+    border: 1px solid #d6e4e9;
+
+    background: #ffffff;
+}
+
+.ftbl47-application > span {
+    color: #009fe3;
+
+    font-family: monospace;
+    font-size: 9px;
+}
+
+.ftbl47-application h3 {
+    margin: 55px 0 10px;
+
+    font-size: 19px;
+}
+
+.ftbl47-application p {
+    margin: 0;
+
+    color: #67828e;
+
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   SPECIFICATIONS
+========================================================= */
+
+.ftbl47-specifications {
+    background: #f4f8fd;
+}
+
+.ftbl47-spec-table {
+    border-top: 1px solid #cbdde3;
+}
+
+.ftbl47-spec-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 58px;
+
+    align-items: center;
+
+    border-bottom: 1px solid #cbdde3;
+}
+
+.ftbl47-spec-row span {
+    padding: 17px 20px;
+
+    color: #67828e;
+
+    font-family: monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.ftbl47-spec-row strong {
+    padding: 17px 20px;
+
+    color: #071827;
+
+    font-size: 13px;
+}
+
+.ftbl47-spec-header {
+    background: #071827;
+}
+
+.ftbl47-spec-header span {
+    color: #ffffff;
+}
+
+.ftbl47-spec-header span:last-child {
+    color: #00a7e8;
+}
+
+
+/* =========================================================
+   REQUIREMENTS
+========================================================= */
+
+.ftbl47-requirements-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.ftbl47-requirement {
+    padding: 30px;
+
+    border: 1px solid #d6e4e9;
+}
+
+.ftbl47-requirement > span {
+    color: #009fe3;
+
+    font-family: monospace;
+    font-size: 9px;
+}
+
+.ftbl47-requirement h3 {
+    margin: 35px 0 10px;
+
+    font-size: 20px;
+}
+
+.ftbl47-requirement p {
+    max-width: 500px;
+
+    margin: 0;
+
+    color: #67828e;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   INCLUDED
+========================================================= */
+
+.ftbl47-included {
+    background: #f4f8fd;
+}
+
+.ftbl47-included-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border: 1px solid #cbdde3;
+}
+
+.ftbl47-included-grid > div {
+    min-height: 180px;
+
+    padding: 25px;
+
+    border-right: 1px solid #cbdde3;
+
+    background: #ffffff;
+}
+
+.ftbl47-included-grid > div:last-child {
+    border-right: none;
+}
+
+.ftbl47-included-grid span {
+    color: #009fe3;
+
+    font-family: monospace;
+    font-size: 9px;
+}
+
+.ftbl47-included-grid h3 {
+    margin: 45px 0 8px;
+
+    font-size: 17px;
+}
+
+.ftbl47-included-grid p {
+    margin: 0;
+
+    color: #67828e;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SUPPORT
+========================================================= */
+
+.ftbl47-support {
+    padding: 0 0 45px;
+}
+
+.ftbl47-support-box {
+    min-height: 210px;
+
+    padding: 35px 45px;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr .85fr;
+
+    align-items: center;
+
+    gap: 50px;
+
+    background: #071827;
+
+    color: #ffffff;
+}
+
+.ftbl47-support-box > div:first-child > span {
+    color: #00a7e8;
+
+    font-family: monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.ftbl47-support-box h2 {
+    margin: 12px 0 0;
+
+    font-size: 42px;
+    line-height: .9;
+
+    letter-spacing: -2px;
+}
+
+.ftbl47-support-info p {
+    max-width: 390px;
+
+    margin: 0 0 18px;
+
+    color: #9bb1bd;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.ftbl47-navigation {
+    padding: 5px 0 45px;
+
+    border-top: 1px solid #d9e5e9;
+}
+
+.ftbl47-back {
+    display: inline-flex;
+
+    padding-top: 22px;
+
+    color: #071827;
+
+    font-family: monospace;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+}
+
+.ftbl47-back:hover {
+    color: #009fe3;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .ftbl47-container {
+        width: calc(100% - 40px);
+    }
+
+    .ftbl47-hero-grid {
+        grid-template-columns: 1fr;
+        padding-top: 35px;
+    }
+
+    .ftbl47-visual {
+        height: 400px;
+    }
+
+    .ftbl47-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ftbl47-benefit:nth-child(2) {
+        border-right: none;
+    }
+
+    .ftbl47-application-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ftbl47-overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ftbl47-requirements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ftbl47-included-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ftbl47-included-grid > div {
+        border-right: none;
+        border-bottom: 1px solid #cbdde3;
+    }
+
+    .ftbl47-included-grid > div:last-child {
+        border-bottom: none;
+    }
+
+    .ftbl47-support-box {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .ftbl47-container {
+        width: calc(100% - 30px);
+    }
+
+    .ftbl47-topline {
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .ftbl47-intro h1 {
+        font-size: 65px;
+        letter-spacing: -4px;
+    }
+
+    .ftbl47-intro h2 {
+        font-size: 19px;
+    }
+
+    .ftbl47-actions {
+        flex-direction: column;
+    }
+
+    .ftbl47-btn {
+        width: 100%;
+    }
+
+    .ftbl47-image-wrap {
+        width: 300px;
+    }
+
+    .ftbl47-orbit-one {
+        width: 320px;
+        height: 320px;
+    }
+
+    .ftbl47-orbit-two {
+        width: 240px;
+        height: 240px;
+    }
+
+    .ftbl47-overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ftbl47-overview-item {
+        border-left: 1px solid #d6e4e9;
+        border-bottom: 1px solid #d6e4e9;
+    }
+
+    .ftbl47-section-heading {
+        display: block;
+    }
+
+    .ftbl47-section-heading > p {
+        margin-top: 25px;
+    }
+
+    .ftbl47-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ftbl47-benefit {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+
+    .ftbl47-benefit:last-child {
+        border-bottom: none;
+    }
+
+    .ftbl47-spec-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ftbl47-spec-row span {
+        padding-bottom: 5px;
+    }
+
+    .ftbl47-spec-row strong {
+        padding-top: 5px;
+    }
+
+    .ftbl47-support-box {
+        padding: 30px;
+    }
+
+    .ftbl47-support-box h2 {
+        font-size: 36px;
+    }
+
+}
