@@ -552,6 +552,131 @@ export default function ThermCalPage() {
       </section>
 
 
+
+      
+{/* ==========================================
+    THERMCAL — CHOOSE YOUR MODEL
+========================================== */}
+
+<section className="thermcal-models-section" id="thermcal-models">
+  <div className="thermcal-models-container">
+
+    {/* SECTION HEADER */}
+    <div className="thermcal-models-header">
+      <h2>
+        CHOOSE YOUR
+        <br />
+        MODEL
+      </h2>
+
+      <p>
+        Select the temperature calibrator
+        <br />
+        that matches your requirements.
+      </p>
+    </div>
+
+    {/* MODEL CARDS */}
+    <div className="thermcal-models-grid">
+
+      {/* THERMCAL400 */}
+      <a
+        href="/products/thermcal/ThermCal400"
+        className="thermcal-model-card"
+      >
+        <div className="thermcal-model-card-bg-number">01</div>
+
+        <div className="thermcal-model-card-content">
+          <div className="thermcal-model-number">
+            <span>01</span>
+            <span className="thermcal-model-line"></span>
+          </div>
+
+          <h3>ThermCal400</h3>
+
+          <p className="thermcal-model-description">
+            High-temperature dry block calibrator
+          </p>
+
+          <div className="thermcal-model-specs">
+            <div>
+              <strong>455<span>°C</span></strong>
+              <small>MAX TEMP</small>
+            </div>
+
+            <div>
+              <strong>±0.4°C</strong>
+              <small>ACCURACY</small>
+            </div>
+          </div>
+
+          <div className="thermcal-model-action">
+            <span>VIEW MODEL</span>
+            <span className="thermcal-model-arrow">→</span>
+          </div>
+        </div>
+
+        <div className="thermcal-model-image-wrap">
+         <img
+  src="/assets/images/thermal%20cal/Screenshot%202026-10-09%20220143.png"
+  alt="ThermCal400 dry block temperature calibrator"
+  className="thermcal-model-image"
+/>
+        </div>
+      </a>
+
+      {/* THERMCAL130 */}
+      <a
+        href="/products/thermcal/ThermCal130"
+        className="thermcal-model-card thermcal-model-card-dark"
+      >
+        <div className="thermcal-model-card-bg-number">02</div>
+
+        <div className="thermcal-model-card-content">
+          <div className="thermcal-model-number">
+            <span>02</span>
+            <span className="thermcal-model-line"></span>
+          </div>
+
+          <h3>ThermCal130</h3>
+
+          <p className="thermcal-model-description">
+            Heating and cooling temperature calibrator
+          </p>
+
+          <div className="thermcal-model-specs">
+            <div>
+              <strong>130<span>°C</span></strong>
+              <small>MAX TEMP</small>
+            </div>
+
+            <div>
+              <strong>±0.4°C</strong>
+              <small>ACCURACY</small>
+            </div>
+          </div>
+
+          <div className="thermcal-model-action">
+            <span>VIEW MODEL</span>
+            <span className="thermcal-model-arrow">→</span>
+          </div>
+        </div>
+
+        <div className="thermcal-model-image-wrap">
+         <img
+  src="/assets/images/thermal%20cal/Screenshot%202026-10-09%20220156.png"
+  alt="ThermCal130 temperature calibrator"
+  className="thermcal-model-image"
+/>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
       
 
 {/* =====================================================
