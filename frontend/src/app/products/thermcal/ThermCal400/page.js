@@ -124,7 +124,7 @@ export default function ThermCal400Page() {
                 </div>
 
                 <div className="tc400-actions">
-                  <a href="/contact" className="tc400-btn tc400-btn-primary">
+                  <a href="/form" className="tc400-btn tc400-btn-primary">
                     REQUEST A QUOTE <span>↗</span>
                   </a>
                   <a
@@ -298,7 +298,7 @@ export default function ThermCal400Page() {
               </p>
             </div>
 
-            <a href="/contact" className="tc400-btn tc400-btn-light">
+            <a href="/form" className="tc400-btn tc400-btn-light">
               ENQUIRE ABOUT THERMCAL400 <span>↗</span>
             </a>
           </div>
