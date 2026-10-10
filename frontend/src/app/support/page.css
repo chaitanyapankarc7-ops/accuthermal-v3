@@ -9,7 +9,7 @@
 /* ---------- HERO ---------- */
 
 .sup-hero {
-  padding-top: 110px;
+  padding-top: 150px;
   background: var(--night2);
   background-image: radial-gradient(circle at 72% 48%, #14568f 0, transparent 26%),
     linear-gradient(120deg, #0b3a6e, #0e5a9b);
@@ -614,7 +614,7 @@
 
 @media (max-width: 620px) {
   .sup-hero {
-    padding-top: 76px;
+    padding-top: 130px;
   }
 
   .sup-hero-copy {

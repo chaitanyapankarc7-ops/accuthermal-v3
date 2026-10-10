@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const customerGroups = [
   {
@@ -75,6 +75,8 @@ const customerGroups = [
 
 export default function Customers() {
   const [activeGroup, setActiveGroup] = useState(0);
+  const [trackHeight, setTrackHeight] = useState(null);
+  const groupRefs = useRef([]);
 
   // Auto-advance the logo groups (crossfade) every 5 seconds
   useEffect(() => {
@@ -83,6 +85,27 @@ export default function Customers() {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  // Measure the active group so the track can animate to its height. This
+  // removes the empty space left behind by groups with fewer logos. The
+  // measurement only runs when the group changes, or if the active group's
+  // size changes (e.g. viewport resize / column reflow) — never per frame.
+  useEffect(() => {
+    const el = groupRefs.current[activeGroup];
+    if (!el) return;
+
+    const measure = () => {
+      const h = el.getBoundingClientRect().height;
+      setTrackHeight((prev) => (prev !== null && Math.abs(prev - h) < 1 ? prev : h));
+    };
+
+    measure();
+
+    if (typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [activeGroup]);
 
   return (
     <section className="customers" id="customers">
@@ -98,10 +121,16 @@ export default function Customers() {
         </div>
 
         <div className="customers-stage reveal">
-          <div className="customers-track">
+          <div
+            className="customers-track"
+            style={trackHeight !== null ? { height: trackHeight } : undefined}
+          >
             {customerGroups.map((group, gi) => (
               <div
                 key={gi}
+                ref={(el) => {
+                  groupRefs.current[gi] = el;
+                }}
                 className={`customer-group ${activeGroup === gi ? "active" : ""}`}
               >
                 <span className="customer-group-label mono">{group.label}</span>

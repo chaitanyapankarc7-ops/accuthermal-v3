@@ -147,16 +147,11 @@ h1, h2, h3 {
 .eyebrow {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   color: var(--blue);
   margin-bottom: 20px;
-}
-
-.eyebrow:before {
-  content: "";
-  width: 30px;
-  height: 1px;
-  background: currentColor;
+  text-align: center;
 }
 
 /* Navigation */
@@ -4340,11 +4335,14 @@ footer {
 }
 
 .customers-track {
-  display: grid;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-group {
-  grid-area: 1 / 1;
+  position: absolute;
+  inset: 0;
   opacity: 0;
   visibility: hidden;
   transform: translateY(14px);
@@ -4353,6 +4351,7 @@ footer {
 }
 
 .customer-group.active {
+  position: relative;
   opacity: 1;
   visibility: visible;
   transform: none;

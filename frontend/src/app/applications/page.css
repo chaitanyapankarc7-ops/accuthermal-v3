@@ -3,7 +3,7 @@
 }
 
 .apps-index-hero {
-  padding: 110px 0 70px;
+  padding: 150px 0 70px;
   background: var(--blue);
   color: #fff;
 }
@@ -163,7 +163,7 @@
 
 @media (max-width: 620px) {
   .apps-index-hero {
-    padding: 76px 0 54px;
+    padding: 130px 0 54px;
   }
 
   .apps-index-section,
