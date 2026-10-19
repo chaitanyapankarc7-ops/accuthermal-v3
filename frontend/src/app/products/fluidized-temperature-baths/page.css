@@ -5565,7 +5565,8 @@ body{
     }
 
     .ftb-downloads-intro h2 {
-        font-size: clamp(44px, 11vw, 58px);
+        /* "DOCUMENTATION." is one long word; cap at ~36px at 320 to fit */
+        font-size: clamp(28px, 10.5vw, 58px);
 
         letter-spacing: -3px;
     }
@@ -5993,7 +5994,9 @@ body{
   }
 
   .ftb-specifications-header h2 {
-    font-size: 54px;
+    /* "SPECIFICATIONS." is one unbreakable word; scale it down so it
+       never overflows the header column and gets clipped. */
+    font-size: clamp(28px, 11.5vw, 54px);
     letter-spacing: -3px;
   }
 

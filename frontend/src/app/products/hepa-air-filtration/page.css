@@ -844,7 +844,7 @@
     .hepa-applications-header h2,
     .hepa-process-header h2,
     .hepa-downloads-intro h2 {
-        font-size: clamp(42px, 11vw, 55px);
+        font-size: clamp(26px, 10vw, 55px);
     }
 
     .hepa-overview-content {

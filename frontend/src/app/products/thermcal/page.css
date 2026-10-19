@@ -1676,14 +1676,22 @@
 
     .thermcal-section-heading h2,
     .thermcal-features-header h2,
-    .thermcal-applications-heading h2,
-    .thermcal-specifications h2,
-    .thermcal-download-grid h2 {
+    .thermcal-applications-heading h2 {
         font-size: 50px;
     }
 
+    /* Headings whose longest word cannot break must scale with the
+       viewport. Otherwise the word overflows the container (or forces a
+       grid track wider than the screen) and gets clipped.
+       e.g. "COMPROMISE.", "DOCUMENTATION.", "SPECIFICATIONS." */
+    .thermcal-intro-grid h2,
+    .thermcal-download-grid h2,
+    .thermcal-specifications h2 {
+        font-size: clamp(26px, 10.5vw, 50px);
+    }
+
     .thermcal-model-info h3 {
-        font-size: 42px;
+        font-size: clamp(24px, 9vw, 42px);
     }
 
     .thermcal-model-stats {
@@ -1724,7 +1732,7 @@
     }
 
     .thermcal-cta-content h2 {
-        font-size: 60px;
+        font-size: clamp(28px, 12vw, 60px);
     }
 
 }/* =========================================================

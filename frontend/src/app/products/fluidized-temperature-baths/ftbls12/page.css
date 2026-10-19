@@ -2064,3 +2064,27 @@
         padding: 25px;
     }
 }
+
+
+/* =========================================================
+   MOBILE FIX — stack section headings
+   In a flex row the heading text and paragraph were forced
+   side by side, squeezing the paragraph into a sliver that
+   overflowed past the right edge of the screen.
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .ftbl12-section-heading,
+    .ftbl12-specifications .ftbl12-section-heading,
+    .ftbl12-benefits .ftbl12-section-heading,
+    .ftbl12-included .ftbl12-section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .ftbl12-section-heading p {
+        max-width: none;
+    }
+}
