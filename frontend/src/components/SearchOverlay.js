@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
 import {
   search,
@@ -275,156 +276,161 @@ export default function SearchOverlay() {
         </svg>
       </button>
 
-      {open && (
-        <div className="search-overlay" onClick={onBackdropClick}>
-          <div
-            ref={panelRef}
-            className="search-panel"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby={titleId}
-          >
-            <h2 id={titleId} className="sr-only">
-              Search Accurate Thermal Systems
-            </h2>
+      {open &&
+        createPortal(
+          /* Portalled to <body>: the nav's backdrop-filter would otherwise
+             make it the containing block for this position: fixed layer,
+             collapsing the panel to the height of the navbar on mobile. */
+          <div className="search-overlay" onClick={onBackdropClick}>
+            <div
+              ref={panelRef}
+              className="search-panel"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={titleId}
+            >
+              <h2 id={titleId} className="sr-only">
+                Search Accurate Thermal Systems
+              </h2>
 
-            <div className="search-field">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
+              <div className="search-field">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
 
-              <input
-                ref={inputRef}
-                type="search"
-                className="search-input"
-                placeholder="Search equipment, applications, documents…"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                onKeyDown={onInputKeyDown}
-                role="combobox"
-                aria-expanded="true"
-                aria-controls={listId}
-                aria-autocomplete="list"
-                aria-activedescendant={
-                  navigable.length ? `${listId}-option-${activeIndex}` : undefined
-                }
-                autoComplete="off"
-                spellCheck="false"
-              />
+                <input
+                  ref={inputRef}
+                  type="search"
+                  className="search-input"
+                  placeholder="Search equipment, applications, documents…"
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  onKeyDown={onInputKeyDown}
+                  role="combobox"
+                  aria-expanded="true"
+                  aria-controls={listId}
+                  aria-autocomplete="list"
+                  aria-activedescendant={
+                    navigable.length ? `${listId}-option-${activeIndex}` : undefined
+                  }
+                  autoComplete="off"
+                  spellCheck="false"
+                />
 
-              <button type="button" className="search-clear" onClick={close} aria-label="Close search">
-                ESC
-              </button>
-            </div>
+                <button type="button" className="search-clear" onClick={close} aria-label="Close search">
+                  ESC
+                </button>
+              </div>
 
-            <div id={listId} className="search-results" role="listbox" aria-label="Search results">
-              {trimmed && results.length === 0 && (
-                <p className="search-empty">
-                  No matches for <b>{trimmed}</b>.
-                </p>
-              )}
+              <div id={listId} className="search-results" role="listbox" aria-label="Search results">
+                {trimmed && results.length === 0 && (
+                  <p className="search-empty">
+                    No matches for <b>{trimmed}</b>.
+                  </p>
+                )}
 
-              {trimmed &&
-                resultGroups.map((group) => (
-                  <div className="search-group" key={group.label}>
-                    <span className="search-group-label">{group.label}</span>
-                    {group.items.map((entry) => {
-                      const index = navigable.indexOf(entry);
-                      return (
-                        <div
-                          key={entry.id}
-                          id={`${listId}-option-${index}`}
-                          role="option"
-                          aria-selected={index === activeIndex}
-                          className={`search-row ${index === activeIndex ? "is-active" : ""}`}
-                          onMouseEnter={() => setActiveIndex(index)}
-                          onClick={() => go(entry)}
-                        >
-                          <b>
-                            <Highlighted text={entry.title} tokens={tokens} />
-                          </b>
-                          {entry.subtitle && (
-                            <small>
-                              <Highlighted text={entry.subtitle} tokens={tokens} />
-                            </small>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                ))}
-
-              {!trimmed &&
-                idleGroups.map((group) => (
-                  <div className="search-group" key={group.label}>
-                    <span className="search-group-label">{group.label}</span>
-                    {group.items.map((item) => {
-                      const index = navigable.indexOf(item);
-
-                      if (group.kind === "query") {
+                {trimmed &&
+                  resultGroups.map((group) => (
+                    <div className="search-group" key={group.label}>
+                      <span className="search-group-label">{group.label}</span>
+                      {group.items.map((entry) => {
+                        const index = navigable.indexOf(entry);
                         return (
                           <div
-                            key={item}
+                            key={entry.id}
                             id={`${listId}-option-${index}`}
                             role="option"
                             aria-selected={index === activeIndex}
-                            className={`search-row search-row-query ${index === activeIndex ? "is-active" : ""}`}
+                            className={`search-row ${index === activeIndex ? "is-active" : ""}`}
                             onMouseEnter={() => setActiveIndex(index)}
-                            onClick={() => setQuery(item)}
+                            onClick={() => go(entry)}
                           >
-                            <b>{item}</b>
+                            <b>
+                              <Highlighted text={entry.title} tokens={tokens} />
+                            </b>
+                            {entry.subtitle && (
+                              <small>
+                                <Highlighted text={entry.subtitle} tokens={tokens} />
+                              </small>
+                            )}
                           </div>
                         );
-                      }
+                      })}
+                    </div>
+                  ))}
 
-                      return (
-                        <div
-                          key={item.id}
-                          id={`${listId}-option-${index}`}
-                          role="option"
-                          aria-selected={index === activeIndex}
-                          className={`search-row ${index === activeIndex ? "is-active" : ""}`}
-                          onMouseEnter={() => setActiveIndex(index)}
-                          onClick={() => go(item)}
-                        >
-                          <b>{item.title}</b>
-                          {item.subtitle && <small>{item.subtitle}</small>}
-                        </div>
-                      );
-                    })}
-                  </div>
-                ))}
+                {!trimmed &&
+                  idleGroups.map((group) => (
+                    <div className="search-group" key={group.label}>
+                      <span className="search-group-label">{group.label}</span>
+                      {group.items.map((item) => {
+                        const index = navigable.indexOf(item);
+
+                        if (group.kind === "query") {
+                          return (
+                            <div
+                              key={item}
+                              id={`${listId}-option-${index}`}
+                              role="option"
+                              aria-selected={index === activeIndex}
+                              className={`search-row search-row-query ${index === activeIndex ? "is-active" : ""}`}
+                              onMouseEnter={() => setActiveIndex(index)}
+                              onClick={() => setQuery(item)}
+                            >
+                              <b>{item}</b>
+                            </div>
+                          );
+                        }
+
+                        return (
+                          <div
+                            key={item.id}
+                            id={`${listId}-option-${index}`}
+                            role="option"
+                            aria-selected={index === activeIndex}
+                            className={`search-row ${index === activeIndex ? "is-active" : ""}`}
+                            onMouseEnter={() => setActiveIndex(index)}
+                            onClick={() => go(item)}
+                          >
+                            <b>{item.title}</b>
+                            {item.subtitle && <small>{item.subtitle}</small>}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ))}
+              </div>
+
+              {trimmed && results.length > 0 && (
+                <button
+                  type="button"
+                  className="search-all"
+                  onClick={() => {
+                    recordQuery(trimmed);
+                    setOpen(false);
+                    setQuery("");
+                    router.push(`/search?q=${encodeURIComponent(trimmed)}`);
+                  }}
+                >
+                  View all results for &ldquo;{trimmed}&rdquo;
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              )}
             </div>
-
-            {trimmed && results.length > 0 && (
-              <button
-                type="button"
-                className="search-all"
-                onClick={() => {
-                  recordQuery(trimmed);
-                  setOpen(false);
-                  setQuery("");
-                  router.push(`/search?q=${encodeURIComponent(trimmed)}`);
-                }}
-              >
-                View all results for &ldquo;{trimmed}&rdquo;
-                <span aria-hidden="true">&rarr;</span>
-              </button>
-            )}
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </>
   );
 }
