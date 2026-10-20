@@ -16,11 +16,6 @@ export default function ftbl26S26Page() {
         <section className="ftbl26-product-hero">
           <div className="ftbl26-product-container">
 
-            <div className="ftbl2626-product-topline">
-              <span>ATS / FTB SERIES</span>
-              <span>MODEL 02</span>
-            </div>
-
             <div className="ftbl26-product-hero-grid">
 
               <div className="ftbl26-product-intro">

@@ -1266,13 +1266,15 @@
 ========================================================= */
 
 .ftbl12-product-hero {
-    padding: 20px 0 0;
+    /* 110px clears the absolutely positioned navbar */
+    padding: 130px 0 0;
     background: #f4fafc;
     border-bottom: 1px solid #d6e4e9;
 }
 
 .ftbl12-product-topline {
     padding-bottom: 12px;
+    justify-content: flex-end;
 }
 
 

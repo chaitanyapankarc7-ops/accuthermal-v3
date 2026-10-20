@@ -26,7 +26,8 @@
 
 .ftbsl6-breadcrumb {
   position: relative;
-  padding-top: 35px;
+  /* 145px clears the 110px absolutely positioned navbar */
+  padding-top: 145px;
   color: #66808e;
   font: 700 8px "IBM Plex Mono", monospace;
   letter-spacing: 1.5px;

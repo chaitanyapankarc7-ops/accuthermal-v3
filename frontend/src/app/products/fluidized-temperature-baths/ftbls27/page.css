@@ -26,12 +26,13 @@
         );
 
     border-bottom: 1px solid #d6e4e9;
-    padding: 35px 0 50px;
+    /* 110px clears the absolutely positioned navbar */
+    padding: 145px 0 50px;
 }
 
 .ftbl27-topline {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 
     padding-bottom: 18px;
 

@@ -21,11 +21,13 @@
 .ftbl26-product-hero {
   background: #f1f8fa;
   border-bottom: 1px solid #d4e2e8;
+  /* 110px clears the absolutely positioned navbar */
+  padding-top: 110px;
 }
 
 .ftbl26-product-topline {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 22px 0 18px;
   color: #009fe3;
   font-size: 9px;
