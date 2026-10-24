@@ -7395,41 +7395,20 @@ section {
   pointer-events: none;
 }
 
-.ftb-model-card:nth-child(1)::before {
-  content: "01";
+
+/* REMOVE DECORATIVE NUMBERS FROM ALL FTB MODEL CARDS */
+
+.ftb-model-card::before {
+  content: none !important;
+  display: none !important;
 }
 
-.ftb-model-card:nth-child(2)::before {
-  content: "02";
-}
-
-.ftb-model-card:nth-child(3)::before {
-  content: "03";
-}
-
-.ftb-model-card:nth-child(4)::before {
-  content: "04";
-}
-
-.ftb-model-card:nth-child(5)::before {
-  content: "05";
-}
-
-.ftb-model-card:nth-child(6)::before {
-  content: "06";
-}
-
-.ftb-model-card:nth-child(7)::before {
-  content: "07";
-}
-
-.ftb-model-card:nth-child(8)::before {
-  content: "08";
-}
-
+/* Prevent dark-card styles from restoring the numbers */
 .ftb-model-card-dark::before {
-  color: rgba(255, 255, 255, 0.055);
+  content: none !important;
+  display: none !important;
 }
+
 
 
 /* =========================================================
@@ -7785,4 +7764,239 @@ section {
     min-height: 205px;
   }
 
+}
+
+/* =========================================
+   FIX: MODEL CARD TEXT VISIBILITY ON HOVER
+========================================= */
+
+/* Keep text visible on every model card */
+.ftb-model-card,
+.ftb-model-card * {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Model name */
+.ftb-model-card h2,
+.ftb-model-card h3,
+.ftb-model-card .ftb-model-name {
+  color: #0b1b2a;
+}
+
+/* Capacity number and unit */
+.ftb-model-card .ftb-model-capacity,
+.ftb-model-card .ftb-model-number {
+  color: #0b1b2a;
+}
+
+/* Description and supporting text */
+.ftb-model-card p,
+.ftb-model-card .ftb-model-description {
+  color: #526b80;
+}
+
+/* View model button */
+.ftb-model-card .ftb-model-action,
+.ftb-model-card .ftb-model-action span {
+  color: #0b1b2a;
+}
+
+/* Hover: light cards */
+.ftb-model-card:not(.ftb-model-card-dark):hover h2,
+.ftb-model-card:not(.ftb-model-card-dark):hover h3,
+.ftb-model-card:not(.ftb-model-card-dark):hover p,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-name,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-capacity,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-number,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-description,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-action,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-action span {
+  color: #0b1b2a !important;
+}
+
+/* Hover: dark cards */
+.ftb-model-card-dark:hover h2,
+.ftb-model-card-dark:hover h3,
+.ftb-model-card-dark:hover p,
+.ftb-model-card-dark:hover .ftb-model-name,
+.ftb-model-card-dark:hover .ftb-model-capacity,
+.ftb-model-card-dark:hover .ftb-model-number,
+.ftb-model-card-dark:hover .ftb-model-description,
+.ftb-model-card-dark:hover .ftb-model-action,
+.ftb-model-card-dark:hover .ftb-model-action span {
+  color: #ffffff !important;
+}
+
+/* Keep the arrow visible */
+.ftb-model-card .ftb-model-action svg {
+  stroke: currentColor;
+}
+
+.ftb-model-card:hover .ftb-model-action {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================================
+   FIX MODEL CARD TEXT VISIBILITY
+   Visible BEFORE and AFTER hover
+========================================= */
+
+/* Light cards: dark readable text */
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-card-content,
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-card-content h2,
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-card-content h3,
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-card-content p,
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-action,
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-action span {
+  color: #0b1b2a !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Dark cards: white readable text */
+.ftb-model-card-dark,
+.ftb-model-card-dark .ftb-model-card-content,
+.ftb-model-card-dark .ftb-model-card-content h2,
+.ftb-model-card-dark .ftb-model-card-content h3,
+.ftb-model-card-dark .ftb-model-card-content p,
+.ftb-model-card-dark .ftb-model-action,
+.ftb-model-card-dark .ftb-model-action span {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Keep all text visible on hover too */
+.ftb-model-card:hover .ftb-model-card-content,
+.ftb-model-card:hover .ftb-model-card-content h2,
+.ftb-model-card:hover .ftb-model-card-content h3,
+.ftb-model-card:hover .ftb-model-card-content p,
+.ftb-model-card:hover .ftb-model-action,
+.ftb-model-card:hover .ftb-model-action span {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Keep the action label readable */
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-action,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-action span {
+  color: #0b1b2a !important;
+}
+
+.ftb-model-card-dark:hover .ftb-model-action,
+.ftb-model-card-dark:hover .ftb-model-action span {
+  color: #ffffff !important;
+}
+
+/* ==========================================
+   FTB MODEL CARDS — FINAL HOVER TEXT FIX
+========================================== */
+
+/* LIGHT CARDS: readable before hover */
+.ftb-model-card:not(.ftb-model-card-dark),
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-card-content {
+  color: #0b1b2a !important;
+}
+
+/* Capacity number */
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-capacity,
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-number {
+  color: #0b1b2a !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-text-fill-color: #0b1b2a !important;
+}
+
+/* Capacity unit: L / DEPTH */
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-capacity span,
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-number span {
+  color: #00aaff !important;
+  -webkit-text-fill-color: #00aaff !important;
+  opacity: 1 !important;
+}
+
+/* Model name and description */
+.ftb-model-card:not(.ftb-model-card-dark) h2,
+.ftb-model-card:not(.ftb-model-card-dark) h3,
+.ftb-model-card:not(.ftb-model-card-dark) p,
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-name,
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-description,
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-action,
+.ftb-model-card:not(.ftb-model-card-dark) .ftb-model-action span {
+  color: #0b1b2a !important;
+  -webkit-text-fill-color: #0b1b2a !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* HOVERED LIGHT CARDS: keep text readable
+   even if the background becomes dark */
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-capacity,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-number,
+.ftb-model-card:not(.ftb-model-card-dark):hover h2,
+.ftb-model-card:not(.ftb-model-card-dark):hover h3,
+.ftb-model-card:not(.ftb-model-card-dark):hover p,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-name,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-description,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-action,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-action span {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Keep capacity units cyan on hover */
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-capacity span,
+.ftb-model-card:not(.ftb-model-card-dark):hover .ftb-model-number span {
+  color: #00c8ff !important;
+  -webkit-text-fill-color: #00c8ff !important;
+}
+
+/* EXISTING DARK CARDS: white text at all times */
+.ftb-model-card-dark,
+.ftb-model-card-dark .ftb-model-card-content,
+.ftb-model-card-dark .ftb-model-capacity,
+.ftb-model-card-dark .ftb-model-number,
+.ftb-model-card-dark h2,
+.ftb-model-card-dark h3,
+.ftb-model-card-dark p,
+.ftb-model-card-dark .ftb-model-name,
+.ftb-model-card-dark .ftb-model-description,
+.ftb-model-card-dark .ftb-model-action,
+.ftb-model-card-dark .ftb-model-action span {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Cyan capacity units on dark cards */
+.ftb-model-card-dark .ftb-model-capacity span,
+.ftb-model-card-dark .ftb-model-number span {
+  color: #00c8ff !important;
+  -webkit-text-fill-color: #00c8ff !important;
+}
+
+/* REMOVE DECORATIVE BACKGROUND NUMBERS FROM ALL MODEL CARDS */
+
+.ftb-model-card-bg-number {
+  display: none !important;
+}
+
+/* Fallback if the numbers use a different class or pseudo-element */
+.ftb-model-card::before,
+.ftb-model-card::after {
+  /* Keep existing card decorations unchanged */
+}
+
+/* Hide numbered decorative elements inside every card */
+.ftb-model-card .ftb-model-card-content::before,
+.ftb-model-card .ftb-model-card-content::after {
+  content: none !important;
+  display: none !important;
 }
