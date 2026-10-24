@@ -1,4 +1,3 @@
-```jsx
 import Navbar from "../../../../components/Navbar";
 import Link from "next/link";
 import "./page.css";
@@ -265,4 +264,3 @@ export default function ModelECU1Page() {
     </>
   );
 }
-```
