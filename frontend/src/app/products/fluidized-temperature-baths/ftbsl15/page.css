@@ -14,12 +14,13 @@
 
 .ftbsl15-product-hero {
   background: linear-gradient(110deg, #eff8fa, #f9fcfd 62%, #fff);
-  padding: 34px 0 58px;
+  /* 110px clears the absolutely positioned navbar */
+  padding: 144px 0 58px;
 }
 
 .ftbsl15-product-topline {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-bottom: 22px;
   border-bottom: 1px solid #d5e5eb;
   color: #188fc1;
@@ -500,7 +501,7 @@
   }
 
   .ftbsl15-product-hero {
-    padding-top: 22px;
+    padding-top: 132px;
   }
 
   .ftbsl15-product-intro h1 {

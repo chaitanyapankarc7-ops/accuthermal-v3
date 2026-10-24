@@ -1266,13 +1266,15 @@
 ========================================================= */
 
 .ftbl12-product-hero {
-    padding: 20px 0 0;
+    /* 110px clears the absolutely positioned navbar */
+    padding: 130px 0 0;
     background: #f4fafc;
     border-bottom: 1px solid #d6e4e9;
 }
 
 .ftbl12-product-topline {
     padding-bottom: 12px;
+    justify-content: flex-end;
 }
 
 
@@ -2062,5 +2064,29 @@
 
     .ftbl12-support-box {
         padding: 25px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE FIX — stack section headings
+   In a flex row the heading text and paragraph were forced
+   side by side, squeezing the paragraph into a sliver that
+   overflowed past the right edge of the screen.
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .ftbl12-section-heading,
+    .ftbl12-specifications .ftbl12-section-heading,
+    .ftbl12-benefits .ftbl12-section-heading,
+    .ftbl12-included .ftbl12-section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .ftbl12-section-heading p {
+        max-width: none;
     }
 }

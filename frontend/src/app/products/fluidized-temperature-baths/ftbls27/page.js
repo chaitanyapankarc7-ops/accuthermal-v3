@@ -19,12 +19,6 @@ export default function FTBLL27Page() {
 
         <div className="ftbl27-container">
 
-          <div className="ftbl27-topline">
-            <span>ATS / FLUIDIZED TEMPERATURE BATHS</span>
-            <span>MODEL ATS1016</span>
-          </div>
-
-
           <div className="ftbl27-hero-grid">
 
             {/* LEFT */}

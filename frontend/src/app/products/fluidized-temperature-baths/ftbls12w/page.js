@@ -19,12 +19,6 @@ export default function FTBLL12WPage() {
 
         <div className="ftbl12w-container">
 
-          <div className="ftbl12w-topline">
-            <span>ATS / FLUIDIZED TEMPERATURE BATHS</span>
-            <span>MODEL ATS1017</span>
-          </div>
-
-
           <div className="ftbl12w-hero-grid">
 
             {/* LEFT */}

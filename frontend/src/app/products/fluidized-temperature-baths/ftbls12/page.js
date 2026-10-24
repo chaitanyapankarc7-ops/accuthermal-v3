@@ -17,11 +17,6 @@ export default function FTBLS12Page() {
 
           <div className="ftbl12-product-container">
 
-            <div className="ftbl12-product-topline">
-              <span>ATS / FTB SERIES</span>
-              <span>MODEL 01</span>
-            </div>
-
             <div className="ftbl12-product-hero-grid">
 
               {/* LEFT */}

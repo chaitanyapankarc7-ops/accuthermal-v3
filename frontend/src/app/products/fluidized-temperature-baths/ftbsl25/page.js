@@ -11,10 +11,6 @@ export default function FTBSL25Page() {
       <main className="ftbsl25-page">
         <section className="ftbsl25-product-hero">
           <div className="ftbsl25-product-container">
-            <div className="ftbsl25-product-topline">
-              <span>ATS / FTB SERIES</span>
-              <span>MODEL 08</span>
-            </div>
 
             <div className="ftbsl25-product-hero-grid">
               <div className="ftbsl25-product-intro">

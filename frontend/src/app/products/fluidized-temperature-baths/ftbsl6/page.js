@@ -29,10 +29,6 @@ export default function FTBSL6Page() {
 
             <div className="ftbsl6-hero-copy">
 
-              <span className="ftbsl6-kicker">
-                ATS / SL SERIES
-              </span>
-
               <h1>
                 FTBSL
                 <br />
