@@ -174,7 +174,7 @@ export default function ContactFormPage() {
                 Email:{" "}
                 <a href="mailto:sales@accuthermal.com">sales@accuthermal.com</a>
                 <br />
-                Phone: <a href="tel:6093263190">609-326-3190</a>, option #2
+                Phone: <a href="tel:6093263190">609-326-3190</a>
                 <br />
                 Fax: 862-229-0407
               </p>
