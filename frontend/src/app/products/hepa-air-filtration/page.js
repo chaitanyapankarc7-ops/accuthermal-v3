@@ -1,5 +1,6 @@
 "use client";
 import "./page.css";
+import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import Navbar from "../../../components/Navbar";
@@ -89,7 +90,7 @@ export default function HEPAAirFiltration() {
             {/* PRODUCT IMAGE */}
 
             <Image
-              src="/assets/images/hepa/hero-machine.png"
+              src="/assets/images/heap_air/Stainless_Steel_Mobile_Control_Cabinet__1_-removebg-preview.png"
               alt="HEPA Air Filtration System"
               width={700}
               height={700}
@@ -336,7 +337,7 @@ export default function HEPAAirFiltration() {
             <div className="hepa-system-image">
 
               <Image
-                src="/assets/images/hepa/ecu2.jpg"
+                src="/assets/images/heap_air/ecu2.png"
                 alt="ECU2 HEPA Air Filtration System"
                 width={800}
                 height={800}
@@ -817,6 +818,72 @@ export default function HEPAAirFiltration() {
       
 
 
+{/* ================= HEPA MODEL SELECTOR ================= */}
+
+<section className="hepa-models-section">
+  <div className="hepa-models-container">
+    <div className="hepa-models-heading">
+      <div>
+        <span className="hepa-models-eyebrow">
+          ATS / HEPA AIR FILTRATION
+        </span>
+        <h2>CHOOSE YOUR MODEL</h2>
+      </div>
+
+      <p>
+        Explore our HEPA air filtration models and find
+        the right system for your application.
+      </p>
+    </div>
+
+    <div className="hepa-models-grid">
+      <Link
+       href="/products/hepa-air-filtration/Model%20ECU1"
+        className="hepa-model-card"
+      >
+        <div className="hepa-model-card-content">
+          <span className="hepa-model-card-index">01 / MODEL</span>
+          <h3>Model ECU1</h3>
+          <p>HEPA Air Filtration</p>
+        </div>
+
+        <div className="hepa-model-card-visual">
+          <img
+            src="/assets/images/heap_air/Screenshot 2026-10-20 023426.png"
+            alt="HEPA ECU1 model"
+          />
+        </div>
+
+        <div className="hepa-model-card-link">
+          VIEW MODEL <span>→</span>
+        </div>
+      </Link>
+
+      <Link
+        href="/products/hepa-air-filtration/Model%20ECU2"
+        className="hepa-model-card"
+      >
+        <div className="hepa-model-card-content">
+          <span className="hepa-model-card-index">02 / MODEL</span>
+          <h3>Model ECU2</h3>
+          <p>HEPA Air Filtration</p>
+        </div>
+
+        <div className="hepa-model-card-visual">
+          <img
+            src="/assets/images/heap_air/Screenshot 2026-10-20 022321.png"
+            alt="HEPA ECU2 model"
+          />
+        </div>
+
+        <div className="hepa-model-card-link">
+          VIEW MODEL <span>→</span>
+        </div>
+      </Link>
+    </div>
+  </div>
+</section>
+
     
 
   
@@ -859,11 +926,15 @@ export default function HEPAAirFiltration() {
             </div>
 
 
+
+
+
             {/* =================================================
                 MEDIA AREA
             ================================================= */}
 
             <div className="hepa-process-media">
+
 
 
               {/* =================================================

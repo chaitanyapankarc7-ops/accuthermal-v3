@@ -4085,3 +4085,265 @@
   left: auto !important;
   top: -16px !important;
 }
+
+/* =========================================
+   HEPA AIR FILTRATION — MODEL SELECTOR
+========================================= */
+
+.hepa-models-section {
+  padding: 90px 7%;
+  background: #f5f9fb;
+  color: #0b1b2a;
+}
+
+.hepa-models-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hepa-models-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 38px;
+}
+
+.hepa-models-eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  color: #00aeef;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.hepa-models-heading h2 {
+  margin: 0;
+  color: #0b1b2a;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.hepa-models-heading p {
+  max-width: 320px;
+  margin: 0;
+  color: #617589;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* MODEL GRID */
+
+.hepa-models-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* MODEL CARD */
+
+.hepa-model-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 330px;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid #d2e2eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0b1b2a;
+  text-decoration: none;
+  isolation: isolate;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hepa-model-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(32, 91, 145, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 91, 145, 0.055) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.hepa-model-card:hover {
+  transform: translateY(-5px);
+  border-color: #00aeef;
+  background: #0b2940;
+  color: #ffffff;
+  box-shadow: 0 18px 40px rgba(11, 27, 42, 0.12);
+}
+
+.hepa-model-card-content {
+  position: relative;
+  z-index: 2;
+  max-width: 65%;
+}
+
+.hepa-model-card-index {
+  display: block;
+  margin-bottom: 22px;
+  color: #00aeef;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hepa-model-card h3 {
+  margin: 0 0 12px;
+  color: #0b1b2a;
+  font-size: clamp(27px, 3vw, 38px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.hepa-model-card:hover h3 {
+  color: #ffffff;
+}
+
+.hepa-model-card p {
+  margin: 0;
+  color: #617589;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.hepa-model-card:hover p {
+  color: #d1e1ec;
+}
+
+/* IMAGE AREA */
+
+.hepa-model-card-visual {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46%;
+  height: 75%;
+  overflow: hidden;
+  background: #edf6fb;
+  border-top-left-radius: 5px;
+}
+
+.hepa-model-card-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.hepa-model-card:hover .hepa-model-card-visual img {
+  transform: scale(1.05);
+}
+
+.hepa-model-card-link {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 28px;
+  color: #0b1b2a;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.hepa-model-card:hover .hepa-model-card-link {
+  color: #ffffff;
+}
+
+.hepa-model-card-link span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #00aeef;
+  border-radius: 50%;
+  color: #00aeef;
+  font-size: 17px;
+  transition: background 0.25s ease;
+}
+
+.hepa-model-card:hover .hepa-model-card-link span {
+  background: #00aeef;
+  color: #0b1b2a;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 760px) {
+  .hepa-models-section {
+    padding: 65px 20px;
+  }
+
+  .hepa-models-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hepa-models-heading h2 {
+    letter-spacing: -2px;
+  }
+
+  .hepa-models-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hepa-model-card {
+    min-height: 300px;
+    padding: 24px;
+  }
+
+  .hepa-model-card-content {
+    max-width: 62%;
+  }
+
+  .hepa-model-card-visual {
+    width: 44%;
+    height: 68%;
+  }
+}
+
+@media (max-width: 420px) {
+  .hepa-model-card {
+    min-height: 280px;
+    padding: 20px;
+  }
+
+  .hepa-model-card-content {
+    max-width: 65%;
+  }
+
+  .hepa-model-card-visual {
+    width: 43%;
+    height: 58%;
+  }
+
+  .hepa-model-card h3 {
+    font-size: 27px;
+  }
+}
+
+

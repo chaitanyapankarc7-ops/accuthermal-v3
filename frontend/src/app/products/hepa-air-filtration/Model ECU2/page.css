@@ -1,0 +1,362 @@
+
+.hepa-ecu-page {
+  --hepa-ink: #0b1b2a;
+  --hepa-blue: #205b91;
+  --hepa-cyan: #00aeef;
+  --hepa-paper: #f5f9fb;
+  --hepa-line: #d5e3eb;
+
+  background: #ffffff;
+  color: var(--hepa-ink);
+  overflow: hidden;
+}
+
+.hepa-ecu-page *,
+.hepa-ecu-page *::before,
+.hepa-ecu-page *::after {
+  box-sizing: border-box;
+}
+
+.hepa-ecu-hero {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  align-items: center;
+  gap: 64px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px 7%;
+}
+
+.hepa-ecu-hero-content {
+  max-width: 640px;
+}
+
+.hepa-ecu-eyebrow,
+.hepa-ecu-section-heading > span,
+.hepa-ecu-specifications > div > span,
+.hepa-ecu-bottom-cta > span {
+  display: block;
+  color: var(--hepa-cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  line-height: 1.8;
+}
+
+.hepa-ecu-hero h1 {
+  margin: 24px 0 8px;
+  font-size: clamp(76px, 10vw, 140px);
+  font-weight: 850;
+  letter-spacing: -0.085em;
+  line-height: 0.9;
+}
+
+.hepa-ecu-hero h1 span {
+  color: var(--hepa-blue);
+}
+
+.hepa-ecu-hero h2 {
+  margin: 22px 0 16px;
+  font-size: clamp(22px, 2.5vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.hepa-ecu-hero-content > p,
+.hepa-ecu-overview-copy,
+.hepa-ecu-feature-card p,
+.hepa-ecu-specifications p {
+  color: #617589;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.hepa-ecu-hero-content > p {
+  max-width: 540px;
+}
+
+.hepa-ecu-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.hepa-ecu-primary-btn,
+.hepa-ecu-secondary-btn {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 13px 18px;
+  border: 1px solid var(--hepa-blue);
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hepa-ecu-primary-btn {
+  background: var(--hepa-blue);
+  color: #ffffff;
+}
+
+.hepa-ecu-primary-btn:hover {
+  background: var(--hepa-ink);
+  border-color: var(--hepa-ink);
+  transform: translateY(-2px);
+}
+
+.hepa-ecu-secondary-btn {
+  background: #ffffff;
+  color: var(--hepa-blue);
+}
+
+.hepa-ecu-secondary-btn:hover {
+  background: var(--hepa-paper);
+  transform: translateY(-2px);
+}
+
+.hepa-ecu-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid var(--hepa-line);
+  border-radius: 5px;
+  background: linear-gradient(140deg, #f8fcfe, #eaf4fa);
+}
+
+.hepa-ecu-visual-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(32, 91, 145, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 91, 145, 0.07) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.hepa-ecu-orbit {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(0, 174, 239, 0.2);
+  border-radius: 50%;
+}
+
+.hepa-ecu-orbit-one {
+  width: 250px;
+  height: 250px;
+}
+
+.hepa-ecu-orbit-two {
+  width: 360px;
+  height: 360px;
+}
+
+.hepa-ecu-visual-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.hepa-ecu-visual-label span,
+.hepa-ecu-visual-label small {
+  color: var(--hepa-blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hepa-ecu-visual-label strong {
+  color: var(--hepa-ink);
+  font-size: clamp(76px, 9vw, 120px);
+  font-weight: 850;
+  letter-spacing: -8px;
+  line-height: 1;
+}
+
+.hepa-ecu-visual-index {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  color: rgba(32, 91, 145, 0.12);
+  font-size: 76px;
+  font-weight: 850;
+}
+
+.hepa-ecu-overview,
+.hepa-ecu-features {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 65px 7%;
+}
+
+.hepa-ecu-section-heading h2,
+.hepa-ecu-specifications h2,
+.hepa-ecu-bottom-cta h2 {
+  margin: 14px 0 0;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+
+.hepa-ecu-overview-copy {
+  max-width: 800px;
+  margin-top: 24px;
+}
+
+.hepa-ecu-features {
+  padding-top: 35px;
+  padding-bottom: 100px;
+}
+
+.hepa-ecu-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.hepa-ecu-feature-card {
+  min-height: 210px;
+  padding: 28px;
+  border: 1px solid var(--hepa-line);
+  border-radius: 4px;
+  background: #ffffff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hepa-ecu-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(11, 27, 42, 0.07);
+}
+
+.hepa-ecu-feature-number {
+  color: var(--hepa-cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hepa-ecu-feature-card h3 {
+  margin: 28px 0 8px;
+  font-size: 20px;
+}
+
+.hepa-ecu-feature-card p {
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+.hepa-ecu-specifications {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  padding: 65px 7%;
+  background: var(--hepa-paper);
+  border-top: 1px solid var(--hepa-line);
+  border-bottom: 1px solid var(--hepa-line);
+}
+
+.hepa-ecu-specifications > div {
+  max-width: 680px;
+}
+
+.hepa-ecu-specifications p {
+  margin-bottom: 0;
+}
+
+.hepa-ecu-bottom-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 80px 7%;
+  background: var(--hepa-ink);
+  color: #ffffff;
+}
+
+.hepa-ecu-bottom-cta h2 {
+  max-width: 700px;
+}
+
+@media (max-width: 900px) {
+  .hepa-ecu-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 70px 6%;
+  }
+
+  .hepa-ecu-visual {
+    min-height: 340px;
+  }
+
+  .hepa-ecu-feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hepa-ecu-specifications {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 55px 6%;
+  }
+
+  .hepa-ecu-overview,
+  .hepa-ecu-features {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+}
+
+@media (max-width: 560px) {
+  .hepa-ecu-hero {
+    padding: 48px 20px;
+  }
+
+  .hepa-ecu-hero h1 {
+    font-size: 84px;
+  }
+
+  .hepa-ecu-visual {
+    min-height: 280px;
+  }
+
+  .hepa-ecu-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hepa-ecu-primary-btn,
+  .hepa-ecu-secondary-btn {
+    width: 100%;
+  }
+
+  .hepa-ecu-overview,
+  .hepa-ecu-features {
+    padding: 48px 20px;
+  }
+
+  .hepa-ecu-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hepa-ecu-feature-card {
+    min-height: auto;
+  }
+
+  .hepa-ecu-specifications,
+  .hepa-ecu-bottom-cta {
+    padding: 48px 20px;
+  }
+}

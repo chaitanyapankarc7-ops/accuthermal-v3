@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import "./page.css";
+import "../../../components/FluidizedMobileCards.css";
 import Image from "next/image";
 import Link from "next/link";
 
