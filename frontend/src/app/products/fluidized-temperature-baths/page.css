@@ -570,6 +570,17 @@
         bottom: 10%;
     }
 
+    .ftb-temp-card,
+    .ftb-stability-card {
+        position: relative;
+        right: auto;
+        left: auto;
+        top: auto;
+        bottom: auto;
+        margin: 10px 0;
+        display: inline-block;
+    }
+
     .ftb-hero-bottom {
         display: none;
     }
@@ -4752,10 +4763,10 @@ body{
 }
 
 .ftb-feature-crosshair.horizontal {
-    width: 100%;
+    width: 70%;
     height: 1px;
 
-    left: 0;
+    left: 30%;
     top: 50%;
 }
 
@@ -4806,11 +4817,11 @@ body{
 
 
 .ftb-feature-crosshair.horizontal {
-    width: 100%;
+    width: 70%;
 
     height: 1px;
 
-    left: 0;
+    left: 30%;
 
     top: 50%;
 }
@@ -4994,7 +5005,7 @@ body{
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
     .ftb-feature-section {
         padding: 40px 0 60px;
@@ -5004,6 +5015,7 @@ body{
         width: calc(100% - 30px);
 
         min-height: 900px;
+        padding-bottom: 70px;
     }
 
     .ftb-feature-content {
