@@ -90,7 +90,7 @@ export default function HEPAAirFiltration() {
             {/* PRODUCT IMAGE */}
 
             <Image
-              src="\assets\images\heap_air\Stainless_Steel_Mobile_Control_Cabinet__1_-removebg-preview.png"
+              src="/assets/images/heap_air/Stainless_Steel_Mobile_Control_Cabinet__1_-removebg-preview.png"
               alt="HEPA Air Filtration System"
               width={700}
               height={700}
@@ -337,7 +337,7 @@ export default function HEPAAirFiltration() {
             <div className="hepa-system-image">
 
               <Image
-                src="\assets\images\heap_air\ecu2.png"
+                src="/assets/images/heap_air/ecu2.png"
                 alt="ECU2 HEPA Air Filtration System"
                 width={800}
                 height={800}
@@ -849,7 +849,7 @@ export default function HEPAAirFiltration() {
 
         <div className="hepa-model-card-visual">
           <img
-            src="\assets\images\heap_air\Screenshot 2026-10-20 023426.png"
+            src="/assets/images/heap_air/Screenshot 2026-10-20 023426.png"
             alt="HEPA ECU1 model"
           />
         </div>
@@ -871,7 +871,7 @@ export default function HEPAAirFiltration() {
 
         <div className="hepa-model-card-visual">
           <img
-            src="\assets\images\heap_air\Screenshot 2026-10-20 022321.png"
+            src="/assets/images/heap_air/Screenshot 2026-10-20 022321.png"
             alt="HEPA ECU2 model"
           />
         </div>
