@@ -4,16 +4,33 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Customers from "../components/Customers";
 
+const heroImages = [
+  {
+    src: "/assets/images/hero/ftbll12-breaker-plate-cleaning.jpg",
+    alt: "FTBLL12 fluidized temperature bath cleaning a breaker plate",
+  },
+  {
+    src: "/assets/images/hero/ftbll12-filter-cleaning-labeled.jpg",
+    alt: "FTBLL12 fluidized temperature bath cleaning a filter",
+  },
+  {
+    src: "/assets/images/hero/ftbll12-filter-cleaning.jpg",
+    alt: "FTBLL12 fluidized temperature bath cleaning a filter element",
+  },
+  {
+    src: "/assets/images/hero/nitinol-shape-setting-production.jpg",
+    alt: "Nitinol shape setting on an FTBLL12 fluidized temperature bath",
+  },
+  {
+    src: "/assets/images/hero/nitinol-shape-setting-square.jpg",
+    alt: "Nitinol square component after shape setting",
+  },
+];
+
 export default function Home() {
   const [progressWidth, setProgressWidth] = useState("0%");
   const [bubbles, setBubbles] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const heroImages = [
-    "/assets/images/imgs.jpeg",
-    "/assets/images/pictures_2.jpeg",
-    "/assets/images/pictures_3.jpeg"
-  ];
 
   // Scroll progress handler
   useEffect(() => {
@@ -60,13 +77,15 @@ export default function Home() {
     setBubbles(generatedBubbles);
   }, []);
 
-  // Hero slideshow interval timer
+  // Hero slideshow timer. A timeout per slide lets the fade finish and makes
+  // the progress line restart cleanly.
   useEffect(() => {
-    const timer = setInterval(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = setTimeout(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 4500); // Crossfade every 4.5 seconds
-    return () => clearInterval(timer);
-  }, [heroImages.length]);
+    }, 4500);
+    return () => clearTimeout(timer);
+  }, [currentImageIndex]);
 
   // Card 3D tilt handler
   const handleMouseMove = (e) => {
@@ -111,31 +130,31 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="blueprint" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "700px", position: "relative" }}>
-            {heroImages.map((src, idx) => (
-              <img
-                key={src}
-                src={src}
-                alt={`Accurate Thermal Systems Products ${idx + 1}`}
-                fetchPriority={idx === 0 ? "high" : "auto"}
-                decoding="async"
-                style={{
-                  width: "auto",
-                  height: "100%",
-                  maxHeight: "700px",
-                  objectFit: "contain",
-                  borderRadius: "8px",
-                  filter: "drop-shadow(0 20px 50px rgba(0, 0, 0, 0.45))",
-                  position: "absolute",
-                  top: 0,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  opacity: currentImageIndex === idx ? 1 : 0,
-                  transition: "opacity 1s ease-in-out",
-                  pointerEvents: currentImageIndex === idx ? "auto" : "none",
-                }} 
+          <div className="hero-visual">
+            <div className="hero-panel">
+              <div className="hero-panel-stage">
+                {heroImages.map((image, idx) => (
+                  <img
+                    key={image.src}
+                    src={image.src}
+                    alt={image.alt}
+                    fetchPriority={idx === 0 ? "high" : "auto"}
+                    decoding="async"
+                    aria-hidden={currentImageIndex !== idx}
+                    className={`hero-panel-img${currentImageIndex === idx ? " is-active" : ""}`}
+                  />
+                ))}
+              </div>
+              <span className="hero-panel-mark hero-panel-mark-tl" aria-hidden="true" />
+              <span className="hero-panel-mark hero-panel-mark-tr" aria-hidden="true" />
+              <span className="hero-panel-mark hero-panel-mark-bl" aria-hidden="true" />
+              <span className="hero-panel-mark hero-panel-mark-br" aria-hidden="true" />
+              <span
+                key={currentImageIndex}
+                className="hero-panel-progress"
+                aria-hidden="true"
               />
-            ))}
+            </div>
           </div>
 
         </div>

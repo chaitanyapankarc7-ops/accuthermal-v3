@@ -132,7 +132,7 @@ export default function Navbar({ activePage }) {
             </Link>
 
             <Link
-              href="/#technology"
+              href="/videos"
               className={current === "videos" ? "active" : ""}
             >
               VIDEOS
@@ -144,7 +144,7 @@ export default function Navbar({ activePage }) {
 
 
             {/* ================= MORE ================= */}
-            <div className="nav-dropdown">
+            <div className="nav-dropdown nav-dropdown-more">
 
               <a
                 href="#"
@@ -314,7 +314,7 @@ export default function Navbar({ activePage }) {
           </Link>
 
           <Link
-            href="/#technology"
+            href="/videos"
             className="mobile-sub-link"
             onClick={() => setMenuOpen(false)}
           >
