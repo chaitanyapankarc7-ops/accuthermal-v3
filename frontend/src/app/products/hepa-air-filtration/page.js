@@ -837,10 +837,10 @@ export default function HEPAAirFiltration() {
     </div>
 
     <div className="hepa-models-grid">
-      <Link
-       href="/products/hepa-air-filtration/Model%20ECU1"
-        className="hepa-model-card"
-      >
+        <Link
+    href="/products/hepa-air-filtration/ModelECU1"
+    className="hepa-model-card"
+  >
         <div className="hepa-model-card-content">
           <span className="hepa-model-card-index">01 / MODEL</span>
           <h3>Model ECU1</h3>
@@ -860,7 +860,7 @@ export default function HEPAAirFiltration() {
       </Link>
 
       <Link
-        href="/products/hepa-air-filtration/Model%20ECU2"
+        href="/products/hepa-air-filtration/ModelECU2"
         className="hepa-model-card"
       >
         <div className="hepa-model-card-content">
