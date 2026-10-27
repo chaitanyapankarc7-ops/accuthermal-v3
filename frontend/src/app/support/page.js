@@ -78,7 +78,10 @@ const INTEREST_OPTIONS = [
   { value: "dry-block", label: "Dry Block Temperature Calibrators" },
   { value: "hepa", label: "HEPA Air Filtration" },
   { value: "calibration-services", label: "Calibration Services" },
-  { value: "support-service", label: "Product or Application Support and Service" },
+  {
+    value: "support-service",
+    label: "Product or Application Support and Service",
+  },
   { value: "documentation", label: "Brochures and Documentation" },
   { value: "sample-cleaning", label: "Sample Cleaning" },
   { value: "sample-heat-treatment", label: "Sample Heat Treatment" },
@@ -86,14 +89,16 @@ const INTEREST_OPTIONS = [
 ];
 
 const US_STATES = [
-  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
-  "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois",
-  "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland",
-  "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana",
-  "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
-  "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
-  "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas",
-  "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming",
+  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
+  "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia",
+  "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+  "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
+  "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada",
+  "New Hampshire", "New Jersey", "New Mexico", "New York",
+  "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon",
+  "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina",
+  "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia",
+  "Washington", "West Virginia", "Wisconsin", "Wyoming",
 ];
 
 export default function SupportPage() {
@@ -109,34 +114,128 @@ export default function SupportPage() {
   const [zip, setZip] = useState("");
   const [message, setMessage] = useState("");
   const [interests, setInterests] = useState([]);
+
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const quoteRequested = interests.includes("quote");
 
   const toggleInterest = (value) => {
     setInterests((prev) =>
-      prev.includes(value) ? prev.filter((item) => item !== value) : [...prev, value]
+      prev.includes(value)
+        ? prev.filter((item) => item !== value)
+        : [...prev, value]
     );
   };
 
-  const handleSubmit = (e) => {
+  // Validate the form and send it to the Express backend.
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!firstName || !lastName || !email || !phone || !company) return;
-    setSubmitted(true);
+    setSubmitError("");
+
+    if (isSubmitting) return;
+
+    if (
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !email.trim() ||
+      !phone.trim() ||
+      !company.trim()
+    ) {
+      setSubmitError("Please complete all required fields.");
+      return;
+    }
+
+    if (
+      quoteRequested &&
+      (!address1.trim() ||
+        !city.trim() ||
+        !state.trim() ||
+        !zip.trim())
+    ) {
+      setSubmitError(
+        "Please complete your address, city, state, and ZIP/postal code for a quote."
+      );
+      return;
+    }
+
+    const payload = {
+      firstName: firstName.trim(),
+      lastName: lastName.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
+      company: company.trim(),
+      address1: address1.trim(),
+      address2: address2.trim(),
+      city: city.trim(),
+      state: state.trim(),
+      zip: zip.trim(),
+      interests,
+      message: message.trim(),
+      source: "support-page",
+    };
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/enquiries/support",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const data = await response.json().catch(() => null);
+
+      if (!data) {
+        throw new Error("The server returned an invalid response.");
+      }
+
+      if (!response.ok || !data.success) {
+        throw new Error(
+          data.errors?.[0]?.message ||
+            data.message ||
+            "Unable to submit your request. Please try again."
+        );
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Support form submission failed:", error);
+
+      setSubmitError(
+        error.message ||
+          "Unable to send your request right now. Please try again later."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("on");
+          if (entry.isIntersecting) {
+            entry.target.classList.add("on");
+          }
         });
       },
       { threshold: 0.12 }
     );
+
     const els = document.querySelectorAll(".reveal");
     els.forEach((el) => io.observe(el));
-    return () => els.forEach((el) => io.unobserve(el));
+
+    return () => {
+      els.forEach((el) => io.unobserve(el));
+      io.disconnect();
+    };
   }, []);
 
   return (
@@ -148,15 +247,19 @@ export default function SupportPage() {
         <div className="wrap">
           <div className="sup-hero-copy reveal">
             <h1>Support that doesn&apos;t stop at the sale.</h1>
+
             <p>
-              Three decades of combined experience supporting our products and applications, before
-              and after the sale. Ask us about your temperature measurement or application and we
-              will help you get more accuracy and performance from your equipment.
+              Three decades of combined experience supporting our products
+              and applications, before and after the sale. Ask us about your
+              temperature measurement or application and we will help you get
+              more accuracy and performance from your equipment.
             </p>
+
             <div className="buttons">
               <a className="btn primary" href="#contact">
                 Request support
               </a>
+
               <a className="btn" href="tel:6093263190">
                 Call 609-326-3190
               </a>
@@ -172,6 +275,7 @@ export default function SupportPage() {
             height={596}
             priority
           />
+
           <div className="sup-hero-chips">
             <span className="mono">ISO 17025 compliant</span>
             <span className="mono">30+ years combined experience</span>
@@ -187,11 +291,14 @@ export default function SupportPage() {
         <div className="wrap">
           <div className="section-top reveal">
             <div>
-              <div className="sup-label mono">01 / Product and application support</div>
+              <div className="sup-label mono">
+                01 / Product and application support
+              </div>
               <h2>
                 We are happy to assist with your temperature measurement and application questions.
               </h2>
             </div>
+
             <p>
               Three decades of combined experience means we have already seen the failure you are
               describing. Most support questions are answered on the first call, and the ones that
@@ -218,11 +325,14 @@ export default function SupportPage() {
         <div className="wrap">
           <div className="section-top reveal">
             <div>
-              <div className="sup-label mono">02 / Product service, repair and RMA</div>
+              <div className="sup-label mono">
+                02 / Product service, repair and RMA
+              </div>
               <h2>
                 In the unlikely event your ATS product needs repair or calibration.
               </h2>
             </div>
+
             <p>
               Contact us so we can issue an RMA number, or call 609-326-3190 and choose the option for
               service. Every job is documented before the instrument ships back to you.
@@ -241,13 +351,17 @@ export default function SupportPage() {
 
           <div className="sup-callout-grid">
             <div className="sup-callout reveal">
-              <div className="sup-label mono">Trade-in and competitive equipment</div>
+              <div className="sup-label mono">
+                Trade-in and competitive equipment
+              </div>
+
               <p>
                 In some instances, an aging piece of equipment may need a repair that cannot be
                 justified economically. In these scenarios, we would happily provide a trade-in
                 discount for new replacement equipment. We can also offer a discount for older
                 competitor products as well.
               </p>
+
               <Link className="sup-text-link" href="/form">
                 Discuss a trade-in <span aria-hidden="true">&#8594;</span>
               </Link>
@@ -255,13 +369,17 @@ export default function SupportPage() {
 
             <div className="sup-callout sup-callout-dark reveal">
               <div className="sup-label mono">Service line</div>
+
               <a className="sup-callout-phone" href="tel:6093263190">
                 609-326-3190
               </a>
+
               <p>
                 Choose the option for service when you call. For calibration quotations, sample
                 cleaning and heat treatment trials, email{" "}
-                <a href="mailto:sales@accuthermal.com">sales@accuthermal.com</a>.
+                <a href="mailto:sales@accuthermal.com">
+                  sales@accuthermal.com
+                </a>.
               </p>
             </div>
           </div>
@@ -275,11 +393,15 @@ export default function SupportPage() {
         <div className="wrap">
           <div className="section-top reveal">
             <div>
-              <div className="sup-label mono">03 / NIST traceable temperature calibration</div>
+              <div className="sup-label mono">
+                03 / NIST traceable temperature calibration
+              </div>
+
               <h2>
                 Economical calibration with low measurement uncertainties and a fast turnaround.
               </h2>
             </div>
+
             <p>
               We offer NIST traceable calibration services on a range of temperature instruments
               and sensors at economical prices with a fast turnaround. Our calibration services are
@@ -298,6 +420,7 @@ export default function SupportPage() {
 
           <div className="sup-instruments reveal">
             <div className="sup-label mono">We calibrate</div>
+
             <div className="sup-instrument-list">
               {CAL_INSTRUMENTS.map((instrument) => (
                 <span key={instrument}>{instrument}</span>
@@ -312,13 +435,22 @@ export default function SupportPage() {
 
           <div className="sup-downloads">
             {DOWNLOADS.map((download, i) => (
-              <a className="sup-download reveal" href={download.href} key={download.href}>
-                <span className="mono">{String(i + 1).padStart(2, "0")}</span>
+              <a
+                className="sup-download reveal"
+                href={download.href}
+                key={download.href}
+              >
+                <span className="mono">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
                 <div>
                   <b>{download.title}</b>
                   <small>{download.meta}</small>
                 </div>
+
                 <span className="sup-download-ext mono">PDF</span>
+
                 <span className="sup-download-arrow" aria-hidden="true">
                   &#8595;
                 </span>
@@ -338,6 +470,7 @@ export default function SupportPage() {
               <div className="sup-label mono">04 / Contact us</div>
               <h2>Get a quote, an RMA number, or an answer.</h2>
             </div>
+
             <p>
               Tell us what you need. If it is a quotation, a service visit or a technical question,
               the same engineers answer both.
@@ -349,11 +482,14 @@ export default function SupportPage() {
               {submitted ? (
                 <div className="form-success">
                   <span className="form-success-mark">&#10003;</span>
+
                   <h2>Thank you, {firstName}!</h2>
+
                   <p>
                     Your request has been received. An Accurate Thermal Systems engineer will contact
                     you shortly at <b>{email}</b>.
                   </p>
+
                   <Link className="btn primary" href="/">
                     Back to Home &#8594;
                   </Link>
@@ -365,23 +501,30 @@ export default function SupportPage() {
                       <label htmlFor="sup-first-name" className="visually-hidden">
                         First Name <span className="req">(Required)</span>
                       </label>
+
                       <input
                         id="sup-first-name"
                         type="text"
-                        placeholder="First"
+                        placeholder="First Name"
+                        maxLength={100}
+                        autoComplete="given-name"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                         required
                       />
                     </div>
+
                     <div className="form-field">
                       <label htmlFor="sup-last-name" className="visually-hidden">
                         Last Name <span className="req">(Required)</span>
                       </label>
+
                       <input
                         id="sup-last-name"
                         type="text"
-                        placeholder="Last"
+                        placeholder="Last Name"
+                        maxLength={100}
+                        autoComplete="family-name"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                         required
@@ -393,10 +536,13 @@ export default function SupportPage() {
                     <label htmlFor="sup-email">
                       Email <span className="req">(Required)</span>
                     </label>
+
                     <input
                       id="sup-email"
                       type="email"
                       placeholder="you@company.com"
+                      maxLength={254}
+                      autoComplete="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
@@ -407,10 +553,13 @@ export default function SupportPage() {
                     <label htmlFor="sup-phone">
                       Phone <span className="req">(Required)</span>
                     </label>
+
                     <input
                       id="sup-phone"
                       type="tel"
-                      placeholder="(000) 000-0000"
+                      placeholder="+1 (555) 000-0000"
+                      maxLength={30}
+                      autoComplete="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       required
@@ -419,21 +568,26 @@ export default function SupportPage() {
 
                   <div className="form-field">
                     <label htmlFor="sup-company">
-                      Company or Organization <span className="req">(Required)</span>
+                      Company <span className="req">(Required)</span>
                     </label>
+
                     <input
                       id="sup-company"
                       type="text"
                       placeholder="Company name"
+                      maxLength={150}
+                      autoComplete="organization"
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       required
                     />
                   </div>
-
-                  <fieldset className="sup-checkgroup">
+                                    <fieldset className="sup-checkgroup">
                     <legend>Area of Interest</legend>
-                    <p className="sup-checkgroup-hint">(Select all that apply.)</p>
+                    <p className="sup-checkgroup-hint">
+                      (Select all that apply.)
+                    </p>
+
                     <div className="sup-checkgroup-grid">
                       {INTEREST_OPTIONS.map((option) => (
                         <label className="sup-check" key={option.value}>
@@ -452,61 +606,88 @@ export default function SupportPage() {
 
                   {quoteRequested && (
                     <p className="sup-quote-note">
-                      If you selected &ldquo;Get a Quote,&rdquo; please provide your company postal
-                      address so we may accurately prepare your quotation.
+                      If you selected &ldquo;Get a Quote,&rdquo; please provide
+                      your company postal address so we may accurately prepare
+                      your quotation.
                     </p>
                   )}
 
                   <div className="form-field">
                     <label htmlFor="sup-address1">
-                      Address {quoteRequested && <span className="req">(Required)</span>}
+                      Address{" "}
+                      {quoteRequested && (
+                        <span className="req">(Required)</span>
+                      )}
                     </label>
+
                     <input
                       id="sup-address1"
                       type="text"
                       placeholder="Street Address"
+                      maxLength={200}
+                      autoComplete="address-line1"
                       value={address1}
                       onChange={(e) => setAddress1(e.target.value)}
                       required={quoteRequested}
                     />
                   </div>
+
                   <div className="form-field">
-                    <label htmlFor="sup-address2" className="visually-hidden">
+                    <label
+                      htmlFor="sup-address2"
+                      className="visually-hidden"
+                    >
                       Address Line 2
                     </label>
+
                     <input
                       id="sup-address2"
                       type="text"
                       placeholder="Address Line 2"
+                      maxLength={200}
+                      autoComplete="address-line2"
                       value={address2}
                       onChange={(e) => setAddress2(e.target.value)}
                     />
                   </div>
+
                   <div className="sup-address-row">
                     <div className="form-field">
-                      <label htmlFor="sup-city" className="visually-hidden">
+                      <label
+                        htmlFor="sup-city"
+                        className="visually-hidden"
+                      >
                         City
                       </label>
+
                       <input
                         id="sup-city"
                         type="text"
                         placeholder="City"
+                        autoComplete="address-level2"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                         required={quoteRequested}
                       />
                     </div>
+
                     <div className="form-field sup-field-state">
-                      <label htmlFor="sup-state" className="visually-hidden">
+                      <label
+                        htmlFor="sup-state"
+                        className="visually-hidden"
+                      >
                         State / Province / Region
                       </label>
+
                       <select
                         id="sup-state"
+                        autoComplete="address-level1"
                         value={state}
                         onChange={(e) => setState(e.target.value)}
                         required={quoteRequested}
                       >
                         <option value="">State</option>
+
                         {US_STATES.map((stateName) => (
                           <option key={stateName} value={stateName}>
                             {stateName}
@@ -514,14 +695,21 @@ export default function SupportPage() {
                         ))}
                       </select>
                     </div>
+
                     <div className="form-field sup-field-zip">
-                      <label htmlFor="sup-zip" className="visually-hidden">
+                      <label
+                        htmlFor="sup-zip"
+                        className="visually-hidden"
+                      >
                         ZIP / Postal Code
                       </label>
+
                       <input
                         id="sup-zip"
                         type="text"
                         placeholder="ZIP"
+                        maxLength={20}
+                        autoComplete="postal-code"
                         value={zip}
                         onChange={(e) => setZip(e.target.value)}
                         required={quoteRequested}
@@ -531,10 +719,12 @@ export default function SupportPage() {
 
                   <div className="form-field">
                     <label htmlFor="sup-message">Message</label>
+
                     <textarea
                       id="sup-message"
                       rows={5}
                       placeholder="Tell us about your equipment, process or calibration requirements."
+                      maxLength={3000}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                     />
@@ -542,14 +732,36 @@ export default function SupportPage() {
 
                   <div className="form-captcha">
                     <span className="captcha-box">
-                      <input type="checkbox" id="sup-captcha" required />
-                      <label htmlFor="sup-captcha">I&apos;m not a robot</label>
+                      <input
+                        type="checkbox"
+                        id="sup-captcha"
+                        required
+                      />
+                      <label htmlFor="sup-captcha">
+                        I&apos;m not a robot
+                      </label>
                     </span>
+
                     <span className="captcha-badge">reCAPTCHA</span>
                   </div>
 
-                  <button type="submit" className="btn primary form-submit">
-                    Send message &#8594;
+                  {submitError && (
+                    <p
+                      className="sup-submit-error"
+                      role="alert"
+                      aria-live="polite"
+                    >
+                      {submitError}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    className="btn primary form-submit"
+                    disabled={isSubmitting}
+                    aria-busy={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Send message →"}
                   </button>
                 </form>
               )}
@@ -572,7 +784,7 @@ export default function SupportPage() {
               <div className="contact-block">
                 <b>Service &amp; Orders:</b>
                 <p>
-                  Phone: <a href="tel:6093263190">609-326-3190</a>, option #2 for service
+                  Phone: <a href="tel:6093263190">609-326-3190</a>,
                   <br />
                   Fax: 862-229-0407
                 </p>
@@ -581,7 +793,9 @@ export default function SupportPage() {
               <div className="contact-block">
                 <b>Email</b>
                 <p>
-                  <a href="mailto:sales@accuthermal.com">sales@accuthermal.com</a>
+                  <a href="mailto:sales@accuthermal.com">
+                    sales@accuthermal.com
+                  </a>
                 </p>
               </div>
 
@@ -607,14 +821,17 @@ export default function SupportPage() {
             <div>
               <h2>Not sure where to start?</h2>
               <p>
-                Start with the application. It is the fastest way to get the right equipment,
-                media and temperature range on the first quote.
+                Start with the application. It is the fastest way to get the
+                right equipment, media and temperature range on the first
+                quote.
               </p>
             </div>
+
             <div className="buttons">
               <Link className="btn primary" href="/applications">
                 Browse applications
               </Link>
+
               <Link className="btn" href="/products/thermcal">
                 Explore products
               </Link>

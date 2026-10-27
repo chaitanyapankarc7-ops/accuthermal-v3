@@ -130,46 +130,46 @@ export default function ContactFormPage() {
                   </select>
                 </div>
 
-                <div className="form-row">
-                  <div className="form-field">
-                    <label htmlFor="first-name">
-                      Name <span className="req">(Required)</span>
-                    </label>
+            <div className="form-row">
+              <div className="form-field">
+                <label htmlFor="first-name">
+                  Name <span className="req">(Required)</span>
+                </label>
 
-                    <input
-                      id="first-name"
-                      name="firstName"
-                      type="text"
-                      placeholder="First"
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
-                      autoComplete="given-name"
-                      maxLength={100}
-                      required
-                    />
-                  </div>
+                <input
+                  id="first-name"
+                  name="firstName"
+                  type="text"
+                  placeholder="First Name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  autoComplete="given-name"
+                  maxLength={100}
+                  required
+                />
+              </div>
 
-                  <div className="form-field">
-                    <label
-                      htmlFor="last-name"
-                      className="visually-hidden"
-                    >
-                      Last Name <span className="req">(Required)</span>
-                    </label>
+              <div className="form-field">
+                <label
+                  htmlFor="last-name"
+                  className="last-name-label"
+                >
+                  Last Name <span className="req">(Required)</span>
+                </label>
 
-                    <input
-                      id="last-name"
-                      name="lastName"
-                      type="text"
-                      placeholder="Last"
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                      autoComplete="family-name"
-                      maxLength={100}
-                      required
-                    />
-                  </div>
-                </div>
+                <input
+                  id="last-name"
+                  name="lastName"
+                  type="text"
+                  placeholder="Last Name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  autoComplete="family-name"
+                  maxLength={100}
+                  required
+                />
+              </div>
+            </div>
 
                 <div className="form-field">
                   <label htmlFor="email">
