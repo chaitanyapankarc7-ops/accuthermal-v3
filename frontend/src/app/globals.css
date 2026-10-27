@@ -4605,11 +4605,16 @@ footer {
 }
 
 .customers-track {
-  display: grid;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-group {
-  grid-area: 1 / 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   opacity: 0;
   visibility: hidden;
   transform: translateY(14px);
@@ -4618,6 +4623,7 @@ footer {
 }
 
 .customer-group.active {
+  position: relative;
   opacity: 1;
   visibility: visible;
   transform: none;
