@@ -1235,12 +1235,12 @@ export default function FluidizedTemperatureBaths() {
       muted
       playsInline
       preload="metadata"
-      poster="/videos/posters/fluidized-process.jpg"
+      poster="/assets/videos/posters/fluidized-process.jpg"
       className="process-video-player"
       onPlay={() => setVideoPlaying(true)}
     >
       <source
-        src="/videos/MVI_6338.mp4"
+        src="/assets/videos/MVI_6338.mp4"
         type="video/mp4"
       />
     </video>

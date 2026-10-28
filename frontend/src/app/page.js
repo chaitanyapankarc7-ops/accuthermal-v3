@@ -6,23 +6,23 @@ import Customers from "../components/Customers";
 
 const heroImages = [
   {
-    src: "/assets/images/hero/ftbll12-breaker-plate-cleaning.jpg",
+    src: "/assets/images/hero-wide/ftbll12-breaker-plate-cleaning-wide.png",
     alt: "FTBLL12 fluidized temperature bath cleaning a breaker plate",
   },
   {
-    src: "/assets/images/hero/ftbll12-filter-cleaning-labeled.jpg",
+    src: "/assets/images/hero-wide/ftbll12-filter-cleaning-labeled-wide.png",
     alt: "FTBLL12 fluidized temperature bath cleaning a filter",
   },
   {
-    src: "/assets/images/hero/ftbll12-filter-cleaning.jpg",
+    src: "/assets/images/hero-wide/ftbll12-filter-cleaning-wide.png",
     alt: "FTBLL12 fluidized temperature bath cleaning a filter element",
   },
   {
-    src: "/assets/images/hero/nitinol-shape-setting-production.jpg",
+    src: "/assets/images/hero-wide/nitinol-shape-setting-production-wide.png",
     alt: "Nitinol shape setting on an FTBLL12 fluidized temperature bath",
   },
   {
-    src: "/assets/images/hero/nitinol-shape-setting-square.jpg",
+    src: "/assets/images/hero-wide/nitinol-shape-setting-square-wide.png",
     alt: "Nitinol square component after shape setting",
   },
 ];
@@ -31,6 +31,7 @@ export default function Home() {
   const [progressWidth, setProgressWidth] = useState("0%");
   const [bubbles, setBubbles] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isGalleryPaused, setIsGalleryPaused] = useState(false);
 
   // Scroll progress handler
   useEffect(() => {
@@ -80,12 +81,24 @@ export default function Home() {
   // Hero slideshow timer. A timeout per slide lets the fade finish and makes
   // the progress line restart cleanly.
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (
+      isGalleryPaused ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
     const timer = setTimeout(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
     }, 4500);
     return () => clearTimeout(timer);
-  }, [currentImageIndex]);
+  }, [currentImageIndex, isGalleryPaused]);
+
+  const goToImage = (idx) => {
+    setCurrentImageIndex((idx + heroImages.length) % heroImages.length);
+  };
+
+  const goToPreviousImage = () => goToImage(currentImageIndex - 1);
+  const goToNextImage = () => goToImage(currentImageIndex + 1);
 
   // Card 3D tilt handler
   const handleMouseMove = (e) => {
@@ -131,19 +144,53 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-visual">
-            <div className="hero-panel">
+            <div
+              className={`hero-panel${isGalleryPaused ? " is-paused" : ""}`}
+              onMouseEnter={() => setIsGalleryPaused(true)}
+              onMouseLeave={() => setIsGalleryPaused(false)}
+              onFocus={() => setIsGalleryPaused(true)}
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) {
+                  setIsGalleryPaused(false);
+                }
+              }}
+            >
               <div className="hero-panel-stage">
                 {heroImages.map((image, idx) => (
-                  <img
+                  <div
                     key={image.src}
-                    src={image.src}
-                    alt={image.alt}
-                    fetchPriority={idx === 0 ? "high" : "auto"}
-                    decoding="async"
                     aria-hidden={currentImageIndex !== idx}
-                    className={`hero-panel-img${currentImageIndex === idx ? " is-active" : ""}`}
-                  />
+                    className={`hero-panel-slide${currentImageIndex === idx ? " is-active" : ""}`}
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      fetchPriority={idx === 0 ? "high" : "auto"}
+                      decoding="async"
+                      className="hero-panel-img"
+                    />
+                  </div>
                 ))}
+                <button
+                  type="button"
+                  className="hero-panel-control hero-panel-control-prev"
+                  aria-label="Show previous hero image"
+                  onClick={goToPreviousImage}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m15 5-7 7 7 7" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  className="hero-panel-control hero-panel-control-next"
+                  aria-label="Show next hero image"
+                  onClick={goToNextImage}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7" />
+                  </svg>
+                </button>
               </div>
               <span className="hero-panel-mark hero-panel-mark-tl" aria-hidden="true" />
               <span className="hero-panel-mark hero-panel-mark-tr" aria-hidden="true" />
@@ -154,6 +201,18 @@ export default function Home() {
                 className="hero-panel-progress"
                 aria-hidden="true"
               />
+              <div className="hero-panel-indicators" aria-label="Hero image slides">
+                {heroImages.map((image, idx) => (
+                  <button
+                    key={image.src}
+                    type="button"
+                    className={`hero-panel-indicator${currentImageIndex === idx ? " is-active" : ""}`}
+                    aria-label={`Show hero image ${idx + 1}`}
+                    aria-current={currentImageIndex === idx ? "true" : undefined}
+                    onClick={() => goToImage(idx)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 

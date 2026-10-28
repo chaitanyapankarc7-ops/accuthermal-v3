@@ -962,7 +962,7 @@ export default function HEPAAirFiltration() {
                 >
 
                   <source
-                    src="/videos/ECU1 HEPA Air Filtration System.mp4"
+                    src="/assets/videos/ECU1 HEPA Air Filtration System.mp4"
                     type="video/mp4"
                   />
 

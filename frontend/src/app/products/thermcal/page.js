@@ -722,7 +722,7 @@ export default function ThermCalPage() {
         muted
         playsInline
         preload="metadata"
-        poster="/videos/posters/thermcal400.jpg"
+        poster="/assets/videos/posters/thermcal400.jpg"
         className="thermcal-video"
 
         onPlay={() => {
@@ -731,7 +731,7 @@ export default function ThermCalPage() {
       >
 
         <source
-          src="/videos/20150203_140542.mp4"
+          src="/assets/videos/20150203_140542.mp4"
           type="video/mp4"
         />
 
@@ -869,7 +869,7 @@ export default function ThermCalPage() {
         muted
         playsInline
         preload="metadata"
-        poster="/videos/posters/thermcal130.jpg"
+        poster="/assets/videos/posters/thermcal130.jpg"
         className="thermcal-video"
 
         onPlay={() => {
@@ -878,7 +878,7 @@ export default function ThermCalPage() {
       >
 
         <source
-          src="/videos/130.mp4"
+          src="/assets/videos/130.mp4"
           type="video/mp4"
         />
 

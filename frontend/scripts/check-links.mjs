@@ -12,7 +12,7 @@ const KNOWN_MISSING = new Set([
   "/assets/images/hepa/hero-machine.png",
   "/assets/images/hepa/ecu1.jpg",
   "/assets/images/hepa/ecu2.jpg",
-  "/videos/hepa-filtration.mp4",
+  "/assets/videos/hepa-filtration.mp4",
   "/downloads/ECU1-brochure.pdf",
   "/downloads/ECU2-brochure.pdf",
   "/downloads/hepa-safety-data.pdf",
