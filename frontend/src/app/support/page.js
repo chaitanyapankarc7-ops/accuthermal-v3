@@ -180,7 +180,7 @@ export default function SupportPage() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/enquiries/support",
+        "http://localhost:5000/api/enquiries/support.php",
         {
           method: "POST",
           headers: {

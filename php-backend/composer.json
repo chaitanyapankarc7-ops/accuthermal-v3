@@ -1,0 +1,9 @@
+{
+    "name": "accurate-thermal/enquiry-backend",
+    "description": "PHP enquiry backend for Accurate Thermal Systems",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "phpmailer/phpmailer": "^7.1"
+    }
+}
