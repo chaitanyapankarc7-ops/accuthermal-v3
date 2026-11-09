@@ -504,26 +504,110 @@ export default function ApplicationDetail() {
         </section>
       )}
 
-      {/* CUSTOMERS */}
-      <section className="app-detail-customers">
-        <div className="wrap">
-          <div className="app-section-header reveal">
-            <div>
-              <div className="eyebrow mono">{extendedContent ? "12 / CUSTOMERS" : "06 / CUSTOMERS"}</div>
-              <h2>Trusted by industry leaders.</h2>
-            </div>
-            <p>
-              Medical, chemical, and industrial teams rely on our systems.
-            </p>
-          </div>
-          <div className="app-detail-customer-placeholder reveal">
-            <div className="app-customer-slot">
-              <span>Customer Logos</span>
-              <small>Add from /assets/images/customers/{app.customerCategory}/</small>
-            </div>
-          </div>
+     
+
+{/* =========================================
+    CUSTOMER LOGOS — THERMAL CLEANING
+========================================= */}
+
+{(params.slug === "thermal-cleaning") && (() => {
+  const customers = [
+    { name: "Baxter", logo: "baxter.png" },
+    { name: "Belden", logo: "belden.png" },
+    { name: "Berry Plastics", logo: "berry-plastics.png" },
+    { name: "Cooper Standard", logo: "cooper-standard.jpg" },
+    { name: "Dynisco", logo: "dynisco.png" },
+    { name: "Encore Wire", logo: "encore-wire.png" },
+    { name: "Entegris", logo: "entegris.png" },
+    { name: "Evonik", logo: "evonik.png" },
+    { name: "General Cable", logo: "general-cable.png" },
+    { name: "IDEX Health & Science", logo: "idex.png" },
+    { name: "J.M. Smucker Company", logo: "jm-smucker.png" },
+      { name: "Baxter", logo: "baxter.png" },
+  { name: "Belden", logo: "belden.png" },
+  { name: "Berry Plastics", logo: "berry-plastics.png" },
+  { name: "Cooper Standard", logo: "cooper-standard.jpg" },
+  { name: "Dynisco", logo: "dynisco.png" },
+  { name: "Encore Wire", logo: "encore-wire.png" },
+  { name: "Entegris", logo: "entegris.png" },
+  { name: "Evonik", logo: "evonik.png" },
+  { name: "General Cable", logo: "general-cable.png" },
+  { name: "IDEX Health & Science", logo: "idex.png" },
+  { name: "J.M. Smucker Company", logo: "jm-smucker.png" },
+  { name: "Orbis", logo: "orbis.png" },
+  { name: "Parker Hannifin", logo: "parker-hannifin.png" },
+  { name: "PolyOne", logo: "polyone-logo.png" },
+  { name: "Saint-Gobain", logo: "saint-gobain.png" },
+  { name: "Southwire", logo: "southwire.png" },
+  { name: "Standridge", logo: "standridge.png" },
+  { name: "Teknor Apex", logo: "teknor.png" },
+  { name: "TI Automotive", logo: "TI-automotive.png" },
+  { name: "Trajan Scientific", logo: "trajan-scienific.png" },
+  { name: "UMass Lowell", logo: "umass.png" },
+  { name: "W. L. Gore", logo: "WL-Gore.png" },
+  { name: "ZEUS", logo: "zeus.png" },
+  { name: "Zimmer Biomet", logo: "zimmerbiomet.png" },
+  ];
+
+  return (
+    <section className="customer-logos-section">
+      <div className="customer-logos-heading">
+        <span className="customer-logos-eyebrow">
+          ATS / TRUSTED PARTNERS
+        </span>
+
+        <h2>Trusted by Industry Leaders</h2>
+
+        <p>
+          Demanding industries trust ATS thermal systems
+          for controlled, repeatable temperature performance.
+        </p>
+      </div>
+
+      <div className="customer-logos-meta">
+        <span>APPLICATION / THERMAL CLEANING</span>
+        <span>{String(customers.length).padStart(2, "0")} PARTNERS</span>
+      </div>
+
+   
+<div className="customer-logo-carousel">
+  {[0, 1].map((row) => {
+    const rowCustomers = customers.filter(
+      (_, index) => index % 2 === row
+    );
+
+    return (
+      <div
+        className={`customer-logo-marquee ${
+          row === 1 ? "reverse" : ""
+        }`}
+        key={row}
+      >
+        <div className="customer-logo-track">
+          {[...rowCustomers, ...rowCustomers].map(
+            (customer, index) => (
+              <article
+                className="customer-logo-card"
+                key={`${row}-${customer.name}-${index}`}
+              >
+                <img
+                  src={`/assets/images/customers/thermal-cleaning/${customer.logo}`}
+                  alt={`${customer.name} logo`}
+                  loading="lazy"
+                />
+              </article>
+            )
+          )}
         </div>
-      </section>
+      </div>
+    );
+  })}
+</div>
+    </section>
+  );
+})()}
+
+
 
       {/* CTA */}
       <section className="app-detail-cta">

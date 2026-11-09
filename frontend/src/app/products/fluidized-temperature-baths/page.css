@@ -47,7 +47,7 @@
 
     width: min(1200px, calc(100% - 80px));
 
-    min-height: 640px;
+    min-height: 700px;
 
     margin: 0 auto;
 
@@ -833,7 +833,7 @@
 
     .ftb-hero-content {
 
-        max-width: 760px;
+        max-width: 660px;
 
         margin: auto;
     }
@@ -4542,582 +4542,6 @@ body{
 
 }
 
-/* =========================================================
-   FLUIDIZED TEMPERATURE BATH
-   PRODUCT FEATURE SECTION
-========================================================= */
-
-.ftb-feature-section {
-    position: relative;
-
-    padding: 70px 0 100px;
-
-    background: #ffffff;
-
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   MAIN PANEL
-========================================================= */
-
-.ftb-feature-panel {
-    position: relative;
-
-    width: min(1200px, calc(100% - 100px));
-
-    min-height: 560px;
-
-    margin: 0 auto;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            110deg,
-            #e4f2f5 0%,
-            #eef6f7 45%,
-            #f3f0e9 100%
-        );
-
-    border: 1px solid #d4dee0;
-}
-
-
-/* =========================================================
-   TECHNICAL GRID
-========================================================= */
-
-.ftb-feature-grid {
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-        linear-gradient(
-            rgba(8, 36, 58, .035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(8, 36, 58, .035) 1px,
-            transparent 1px
-        );
-
-    background-size: 42px 42px;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   TECHNICAL RINGS
-========================================================= */
-
-.ftb-feature-ring {
-    position: absolute;
-
-    left: 50%;
-
-    top: 48%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-
-.ftb-feature-ring-1 {
-    width: 300px;
-    height: 300px;
-
-    border: 1px solid rgba(30, 110, 145, .18);
-}
-
-
-.ftb-feature-ring-2 {
-    width: 390px;
-    height: 390px;
-
-    border: 1px solid rgba(30, 110, 145, .13);
-}
-
-
-.ftb-feature-ring-3 {
-    width: 480px;
-    height: 480px;
-
-    border: 1px dashed rgba(30, 110, 145, .12);
-}
-
-
-/* =========================================================
-   LEFT CONTENT
-========================================================= */
-
-.ftb-feature-content {
-    position: absolute;
-
-    left: 42px;
-
-    top: 105px;
-
-    z-index: 5;
-
-    width: 330px;
-}
-
-
-.ftb-feature-kicker {
-    display: block;
-
-    margin-bottom: 22px;
-
-    color: #e7193f;
-
-    font-family: "IBM Plex Mono", monospace;
-
-    font-size: 8px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-}
-
-
-.ftb-feature-content h2 {
-    margin: 0;
-
-    color: #071827;
-
-    font-size: clamp(46px, 5vw, 70px);
-
-    line-height: .92;
-
-    letter-spacing: -3px;
-
-    font-weight: 800;
-}
-
-
-.ftb-feature-content p {
-    max-width: 285px;
-
-    margin: 28px 0 0;
-
-    padding-left: 15px;
-
-    border-left: 1px solid #00a7e8;
-
-    color: #637b88;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   CENTER PRODUCT
-========================================================= */
-
-/* =========================================================
-   CENTER PRODUCT
-========================================================= */
-
-.ftb-feature-product {
-    position: absolute;
-
-    /* MOVE THE PRODUCT LEFT */
-    left: 52%;
-
-    top: 50%;
-
-    /* KEEP ORIGINAL SIZE */
-    width: 480px;
-    height: 470px;
-
-    transform: translate(-50%, -50%);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    z-index: 3;
-}
-
-
-/* =========================================================
-   CROSSHAIR
-========================================================= */
-
-.ftb-feature-crosshair {
-    position: absolute;
-
-    background: rgba(20, 110, 145, .18);
-
-    pointer-events: none;
-}
-
-.ftb-feature-crosshair.horizontal {
-    width: 70%;
-    height: 1px;
-
-    left: 30%;
-    top: 50%;
-}
-
-.ftb-feature-crosshair.vertical {
-    width: 1px;
-    height: 100%;
-
-    left: 50%;
-    top: 0;
-}
-
-
-/* =========================================================
-   PRODUCT IMAGE
-========================================================= */
-
-.ftb-feature-machine {
-    position: relative;
-    z-index: 5;
-    width: 390px;
-    height: auto;
-    object-fit: contain;
-
-    transform: translateX(30px);
-
-    filter:
-        drop-shadow(
-            0 25px 25px rgba(0,0,0,.16)
-        );
-
-    transition: transform .5s ease;
-}
-
-
-.ftb-feature-product:hover .ftb-feature-machine {
-    transform: translateY(-8px) scale(1.02);
-}
-
-/* Crosshair */
-
-.ftb-feature-crosshair {
-    position: absolute;
-
-    background: rgba(20, 110, 145, .18);
-
-    pointer-events: none;
-}
-
-
-.ftb-feature-crosshair.horizontal {
-    width: 70%;
-
-    height: 1px;
-
-    left: 30%;
-
-    top: 50%;
-}
-
-
-.ftb-feature-crosshair.vertical {
-    width: 1px;
-
-    height: 100%;
-
-    left: 50%;
-
-    top: 0;
-}
-
-
-/* Product */
-
-.ftb-feature-machine {
-    position: relative;
-
-    z-index: 5;
-
-    width: 390px;
-
-    height: auto;
-
-    object-fit: contain;
-
-    filter:
-        drop-shadow(
-            0 25px 25px rgba(0,0,0,.16)
-        );
-
-    transition:
-        transform .5s ease;
-}
-
-
-.ftb-feature-product:hover .ftb-feature-machine {
-    transform: translateY(-8px) scale(1.02);
-}
-
-
-/* =========================================================
-   RIGHT APPLICATION MATRIX
-========================================================= */
-
-.ftb-feature-applications {
-    position: absolute;
-
-    right: 40px;
-
-    top: 145px;
-
-    width: 250px;
-
-    z-index: 5;
-}
-
-
-.ftb-app-kicker {
-    display: block;
-
-    margin-bottom: 20px;
-
-    color: #718893;
-
-    font-family: "IBM Plex Mono", monospace;
-
-    font-size: 7px;
-
-    letter-spacing: 2px;
-}
-
-
-.ftb-app-row {
-    display: grid;
-
-    grid-template-columns: 32px 1fr;
-
-    align-items: center;
-
-    min-height: 50px;
-
-    border-top: 1px solid rgba(7, 24, 39, .18);
-}
-
-
-.ftb-app-row:last-child {
-    border-bottom: 1px solid rgba(7, 24, 39, .18);
-}
-
-
-.ftb-app-row span {
-    color: #00a7e8;
-
-    font-family: "IBM Plex Mono", monospace;
-
-    font-size: 7px;
-}
-
-
-.ftb-app-row strong {
-    color: #071827;
-
-    font-size: 11px;
-
-    font-weight: 700;
-}
-
-
-/* =========================================================
-   BOTTOM FOOTER
-========================================================= */
-
-.ftb-feature-footer {
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 0;
-
-    height: 45px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 0 18px;
-
-    border-top: 1px solid rgba(7, 24, 39, .13);
-
-    color: #718893;
-
-    font-family: "IBM Plex Mono", monospace;
-
-    font-size: 6px;
-
-    letter-spacing: 1.5px;
-
-    z-index: 10;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .ftb-feature-panel {
-        width: calc(100% - 50px);
-    }
-
-    .ftb-feature-content {
-        left: 30px;
-    }
-
-    .ftb-feature-content h2 {
-        font-size: 52px;
-    }
-
-    .ftb-feature-applications {
-        right: 25px;
-        width: 210px;
-    }
-
-    .ftb-feature-machine {
-        width: 330px;
-    }
-
-    .ftb-feature-ring-3 {
-        width: 420px;
-        height: 420px;
-    }
-}
-
-
-@media (max-width: 900px) {
-
-    .ftb-feature-section {
-        padding: 40px 0 60px;
-    }
-
-    .ftb-feature-panel {
-        width: calc(100% - 30px);
-
-        min-height: 900px;
-        padding-bottom: 70px;
-    }
-
-    .ftb-feature-content {
-        position: relative;
-
-        left: auto;
-        top: auto;
-
-        width: auto;
-
-        padding: 55px 35px 0;
-    }
-
-    .ftb-feature-content h2 {
-        font-size: 52px;
-    }
-
-    .ftb-feature-product {
-        position: relative;
-
-        left: auto;
-        top: auto;
-
-        transform: none;
-
-        width: 100%;
-
-        height: 420px;
-
-        margin-top: 10px;
-    }
-
-    .ftb-feature-machine {
-        width: 340px;
-    }
-
-    .ftb-feature-applications {
-        position: relative;
-
-        right: auto;
-        top: auto;
-
-        width: calc(100% - 70px);
-
-        margin: 0 35px;
-    }
-
-    .ftb-feature-footer {
-        padding: 0 15px;
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    .ftb-feature-panel {
-        min-height: 850px;
-    }
-
-    .ftb-feature-content {
-        padding: 40px 25px 0;
-    }
-
-    .ftb-feature-content h2 {
-        font-size: 43px;
-
-        letter-spacing: -2px;
-    }
-
-    .ftb-feature-product {
-        height: 350px;
-    }
-
-    .ftb-feature-machine {
-        width: 280px;
-    }
-
-    .ftb-feature-ring-1 {
-        width: 240px;
-        height: 240px;
-    }
-
-    .ftb-feature-ring-2 {
-        width: 320px;
-        height: 320px;
-    }
-
-    .ftb-feature-ring-3 {
-        width: 390px;
-        height: 390px;
-    }
-
-    .ftb-feature-applications {
-        width: calc(100% - 50px);
-
-        margin: 0 25px;
-    }
-
-    .ftb-feature-footer {
-        font-size: 5px;
-    }
-}
 
 /* =========================================================
    DOWNLOADS / PRODUCT DOCUMENTATION
@@ -8224,4 +7648,1372 @@ section {
 .ftb-model-grid .ftb-model-card-dark:hover .ftb-model-index {
   color: #00c8ff !important;
   -webkit-text-fill-color: #00c8ff !important;
+}
+
+/* ============================================
+   FLUIDIZED TEMPERATURE BATHS — HERO
+   Left content | Center product | Right matrix
+============================================ */
+
+.ftb-feature-section {
+  width: 100%;
+  padding: 55px 24px;
+  background: #ffffff;
+}
+
+.ftb-feature-panel,
+.ftb-feature-panel * {
+  box-sizing: border-box;
+}
+
+.ftb-feature-panel {
+  --ftb-ink: #091b2b;
+  --ftb-blue: #087dbb;
+  --ftb-line: #cbdde7;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr) minmax(0, 0.85fr);
+  grid-template-rows: minmax(440px, 1fr) 44px;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--ftb-line);
+  background: linear-gradient(110deg, #e8f5f8 0%, #f2f5f1 100%);
+  color: var(--ftb-ink);
+  isolation: isolate;
+}
+
+/* Technical grid background */
+
+.ftb-feature-grid {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(#b9d3df45 1px, transparent 1px),
+    linear-gradient(90deg, #b9d3df45 1px, transparent 1px);
+  background-size: 29px 29px;
+}
+
+/* ============================================
+   LEFT: HEADING AND DESCRIPTION
+============================================ */
+
+.ftb-feature-content {
+  position: relative;
+  z-index: 3;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  min-width: 0;
+  padding: 48px 0 48px clamp(25px, 3.2vw, 48px);
+}
+
+.ftb-feature-kicker {
+  display: block;
+  margin-bottom: 25px;
+  color: #e32643;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.ftb-feature-content h2 {
+  max-width: 440px;
+  margin: 0 0 24px;
+  color: var(--ftb-ink);
+  font-size: clamp(40px, 4.1vw, 72px);
+  font-weight: 800;
+  line-height: 0.91;
+  letter-spacing: -0.065em;
+}
+
+.ftb-feature-content p {
+  max-width: 330px;
+  margin: 0;
+  padding: 3px 0 3px 15px;
+  border-left: 2px solid #13a9ef;
+  color: #607f94;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* ============================================
+   CENTER: IMAGE AND CIRCULAR RINGS
+============================================ */
+
+.ftb-feature-product {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  grid-column: 2;
+  grid-row: 1;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  justify-self: stretch;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  margin: 0;
+  padding: 25px;
+  overflow: visible;
+  transform: none;
+}
+
+/* All rings share the exact same center */
+
+.ftb-feature-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border: 1px solid #87b8d255;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.ftb-feature-ring-1 {
+  width: 58%;
+}
+
+.ftb-feature-ring-2 {
+  width: 73%;
+}
+
+.ftb-feature-ring-3 {
+  width: 88%;
+  border-style: dashed;
+  border-color: #87b8d244;
+}
+
+/* Decorative crosshairs stay inside the image area */
+
+.ftb-feature-crosshair {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  display: block;
+  background: #8ab9d044;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.ftb-feature-crosshair.horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+.ftb-feature-crosshair.vertical {
+  width: 1px;
+  height: 100%;
+}
+
+/* Product image sits in front of rings */
+
+.ftb-feature-product .ftb-feature-machine {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 86%;
+  max-width: 390px;
+  height: auto;
+  max-height: 365px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+  filter: drop-shadow(0 18px 18px #253f4b19);
+}
+
+/* ============================================
+   RIGHT: APPLICATION MATRIX
+============================================ */
+
+.ftb-feature-applications {
+  position: relative;
+  z-index: 3;
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  min-width: 0;
+  padding: 35px clamp(18px, 2.2vw, 35px) 35px 12px;
+}
+
+.ftb-app-kicker {
+  display: block;
+  margin-bottom: 22px;
+  color: #7692a5;
+  font-size: 9px;
+  letter-spacing: 2.2px;
+}
+
+.ftb-app-row {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 12px 0;
+  border-top: 1px solid #aabdc866;
+}
+
+.ftb-app-row:last-child {
+  border-bottom: 1px solid #aabdc866;
+}
+
+.ftb-app-row > span {
+  color: var(--ftb-blue);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.ftb-app-row strong {
+  color: var(--ftb-ink);
+  font-size: clamp(10px, 0.8vw, 12px);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* ============================================
+   BOTTOM META BAR
+============================================ */
+
+.ftb-feature-footer {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-width: 0;
+  padding: 0 20px;
+  border-top: 1px solid #afc6d055;
+  background: #ffffff0d;
+}
+
+.ftb-feature-footer span {
+  color: #7892a4;
+  font-size: 8px;
+  letter-spacing: 1.6px;
+}
+
+.ftb-feature-footer span:last-child {
+  text-align: right;
+}
+
+/* ============================================
+   TABLET
+============================================ */
+
+@media (max-width: 1050px) {
+  .ftb-feature-section {
+    padding: 35px 18px;
+  }
+
+  .ftb-feature-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto 44px;
+  }
+
+  .ftb-feature-content {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 50px 10px 30px 30px;
+  }
+
+  .ftb-feature-product {
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 380px;
+    padding: 20px;
+  }
+
+  .ftb-feature-applications {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding: 20px 30px 30px;
+  }
+
+  .ftb-feature-applications .ftb-app-kicker {
+    margin-bottom: 12px;
+  }
+
+  .ftb-feature-applications .ftb-app-row {
+    grid-template-columns: 25px minmax(0, 1fr);
+  }
+
+  .ftb-feature-content h2 {
+    font-size: clamp(42px, 6vw, 62px);
+  }
+
+  .ftb-feature-ring-1 {
+    width: 56%;
+  }
+
+  .ftb-feature-ring-2 {
+    width: 72%;
+  }
+
+  .ftb-feature-ring-3 {
+    width: 88%;
+  }
+
+  .ftb-feature-footer {
+    grid-row: 3;
+  }
+}
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 650px) {
+  .ftb-feature-section {
+    padding: 20px 12px;
+  }
+
+  .ftb-feature-panel {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto 44px;
+  }
+
+  .ftb-feature-content {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 35px 24px 10px;
+  }
+
+  .ftb-feature-kicker {
+    margin-bottom: 18px;
+  }
+
+  .ftb-feature-content h2 {
+    max-width: 100%;
+    margin-bottom: 18px;
+    font-size: clamp(42px, 12vw, 60px);
+  }
+
+  .ftb-feature-content p {
+    max-width: 380px;
+    font-size: 12px;
+  }
+
+  .ftb-feature-product {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    width: 100%;
+    max-width: 390px;
+    height: auto;
+    min-height: 310px;
+    padding: 20px;
+  }
+
+  .ftb-feature-ring-1 {
+    width: 52%;
+  }
+
+  .ftb-feature-ring-2 {
+    width: 68%;
+  }
+
+  .ftb-feature-ring-3 {
+    width: 84%;
+  }
+
+  .ftb-feature-product .ftb-feature-machine {
+    width: 82%;
+    max-width: 290px;
+    max-height: 275px;
+  }
+
+  .ftb-feature-applications {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 10px 24px 25px;
+  }
+
+  .ftb-app-row strong {
+    font-size: 12px;
+  }
+
+  .ftb-feature-footer {
+    grid-column: 1;
+    grid-row: 4;
+    padding: 0 12px;
+  }
+
+  .ftb-feature-footer span {
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+}
+
+/* =====================================================
+   FLUIDIZED TEMPERATURE BATH — FEATURE PANEL
+   Desktop: content | product | applications
+===================================================== */
+
+.ftb-feature-section {
+  padding: 55px 24px;
+  background: #fff;
+}
+
+.ftb-feature-panel {
+  --ftb-ink: #0a1c2b;
+  --ftb-muted: #6f899a;
+  --ftb-line: #cbdde5;
+
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr) minmax(210px, 0.8fr);
+  grid-template-rows: minmax(460px, auto) 42px;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 502px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--ftb-line);
+  background: linear-gradient(115deg, #e8f5f8 0%, #edf5f5 58%, #f3f3ed 100%);
+  color: var(--ftb-ink);
+}
+
+.ftb-feature-panel *,
+.ftb-feature-panel *::before,
+.ftb-feature-panel *::after {
+  box-sizing: border-box;
+}
+
+/* Technical grid background */
+
+.ftb-feature-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background-image:
+    linear-gradient(#a9cbd522 1px, transparent 1px),
+    linear-gradient(90deg, #a9cbd522 1px, transparent 1px);
+  background-size: 29px 29px;
+}
+
+/* Rings stay behind the product, not the text */
+
+.ftb-feature-ring {
+  position: absolute;
+  top: 46%;
+  left: 55.5%;
+  z-index: -2;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #7eafc72e;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.ftb-feature-ring-1 {
+  width: 240px;
+  height: 240px;
+}
+
+.ftb-feature-ring-2 {
+  width: 330px;
+  height: 330px;
+}
+
+.ftb-feature-ring-3 {
+  width: 420px;
+  height: 420px;
+  border-style: dashed;
+}
+
+/* Left column */
+
+.ftb-feature-content {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  min-width: 0;
+  padding: 40px 12px 40px  clamp(24px, 3vw, 44px);
+}
+
+.ftb-feature-kicker {
+  display: block;
+  margin-bottom: 25px;
+  color: #ed334b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.ftb-feature-content h2 {
+  max-width: 470px;
+  margin: 0 0 24px;
+  color: var(--ftb-ink);
+  font-size: clamp(42px, 4.3vw, 68px);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+}
+
+.ftb-feature-content p {
+  max-width: 330px;
+  margin: 0;
+  padding-left: 14px;
+  border-left: 2px solid #08a9e7;
+  color: var(--ftb-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* Center product column */
+
+.ftb-feature-product {
+  position: relative;
+  display: flex;
+  grid-column: 2;
+  grid-row: 1;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 32px 8px;
+  overflow: hidden;
+}
+
+.ftb-feature-crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  display: block;
+  margin: 0;
+  background: #86b2c52b;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.ftb-feature-crosshair.horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+.ftb-feature-crosshair.vertical {
+  width: 1px;
+  height: 100%;
+}
+
+.ftb-feature-machine {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  max-height: 350px;
+  margin: 0;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 12px 14px #172c3817);
+}
+
+/* Right application matrix */
+
+.ftb-feature-applications {
+  position: relative;
+  z-index: 2;
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  min-width: 0;
+  padding: 30px clamp(16px, 2vw, 30px) 30px 8px;
+}
+
+.ftb-app-kicker {
+  display: block;
+  margin-bottom: 20px;
+  color: #7590a2;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+.ftb-app-row {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+  min-height: 50px;
+  padding: 10px 0;
+  border-top: 1px solid #9fb8c638;
+}
+
+.ftb-app-row:last-child {
+  border-bottom: 1px solid #9fb8c638;
+}
+
+.ftb-app-row > span {
+  color: #159bd8;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.ftb-app-row strong {
+  color: var(--ftb-ink);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Bottom metadata strip */
+
+.ftb-feature-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  padding: 0 18px;
+  border-top: 1px solid #afc5d044;
+}
+
+.ftb-feature-footer span {
+  color: #7892a3;
+  font-size: 7px;
+  letter-spacing: 1.4px;
+}
+
+.ftb-feature-footer span:last-child {
+  text-align: right;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+  .ftb-feature-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(350px, auto) auto 42px;
+  }
+
+  .ftb-feature-content {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 32px 8px 32px 26px;
+  }
+
+  .ftb-feature-content h2 {
+    font-size: clamp(40px, 5.5vw, 58px);
+  }
+
+  .ftb-feature-product {
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 350px;
+  }
+
+  .ftb-feature-ring {
+    left: 72%;
+  }
+
+  .ftb-feature-ring-1 {
+    width: 190px;
+    height: 190px;
+  }
+
+  .ftb-feature-ring-2 {
+    width: 260px;
+    height: 260px;
+  }
+
+  .ftb-feature-ring-3 {
+    width: 330px;
+    height: 330px;
+  }
+
+  .ftb-feature-machine {
+    max-width: 290px;
+    max-height: 290px;
+  }
+
+  .ftb-feature-applications {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding: 20px 26px 28px;
+  }
+
+  .ftb-feature-footer {
+    grid-row: 3;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+  .ftb-feature-section {
+    padding: 20px 12px;
+  }
+
+  .ftb-feature-panel {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 280px auto 42px;
+  }
+
+  .ftb-feature-content {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 30px 22px 10px;
+  }
+
+  .ftb-feature-content h2 {
+    font-size: clamp(42px, 11vw, 56px);
+  }
+
+  .ftb-feature-product {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 280px;
+    padding: 12px;
+  }
+
+  .ftb-feature-ring {
+    left: 50%;
+    top: 48%;
+  }
+
+  .ftb-feature-ring-1 {
+    width: 155px;
+    height: 155px;
+  }
+
+  .ftb-feature-ring-2 {
+    width: 215px;
+    height: 215px;
+  }
+
+  .ftb-feature-ring-3 {
+    width: 275px;
+    height: 275px;
+  }
+
+  .ftb-feature-machine {
+    max-width: 245px;
+    max-height: 245px;
+  }
+
+  .ftb-feature-applications {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 12px 22px 24px;
+  }
+
+  .ftb-feature-footer {
+    grid-column: 1;
+    grid-row: 4;
+    padding: 0 10px;
+  }
+
+  .ftb-feature-footer span {
+    font-size: 6px;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* ==========================================
+   FTB FEATURE PANEL — FINAL POSITION FIX
+========================================== */
+
+.ftb-feature-section {
+  padding: 40px 24px;
+}
+
+.ftb-feature-panel {
+  width: 100%;
+  max-width: 1240px;
+  min-height: 0;
+  grid-template-columns: 0.95fr 1fr 0.8fr;
+  grid-template-rows: 440px 38px;
+}
+
+/* Keep the heading compact */
+.ftb-feature-content {
+  padding: 35px 0 35px 36px;
+}
+
+.ftb-feature-content h2 {
+  font-size: clamp(42px, 3.6vw, 58px);
+  line-height: 0.96;
+  margin-bottom: 20px;
+}
+
+.ftb-feature-content p {
+  max-width: 300px;
+  font-size: 12px;
+}
+
+/* Center the machine and stop it dropping below the panel */
+.ftb-feature-product {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 0;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.ftb-feature-machine {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: 320px;
+  max-height: 320px;
+  object-fit: contain;
+  object-position: center;
+  transform: translateY(-8px);
+}
+
+/* Keep decorative rings centered behind the product */
+.ftb-feature-ring {
+  left: 51%;
+  top: 46%;
+}
+
+.ftb-feature-ring-1 {
+  width: 210px;
+  height: 210px;
+}
+
+.ftb-feature-ring-2 {
+  width: 290px;
+  height: 290px;
+}
+
+.ftb-feature-ring-3 {
+  width: 370px;
+  height: 370px;
+}
+
+/* Keep applications in their own column */
+.ftb-feature-applications {
+  position: relative;
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  width: 100%;
+  margin: 0;
+  padding: 24px 24px 24px 8px;
+}
+
+.ftb-app-row {
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 8px;
+  min-height: 48px;
+}
+
+.ftb-app-row strong {
+  font-size: 10px;
+}
+
+/* Bottom strip */
+.ftb-feature-footer {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .ftb-feature-panel {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 360px auto 38px;
+  }
+
+  .ftb-feature-content {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 28px;
+  }
+
+  .ftb-feature-product {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .ftb-feature-machine {
+    max-width: 270px;
+    height: 280px;
+    max-height: 280px;
+  }
+
+  .ftb-feature-ring {
+    left: 50%;
+  }
+
+  .ftb-feature-applications {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding: 20px 28px;
+  }
+
+  .ftb-feature-footer {
+    grid-row: 3;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ftb-feature-section {
+    padding: 20px 12px;
+  }
+
+  .ftb-feature-panel {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 260px auto 42px;
+  }
+
+  .ftb-feature-content {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 28px 22px 8px;
+  }
+
+  .ftb-feature-content h2 {
+    font-size: 46px;
+  }
+
+  .ftb-feature-product {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 260px;
+  }
+
+  .ftb-feature-machine {
+    max-width: 230px;
+    height: 240px;
+    max-height: 240px;
+    transform: translateY(0);
+  }
+
+  .ftb-feature-applications {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 12px 22px 24px;
+  }
+
+  .ftb-feature-footer {
+    grid-column: 1;
+    grid-row: 4;
+    padding: 0 10px;
+  }
+}
+
+/* ==========================================
+   FINAL FIX — FTB PRODUCT IMAGE POSITION
+========================================== */
+
+/* Give the panel a stable positioning context */
+.ftb-feature-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34% 36% 30%;
+  grid-template-rows: 420px 38px;
+  min-height: 458px;
+  max-width: 1240px;
+  overflow: hidden;
+}
+
+/* Keep image in the center column */
+.ftb-feature-product {
+  position: relative !important;
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: stretch !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 20px !important;
+  overflow: visible !important;
+  transform: none !important;
+}
+
+/* Correct image size and vertical alignment */
+.ftb-feature-product img.ftb-feature-machine {
+  position: relative !important;
+  inset: auto !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 310px !important;
+  height: 310px !important;
+  max-height: 310px !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: translateY(-12px) !important;
+}
+
+/* Rings: center them on the product column */
+.ftb-feature-ring {
+  left: 52% !important;
+  top: 46% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ftb-feature-ring-1 {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.ftb-feature-ring-2 {
+  width: 270px !important;
+  height: 270px !important;
+}
+
+.ftb-feature-ring-3 {
+  width: 340px !important;
+  height: 340px !important;
+}
+
+/* Keep the application matrix in its own column */
+.ftb-feature-applications {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  position: relative !important;
+  align-self: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 24px 22px 24px 8px !important;
+  transform: none !important;
+}
+
+/* Keep heading in the left column */
+.ftb-feature-content {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  min-width: 0;
+  padding-left: 28px;
+}
+
+/* Footer stays below the three columns */
+.ftb-feature-footer {
+  grid-column: 1 / -1 !important;
+  grid-row: 2 !important;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .ftb-feature-panel {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 360px auto 38px;
+  }
+
+  .ftb-feature-content {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .ftb-feature-product {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  .ftb-feature-product img.ftb-feature-machine {
+    max-width: 270px !important;
+    height: 270px !important;
+    max-height: 270px !important;
+    transform: none !important;
+  }
+
+  .ftb-feature-applications {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    padding: 20px 28px !important;
+  }
+
+  .ftb-feature-footer {
+    grid-row: 3 !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ftb-feature-panel {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 270px auto 42px;
+  }
+
+  .ftb-feature-content {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    padding: 28px 22px 8px;
+  }
+
+  .ftb-feature-product {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+
+  .ftb-feature-product img.ftb-feature-machine {
+    max-width: 240px !important;
+    height: 240px !important;
+    max-height: 240px !important;
+  }
+
+  .ftb-feature-ring {
+    left: 50% !important;
+    top: 50% !important;
+  }
+
+  .ftb-feature-ring-1 {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .ftb-feature-ring-2 {
+    width: 205px !important;
+    height: 205px !important;
+  }
+
+  .ftb-feature-ring-3 {
+    width: 260px !important;
+    height: 260px !important;
+  }
+
+  .ftb-feature-applications {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    padding: 12px 22px 24px !important;
+  }
+
+  .ftb-feature-footer {
+    grid-column: 1 !important;
+    grid-row: 4 !important;
+  }
+}
+.ftb-feature-section {
+  width: 100%;
+  padding: 40px 24px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.ftb-feature-panel {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   FTB PRODUCT IMAGE — PREMIUM HOVER
+========================================= */
+
+.ftb-feature-product .ftb-feature-machine {
+  cursor: pointer;
+  transform: translateY(0) scale(1);
+  transform-origin: center center;
+  transition:
+    transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 450ms ease;
+  filter: drop-shadow(0 14px 18px rgba(9, 27, 43, 0.14));
+  will-change: transform, filter;
+}
+
+/* Lift and gently enlarge the machine */
+.ftb-feature-product:hover .ftb-feature-machine {
+  transform: translateY(-9px) scale(1.045);
+  filter: drop-shadow(0 24px 24px rgba(9, 27, 43, 0.23));
+}
+
+/* Subtle ring response when hovering the product area */
+.ftb-feature-ring {
+  transition:
+    border-color 400ms ease,
+    opacity 400ms ease;
+}
+
+.ftb-feature-product:hover ~ .ftb-feature-ring {
+  border-color: rgba(36, 100, 155, 0.35);
+}
+
+/* Accessibility: disable motion when requested */
+@media (prefers-reduced-motion: reduce) {
+  .ftb-feature-product .ftb-feature-machine {
+    transition: none;
+  }
+
+  .ftb-feature-product:hover .ftb-feature-machine {
+    transform: none;
+  }
+}
+
+/* =========================================
+   FTB IMAGE HOVER — OVERRIDE EXISTING CSS
+========================================= */
+
+.ftb-feature-product .ftb-feature-machine {
+  position: relative !important;
+  z-index: 5;
+  cursor: pointer;
+
+  transform: translateY(0) scale(1) !important;
+  transform-origin: center center;
+
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.5s ease !important;
+
+  filter: drop-shadow(0 12px 15px rgba(9, 27, 43, 0.15));
+}
+
+/* Trigger when hovering over the image */
+.ftb-feature-product .ftb-feature-machine:hover {
+  transform: translateY(-10px) scale(1.06) !important;
+  filter: drop-shadow(0 24px 22px rgba(9, 27, 43, 0.28));
+}
+
+/* Also trigger when hovering over the product container */
+.ftb-feature-product:hover .ftb-feature-machine {
+  transform: translateY(-10px) scale(1.06) !important;
+  filter: drop-shadow(0 24px 22px rgba(9, 27, 43, 0.28));
+}
+
+/* Bigger FTB product image */
+.ftb-feature-product .ftb-feature-machine {
+  width: 100% !important;
+  max-width: 390px !important;
+  height: 360px !important;
+  max-height: 360px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.5s ease !important;
+}
+
+/* Hover effect */
+.ftb-feature-product:hover .ftb-feature-machine,
+.ftb-feature-product .ftb-feature-machine:hover {
+  transform: translateY(-8px) scale(1.06) !important;
+  filter: drop-shadow(0 24px 22px rgba(9, 27, 43, 0.25));
+}
+
+/* Responsive image size */
+@media (max-width: 1000px) {
+  .ftb-feature-product .ftb-feature-machine {
+    max-width: 310px !important;
+    height: 300px !important;
+    max-height: 300px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .ftb-feature-product .ftb-feature-machine {
+    max-width: 260px !important;
+    height: 250px !important;
+    max-height: 250px !important;
+  }
+}
+
+/* FTB — INCREASE PRODUCT IMAGE SIZE */
+
+.ftb-feature-product {
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+.ftb-feature-product .ftb-feature-machine {
+  width: 125% !important;
+  max-width: none !important;
+  height: 390px !important;
+  max-height: 390px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: scale(1.15) !important;
+  transition:
+    transform 450ms ease,
+    filter 450ms ease !important;
+}
+
+/* Bigger on hover */
+.ftb-feature-product:hover .ftb-feature-machine {
+  transform: translateY(-8px) scale(1.23) !important;
+  filter: drop-shadow(0 22px 24px rgba(9, 27, 43, 0.22));
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .ftb-feature-product .ftb-feature-machine {
+    width: 115% !important;
+    height: 320px !important;
+    max-height: 320px !important;
+    transform: scale(1.08) !important;
+  }
+
+  .ftb-feature-product:hover .ftb-feature-machine {
+    transform: translateY(-6px) scale(1.15) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ftb-feature-product .ftb-feature-machine {
+    width: 100% !important;
+    max-width: 290px !important;
+    height: 280px !important;
+    max-height: 280px !important;
+    transform: scale(1.05) !important;
+  }
+
+  .ftb-feature-product:hover .ftb-feature-machine {
+    transform: translateY(-5px) scale(1.1) !important;
+  }
+}
+/* Common blue patterned product hero */
+.product-hero {
+    height: 660px;
+    min-height: 660px;
+    position: relative;
+    overflow: hidden;
+    background-color: #195887;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 38px 38px;
 }

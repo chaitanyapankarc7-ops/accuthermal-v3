@@ -4,7 +4,7 @@
 
 .hepa-hero {
     position: relative;
-    min-height: 650px;
+    min-height: 700px;
     background: #15578d;
     color: #fff;
     overflow: hidden;
@@ -23,7 +23,7 @@
     position: relative;
     z-index: 2;
     width: min(1200px, calc(100% - 80px));
-    min-height: 590px;
+    min-height: 700px;
     margin: auto;
     display: grid;
     grid-template-columns: .9fr 1.1fr;
@@ -4346,4 +4346,15 @@
   }
 }
 
-
+/* Common blue patterned product hero */
+.product-hero {
+    height: 660px;
+    min-height: 660px;
+    position: relative;
+    overflow: hidden;
+    background-color: #195887;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 38px 38px;
+}

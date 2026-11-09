@@ -58,7 +58,7 @@
 .thermcal-hero {
     position: relative;
 
-    min-height: 760px;
+    min-height:  700px;
 
     background:
         linear-gradient(
@@ -125,7 +125,7 @@
 
     width: min(1500px, 100%);
 
-    min-height: 760px;
+    min-height:700px;
 
     margin: auto;
 
@@ -3582,4 +3582,16 @@
   .thermcal-models-section {
     padding: 45px 0 55px;
   }
+}
+/* Common blue patterned product hero */
+.product-hero {
+    height: 660px;
+    min-height: 660px;
+    position: relative;
+    overflow: hidden;
+    background-color: #195887;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 38px 38px;
 }
