@@ -8,5 +8,8 @@ node_modules/
 Thumbs.db
 Desktop.ini
 
+# Large source video kept locally; use Git LFS or external storage if it must be versioned.
+private-assets/original-videos/ECU1 HEPA Air Filtration System.mp4
+
 # macOS
 .DS_Storegit status 
