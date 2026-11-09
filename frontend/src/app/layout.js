@@ -1,7 +1,9 @@
 import "./globals.css";
 import "./site-responsive.css";
+import "../components/ProductAssistant.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ProductAssistant from "../components/ProductAssistant";
 
 export const metadata = {
   title: "Accurate Thermal Systems | Precision Thermal Engineering",
@@ -46,6 +48,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <ProductAssistant />
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors");
 
 const enquiryRoutes = require("./routes/enquiryRoutes");
+const assistantRoutes = require("./routes/assistantRoutes");
 
 const app = express();
 
@@ -45,6 +46,7 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use("/api/enquiries", enquiryRoutes);
+app.use("/api/assistant", assistantRoutes);
 
 app.use((err, req, res, next) => {
   if (err.type === "entity.parse.failed") {
