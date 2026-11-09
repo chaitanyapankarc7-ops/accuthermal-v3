@@ -8015,3 +8015,99 @@ section {
   content: none !important;
   display: none !important;
 }
+
+/* All model cards share the same neutral default. The existing blue card
+   treatment is reserved for hover. */
+.ftb-model-grid .ftb-model-card,
+.ftb-model-grid .ftb-model-card-dark {
+  color: #0b1b2a;
+  border-color: #cbdde4;
+  background: #ffffff;
+}
+
+.ftb-model-grid .ftb-model-card:hover,
+.ftb-model-grid .ftb-model-card-dark:hover {
+  color: #ffffff;
+  border-color: #0b3653;
+  background: linear-gradient(135deg, #061a2b 0%, #0b3653 100%);
+}
+
+.ftb-model-grid .ftb-model-card:hover p,
+.ftb-model-grid .ftb-model-card-dark:hover p {
+  color: rgba(255, 255, 255, 0.68) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.68) !important;
+}
+
+.ftb-model-grid .ftb-model-card:hover .ftb-model-capacity span,
+.ftb-model-grid .ftb-model-card:hover .ftb-model-index,
+.ftb-model-grid .ftb-model-card-dark:hover .ftb-model-capacity span,
+.ftb-model-grid .ftb-model-card-dark:hover .ftb-model-index {
+  color: #00c8ff !important;
+  -webkit-text-fill-color: #00c8ff !important;
+}
+
+/* Give the three bottom-row model images the same visual weight as the top row. */
+.ftb-model-grid .ftb-model-card:nth-child(n + 6) .ftb-model-image {
+  width: 60%;
+}
+
+.ftb-model-grid .ftb-model-card:nth-child(n + 6) .ftb-model-image img {
+  width: 96%;
+  height: 96%;
+}
+
+.ftb-model-grid .ftb-model-card:nth-child(7) .ftb-model-image,
+.ftb-model-grid .ftb-model-card:nth-child(8) .ftb-model-image {
+  width: 68%;
+}
+
+.ftb-model-grid .ftb-model-card:nth-child(7) .ftb-model-image img,
+.ftb-model-grid .ftb-model-card:nth-child(8) .ftb-model-image img {
+  width: 106%;
+  height: 106%;
+}
+
+/* The former dark cards use the same dark text as every other card at rest. */
+.ftb-model-grid .ftb-model-card-dark,
+.ftb-model-grid .ftb-model-card-dark .ftb-model-card-content,
+.ftb-model-grid .ftb-model-card-dark h2,
+.ftb-model-grid .ftb-model-card-dark h3,
+.ftb-model-grid .ftb-model-card-dark .ftb-model-capacity,
+.ftb-model-grid .ftb-model-card-dark .ftb-model-action,
+.ftb-model-grid .ftb-model-card-dark .ftb-model-action span {
+  color: #0b1b2a !important;
+  -webkit-text-fill-color: #0b1b2a !important;
+}
+
+.ftb-model-grid .ftb-model-card-dark p {
+  color: #526b80 !important;
+  -webkit-text-fill-color: #526b80 !important;
+}
+
+.ftb-model-grid .ftb-model-card-dark .ftb-model-capacity span,
+.ftb-model-grid .ftb-model-card-dark .ftb-model-index {
+  color: #00a7e8 !important;
+  -webkit-text-fill-color: #00a7e8 !important;
+}
+
+.ftb-model-grid .ftb-model-card-dark:hover,
+.ftb-model-grid .ftb-model-card-dark:hover .ftb-model-card-content,
+.ftb-model-grid .ftb-model-card-dark:hover h2,
+.ftb-model-grid .ftb-model-card-dark:hover h3,
+.ftb-model-grid .ftb-model-card-dark:hover .ftb-model-capacity,
+.ftb-model-grid .ftb-model-card-dark:hover .ftb-model-action,
+.ftb-model-grid .ftb-model-card-dark:hover .ftb-model-action span {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.ftb-model-grid .ftb-model-card-dark:hover p {
+  color: rgba(255, 255, 255, 0.68) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.68) !important;
+}
+
+.ftb-model-grid .ftb-model-card-dark:hover .ftb-model-capacity span,
+.ftb-model-grid .ftb-model-card-dark:hover .ftb-model-index {
+  color: #00c8ff !important;
+  -webkit-text-fill-color: #00c8ff !important;
+}

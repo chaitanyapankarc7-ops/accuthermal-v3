@@ -155,26 +155,18 @@ export default function Navbar({ activePage }) {
               </a>
 <div className="nav-dropdown-menu">
 
-                <Link href="/#systems">
+                <Link href="/news">
                   <span>01</span>
                   <div>
-                    <b>Calibration Services</b>
-                    <small>ATS validation & support</small>
-                  </div>
-                </Link>
-
-                <Link href="/#resources">
-                  <span>02</span>
-                  <div>
-                    <b>Resources</b>
-                    <small>Technical library and brochures</small>
+                    <b>News</b>
+                    <small>Company updates and technical stories</small>
                   </div>
                 </Link>
 
                 <Link href="/#about">
-                  <span>03</span>
+                  <span>02</span>
                   <div>
-                    <b>About ATS</b>
+                    <b>About Us</b>
                     <small>Engineering experience & company history</small>
                   </div>
                 </Link>
@@ -341,19 +333,11 @@ export default function Navbar({ activePage }) {
           </span>
 
           <Link
-            href="/#systems"
+            href="/news"
             className="mobile-sub-link"
             onClick={() => setMenuOpen(false)}
           >
-            Calibration Services
-          </Link>
-
-          <Link
-            href="/#resources"
-            className="mobile-sub-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            Resources
+            News
           </Link>
 
           <Link
@@ -361,7 +345,7 @@ export default function Navbar({ activePage }) {
             className="mobile-sub-link"
             onClick={() => setMenuOpen(false)}
           >
-            About ATS
+            About Us
           </Link>
 
 

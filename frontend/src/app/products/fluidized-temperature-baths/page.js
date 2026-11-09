@@ -47,7 +47,7 @@ export default function FluidizedTemperatureBaths() {
       <div className="ftb-hero-buttons">
 
         <a
-          href="#overview"
+          href="#models"
           className="ftb-hero-primary"
         >
           EXPLORE MODELS
@@ -635,7 +635,7 @@ export default function FluidizedTemperatureBaths() {
 
        <div className="ftb-model-image">
   <img
-    src="/assets/images/fluidized/Screenshot 2026-10-08 212245.png"
+    src="/assets/images/fluidized/models/ftbls12-transparent.png"
     alt="FTBLS12"
   />
 </div>
@@ -711,13 +711,10 @@ export default function FluidizedTemperatureBaths() {
 
 
         <div className="ftb-model-image">
-<div className="ftb-model-image">
-  <img
-    src="/assets/images/fluidized/Screenshot 2026-10-08 212252.png"
-    alt="FTBLS26"
-  />
-</div>
-
+          <img
+            src="/assets/images/fluidized/models/ftbls26-transparent.png"
+            alt="FTBLS26"
+          />
         </div>
 
 
@@ -775,7 +772,7 @@ export default function FluidizedTemperatureBaths() {
         </div>
         <div className="ftb-model-image">
   <img
-    src="/assets/images/fluidized/Screenshot 2026-10-08 212257.png"
+    src="/assets/images/fluidized/models/ftbll12w-transparent.png"
     alt="FTBLL12W"
   />
 </div>
@@ -852,7 +849,7 @@ export default function FluidizedTemperatureBaths() {
         </div>
         <div className="ftb-model-image">
   <img
-    src="/assets/images/fluidized/Screenshot 2026-10-08 212306.png"
+    src="/assets/images/fluidized/models/ftbll27-transparent.png"
     alt="FTBLL27"
   />
 </div>
@@ -929,7 +926,7 @@ export default function FluidizedTemperatureBaths() {
         </div>
         <div className="ftb-model-image">
   <img
-    src="/assets/images/fluidized/Screenshot 2026-10-08 212313.png"
+    src="/assets/images/fluidized/models/ftbll47-transparent.png"
     alt="FTBLL47"
   />
 </div>
@@ -1005,7 +1002,7 @@ export default function FluidizedTemperatureBaths() {
         </div>
         <div className="ftb-model-image">
   <img
-    src="/assets/images/fluidized/Screenshot 2026-10-08 212319.png"
+    src="/assets/images/fluidized/models/ftbsl6-transparent.png"
     alt="FTBSL6"
   />
 </div>
@@ -1084,7 +1081,7 @@ export default function FluidizedTemperatureBaths() {
 
         <div className="ftb-model-image">
   <img
-    src="/assets/images/fluidized/Screenshot 2026-10-08 212344.png"
+    src="/assets/images/fluidized/models/ftbsl15-transparent.png"
     alt="FTBSL15"
   />
 </div>
@@ -1145,7 +1142,7 @@ export default function FluidizedTemperatureBaths() {
 
         <div className="ftb-model-image">
   <img
-    src="/assets/images/fluidized/Screenshot 2026-10-08 212351.png"
+    src="/assets/images/fluidized/models/ftbsl25-transparent.png"
     alt="FTBSL25"
   />
 </div>

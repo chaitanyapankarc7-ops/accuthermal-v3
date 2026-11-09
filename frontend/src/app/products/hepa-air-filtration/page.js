@@ -46,10 +46,10 @@ export default function HEPAAirFiltration() {
             <div className="hepa-hero-buttons">
 
               <a
-                href="#systems"
+                href="#models"
                 className="hepa-primary-btn"
               >
-                EXPLORE SYSTEMS
+                EXPLORE MODELS
                 <span>→</span>
               </a>
 
@@ -820,7 +820,7 @@ export default function HEPAAirFiltration() {
 
 {/* ================= HEPA MODEL SELECTOR ================= */}
 
-<section className="hepa-models-section">
+<section className="hepa-models-section" id="models">
   <div className="hepa-models-container">
     <div className="hepa-models-heading">
       <div>
