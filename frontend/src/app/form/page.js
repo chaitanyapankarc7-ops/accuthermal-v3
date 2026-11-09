@@ -226,23 +226,6 @@ export default function ContactFormPage() {
                   />
                 </div>
 
-                <div className="form-captcha">
-                  <span className="captcha-box">
-                    <input
-                      type="checkbox"
-                      id="captcha"
-                      name="captcha"
-                      required
-                    />
-
-                    <label htmlFor="captcha">
-                      I&apos;m not a robot
-                    </label>
-                  </span>
-
-                  <span className="captcha-badge">reCAPTCHA</span>
-                </div>
-
                 {submitError && (
                   <p className="form-error" role="alert">
                     {submitError}
@@ -302,9 +285,19 @@ export default function ContactFormPage() {
               </p>
             </div>
 
+            <div className="contact-map-card">
+              <iframe
+                className="contact-map-embed"
+                title="Map showing Accurate Thermal Systems in Hainesport, New Jersey"
+                src="https://www.google.com/maps?q=4104+Sylon+Blvd,+Hainesport,+NJ+08036&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
             <a
               className="btn contact-map-btn"
-              href="https://www.google.com/maps/search/?api=1&query=4104+Sylon+Blvd+Hainesport+NJ+08036"
+              href="https://www.google.com/maps/dir/?api=1&destination=4104+Sylon+Blvd+Hainesport+NJ+08036"
               target="_blank"
               rel="noopener noreferrer"
             >

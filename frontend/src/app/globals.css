@@ -5048,7 +5048,24 @@ box-sizing: border-box;
 }
 
 .contact-map-btn {
-  margin-top: 8px;
+  width: 100%;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.contact-map-card {
+  margin-top: 28px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #dce2e5;
+}
+
+.contact-map-embed {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border: 0;
 }
 
 @media (max-width: 900px) {
