@@ -1,0 +1,460 @@
+/*
+ * Site-wide responsive finishing layer.
+ * This preserves the existing page structures while making their spacing,
+ * type and media behave consistently between desktop, tablet and mobile.
+ */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+button,
+span,
+small {
+  overflow-wrap: anywhere;
+}
+
+.wrap {
+  width: min(var(--max), calc(100% - 48px));
+}
+
+/* Keep the full navigation usable before the mobile menu takes over. */
+@media (min-width: 901px) and (max-width: 1240px) {
+  .links {
+    gap: clamp(14px, 1.8vw, 24px);
+    font-size: 12px;
+  }
+
+  .nav-logo {
+    height: 70px;
+    max-width: 250px;
+  }
+
+  .nav-cta {
+    padding: 13px 16px;
+    font-size: 10px;
+  }
+}
+
+/* Tablet: preserve the two-part visual rhythm, but remove cramped columns. */
+@media (max-width: 1024px) {
+  .wrap {
+    width: min(var(--max), calc(100% - 40px));
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 28px;
+  }
+
+  .customer-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ftb-hero-inner,
+  .hepa-hero-inner,
+  .thermcal-hero-inner {
+    gap: 34px;
+  }
+
+  .hepa-system-card,
+  .hepa-process-media {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .thermcal-model-info,
+  .hepa-system-info {
+    padding: clamp(28px, 4vw, 52px);
+  }
+}
+
+/* Tablet / mobile transition. */
+@media (max-width: 900px) {
+  .hero,
+  .ftb-product-hero-new,
+  .hepa-hero,
+  .thermcal-hero {
+    min-height: auto;
+  }
+
+  .hero-inner,
+  .ftb-hero-inner,
+  .hepa-hero-inner,
+  .thermcal-hero-inner {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-inner {
+    padding-top: 118px;
+    padding-bottom: 56px;
+  }
+
+  .hero-copy,
+  .ftb-hero-content,
+  .hepa-hero-content,
+  .thermcal-hero-content {
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .hero .eyebrow,
+  .ftb-hero-kicker,
+  .hepa-hero-kicker,
+  .thermcal-eyebrow,
+  .thermcal-breadcrumb {
+    justify-content: center;
+  }
+
+  .hero p,
+  .ftb-hero-content p,
+  .hepa-hero-content p,
+  .thermcal-hero-content p {
+    margin-inline: auto;
+  }
+
+  .hero .buttons,
+  .ftb-hero-buttons,
+  .hepa-hero-buttons,
+  .thermcal-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-visual,
+  .ftb-hero-visual,
+  .hepa-hero-visual,
+  .thermcal-hero-product {
+    width: 100%;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  .blueprint,
+  .ftb-hero-visual,
+  .hepa-hero-visual,
+  .thermcal-hero-product {
+    min-height: 360px;
+  }
+
+  .intro-grid,
+  .system-story,
+  .tech-grid,
+  .custom-grid,
+  .family-showcase,
+  .final-grid,
+  .hepa-overview-container,
+  .hepa-systems-header,
+  .hepa-applications-header,
+  .hepa-downloads-container,
+  .thermcal-intro-grid,
+  .thermcal-section-heading,
+  .thermcal-features-header,
+  .thermcal-applications-heading,
+  .thermcal-download-grid,
+  .thermcal-cta-grid,
+  .sup-callout-grid,
+  .sup-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-top,
+  .hepa-overview-heading,
+  .hepa-systems-header,
+  .hepa-applications-header,
+  .hepa-process-header,
+  .hepa-downloads-intro,
+  .thermcal-section-heading,
+  .thermcal-features-header,
+  .thermcal-applications-heading,
+  .thermcal-specifications,
+  .apps-index-hero,
+  .apps-index-section-head,
+  .sup-hero,
+  .search-page {
+    text-align: center;
+  }
+
+  .eyebrow,
+  .sup-label,
+  .news-kicker,
+  .vid-label {
+    justify-content: center;
+  }
+
+  .section-top > p,
+  .hepa-systems-header > p,
+  .hepa-applications-header > p,
+  .hepa-process-header > p,
+  .thermcal-section-heading > p,
+  .thermcal-features-header > p,
+  .thermcal-applications-heading > p,
+  .apps-index-hero p,
+  .sup-hero p,
+  .search-page > .wrap > p {
+    max-width: 62ch;
+    margin-inline: auto;
+  }
+
+  .model-grid,
+  .selector-grid,
+  .apps-index-grid,
+  .sup-pillar-grid,
+  .sup-steps,
+  .hepa-application-grid,
+  .thermcal-feature-grid,
+  .news-grid,
+  .vid-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .thermcal-model,
+  .thermcal-model-second {
+    grid-template-columns: 1fr;
+  }
+
+  .thermcal-model-image,
+  .thermcal-model-placeholder,
+  .hepa-system-image,
+  .hepa-video-wrapper,
+  .hepa-video {
+    min-height: 360px;
+  }
+
+  .thermcal-model-info,
+  .hepa-system-info,
+  .sup-form-panel {
+    padding: 38px 30px;
+  }
+
+  .thermcal-table-wrapper,
+  .hepa-comparison-table-wrapper,
+  .sup-downloads,
+  .search-page-list {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* Phones: compact spacing without shrinking text into illegibility. */
+@media (max-width: 600px) {
+  .wrap {
+    width: calc(100% - 30px);
+  }
+
+  nav {
+    height: 76px;
+  }
+
+  .nav-logo {
+    height: 46px;
+    max-width: 160px;
+  }
+
+  .hero-inner,
+  .ftb-hero-inner,
+  .hepa-hero-inner,
+  .thermcal-hero-inner {
+    padding-top: 98px;
+    padding-bottom: 38px;
+  }
+
+  .hero h1,
+  .ftb-hero-content h1,
+  .hepa-hero-content h1,
+  .thermcal-hero-content h1,
+  .news-hero h1,
+  .vid-hero h1 {
+    font-size: clamp(38px, 13vw, 62px);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .hero p,
+  .ftb-hero-content p,
+  .hepa-hero-content p,
+  .thermcal-hero-content p,
+  .news-hero p,
+  .vid-hero-copy > p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .hero .buttons,
+  .ftb-hero-buttons,
+  .hepa-hero-buttons,
+  .thermcal-actions,
+  .buttons {
+    align-items: stretch;
+    flex-direction: column;
+    width: min(100%, 360px);
+    margin-inline: auto;
+  }
+
+  .hero .buttons > *,
+  .ftb-hero-buttons > *,
+  .hepa-hero-buttons > *,
+  .thermcal-actions > *,
+  .buttons > * {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .blueprint,
+  .ftb-hero-visual,
+  .hepa-hero-visual,
+  .thermcal-hero-product {
+    min-height: 280px;
+    height: min(88vw, 380px);
+  }
+
+  .hero-visual,
+  .ftb-hero-machine,
+  .hepa-hero-machine,
+  .thermcal-main-image {
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .model-grid,
+  .selector-grid,
+  .apps-index-grid,
+  .sup-pillar-grid,
+  .sup-steps,
+  .hepa-application-grid,
+  .thermcal-feature-grid,
+  .news-grid,
+  .vid-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    text-align: center;
+  }
+
+  .customers,
+  .intro,
+  .systems,
+  .hepa-overview,
+  .hepa-systems,
+  .hepa-applications,
+  .hepa-process,
+  .hepa-downloads,
+  .thermcal-intro,
+  .thermcal-series,
+  .thermcal-features,
+  .thermcal-applications,
+  .thermcal-specifications,
+  .apps-index-section,
+  .sup-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .section-top,
+  .news-section-heading,
+  .vid-section-top {
+    gap: 24px;
+    margin-bottom: 26px;
+  }
+
+  .section-top h2,
+  .hepa-overview-heading h2,
+  .hepa-systems-header h2,
+  .hepa-applications-header h2,
+  .hepa-process-header h2,
+  .hepa-downloads-intro h2,
+  .thermcal-intro-grid h2,
+  .thermcal-section-heading h2,
+  .thermcal-features-header h2,
+  .thermcal-applications-heading h2,
+  .thermcal-specifications h2,
+  .news-section-heading h2,
+  .vid-section-top h2 {
+    font-size: clamp(28px, 9vw, 46px);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+  }
+
+  .hepa-system-info,
+  .thermcal-model-info,
+  .sup-form-panel,
+  .sup-callout,
+  .news-footer-cta-inner {
+    padding: 28px 20px;
+  }
+
+  .hepa-system-image,
+  .hepa-video-wrapper,
+  .hepa-video,
+  .thermcal-model-image,
+  .thermcal-model-placeholder {
+    min-height: 270px;
+  }
+
+  .news-card-featured {
+    grid-column: auto;
+  }
+
+  .vid-featured-frame {
+    box-shadow: 7px 7px 0 rgba(7, 20, 33, 0.14);
+  }
+
+  .vid-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .sup-download,
+  .hepa-download-item {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .sup-download > :last-child,
+  .hepa-download-item > :last-child {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .customer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .customer-logo {
+    min-height: 84px;
+    padding: 14px;
+  }
+
+  .customer-logo img {
+    max-height: 54px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

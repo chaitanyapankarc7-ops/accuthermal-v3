@@ -25,10 +25,6 @@ export default function FluidizedTemperatureBaths() {
     {/* LEFT CONTENT */}
     <div className="ftb-hero-content">
 
-      <span className="ftb-hero-kicker">
-        THERMAL PROCESSING SYSTEMS
-      </span>
-
       <h1>
         Fluidized
         <br />

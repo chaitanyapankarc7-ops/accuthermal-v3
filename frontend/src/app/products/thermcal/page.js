@@ -1385,7 +1385,7 @@ export default function ThermCalPage() {
           </p>
 
           <a
-            href="#contact"
+            href="/form"
             className="thermcal-btn-primary"
           >
             REQUEST A QUOTE

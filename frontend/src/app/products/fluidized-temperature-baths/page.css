@@ -8067,6 +8067,120 @@ section {
   height: 106%;
 }
 
+/* =========================================================
+   FINAL FTB HERO RESPONSIVE OVERRIDES
+========================================================= */
+
+@media (max-width: 900px) {
+  .ftb-product-hero-new {
+    min-height: auto;
+  }
+
+  .ftb-hero-inner {
+    min-height: 0;
+    padding: 96px 0 52px;
+    align-items: start;
+  }
+
+  .ftb-hero-content {
+    padding-top: 0;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .ftb-hero-content p {
+    margin-inline: auto;
+  }
+
+  .ftb-hero-buttons {
+    justify-content: center;
+  }
+
+  .ftb-hero-visual {
+    height: 440px;
+    min-height: 0;
+    margin-inline: auto;
+  }
+
+  .ftb-hero-machine {
+    width: min(430px, 82vw) !important;
+    max-width: 82vw;
+    margin-inline: auto;
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .ftb-hero-inner {
+    width: calc(100% - 30px);
+    padding: 88px 0 36px;
+  }
+
+  .ftb-hero-content h1 {
+    font-size: clamp(42px, 13vw, 58px);
+    line-height: 0.96;
+    letter-spacing: -2.5px;
+  }
+
+  .ftb-hero-content p {
+    max-width: 35ch;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .ftb-hero-buttons {
+    width: min(100%, 340px);
+    margin-inline: auto;
+    align-items: stretch;
+  }
+
+  .ftb-hero-primary,
+  .ftb-hero-secondary {
+    width: 100%;
+  }
+
+  .ftb-hero-visual {
+    height: 330px;
+    margin-top: 8px;
+  }
+
+  .ftb-hero-machine {
+    width: min(320px, 82vw) !important;
+    max-width: 82vw;
+  }
+
+  .ftb-ring-1 {
+    width: 240px;
+    height: 240px;
+  }
+
+  .ftb-ring-2 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .ftb-ring-3 {
+    width: 360px;
+    height: 360px;
+  }
+
+  .ftb-temp-card {
+    top: 2%;
+    right: 2%;
+  }
+
+  .ftb-stability-card {
+    bottom: 2%;
+    left: 2%;
+  }
+
+  .ftb-temp-card,
+  .ftb-stability-card {
+    position: absolute;
+    margin: 0;
+  }
+}
+
 /* The former dark cards use the same dark text as every other card at rest. */
 .ftb-model-grid .ftb-model-card-dark,
 .ftb-model-grid .ftb-model-card-dark .ftb-model-card-content,

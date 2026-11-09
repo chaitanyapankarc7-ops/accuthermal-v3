@@ -138,7 +138,7 @@ export default function Home() {
               <a className="btn primary" href="#systems">
                 Explore Systems →
               </a>
-              <a className="btn" href="#contact">
+              <a className="btn" href="/form">
                 Talk to an Engineer
               </a>
             </div>
@@ -433,7 +433,7 @@ export default function Home() {
           <h2>
             Need a thermal system built around <span>your application?</span>
           </h2>
-          <a className="btn primary" href="mailto:sales@accuthermal.com">
+          <a className="btn primary" href="/form">
             Talk to an Engineer →
           </a>
         </div>

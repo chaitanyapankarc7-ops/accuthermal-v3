@@ -48,7 +48,7 @@ export default function FTBLL27Page() {
               <div className="ftbl27-actions">
 
                 <a
-                  href="/#contact"
+                  href="/form"
                   className="ftbl27-btn ftbl27-btn-primary"
                 >
                   REQUEST A QUOTE
@@ -657,7 +657,7 @@ export default function FTBLL27Page() {
               </p>
 
               <a
-                href="/#contact"
+                href="/form"
                 className="ftbl27-btn ftbl27-btn-primary"
               >
                 REQUEST A QUOTE

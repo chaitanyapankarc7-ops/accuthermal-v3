@@ -48,7 +48,7 @@ export default function FTBLL12WPage() {
               <div className="ftbl12w-actions">
 
                 <a
-                  href="/#contact"
+                  href="/form"
                   className="ftbl12w-btn ftbl12w-btn-primary"
                 >
                   REQUEST A QUOTE
@@ -577,7 +577,7 @@ export default function FTBLL12WPage() {
               </p>
 
               <a
-                href="/#contact"
+                href="/form"
                 className="ftbl12w-btn ftbl12w-btn-primary"
               >
                 REQUEST A QUOTE
