@@ -287,28 +287,39 @@ export default function ThermCal130Page() {
             </p>
           </div>
         </section>
+{/* ================= PRODUCT SUPPORT SECTION ================= */}
 
-        {/* ENQUIRY */}
-        <section className="tc130-cta">
-          <div className="tc130-container tc130-cta-inner">
-            <div>
-              <span>04 / NEXT STEP</span>
-              <h2>
-                Looking for
-                <br />
-                flexible calibration?
-              </h2>
-              <p>
-                Contact Accurate Thermal Systems to discuss your
-                ThermCal130 requirements.
-              </p>
-            </div>
+<section className="product-support-section">
+  <div className="product-support-container">
 
-            <a href="/form" className="tc130-btn tc130-btn-light">
-              ENQUIRE ABOUT THERMCAL130 <span>↗</span>
-            </a>
-          </div>
-        </section>
+    <div className="product-support-box">
+
+      <div className="product-support-heading">
+        <span>04 / NEXT STEP</span>
+
+        <h2>
+          NEED A CALIBRATION<br />
+          SOLUTION?
+        </h2>
+      </div>
+
+      <div className="product-support-info">
+        <p>
+          Contact Accurate Thermal Systems to discuss your
+          ThermCal130 requirements.
+        </p>
+
+        <a href="/form" className="product-support-btn">
+          ENQUIRE ABOUT THERMCAL130
+          <span>↗</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+       
 
         {/* BACK TO PRODUCT RANGE */}
         <div className="tc130-container tc130-back">

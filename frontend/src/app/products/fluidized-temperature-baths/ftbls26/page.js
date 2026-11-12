@@ -24,7 +24,7 @@ export default function ftbl26S26Page() {
                   FLUIDIZED TEMPERATURE BATH
                 </div>
 
-                <h1>ftbl26L26</h1>
+                <h1>FTBLL26</h1>
 
                 <p className="ftbl26-product-subtitle">
                   26 Litre Fluidized Temperature Bath
@@ -72,7 +72,7 @@ export default function ftbl26S26Page() {
 
                   <img
                     src="/assets/images/products/fluidizedbath.png"
-                    alt="ftbl26L26 Fluidized Temperature Bath"
+                    alt="FTBLL26 Fluidized Temperature Bath"
                     className="ftbl26-product-image"
                   />
 
@@ -107,7 +107,7 @@ export default function ftbl26S26Page() {
 
               <div className="ftbl26-overview-item">
                 <span>MODEL</span>
-                <strong>ftbl26L26</strong>
+                <strong>FTBLL26</strong>
               </div>
 
               <div className="ftbl26-overview-item">
@@ -143,7 +143,7 @@ export default function ftbl26S26Page() {
             <div className="ftbl26-section-heading">
 
               <div>
-                <span>WHY ftbl26L26</span>
+                <span>WHY FTBLL26</span>
 
                 <h2>
                   BUILT FOR<br />
@@ -333,7 +333,7 @@ export default function ftbl26S26Page() {
 
               <p>
                 Technical and ordering information for the
-                ftbl26L26 configuration.
+                FTBLL26 configuration.
               </p>
 
             </div>
@@ -343,7 +343,7 @@ export default function ftbl26S26Page() {
 
               <div className="ftbl26-spec-row">
                 <span>Model</span>
-                <strong>ftbl26L26</strong>
+                <strong>FTBLL26</strong>
               </div>
 
               <div className="ftbl26-spec-row">
@@ -558,55 +558,38 @@ export default function ftbl26S26Page() {
 
         </section>
 
+{/* ================= PRODUCT SUPPORT SECTION ================= */}
 
-        {/* =====================================================
-            SUPPORT / QUOTE
-        ===================================================== */}
+<section className="product-support-section">
+  <div className="product-support-container">
 
-        <section className="ftbl26-support">
+    <div className="product-support-box">
 
-          <div className="ftbl26-product-container">
+      <div className="product-support-heading">
+        <span>ATS SUPPORT</span>
 
-            <div className="ftbl26-support-box">
+        <h2>
+          NEED HELP<br />
+          CONFIGURING YOUR SYSTEM?
+        </h2>
+      </div>
 
-              <div>
+      <div className="product-support-info">
+        <p>
+          Lifetime technical, application and installation
+          support is available, along with maintenance support.
+        </p>
 
-                <span>
-                  ATS SUPPORT
-                </span>
+        <Link href="/form" className="product-support-btn">
+          REQUEST A QUOTE
+          <span>→</span>
+        </Link>
+      </div>
 
-                <h2>
-                  NEED HELP
-                  <br />
-                  CONFIGURING YOUR SYSTEM?
-                </h2>
+    </div>
 
-              </div>
-
-
-              <div className="ftbl26-support-info">
-
-                <p>
-                  Lifetime technical, application and
-                  installation support is available,
-                  along with maintenance support.
-                </p>
-
-                <Link
-                  href="/form"
-                  className="ftbl26-btn ftbl26-btn-primary"
-                >
-                  REQUEST A QUOTE
-                  <span>→</span>
-                </Link>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
+  </div>
+</section>
 
 
         {/* =====================================================

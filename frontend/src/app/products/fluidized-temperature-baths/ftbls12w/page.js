@@ -542,75 +542,54 @@ export default function FTBLL12WPage() {
 
       </section>
 
+{/* ================= PRODUCT SUPPORT SECTION ================= */}
 
-      {/* =====================================================
-          CTA
-      ===================================================== */}
+<section className="product-support-section">
+  <div className="product-support-container">
 
-      <section className="ftbl12w-support">
+    <div className="product-support-box">
 
-        <div className="ftbl12w-container">
+      <div className="product-support-heading">
+        <span>ATS SUPPORT</span>
 
-          <div className="ftbl12w-support-box">
+        <h2>
+          NEED HELP<br />
+          CONFIGURING YOUR SYSTEM?
+        </h2>
+      </div>
 
-            <div>
+      <div className="product-support-info">
+        <p>
+          Lifetime technical, application and installation
+          support is available, along with maintenance support.
+        </p>
 
-              <span>
-                NEED HELP CONFIGURING YOUR SYSTEM?
-              </span>
+        <Link href="/form" className="product-support-btn">
+          REQUEST A QUOTE
+          <span>→</span>
+        </Link>
+      </div>
 
-              <h2>
-                TALK TO AN
-                <br />
-                ATS ENGINEER.
-              </h2>
+    </div>
 
-            </div>
-
-
-            <div className="ftbl12w-support-info">
-
-              <p>
-                Contact Accurate Thermal Systems for quotation,
-                application assistance, installation support and
-                maintenance information.
-              </p>
-
-              <a
-                href="/form"
-                className="ftbl12w-btn ftbl12w-btn-primary"
-              >
-                REQUEST A QUOTE
-                <span>→</span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
+  </div>
+</section>
 
       {/* =====================================================
           BACK TO MODELS
       ===================================================== */}
 
-      <section className="ftbl12w-navigation">
-
-        <div className="ftbl12w-container">
-
-          <Link
-            href="/products/fluidized-temperature-baths"
-            className="ftbl12w-back"
-          >
-            ← BACK TO FLUIDIZED TEMPERATURE BATHS
-          </Link>
-
-        </div>
-
-      </section>
+     <section className="ftbl12-model-navigation">
+  <div className="ftbl12-product-container">
+    <Link
+      href="/products/fluidized-temperature-baths"
+      className="ftbl12-back-models"
+    >
+      <span className="back-arrow">←</span>
+      BACK TO ALL FLUIDIZED TEMPERATURE BATHS
+    </Link>
+  </div>
+</section>
 
     </main>
   );

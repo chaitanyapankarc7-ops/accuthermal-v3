@@ -9017,3 +9017,242 @@ section {
         linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
     background-size: 38px 38px;
 }
+/* =========================================
+   FTB SPECIFICATION TABLES - ACCESSIBILITY
+========================================= */
+
+.ftb-specifications-section {
+  padding: 70px 0;
+}
+
+.ftb-spec-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 45px;
+  border: 1px solid #d6dee5;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+/* Table */
+.ftb-spec-table {
+  width: 100%;
+  min-width: 750px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+/* Column headings */
+.ftb-spec-table thead th {
+  background: #0a1927;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 18px 14px;
+  text-align: center;
+  border-right: 1px solid #ffffff20;
+}
+
+/* Table cells */
+.ftb-spec-table tbody td {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #263747;
+  padding: 16px 14px;
+  text-align: center;
+  border-bottom: 1px solid #dce3e9;
+  border-right: 1px solid #e5eaf0;
+}
+
+/* Specification labels */
+.ftb-spec-table tbody td:first-child,
+.ftb-spec-table thead th:first-child {
+  width: 24%;
+  text-align: left;
+  font-weight: 700;
+}
+
+/* Specification label background */
+.ftb-spec-table tbody td:first-child {
+  background: #edf2f6;
+  color: #142b40;
+}
+
+/* Alternating rows */
+.ftb-spec-table tbody tr:nth-child(even) td:not(:first-child) {
+  background: #f6f8fa;
+}
+
+/* Hover */
+.ftb-spec-table tbody tr:hover td {
+  background-color: #eaf1f6;
+}
+
+/* Remove final borders */
+.ftb-spec-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ftb-spec-table th:last-child,
+.ftb-spec-table td:last-child {
+  border-right: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ftb-specifications-section {
+    padding: 45px 0;
+  }
+
+  .ftb-spec-table-wrap {
+    margin-bottom: 30px;
+  }
+
+  .ftb-spec-table {
+    min-width: 700px;
+  }
+
+  .ftb-spec-table thead th {
+    font-size: 14px;
+    padding: 15px 12px;
+  }
+
+  .ftb-spec-table tbody td {
+    font-size: 13px;
+    padding: 14px 12px;
+  }
+}
+
+/* ==========================================
+   FTB TWO-TABLE COMPARISON
+========================================== */
+
+.ftb-comparison-group {
+  margin-top: 45px;
+}
+
+.ftb-comparison-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+  margin-bottom: 18px;
+}
+
+.ftb-comparison-heading span {
+  display: block;
+  color: #c52c3c;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.ftb-comparison-heading h3 {
+  color: #0a2742;
+  font-size: 25px;
+  margin: 0;
+}
+
+.ftb-comparison-heading p {
+  color: #647586;
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+
+.ftb-comparison-wrap {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #d5e0ea;
+  border-radius: 5px;
+  margin-bottom: 45px;
+}
+
+.ftb-comparison-table {
+  width: 100%;
+  min-width: 900px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.ftb-comparison-table th {
+  background: #0a2742;
+  color: #fff;
+  padding: 20px 14px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  border: 1px solid #29445e;
+}
+
+.ftb-comparison-table th:first-child {
+  width: 25%;
+  text-align: left;
+}
+
+.ftb-comparison-table th small {
+  display: block;
+  color: #a8c9e8;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 7px;
+}
+
+.ftb-comparison-table td {
+  padding: 17px 14px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 1.65;
+  font-weight: 500;
+  color: #263b50;
+  border: 1px solid #dce5ee;
+  overflow-wrap: anywhere;
+}
+
+.ftb-comparison-table td:first-child {
+  background: #edf3f9;
+  color: #102d48;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.ftb-comparison-table tbody tr:nth-child(even) td:not(:first-child) {
+  background: #f6f9fc;
+}
+
+.ftb-comparison-table tbody tr:hover td {
+  background: #eaf2fa;
+}
+
+@media (max-width: 768px) {
+  .ftb-comparison-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ftb-comparison-heading h3 {
+    font-size: 21px;
+  }
+
+  .ftb-comparison-table {
+    min-width: 850px;
+  }
+
+  .ftb-comparison-table th {
+    font-size: 14px;
+    padding: 16px 12px;
+  }
+
+  .ftb-comparison-table td {
+    font-size: 13px;
+    padding: 14px 12px;
+  }
+}

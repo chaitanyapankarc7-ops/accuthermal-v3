@@ -255,22 +255,38 @@ export default function FTBSL15Page() {
           </div>
         </section>
 
-        <section className="ftbsl15-support">
-          <div className="ftbsl15-product-container">
-            <div className="ftbsl15-support-box">
-              <div>
-                <span>ATS SUPPORT</span>
-                <h2>NEED HELP<br />CONFIGURING YOUR SYSTEM?</h2>
-              </div>
-              <div className="ftbsl15-support-info">
-                <p>Contact ATS to confirm the right configuration and utilities for your application.</p>
-                <Link href="/form" className="ftbsl15-btn ftbsl15-btn-primary">
-                  REQUEST A QUOTE <span>→</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* ================= PRODUCT SUPPORT SECTION ================= */}
+
+<section className="product-support-section">
+  <div className="product-support-container">
+
+    <div className="product-support-box">
+
+      <div className="product-support-heading">
+        <span>ATS SUPPORT</span>
+
+        <h2>
+          NEED HELP<br />
+          CONFIGURING YOUR SYSTEM?
+        </h2>
+      </div>
+
+      <div className="product-support-info">
+        <p>
+          Lifetime technical, application and installation
+          support is available, along with maintenance support.
+        </p>
+
+        <Link href="/form" className="product-support-btn">
+          REQUEST A QUOTE
+          <span>→</span>
+        </Link>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
         <section className="ftbsl15-model-navigation">
           <div className="ftbsl15-product-container">

@@ -394,31 +394,38 @@ export default function FTBSL6Page() {
 
       </section>
 
+{/* ================= PRODUCT SUPPORT SECTION ================= */}
 
-      {/* =====================================================
-          CTA
-      ===================================================== */}
+<section className="product-support-section">
+  <div className="product-support-container">
 
-      <section className="ftbsl6-cta">
+    <div className="product-support-box">
 
-        <div className="ftbsl6-container">
+      <div className="product-support-heading">
+        <span>ATS SUPPORT</span>
 
-          <span>ATS / FTBSL6</span>
+        <h2>
+          NEED HELP<br />
+          CONFIGURING YOUR SYSTEM?
+        </h2>
+      </div>
 
-          <h2>
-            NEED A COMPACT
-            <br />
-            THERMAL SYSTEM?
-          </h2>
+      <div className="product-support-info">
+        <p>
+          Lifetime technical, application and installation
+          support is available, along with maintenance support.
+        </p>
 
-          <a href="/form">
-            REQUEST A QUOTE →
-          </a>
+        <Link href="/form" className="product-support-btn">
+          REQUEST A QUOTE
+          <span>→</span>
+        </Link>
+      </div>
 
-        </div>
+    </div>
 
-      </section>
-
+  </div>
+</section>
 
       <div className="ftbsl6-back">
 

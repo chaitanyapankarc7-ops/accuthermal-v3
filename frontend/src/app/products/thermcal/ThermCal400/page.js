@@ -282,27 +282,38 @@ export default function ThermCal400Page() {
           </div>
         </section>
 
-        {/* ENQUIRY CTA */}
-        <section className="tc400-cta">
-          <div className="tc400-container tc400-cta-inner">
-            <div>
-              <span>04 / NEXT STEP</span>
-              <h2>
-                Need a calibration
-                <br />
-                solution?
-              </h2>
-              <p>
-                Contact Accurate Thermal Systems to discuss your
-                ThermCal400 requirements.
-              </p>
-            </div>
+      {/* ================= PRODUCT SUPPORT SECTION ================= */}
 
-            <a href="/form" className="tc400-btn tc400-btn-light">
-              ENQUIRE ABOUT THERMCAL400 <span>↗</span>
-            </a>
-          </div>
-        </section>
+<section className="product-support-section">
+  <div className="product-support-container">
+
+    <div className="product-support-box">
+
+      <div className="product-support-heading">
+        <span>04 / NEXT STEP</span>
+
+        <h2>
+          NEED A CALIBRATION<br />
+          SOLUTION?
+        </h2>
+      </div>
+
+      <div className="product-support-info">
+        <p>
+          Contact Accurate Thermal Systems to discuss your
+          ThermCal400 requirements.
+        </p>
+
+        <a href="/form" className="product-support-btn">
+          ENQUIRE ABOUT THERMCAL400
+          <span>↗</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
         {/* BACK TO PRODUCT RANGE */}
         <div className="tc400-container tc400-back">

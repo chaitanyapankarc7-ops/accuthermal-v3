@@ -623,54 +623,38 @@ export default function FTBLL27Page() {
       </section>
 
 
-      {/* =====================================================
-          CTA
-      ===================================================== */}
+      {/* ================= PRODUCT SUPPORT SECTION ================= */}
 
-      <section className="ftbl27-support">
+<section className="product-support-section">
+  <div className="product-support-container">
 
-        <div className="ftbl27-container">
+    <div className="product-support-box">
 
-          <div className="ftbl27-support-box">
+      <div className="product-support-heading">
+        <span>ATS SUPPORT</span>
 
-            <div>
+        <h2>
+          NEED HELP<br />
+          CONFIGURING YOUR SYSTEM?
+        </h2>
+      </div>
 
-              <span>
-                NEED HELP CONFIGURING YOUR SYSTEM?
-              </span>
+      <div className="product-support-info">
+        <p>
+          Lifetime technical, application and installation
+          support is available, along with maintenance support.
+        </p>
 
-              <h2>
-                TALK TO AN
-                <br />
-                ATS ENGINEER.
-              </h2>
+        <Link href="/form" className="product-support-btn">
+          REQUEST A QUOTE
+          <span>→</span>
+        </Link>
+      </div>
 
-            </div>
+    </div>
 
-
-            <div className="ftbl27-support-info">
-
-              <p>
-                Contact Accurate Thermal Systems for quotation,
-                application assistance, installation support and
-                maintenance information.
-              </p>
-
-              <a
-                href="/form"
-                className="ftbl27-btn ftbl27-btn-primary"
-              >
-                REQUEST A QUOTE
-                <span>→</span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
+  </div>
+</section>
 
 
       {/* =====================================================

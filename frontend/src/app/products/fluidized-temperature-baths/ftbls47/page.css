@@ -888,3 +888,172 @@
     }
 
 }
+/* =====================================
+   PRODUCT SUPPORT SECTION
+===================================== */
+
+.product-support-section {
+  padding: 65px 0;
+  background: #fff;
+}
+
+.product-support-container {
+  width: min(1500px, 90%);
+  margin: auto;
+}
+
+.product-support-box {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 50px;
+  padding: 55px 60px;
+  background: #081a2b;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-support-heading,
+.product-support-info {
+  position: relative;
+  z-index: 1;
+}
+
+.product-support-heading span {
+  display: block;
+  color: #00aeef;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.product-support-heading h2 {
+  color: #fff;
+  font-size: clamp(30px, 3.2vw, 44px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin: 0;
+}
+
+.product-support-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.product-support-info p {
+  color: #bdcbd8;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 390px;
+  margin: 0;
+}
+
+.product-support-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px 24px;
+  min-height: 48px;
+  background: #00aeef;
+  border: 1px solid #00aeef;
+  color: #081a2b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.product-support-btn span {
+  font-size: 20px;
+}
+
+.product-support-btn:hover {
+  background: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .product-support-section {
+    padding: 40px 0;
+  }
+
+  .product-support-box {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 35px 25px;
+  }
+
+  .product-support-heading h2 {
+    font-size: clamp(27px, 7vw, 36px);
+  }
+
+  .product-support-info p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-support-container {
+    width: 94%;
+  }
+
+  .product-support-box {
+    padding: 30px 20px;
+  }
+}
+/* LARGE FLUIDIZED BATH BACK BUTTON */
+
+.ftbl12-model-navigation {
+  width: 100% !important;
+  padding: 35px 0 55px !important;
+}
+
+.ftbl12-model-navigation .ftbl12-product-container {
+  width: 90% !important;
+  max-width: 1500px !important;
+  margin: 0 auto !important;
+  display: block !important;
+  text-align: left !important;
+}
+
+.ftbl12-model-navigation a.ftbl12-back-models {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: auto !important;
+  min-height: 58px !important;
+  padding: 18px 28px !important;
+
+  font-family: inherit !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  line-height: 1.5 !important;
+
+  color: #ffffff !important;
+  background: #0a2742 !important;
+  border: 1px solid #0a2742 !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+}
+
+.ftbl12-model-navigation a.ftbl12-back-models .back-arrow {
+  font-size: 21px !important;
+  margin-right: 12px !important;
+}
+
+.ftbl12-model-navigation a.ftbl12-back-models:hover {
+  background: #00aeef !important;
+  border-color: #00aeef !important;
+  color: #081a2b !important;
+}
