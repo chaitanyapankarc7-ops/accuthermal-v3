@@ -413,14 +413,37 @@ export default function Home() {
           </div>
           <div className="resource-list reveal">
             {[
-              { title: "Fluidized Bath Product Information", cat: "PRODUCT SYSTEMS" },
-              { title: "Dry Block Calibrator Information", cat: "CALIBRATION" },
-              { title: "Instruction Manuals & Technical Files", cat: "DOCUMENTATION" },
-              { title: "Parts, Media & Accessories", cat: "SUPPORT" },
+              {
+                title: "Fluidized Bath Product Information",
+                href: "/products/fluidized-temperature-baths/",
+              },
+              {
+                title: "Dry Block Calibrator Information",
+                href: "/products/thermcal/",
+              },
+              {
+                title: "Instruction Manuals & Technical Files",
+                href: "/resources/documentation/",
+              },
+              {
+                title: "Parts, Media & Accessories",
+                href: "/products/media-accessories/",
+              },
             ].map((res, i) => (
-              <div key={i} className="resource">
+              <div
+                key={i}
+                className="resource"
+                role={res.href ? "link" : undefined}
+                tabIndex={res.href ? 0 : undefined}
+                onClick={() => res.href && (window.location.href = res.href)}
+                onKeyDown={(event) => {
+                  if (res.href && (event.key === "Enter" || event.key === " ")) {
+                    event.preventDefault();
+                    window.location.href = res.href;
+                  }
+                }}
+              >
                 <b>{res.title}</b>
-                <small>{res.cat}</small>
                 <span>→</span>
               </div>
             ))}

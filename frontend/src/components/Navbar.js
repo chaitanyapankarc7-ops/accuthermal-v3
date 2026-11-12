@@ -156,18 +156,23 @@ export default function Navbar({ activePage }) {
 <div className="nav-dropdown-menu">
 
                 <Link href="/news">
-                  <span>01</span>
                   <div>
                     <b>News</b>
                     <small>Company updates and technical stories</small>
                   </div>
                 </Link>
 
-                <Link href="/#about">
-                  <span>02</span>
+                <Link href="/about/">
                   <div>
                     <b>About Us</b>
                     <small>Engineering experience & company history</small>
+                  </div>
+                </Link>
+
+                <Link href="/sample-cleaning/">
+                  <div>
+                    <b>Sample Cleaning</b>
+                    <small>Send parts for a complimentary cleaning test</small>
                   </div>
                 </Link>
 
@@ -341,7 +346,7 @@ export default function Navbar({ activePage }) {
           </Link>
 
           <Link
-            href="/#about"
+            href="/about/"
             className="mobile-sub-link"
             onClick={() => setMenuOpen(false)}
           >
