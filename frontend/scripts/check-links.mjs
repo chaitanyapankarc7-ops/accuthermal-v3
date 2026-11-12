@@ -142,5 +142,5 @@ if (broken.length) {
 
 console.log(
   `\nLink check passed: ${files.length} pages scanned, all internal links resolve` +
-    (knownGaps.size ? ` (${knownGaps.size} known-missing asset(s) listed above).` : ".")
+  (knownGaps.size ? ` (${knownGaps.size} known-missing asset(s) listed above).` : ".")
 );

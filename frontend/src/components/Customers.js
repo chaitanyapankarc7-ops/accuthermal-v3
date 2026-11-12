@@ -63,7 +63,7 @@ const customerGroups = [
       { src: "/assets/images/customers/thermal-cleaning/southwire.png", alt: "Southwire" },
       { src: "/assets/images/customers/thermal-cleaning/standridge.png", alt: "Standridge" },
       { src: "/assets/images/customers/thermal-cleaning/teknor.png", alt: "Teknor Apex" },
-      { src: "/assets/images/customers/thermal-cleaning/Ti-automotive.png", alt: "TI Automotive" },
+      { src: "/assets/images/customers/thermal-cleaning/TI-automotive.png", alt: "TI Automotive" },
       { src: "/assets/images/customers/thermal-cleaning/trajan-scienific.png", alt: "Trajan Scientific" },
       { src: "/assets/images/customers/thermal-cleaning/umass.png", alt: "UMass" },
       { src: "/assets/images/customers/thermal-cleaning/WL-Gore.png", alt: "WL Gore" },
