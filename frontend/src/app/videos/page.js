@@ -323,7 +323,7 @@ export default function VideosPage() {
             </p>
           </div>
           <div className="vid-cta-actions">
-            <Link className="btn primary" href="/form">
+            <Link className="btn primary" href="/sample-cleaning/">
               Request a sample cleaning
             </Link>
             <Link className="btn vid-btn-dark" href="/applications/thermal-cleaning">

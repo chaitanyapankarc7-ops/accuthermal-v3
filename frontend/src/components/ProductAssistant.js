@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 const quickQuestions = [
   "Which product is right for my application?",
   "Compare the ATS product families",
-  "Help me choose an FTB model",
+  "What does ATS do?",
 ];
 
 const assistantApiUrl =
@@ -51,7 +51,7 @@ export default function ProductAssistant() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: nextMessages.slice(-12),
+          messages: nextMessages.slice(-8),
           currentPath: pathname || "/",
         }),
       });

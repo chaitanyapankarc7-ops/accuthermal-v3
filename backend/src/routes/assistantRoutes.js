@@ -2,20 +2,22 @@ const express = require("express");
 
 const productCatalog = require("../data/productCatalog");
 const productKnowledge = require("../data/productKnowledge");
+const companyKnowledge = require("../data/companyKnowledge");
 
 const router = express.Router();
 
 const DEFAULT_MODEL = "gemini-3.5-flash-lite";
-const MAX_MESSAGES = 12;
+const MAX_MESSAGES = 8;
 const MAX_MESSAGE_LENGTH = 1400;
 
 const assistantInstructions = `
-You are the Accurate Thermal Systems product assistant. Answer questions about ATS products, applications, models and next steps.
+You are the Accurate Thermal Systems (ATS) assistant. Answer concise questions about the company, products, applications, services and next steps.
 
 Rules:
-- Use only the product context below and the user's current page path.
+- Use only the verified company/product context below and the user's current page path.
 - Never invent prices, lead times, availability, certifications, dimensions, temperatures, airflow, performance numbers or other specifications that are not in the context.
 - If the context is not enough, say that clearly and recommend contacting ATS through /form. Do not guess.
+- For a location or contact question, answer directly from the company context in one short sentence.
 - Be concise, practical and friendly. Ask one focused follow-up question when it would help choose a model.
 - When comparing products, explain the use case difference and link to the relevant product page when helpful.
 - You can recommend /form for a quote, engineering help, custom sizing or confirmation of specifications.
@@ -37,6 +39,9 @@ Detailed model knowledge from the ATS product pages:
 ${productKnowledge
   .map((product) => `${product.name}\nSource: ${product.url}\n${product.facts}`)
   .join("\n\n")}
+
+ATS company context:
+${companyKnowledge}
 `;
 
 function normalizeMessages(messages) {

@@ -156,10 +156,6 @@ export default function FluidizedTemperatureBaths() {
 
     <div className="product-details-header">
 
-      <span className="product-details-tag">
-        01 / PRODUCT DETAILS
-      </span>
-
       <h2>
         ENGINEERED
         <br />
@@ -207,10 +203,6 @@ export default function FluidizedTemperatureBaths() {
 
 
       <div className="product-detail-content">
-
-        <span className="detail-number">
-          01 / CONTROL
-        </span>
 
         <h3>
           DIGITAL
@@ -286,10 +278,6 @@ export default function FluidizedTemperatureBaths() {
 
       <div className="product-detail-content">
 
-        <span className="detail-number">
-          02 / AIRFLOW
-        </span>
-
         <h3>
           POWER &
           <br />
@@ -363,10 +351,6 @@ export default function FluidizedTemperatureBaths() {
 
 
       <div className="product-detail-content">
-
-        <span className="detail-number">
-          03 / HARDWARE
-        </span>
 
         <h3>
           LID &
@@ -1181,10 +1165,6 @@ export default function FluidizedTemperatureBaths() {
 
     <div className="process-title">
 
-      <span className="process-tag">
-        02 / PROCESS TECHNOLOGY
-      </span>
-
       <h2>
         SEE HOW
         <br />
@@ -1383,7 +1363,7 @@ export default function FluidizedTemperatureBaths() {
     SYSTEM CHARACTERISTICS
 ===================================================== */}
 
-<div className="process-characteristics">
+<div id="system-characteristics" className="process-characteristics">
 
   <div className="characteristics-heading">
 
@@ -1548,11 +1528,6 @@ export default function FluidizedTemperatureBaths() {
     {/* LEFT SIDE */}
 
     <div className="ftb-downloads-intro">
-
-      <div className="ftb-downloads-tag">
-        <span></span>
-        06 / RESOURCES
-      </div>
 
       <h2>
         TECHNICAL

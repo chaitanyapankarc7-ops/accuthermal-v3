@@ -1290,6 +1290,14 @@ footer {
   color: var(--red);
 }
 
+.cta .btn.primary {
+  min-height: 64px;
+  padding: 20px 30px;
+  font-size: 13px;
+  letter-spacing: .09em;
+  white-space: nowrap;
+}
+
 
 
 
@@ -2171,6 +2179,12 @@ footer {
     flex-direction: column;
   }
 
+  .cta .btn.primary {
+    min-height: 58px;
+    padding: 18px 26px;
+    font-size: 12px;
+  }
+
   .family-catalog {
     grid-template-columns: 1fr;
   }
@@ -2844,6 +2858,10 @@ footer {
 
     font-family: monospace;
     font-size: 12px;
+}
+
+.nav-dropdown-more .nav-dropdown-menu > a {
+    grid-template-columns: 1fr;
 }
 
 
@@ -5296,3 +5314,4 @@ button:focus-visible {
 .contact-form .form-row .last-name-label {
   visibility: hidden;
 }
+

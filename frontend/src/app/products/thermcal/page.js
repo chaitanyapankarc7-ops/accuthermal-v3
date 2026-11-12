@@ -150,10 +150,6 @@ export default function ThermCalPage() {
 
         <div className="thermcal-container">
 
-          <div className="thermcal-section-label">
-            01 / PRODUCT SYSTEM
-          </div>
-
           <div className="thermcal-intro-grid">
 
             <div>
@@ -424,11 +420,6 @@ export default function ThermCalPage() {
 
         <div className="thermcal-container">
 
-          <div className="thermcal-section-label">
-            03 / ENGINEERED FEATURES
-          </div>
-
-
           <div className="thermcal-features-header">
 
             <h2>
@@ -686,11 +677,6 @@ export default function ThermCalPage() {
 <section className="thermcal-video-section">
 
   <div className="thermcal-container">
-
-    <div className="thermcal-section-label">
-      04 / SYSTEM IN ACTION
-    </div>
-
 
     <div className="thermcal-video-header">
 
@@ -1017,10 +1003,6 @@ export default function ThermCalPage() {
 
         <div className="thermcal-container">
 
-          <div className="thermcal-section-label">
-            05 / TECHNICAL DATA
-          </div>
-
 
           <h2>
             TECHNICAL
@@ -1295,10 +1277,6 @@ export default function ThermCalPage() {
       <section className="thermcal-downloads">
 
         <div className="thermcal-container">
-
-          <div className="thermcal-section-label">
-            06 / RESOURCES
-          </div>
 
 
           <div className="thermcal-download-grid">
