@@ -1596,7 +1596,9 @@
 .ftbl12-back-models {
     display: inline-block;
 
-    padding-top: 18px;
+    padding: 14px 20px;
+    border: 1px solid #071827;
+    background: #071827;
 
     font-size: 8px;
 }
@@ -1992,13 +1994,13 @@
 
     padding-top: 18px;
 
-    color: #071827;
+    color: #fff;
 
     text-decoration: none;
 
     font-family: monospace;
 
-    font-size: 8px;
+    font-size: 11px;
 
     font-weight: 700;
 
@@ -2006,7 +2008,7 @@
 }
 
 .ftbl12-back-models:hover {
-    color: #009fe3;
+    color: #fff;
 }
 
 

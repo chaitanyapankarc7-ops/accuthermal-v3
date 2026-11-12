@@ -346,8 +346,14 @@
 }
 
 .ftbsl6-back a {
-  color: #637b88;
-  font: 700 9px "IBM Plex Mono", monospace;
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 20px;
+  border: 1px solid #071827;
+  background: #071827;
+  color: #fff;
+  font: 700 11px/1.2 "IBM Plex Mono", monospace;
+  letter-spacing: 1.5px;
   text-decoration: none;
 }
 

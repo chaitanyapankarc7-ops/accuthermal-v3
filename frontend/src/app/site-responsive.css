@@ -101,8 +101,12 @@ small {
   }
 
   .hero-inner {
-    padding-top: 118px;
+    padding-top: 28px;
     padding-bottom: 56px;
+  }
+
+  .hero-inner > div:first-child {
+    text-align: center;
   }
 
   .hero-copy,
@@ -271,7 +275,7 @@ small {
   .ftb-hero-inner,
   .hepa-hero-inner,
   .thermcal-hero-inner {
-    padding-top: 98px;
+    padding-top: 16px;
     padding-bottom: 38px;
   }
 

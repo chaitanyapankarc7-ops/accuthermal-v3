@@ -459,10 +459,20 @@
 }
 
 .ftbsl15-back-models {
-  color: #0b8fbd;
-  font: 700 9px/1.5 "IBM Plex Mono", "Courier New", monospace;
-  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 20px;
+  border: 1px solid #071827;
+  background: #071827;
+  color: #fff;
+  font: 700 11px/1.2 "IBM Plex Mono", "Courier New", monospace;
+  letter-spacing: 1.5px;
   text-decoration: none;
+  transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.ftbsl15-back-models:hover {
+  transform: translateY(-2px);
 }
 
 @media (max-width: 850px) {
