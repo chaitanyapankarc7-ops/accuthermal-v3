@@ -24,7 +24,7 @@ export default function ContactFormPage() {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/enquiries/contact.php",
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/enquiries/contact.php`,
         {
           method: "POST",
           headers: {
@@ -47,15 +47,15 @@ export default function ContactFormPage() {
       if (!response.ok) {
         const validationErrors = Array.isArray(result.errors)
           ? result.errors
-              .map((item) => item.message)
-              .filter(Boolean)
-              .join(" ")
+            .map((item) => item.message)
+            .filter(Boolean)
+            .join(" ")
           : "";
 
         throw new Error(
           validationErrors ||
-            result.message ||
-            `Request failed with status ${response.status}.`
+          result.message ||
+          `Request failed with status ${response.status}.`
         );
       }
 
@@ -65,7 +65,7 @@ export default function ContactFormPage() {
 
       setSubmitError(
         error.message ||
-          "Unable to submit your request. Please try again."
+        "Unable to submit your request. Please try again."
       );
     } finally {
       setIsSubmitting(false);
@@ -130,46 +130,46 @@ export default function ContactFormPage() {
                   </select>
                 </div>
 
-            <div className="form-row">
-              <div className="form-field">
-                <label htmlFor="first-name">
-                  Name <span className="req">(Required)</span>
-                </label>
+                <div className="form-row">
+                  <div className="form-field">
+                    <label htmlFor="first-name">
+                      Name <span className="req">(Required)</span>
+                    </label>
 
-                <input
-                  id="first-name"
-                  name="firstName"
-                  type="text"
-                  placeholder="First Name"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  autoComplete="given-name"
-                  maxLength={100}
-                  required
-                />
-              </div>
+                    <input
+                      id="first-name"
+                      name="firstName"
+                      type="text"
+                      placeholder="First Name"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      autoComplete="given-name"
+                      maxLength={100}
+                      required
+                    />
+                  </div>
 
-              <div className="form-field">
-                <label
-                  htmlFor="last-name"
-                  className="last-name-label"
-                >
-                  Last Name <span className="req">(Required)</span>
-                </label>
+                  <div className="form-field">
+                    <label
+                      htmlFor="last-name"
+                      className="last-name-label"
+                    >
+                      Last Name <span className="req">(Required)</span>
+                    </label>
 
-                <input
-                  id="last-name"
-                  name="lastName"
-                  type="text"
-                  placeholder="Last Name"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  autoComplete="family-name"
-                  maxLength={100}
-                  required
-                />
-              </div>
-            </div>
+                    <input
+                      id="last-name"
+                      name="lastName"
+                      type="text"
+                      placeholder="Last Name"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      autoComplete="family-name"
+                      maxLength={100}
+                      required
+                    />
+                  </div>
+                </div>
 
                 <div className="form-field">
                   <label htmlFor="email">

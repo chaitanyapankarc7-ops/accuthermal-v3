@@ -3,6 +3,7 @@
 // CORS configuration
 $allowedOrigins = [
     'http://localhost:3000',
+    'https://seashell-starling-220016.hostingersite.com',
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';

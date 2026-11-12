@@ -180,7 +180,7 @@ export default function SupportPage() {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/enquiries/support.php",
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/enquiries/support.php`,
         {
           method: "POST",
           headers: {
@@ -199,8 +199,8 @@ export default function SupportPage() {
       if (!response.ok || !data.success) {
         throw new Error(
           data.errors?.[0]?.message ||
-            data.message ||
-            "Unable to submit your request. Please try again."
+          data.message ||
+          "Unable to submit your request. Please try again."
         );
       }
 
@@ -210,7 +210,7 @@ export default function SupportPage() {
 
       setSubmitError(
         error.message ||
-          "Unable to send your request right now. Please try again later."
+        "Unable to send your request right now. Please try again later."
       );
     } finally {
       setIsSubmitting(false);
@@ -582,7 +582,7 @@ export default function SupportPage() {
                       required
                     />
                   </div>
-                                    <fieldset className="sup-checkgroup">
+                  <fieldset className="sup-checkgroup">
                     <legend>Area of Interest</legend>
                     <p className="sup-checkgroup-hint">
                       (Select all that apply.)
